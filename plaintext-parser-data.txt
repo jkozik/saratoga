@@ -1,0 +1,123 @@
+#
+# data file for plaintext-parser.php -- used to determine caption and base icon for forecast
+# Version 1.06 - 01-Jan-2011
+#
+# select default date format by putting a '#' in front of the ones NOT to be used.  
+# The last uncommented one
+# in this file will be used for the date format .. it may be overridden by a dateformat
+# entry in the plaintext-parser-lang-XX.txt file.
+#
+dateformat|d-M-Y h:i a| // USA format 31-Mar-2006 02:03 pm
+#dateformat|d/m/Y H:i|   // Euro format 31/03/2006 14:03
+#dateformat|Y-m-d H:i|   // ISO  format 2006-03-31 14:03
+#
+# NOTE: order of conditions in file is IMPORTANT to scan for most hazardous conditions first
+#   and report simple sky conditions second (if no severe, thunder, (sleet,snow,mix), rain, fog
+#   are in the report.  
+#
+# Don't change the last field name for a different language.
+#   Instead, change the language entries marked by 'langlookup' in the 
+#   plaintext-parser-lang-XX.txt file.
+#
+# type | keyword(s) | day-icon | night-icon | Caption
+#
+cond|possibly severe|tsra|ntsra|Thunder storm|
+cond|some severe|tsra|ntsra|Thunder storm|
+cond|severe|nsvrtsra|nsvrtsra|Severe storm|
+cond|showery or intermittent. Some thunder|scttsra|nscttsra|Showers storms|
+cond|thunder possible|scttsra|nscttsra|Showers storms|
+cond|thunder|tsra|ntsra|Thunder storm|
+cond|rain and sleet|raip|nraip|Rain Sleet|
+cond|freezing rain and snow|raip|nraip|FrzgRn Snow|
+cond|rain and snow|rasn|nrasn|Rain and Snow|
+cond|snow and rain|rasn|nrasn|Rain and Snow|
+cond|freezing rain|fzra|fzra|Freezing Rain|
+cond|rain likely|ra|nra|Rain likely|
+cond|rain very likely|ra|nra|Rain likely|
+cond|chance of rain|ra|nra|Chance rain|
+cond|rain|ra|nra|Chance rain|
+cond|mix|rasn|rasn|Mix|
+cond|sleet|ip|ip|Sleet|
+cond|snow|sn|nsn|Snow|
+cond|fog in the morning|sctfg|nbknfg|Fog a.m.|
+cond|fog after midnight|sctfg|nbknfg|Fog late|
+cond|fog|fg|nfg|Fog|
+cond|partly cloudy|sct|nsct|Partly Cloudy|
+cond|mostly cloudy|bkn|nbkn|Mostly Cloudy|
+cond|cloudy|cloudy|ncloudy|Cloudy|
+cond|overcast|ovc|novc|Overcast|
+cond|partly sunny|sct|nsct|Partly Sunny|
+cond|mostly sunny|few|nfew|Mostly Sunny|
+cond|mostly clear|few|nfew|Mostly Clear|
+cond|sunny|skc|nskc|Sunny|
+cond|clear|skc|nskc|Clear|
+cond|fair|few|nfew|Fair|
+cond|cloud|bkn|nbkn|Variable Clouds|
+#
+#
+# Precipitation keywords/amounts
+#
+# type |keyword(s) | amount | units
+#
+precip|less than a tenth of an inch|&lt;.1|in.
+precip|around a tenth of an inch|.1|in.
+precip|less than a quarter of an inch|&lt;.25|in.
+precip|around a quarter of an inch|.25|in.
+precip|between a quarter and half an inch|.35|in.
+precip|around half an inch|.5|in.
+precip|between half an inch and one inch|.75|in.
+precip|around an inch|1.0|in.
+precip|between 1 and 2 inches|1.5|in.
+precip|around 2 inches|2.0|in.
+precip|between 2 and 3 inches|2.5|in.
+precip|around 3 inches|3.0|in.
+precip|between 3 and 5 inches|4.0|in.
+precip|between 4 and 6 inches|5.0|in.
+precip|over six inches|>6.0|in.
+snow|accumulation about a quarter inch|.25|in.
+snow|accumulation about half an inch|.5|in.
+snow|accumulation about an inch|1|in.
+snow|accumulation 1 to 2 inches|&lt;2|in.
+snow|accumulation 8 to 12 inches|&lt;12|in.
+snow|accumulation around 2 inches|2|in.
+snow|accumulation 2 to 3 inches|&lt;3|in.
+snow|accumulation 2 to 4 inches|&lt;4|in.
+snow|accumulation 3 to 5 inches|&lt;5|in.
+snow|accumulation 4 to 6 inches|&lt;6|in.
+snow|accumulation 5 to 8 inches|&lt;8|in.
+snow|accumulation 6 to 10 inches|&lt;10|in.
+snow|accumulation 12 to 16 inches|&lt;16|in.
+snow|accumulation 15 to 20 inches|&lt;20|in.
+snow|accumulation 20 inches or more.|&gt;20|in.
+precip|less than 2 mm|&lt;2|mm.
+precip|around 2 mm|2|mm.
+precip|between 2 and 5 mm|&lt;5|mm.
+precip|around 5 mm|5|mm.
+precip|between 5 and 10 mm|7|mm.
+precip|around 10 mm|10|mm.
+precip|between 10 and 20 mm|15|mm.
+precip|around 20 mm|20|mm.
+precip|between 20 and 30 mm|25|mm.
+precip|around 30 mm|30|mm.
+precip|between 30 and 50 mm|40|mm.
+precip|between 40 and 60 mm|50|mm.
+precip|over 60 mm|60+|mm.
+snow|accumulation less than one cm|&lt;1|cm.
+snow|accumulation about a cm|1|cm.
+snow|accumulation 1 to 2 cm|&lt;2|cm.
+snow|accumulation about 2 cm|2|cm.
+snow|accumulation 2 to 3 cm|&lt;3|cm.
+snow|accumulation 2 to 4 cm|&lt;4|cm.
+snow|accumulation 3 to 5 cm|&lt;5|cm.
+snow|accumulation 4 to 6 cm|&lt;6|cm.
+snow|accumulation 5 to 8 cm|&lt;8|cm.
+snow|accumulation 6 to 10 cm|&lt;10|cm.
+snow|accumulation 8 to 12 cm|&lt;12|cm.
+snow|accumulation 12 to 16 cm|&lt;16|cm.
+snow|accumulation 15 to 20 cm|&lt;20|cm.
+snow|accumulation 20 to 30 cm|&lt;30|cm.
+snow|accumulation 30 to 40 cm|&lt;40|cm.
+snow|accumulation 40 to 50 cm|&lt;50|cm.
+snow|accumulation 50 cm or more|&gt;50|cm.
+#
+# -- end of file --

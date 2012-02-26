@@ -1,0 +1,8 @@
+ConfigFolder=Config
+&ConfigfileSuffix=txt
+&DataFolder=Data
+&ScriptsFolder=scripts
+&ScriptsSuffix=php
+&KeyfileSuffix=txt
+&SiteURL=http://saratoga-weather.org/wflash/
+&Town=Saratoga

@@ -1,0 +1,797 @@
+/**********************************
+ * TITLE: Gila Screen Stylesheet  *
+ * URI  : gila/gila-screen.css    *
+ * MODIF: 2003-Apr-30 19:09 +0800 *
+ **********************************/
+
+body {
+  color: black;
+  background-color: #F3F2EB;
+  font-family: verdana, helvetica, arial, sans-serif;
+  font-size: 73%;  /* Enables font size scaling in MSIE */
+  margin: 0;
+  padding: 0;
+}
+
+html > body {
+  font-size: 9pt;
+}
+
+#page {
+  margin: 20px auto;
+  color: black;
+  background-color: #CCBFAD;
+}
+
+.doNotDisplay {
+  display: none !important;
+}
+
+.picfl {
+           float:left;
+           padding-right: 5px;
+           position: relative;
+}
+
+.picfr {
+           float:right;
+           padding-left: 5px;
+           position: relative;
+}
+
+.picfc {
+           text-align: center;
+           padding-left: 5px;
+           padding-right: 5px;
+           position: relative;
+}
+
+
+/* ##### Header ##### */
+
+/* ##### CHANGE background-color to change header color, hex code is OK ##### */
+/* ##### Hex Color Chart - http://www.w3schools.com/Html/html_colors.asp  ##### */
+
+#header {
+  color: inherit;
+  background-color: #7D3908;
+}
+
+.headerTitle {
+  margin: 0;
+  padding: 0.25em 4mm 0.25em 4mm;
+}
+
+.headerTitle a {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 110%;  /* For MSIE */
+  font-weight: bold;
+  font-style: italic;
+}
+
+.headerTitle > a {
+  font-size: 110%;  /* For fully standards-compliant user agents */
+}
+
+.headerTitle span {
+  color: white;
+  background-color: transparent;
+  font-weight: normal;
+}
+
+ .headerTemp {
+  font-size: 36px;
+  font-weight: bold;
+  float: right;
+  right: .5ex;
+  margin-right: 5px;
+  margin-left: 15px;
+  top: 0.18em;
+  color: #FBFBF3;
+}
+
+[class~="headerTemp"] {
+  top: 0.18em;  /* For fully standards-compliant user agents */
+}
+
+.subHeader {
+  color: #FBFBF3;
+  float: left;
+  clear: left;
+  position: relative;
+  background-color: #3B1004;
+  font-size: 109%;
+  margin: 0;
+  padding: 0.5ex 1ex;
+}
+
+.subHeaderRight {
+  color: #FBFBF3;
+  background-color: #3B1004;
+  font-size: 109%;
+  text-align: right;
+  margin:  0;
+  padding: 0.5ex 2ex;
+}
+
+.subHeader a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ##### Left Side Bar ##### */
+
+.leftSideBar {
+  width: 9.5em;
+  float: left;
+  clear: left;
+}
+
+.leftSideBar .sideBarTitle {
+  color: white;
+  background-color: #112637;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.5ex 1ex;
+}
+
+.leftSideBar ul {
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0;
+  padding: 0;
+}
+
+.leftSideBar li {
+  margin: .5ex;
+  padding: 0;
+}
+
+.leftSideBar a {
+display: block;
+color: #112637;
+background-color: transparent;
+width: 89px;
+padding: .05em;
+text-decoration: none;
+}
+
+.leftSideBar a:visited {
+  color: #112637;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.leftSideBar a:hover {
+background-color: #D7E2E8;
+color: #112637;
+}
+
+.leftSideBar .sideBarText {
+  color: black;
+  background-color: transparent;
+  line-height: 1.25em;
+  margin: 1ex 0.25ex 1.5em 0.75ex;
+  padding: 0;
+  display: block;
+}
+
+.leftSideBar .sideBarText a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.leftSideBar .sideBarText a:visited {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.leftSideBar .sideBarText a:hover {
+  text-decoration: none;
+}
+
+.leftSideBar .thisPage {
+  color: black;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+/* ##### Main Copy ##### */
+
+#main-copy {
+  color: black;
+  background-color: white;
+  text-align: justify;
+  line-height: 1.5em;
+  margin: 0 0 0 9.5em;
+  padding: .5ex 1em 1em 1em;
+  border-left: 1px solid rgb(216,210,195);
+}
+
+#main-copy-dark {
+  color: white;
+  background-color: black;
+  text-align: justify;
+  line-height: 1.5em;
+  margin: .1em 0 0 9.5em;
+  padding: .5ex 1em 1em 1em;
+  border-left: 1px solid rgb(216,210,195);
+}
+
+#main-copy h1 {
+  color: black;
+  background-color: transparent;
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 175%;
+  font-weight: bold;
+  margin: 1em 0 0 0;
+  padding: 1em 0 0 0;
+  border-top: 1px solid rgb(216,210,195);
+}
+
+#main-copy a {
+  color: #112637;
+  background-color: transparent;
+  text-decoration: underline;
+}
+#main-copy a:hover {
+  text-decoration: none;
+}
+
+.table-top {
+  color: black;
+  background-color: #D7E2E8;
+  text-align: left;
+  font-weight: bold;
+}
+
+.column-dark {
+  color: black;
+  background-color: #F2F2DB;
+}
+
+.column-light {
+  color: black;
+  background-color: white;
+}
+
+p {
+  margin: 1em 0 1.5em 0;
+  padding: 0;
+}
+
+dt {
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 0.5ex 0;
+}
+
+dd {
+  margin: 0 0 1.5em 1.5em;
+  padding: 0;
+}
+
+.watchBox {
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  background-color: #FF9900;
+  margin: 0 0 0 0;
+  padding: .5em 0em .5em 0em;
+  border: 1px dashed rgb(34,70,79);
+}
+#main-copy .watchBox a {
+  color: blue;
+}
+#main-copy .watchBox a:hover {
+  color: blue;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+.advisoryBoxnoactive {
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  background-color: white;
+  margin: 0 0 0 0;
+  padding: .5em 0em .5em 0em;
+  border: 1px dashed rgb(34,70,79);
+}
+
+.advisoryBox {
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  background-color: #FFCC00;
+  margin: 0 0 0 0;
+  padding: .5em 0em .5em 0em;
+  border: 1px dashed rgb(34,70,79);
+}
+#main-copy .advisoryBox a {
+  color: blue;
+}
+#main-copy .advisoryBox a:hover {
+  color: blue;
+  background-color: inherit;
+ text-decoration: underline;
+}
+
+.warningBox {
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  background-color: #CC0000;
+  margin: 0 0 0 0;
+  padding: .5em 0em .5em 0em;
+  border: 1px dashed rgb(255,255,255);
+}
+#main-copy .warningBox a {
+  color: white;
+}
+#main-copy .warningBox a:hover {
+  color: white;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+.tornadowarningBox {
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  background-color: #CC0000;
+  margin: 0 0 0 0;
+  padding: .5em 0em .5em 0em;
+  border: 1px dashed rgb(255,255,255);
+}
+#main-copy .tornadowarningBox a {
+  color: white;
+}
+#main-copy .tornadowarningBox a:hover {
+  color: white;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+/* ##### ajaxSidebar ##### */
+.ajaxSidebar {
+    background-color: white;
+        border: none;
+        width: 114px;
+}
+.ajaxSidebar h2 {
+        font-size: 12pt;
+        color: white;
+        background-color: #112637;
+        text-align: center;
+        margin-right: 6px;
+}
+
+.ajaxSidebar .meas {
+        font : x-small Arial, Helvetica, sans-serif;
+        color: black;
+        text-align : right;
+        background-color: white;
+        width: 35%;
+        }
+.ajaxSidebar .data {
+        font : 9pt Arial, Helvetica, sans-serif;
+        color: black;
+        text-align : left;
+        background-color: white;
+        }
+.ajaxSidebar td {
+         border: none;
+         background-color: white;
+}
+.ajaxDashboard .datahead {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 9pt;
+        font-weight: bold;
+        color:  white;
+        background-color: #112637;
+        text-align: center;
+}
+.ajaxDashboard .datahead2 {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 9pt;
+        font-weight: bold;
+		border-bottom: 1px solid #CCCCCC;
+        color:  white;
+        background-color: #112637;
+        text-align: center;
+}
+.ajaxDashboard .data1 {
+         color: black;
+         font-family: Verdana, Arial, Helvetica, sans-serif;
+         font-size: 9pt;
+         border-bottom: 1px solid #CCCCCC;
+         background-color: white;
+         text-align: left;
+}
+.ajaxDashboard .data2 {
+         color: black;
+         font-family: Verdana, Arial, Helvetica, sans-serif;
+         font-size: 9pt;
+         background-color: white;
+         text-align: left;
+}
+.ajaxDashboard td {
+         border: none;
+         background-color: white;
+}
+
+
+/* ##### Footer ##### */
+
+#footer {
+  color: black;
+  background-color: #CCBFAD;
+  font-size: 92%;
+  text-align: center;
+  line-height: 1.25em;
+  margin: 0;
+  padding: 1em 4mm 1em 4mm;
+  clear: both;
+}
+
+#footer div {
+  margin: 0;
+  padding: 0 0 1ex 0;
+}
+
+#footer a {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#footer a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#footer a:hover {
+  text-decoration: none;
+}
+
+.jsuparrow {
+background-color:#CDDBCD;
+border:0px none;
+color:#22464F;
+text-decoration:none;
+}
+
+.jsupoutline {
+background:#CDDBCD none repeat scroll 0%;
+border:0px solid #2266AA;
+height:15px;
+left:0px;
+padding:0px;
+position:absolute;
+top:0px;
+width:24px;
+}
+
+/* WordPress additions for Weather Display PHP AJAX Templates */
+/* Copy and paste all of this to the END of your CSS files */
+
+/* Begin Sidebar */
+#sidebar
+{
+	padding: 2.5em;
+	width: 150px;
+	float: right;
+	background-color: #F2F2DB;
+	margin: 5px;
+
+	}
+
+#sidebar form {
+	margin: 0;
+	}
+/* End Sidebar */
+
+
+/* Begin Calendar */
+#wp-calendar {
+	empty-cells: show;
+	margin: 10px auto 0;
+	width: 155px;
+	}
+
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+	}
+
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+	}
+
+#wp-calendar a {
+	display: block;
+	}
+
+#wp-calendar caption {
+	text-align: center;
+	width: 100%;
+	}
+
+#wp-calendar td {
+	padding: 2px 0;
+	text-align: center;
+	}
+
+#wp-calendar td.pad:hover { /* Doesn't work in IE */
+	background-color: #fff; }
+/* End Calendar */
+
+
+
+/* Begin Lists
+
+	Special stylized non-IE bullets
+	Do not work in Internet Explorer, which merely default to normal bullets. */
+
+html>body .entry ul {
+	margin-left: 0px;
+	padding: 0 0 0 30px;
+	list-style: none;
+	padding-left: 10px;
+	text-indent: -10px;
+	}
+
+html>body .entry li {
+	margin: 7px 0 8px 10px;
+	}
+
+.entry ul li:before, #sidebar ul ul li:before {
+	content: "\00BB \0020";
+	}
+
+.entry ol {
+	padding: 0 0 0 35px;
+	margin: 0;
+	}
+
+.entry ol li {
+	margin: 0;
+	padding: 0;
+	}
+
+.postmetadata ul, .postmetadata li {
+	display: inline;
+	list-style-type: none;
+	list-style-image: none;
+	}
+
+#sidebar ul, #sidebar ul ol {
+	margin: 0;
+	padding: 0;
+	}
+
+#sidebar ul li {
+	list-style-type: none;
+	list-style-image: none;
+	margin-bottom: 0px;
+	}
+
+#sidebar ul p, #sidebar ul select {
+	margin: 5px 0 8px;
+	}
+
+#sidebar ul ul, #sidebar ul ol {
+	margin: 5px 0 0 10px;
+	}
+
+#sidebar ul ul ul, #sidebar ul ol {
+	margin: 0 0 0 10px;
+	}
+
+ol li, #sidebar ul ol li {
+	list-style: decimal outside;
+	}
+
+#sidebar ul ul li, #sidebar ul ol li {
+	margin: 3px 0 0;
+	padding: 0;
+	}
+/* End Entry Lists */
+
+#sidebar {
+	font: 10px 'Lucida Grande', Verdana, Arial, Sans-Serif;
+    color: black;
+	}
+
+small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockquote, strike {
+	color: #777;
+	}
+
+
+#wp-calendar #prev a, #wp-calendar #next a {
+	font-size: 9pt;
+	}
+
+#wp-calendar a {
+	text-decoration: none;
+	}
+
+#wp-calendar caption {
+	font: bold 1.3em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	text-align: center;
+	}
+
+#wp-calendar th {
+	font-style: normal;
+	text-transform: capitalize;
+	}
+
+#sidebar h2 {
+	font-family: 'Lucida Grande', Verdana, Sans-Serif;
+	font-size: 1.2em;
+	}
+
+/* Begin Blog Main Copy */
+#blog-main {
+  color: black;
+  background-color: white;
+  text-align: left;
+  line-height: 1.5em;
+  margin: 0 0 0 9.5em;
+  padding: .5ex 1em 1em 1em;
+  border-left: 1px solid rgb(216,210,195);
+  min-height: 720px;
+  clear:right;
+
+}
+
+#blog-main-dark {
+  color: white;
+  background-color: black;
+  text-align: left;
+  line-height: 1.5em;
+  margin: .1em 0 0 9.5em;
+  padding: .5ex 1em 1em 1em;
+  border-left: 1px solid rgb(216,210,195);
+}
+
+#blog-main h1 {
+  color: black;
+  background-color: transparent;
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 175%;
+  font-weight: bold;
+  font-style: italic;
+  margin: 1em 0 0 0;
+  padding: 1em 0 0 0;
+  border-top: 1px solid rgb(216,210,195);
+}
+
+#blog-main h2 {
+  color: black;
+  background-color: transparent;
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 120%;
+  font-weight: bold;
+  margin: 1em 0 0 0;
+  padding: 1em 0 0 0;
+  text-align:left
+
+}
+
+#blog-main a {
+  color: #112637;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#blog-main a:hover {
+  text-decoration: none;
+}
+
+/* Captions */
+
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+/* End captions */
+
+/* Added for image alignment issued */
+
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}
+
+img.alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+
+.alignright {
+	float: right;
+	}
+
+.alignleft {
+	float: left;
+	}
+	
+.thread-alt {
+  color: black;
+  background-color: #F2F2DB;
+}
+
+.thread-even {
+  color: black;
+  background-color: white;
+}
+
+/* ##### mjc extra ##### */
+
+#horizontal-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#horizontal-menu ul li {
+display: inline;
+padding: .2em 1em;
+}
+
+.menuLinkSelectedhoriz {
+background-color: #D7E2E8;
+color: #112637;
+width: 100px;
+padding: .2em;
+}
+
+.menuLinkSelected {
+display: block;
+background-color: #D7E2E8;
+color: #112637;
+width: 90px;
+padding: .04em;
+}
+
+

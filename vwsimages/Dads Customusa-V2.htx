@@ -1,0 +1,1280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>^wsdescription^ ^wslocation^ Local Weather Conditions</title>
+<meta name="Keywords" content="weather stations, weather station, weather radio, gps, weather equipment, weather instrument, weathervane, oregon scientific, lacrosse technology, davis instruments, vantage pro, meteorology, wireless thermometer, barometer, wind, rain gauge, gauges, atomic clock, watch, digital, midland, kestrel">
+<meta name="Description" content="weather station equipment, weather radios, weathervanes, gps and instruments from Oregon Scientific, La Crosse Technology, Davis Instruments, Kestrel Instruments.">
+<meta name="Abstract" content="Oregon Scientific, La Crosse Technology, Davis Instruments, Kestrel Instruments electronics">
+</head>
+
+ <body>
+ <!-- AJAX updates by Ken True - http://saratoga-weather.org/scripts-VWS-AJAX.php -->
+ <script type="text/javascript" src="ajaxVWSwxf.js"></script>
+<table>
+<td>
+<span style="font-size:48px;font-family:Arial">
+CamptonHillsWeather.com
+</span>
+<!--
+<td valign="top"><a href="http://www.ambientweather.com/" target="_blank"><font face="Arial"><img border="0" src="http://site.ambientweatherstore.com/WxEx/ambient_logo.gif" width="150" height="65"></font></a></td>
+<td valign="top"><a href="http://www.ambientweather.com/weex1.html" target="_blank"><font face="Arial"><img border="0" src="http://site.ambientweatherstore.com/adbanner/banner468x60.gif" width="468" height="60"></font></a></td>
+-->
+<td><form target="weather" action=http://www.wunderground.com/cgi-bin/findweather/getForecast> 
+<p align="center"> 
+<font face="Arial"> 
+<font color="#000000" size="1">Find the Weather for any <b>City</b>, <b>State</b> 
+&nbsp;<br>
+or 
+<b>Zipcode</b>, or <b>Country:</b></font> 
+<font size="2"> 
+<br> 
+</font> 
+<font color=#000000><input type=text name=query size=20><input type=submit 
+value="Go"> 
+</font> </font> </form></td>
+
+</table>
+
+<div align="left">
+
+  <table border="0" cellspacing="0" bordercolor="#CCCCFF">
+    <tr>
+      <td valign="top" align="left" colspan="3" bgcolor="#CCCCFF"><b><font face="Arial">^wslocation^
+        Weather</font></b>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" align="left">
+        <table border="0" cellspacing="0" bordercolor="#CCCCFF">
+          <tr>
+            <td bgcolor="#CCCCFF"><b><font face="Arial">Local Radar</font></b></td>
+          </tr>
+          <tr>
+            <td>
+              <p align="center"><font face="Arial"><a href="http://wxex.wunderground.com/radar/radblast.asp?ID=^forecast_nexrad1^&amp;region=^forecast_readregion1^&amp;lat=^wslat^&amp;lon=^wslong^&amp;label=^wsdescription^"><img src=http://wxex.wunderground.com/data/nids/^forecast_nexrad1^19_thumb_t.jpg alt="Local Radar" border=0></a></</td>
+              </font>
+          </tr>
+          <tr>
+            <td bgcolor="#CCCCFF"><b><font face="Arial">Graphs, Details</font></b></td>
+          </tr>
+          <tr>
+            <td>
+              <table border="0" cellspacing="0">
+                <tr>
+                  <td><a href="wx-V2.htm"><font face="Arial" size="2">Graphs and Gauges</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="details.htm"><font face="Arial" size="2">Detailed Weather</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="daily.htm"><font face="Arial" size="2">Detailed Reports</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="usaAjax.htm"><font face="Arial" size="2">Ajax Version (old)</font></a></td>
+                </tr>
+
+
+                <tr>
+                  <td><a href="http://weather.kozik.net/davis/"><font face="Arial" size="2">Central Kane Co Summary</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://weather.kozik.net/davis/Current_Vantage_Pro_Plus.htm"><font face="Arial" size="2">Davis Current Weather Graphs</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://weather.kozik.net/davis/History_Vantage_Pro_Plus.htm"><font face="Arial" size="2">Davis 24 Hour Weather History</font></a></td>
+                </tr>
+
+                <tr>
+                  <td align="center"><a href="http://www.findu.com/cgi-bin/wxpage.cgi?call=CW3778!St. Charles">
+                  <img border="0" src="http://weather.kozik.net/davis/cwp_logo.gif" width="156" height="156"><br>
+                  CW3778 Data</a></td>
+                </tr>
+
+                <tr>
+                  <td  align="center"><a href="http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILSTCHA1">
+                  <img border=0 src="http://banners.wunderground.com/cgi-bin/banner/ban/wxBanner?bannertype=wxstnsticker_both&weatherstationcount=KILSTCHA1" width=160 height=163> 
+                  <br>Weather Underground</a></td>
+                </tr>
+
+              </table>
+          </tr>
+
+
+
+          <tr>
+            <td bgcolor="#CCCCFF"><b><font face="Arial">Maps</font></b></td>
+          </tr>
+          <tr>
+            <td>
+              <table border="0" cellspacing="0">
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/Temperature.html"><font face="Arial" size="2">Temperature</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/HeatIndex.html"><font face="Arial" size="2">Heat
+                    Index</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/WindChill.html"><font face="Arial" size="2">Windchill</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/Humidity.html"><font face="Arial" size="2">Humidity</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/Radar.html"><font face="Arial" size="2">Radar</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/Dewpoint.html"><font face="Arial" size="2">Dew
+                    Point</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/WindSpeed.html"><font face="Arial" size="2">Wind</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/Visibility.html"><font face="Arial" size="2">Visibility</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/VisSatellite.html"><font face="Arial" size="2">Visible
+                    Satellite</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/IRSatellite.html"><font face="Arial" size="2">Satellite</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/Fronts.html"><font face="Arial" size="2">Fronts</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/SnowDepth.html"><font face="Arial" size="2">Snow
+                    Depth</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/JetStream.html"><font face="Arial" size="2">Jet
+                    Stream</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/Flight.html"><font face="Arial" size="2">Flight
+                    Rules</font></a></td>
+                </tr>
+              </table>
+          </tr>
+          <tr>
+            <td bgcolor="#CCCCFF"><b><font face="Arial">Forecast Maps</font></b></td>
+          </tr>
+          <tr>
+            <td><a href="http://www.wunderground.com/ndfdimage/viewimage?type=temp&amp;region=us"><font size="2" face="Arial">Temperature
+              Forecast</font></a>
+          </tr>
+          <tr>
+            <td><a href="http://www.wunderground.com/ndfdimage/viewimage?type=maxt&amp;region=us"><font size="2" face="Arial">Maximum
+              Temperature Forecast</font></a>
+          </tr>
+          <tr>
+            <td><a href="http://www.wunderground.com/ndfdimage/viewimage?type=mint&amp;region=us"><font size="2" face="Arial">Minimum
+              Temperature Forecast</font></a>
+          </tr>
+          <tr>
+            <td><a href="http://www.wunderground.com/ndfdimage/viewimage?type=td&amp;region=us"><font size="2" face="Arial">Dewpoint
+              Forecast</font></a>
+          </tr>
+          <tr>
+            <td><a href="http://www.wunderground.com/ndfdimage/viewimage?type=wx&amp;region=us"><font size="2" face="Arial">Prevalent
+              Weather</font></a>
+          </tr>
+          <tr>
+            <td><a href="http://www.wunderground.com/ndfdimage/viewimage?type=pop12&amp;region=us"><font size="2" face="Arial">12Hr
+              Probability of Precip.</font></a>
+          </tr>
+          <tr>
+            <td><a href="http://www.wunderground.com/ndfdimage/viewimage?type=sky&amp;region=us"><font size="2" face="Arial">Sky
+              Cover</font></a>
+          </tr>
+          <tr>
+            <td bgcolor="#CCCCFF"><b><font face="Arial">Health Maps</font></b>
+          </tr>
+          <tr>
+            <td>
+              <table border="0" cellspacing="0">
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/UVForecast.html"><font face="Arial" size="2">UV
+                    Forecast</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/AirQuality.html"><font face="Arial" size="2">Air
+                    Quality</font></a></td>
+                </tr>
+                <tr>
+                  <td><a href="http://www.wunderground.com/^forecast_country1^/Region/^forecast_country1^/MaxAQI.html"><font face="Arial" size="2">Peak
+                    Air Quality Index</font></a></td>
+                </tr>
+              </table>
+          </tr>
+          <tr>
+            <td bgcolor="#CCCCFF"><b><font face="Arial">Weather Station</font></b></td>
+          </tr>
+          <tr>
+            <td><font face="Arial" size="2"><a href="^wstaturl^">^wstation^</a></font>
+          </tr>
+        </table>
+      </td>
+      <td valign="top" align="left">
+        <table border="0" cellspacing="0" bordercolor="#CCCCFF">
+              <TBODY>
+              </TBODY>
+          <tr>
+            <td bgcolor="#CCCCFF" colspan="2"><b><font face="Arial">Current Conditions
+              </font></b>
+<font color="#808080" size="1" face="Arial">[Select Refresh to Update]
+</font></td>
+          </tr>
+          <tr>
+            <td align="center" colspan="2">
+              <p align="center"><font size="2" face="Arial"><span class="ajax" id="ajaxindicator">Updated:</span> <b><span class="ajax" id="ajaxtime">^vst143^</span>
+              </b><b>on <span class="ajax" id="ajaxdate">^vst142^</span></b><script type="text/javascript">
+<!--
+document.write('<br/>(<b>Updated <span id="ajaxcounter"></span>&nbsp;sec ago</b> )');
+//-->
+</script></font></p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" colspan="2">
+              <font size="2" face="Arial">(<a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^wslat^&amp;longitude=^wslong^">location</a>)</font></td>
+          </tr>
+
+<tr>
+<td align="center" colspan="2">
+<table align=center width=80% border="0">
+  <td rowspan="2">
+    <span class="ajax" id="ajaxthermometer"></span>
+  </td>
+
+  <td>
+
+      <td align="center" colspan="2">
+        <table border="1" cellspacing="0" bordercolor="#CCCCFF">
+          <tr>
+            <td rowspan="2" align="center" bgcolor="#^temp_color^"><b><font face="Arial">Currently:<br>
+            </font><font face="Arial" size="5"><span class="ajax" id="ajaxtemp">^vxv007^^uni007^</span></font></b> <span class="ajax" id="ajaxtemparrow"></span>
+            </td>
+            <td rowspan="2" align="center" bgcolor="#E1E1E1">
+            <p align="center"><font face="Arial"><b><img height="44" alt="Clear" src="http://icons.wunderground.com/graphics/conds/^climate_icon1^.GIF" width="44" border="0"> <br>
+            </b><font size="2">^climate_cconds1^
+            </font></font>
+            </td>
+            <td align="center" bgcolor="#^temp_color_hi^"><font face="Arial"><b>High:
+            <span class="ajax" id="ajaxhightemp">^vhi007^ ^uni007^<</span><font size="1">&nbsp;<br>
+            (<span class="ajax" id="ajaxhightemptime">^vht007^</span>)&nbsp;</font></b></font>
+            </td>
+          </tr>
+
+          <tr>
+          <td align="center" bgcolor="#^temp_color_lo^"><font face="Arial"><b>Low:
+          <span class="ajax" id="ajaxlowtemp">^vlo007^ ^uni007^</span>&nbsp;<br>
+          <font size="1">(<span class="ajax" id="ajaxlowtemptime">^vlt007^</span>)</font></b></font></td>
+          </tr>
+
+        </table>
+      </td>
+
+    <tr>
+      <td align="center" colspan="3">
+      <img border="0" src="http://www.wunderground.com/autoasp/downloads/template/spectrum.gif" width="212" height="40">
+      </td>
+    </tr>
+
+  </td>
+
+</table>
+</td>
+</tr>
+
+
+
+ 
+          <tr>
+            <td align="left"><font face="Arial">Wind:</font></td>
+            <td align="left"><font face="Arial"><span class="ajax" id="ajaxwindicon"></span> <span class="ajax" id="ajaxwinddir">^vxv001^</span>
+	<span class="ajax" id="ajaxwind">^vxv002^</span> <span class="ajax" id="ajaxwinduom"> ^uni002^</span><br/><i><span class="ajax" id="ajaxbeaufort">^vst141^</span></i></font></td>
+          </tr>
+          <tr>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial">Gust:</font></td>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial"><span class="ajax" id="ajaxgust">^vxv003^</span>
+              <span class="ajax" id="ajaxgustuom">^uni003^</span></font></td>
+          </tr>
+          <tr>
+            <td align="left"><font face="Arial">Today's High Wind:</font></td>
+            <td align="left"><font face="Arial"><span class="ajax" id="ajaxhighwdspeed">^vhi002^ ^uni002^</span>  <font size="1">(<span class="ajax" id="ajaxhighwdspeedtime">^vht002^</span>)</font></font></td>
+          </tr>
+          <tr>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial">Humidity:</font></td>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial"><span class="ajax" id="ajaxhumidity">^vxv005^%</span> <span class="ajax" id="ajaxhumidityarrow"></span></font></td>
+          </tr>
+          <tr>
+            <td align="left"><font face="Arial">Pressure:</font></td>
+            <td align="left"><font face="Arial"><span class="ajax" id="ajaxbaro">^vxv023^ ^uni023^</span>&nbsp; <font size="1">(<span class="ajax" id="ajaxbarotrend">^vst139^</span>)&nbsp;</font></font></td>
+          </tr>
+          <tr>
+            <td align="left"><font face="Arial" size="1">Pressure Rate:</font></td>
+            <td align="left"><font face="Arial" size="1"><span class="ajax" id="ajaxbarorate">^vvr023^ ^uni023^/hr</span> </font></td>
+          </tr>
+          <tr>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial">Dew Point:</font></td>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial"><span class="ajax" id="ajaxdew">^vxv022^^uni022^</span> <span class="ajax" id="ajaxdewarrow"></span></font></td>
+          </tr>
+          <tr>
+            <td align="left"><font face="Arial">Wind Chill:</font></td>
+            <td align="left"><font face="Arial"><span class="ajax" id="ajaxwindchill">^vxv019^ ^uni019^</span> <span class="ajax" id="ajaxwindchillarrow"></span></font></td>
+          </tr>
+          <tr>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial">Heat Index
+              (feels like):</font></td>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial"><span class="ajax" id="ajaxheatidx">^vxv021^ ^uni021^</span> <span class="ajax" id="ajaxheatidxarrow"></span></font></td>
+          </tr>
+          <tr>
+            <td align="left"><font face="Arial">Comfort Level:</font></td>
+            <td align="left"><font face="Arial"><span class="ajax" id="ajaxcomfortlevel">^vst137^</span></font></td>
+          </tr>
+          <tr>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial">Temperature
+              Rate:</font></td>
+            <td align="left" bgcolor="#E1E1E1"><font face="Arial">&nbsp;<span class="ajax" id="ajaxtemprate">^vvr007^^uni007^/hr</span></font></td>
+          </tr>
+          <tr>
+            <td align="left">&nbsp;</td>
+            <td align="left"></td>
+          </tr>
+          <tr>
+            <td bgcolor="#CCCCFF" colspan="2"><b><font face="Arial">5 Day Forecast</font></b></td>
+          </tr>
+          <tr>
+            <td colspan="2"><b><font face="Arial">&nbsp;</font></b></td>
+          </tr>
+          <tr>
+            <td align="center" colspan="2">
+              <table border="1" cellspacing="0" bordercolor="#CCCCFF">
+                <tr>
+                  <td align="center" style="background-color: #E1E1E1"><font face="Arial" size="2">^forecast_day1_1^</font></td>
+                  <td align="center" style="background-color: #E1E1E1"><font face="Arial" size="2">^forecast_day1_2^</font></td>
+                  <td align="center" style="background-color: #E1E1E1"><font face="Arial" size="2">^forecast_day1_3^</font></td>
+                  <td align="center" style="background-color: #E1E1E1"><font face="Arial" size="2">^forecast_day1_4^</font></td>
+                  <td align="center" style="background-color: #E1E1E1"><font face="Arial" size="2">^forecast_day1_5^</font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font face="Arial"><img height="44" alt="Clear" src="http://icons.wunderground.com/graphics/conds/^forecast_icon1_1^.GIF" width="44" border="0"> </font></td>
+                  <td align="center"><font face="Arial"><img height="44" alt="Clear" src="http://icons.wunderground.com/graphics/conds/^forecast_icon1_2^.GIF" width="44" border="0"> </font></td>
+                  <td align="center"><font face="Arial"><img height="44" alt="Clear" src="http://icons.wunderground.com/graphics/conds/^forecast_icon1_3^.GIF" width="44" border="0"> </font></td>
+                  <td align="center"><font face="Arial"><img height="44" alt="Clear" src="http://icons.wunderground.com/graphics/conds/^forecast_icon1_4^.GIF" width="44" border="0"> </font></td>
+                  <td align="center"><font face="Arial"><img height="44" alt="Clear" src="http://icons.wunderground.com/graphics/conds/^forecast_icon1_5^.GIF" width="44" border="0"> </font></td>
+                </tr>
+                <tr>
+                  <td align="center"><font face="Arial" size="2">^forecast_conds1_1^</font></td>
+                  <td align="center"><font face="Arial" size="2">^forecast_conds1_2^</font></td>
+                  <td align="center"><font face="Arial" size="2">^forecast_conds1_3^</font></td>
+                  <td align="center"><font face="Arial" size="2">^forecast_conds1_4^</font></td>
+                  <td align="center"><font face="Arial" size="2">^forecast_conds1_5^</font></td>
+                </tr>
+                <tr>
+                  <td align="center" bgcolor="#^temp_for_hi1_1^"><font face="Arial" size="2"><b>^forecast_hi1_1^°</b></font></td>
+                  <td align="center" bgcolor="#^temp_for_hi1_2^"><font face="Arial" size="2"><b>^forecast_hi1_2^°</b></font></td>
+                  <td align="center" bgcolor="#^temp_for_hi1_3^"><font face="Arial" size="2"><b>^forecast_hi1_3^°</b></font></td>
+                  <td align="center" bgcolor="#^temp_for_hi1_4^"><font face="Arial" size="2"><b>^forecast_hi1_4^°</b></font></td>
+                  <td align="center" bgcolor="#^temp_for_hi1_5^"><font face="Arial" size="2"><b>^forecast_hi1_5^°</b></font></td>
+                </tr>
+                <tr>
+                  <td align="center" bgcolor="#^temp_for_lo1_1^"><font face="Arial" size="2"><b>^forecast_lo1_1^°</b></font></td>
+                  <td align="center" bgcolor="#^temp_for_lo1_2^"><font face="Arial" size="2"><b>^forecast_lo1_2^°</b></font></td>
+                  <td align="center" bgcolor="#^temp_for_lo1_3^"><font face="Arial" size="2"><b>^forecast_lo1_3^°</b></font></td>
+                  <td align="center" bgcolor="#^temp_for_lo1_4^"><font face="Arial" size="2"><b>^forecast_lo1_4^°</b></font></td>
+                  <td align="center" bgcolor="#^temp_for_lo1_5^"><font face="Arial" size="2"><b>^forecast_lo1_5^°</b></font></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <p align="center"><img border="0" src="http://www.wunderground.com/autoasp/downloads/template/spectrum.gif" width="212" height="40"></td>
+          </tr>
+              <tr>
+            <td bgcolor="#CCCCFF" colspan="2"><b><font face="Arial">Records and Normals</font></b></td>
+              </tr>
+              <tr>
+            <td colspan="2"><b><font face="Arial">&nbsp;</font></b></td>
+              </tr>
+              <tr>
+            <td colspan="2">
+              <div align="center">
+                <center>
+                <table border="1" cellspacing="0" bordercolor="#CCCCFF">
+                  <tr>
+                  <td align="center" bgcolor="#E1E1E1"><font face="Arial" size="2"><b>Temperature</b></font></td>
+                  <td align="center" bgcolor="#E1E1E1" valign="top"><b><font face="Arial" size="2">Forecast</font></b></td>
+                  <td align="center" bgcolor="#E1E1E1" valign="top"><b><font face="Arial" size="2">Normal</font></b></td>
+                  <td align="center" bgcolor="#E1E1E1" valign="top"><b><font face="Arial" size="2">Record</font></b></td>
+                  </tr>
+                  <tr>
+                  <td align="center" bgcolor="#E1E1E1" valign="middle"><b><font face="Arial" size="2">High</font></b></td>
+                  <td align="center" bgcolor="#^temp_for_hi1_1^" valign="middle"><b><font face="Arial" size="2">^forecast_hi1_1^°</font></b></td>
+                  <td align="center" bgcolor="#^temp_norm_hi1^" valign="middle"><b><font face="Arial" size="2">^almnormhi1^°</font></b>
+                  </td>
+                  <td align="center" bgcolor="#^temp_rec_hi1^" valign="middle"><b><font face="Arial" size="2">^almhi1^°<br>
+                    </font><font face="Arial" size="1">
+                    (^almdatehi1^)</font></b></td>
+                  </tr>
+                  <tr>
+                  <td align="center" bgcolor="#E1E1E1" valign="middle"><b><font face="Arial" size="2">Low</font></b></td>
+                  <td align="center" bgcolor="#^temp_for_lo1_1^" valign="middle"><b><font face="Arial" size="2">^forecast_lo1_1^°</font></b></td>
+                  <td align="center" bgcolor="#^temp_norm_lo1^" valign="middle"><b><font face="Arial" size="2">^almnormlo1^°</font></b></td>
+                  <td align="center" bgcolor="#^temp_rec_lo1^" valign="middle"><b><font face="Arial" size="2">^almlo1^°<br>
+                    </font><font face="Arial" size="1">
+                    (^almdatelo1^)</font></b></td>
+                  </tr>
+                </table>
+                </center>
+              </div>
+            </td>
+              </tr>
+              <tr>
+            <td colspan="2">
+              <b><font face="Arial" size="2">&nbsp;</font></b>
+            </td>
+              </tr>
+
+          <tr>
+            <td bgcolor="#CCCCFF" colspan="2"><b><font face="Arial">Links</font></b></td>
+          </tr>
+              <tr>
+            <td colspan="2">
+              <b><font face="Arial" size="2">&nbsp;</font></b>
+            </td>
+              </tr>              
+
+             <tr>
+<td>
+<style type="text/css">
+div#nav a {display:  list-item;
+           font-family:Arial, san-serif;
+           font-size: 2; }
+</style>
+
+<div  id="nav" >
+<a href="http://delnor.com/">Delnor-Community Hospital</a>
+<a href="http://www.colonialcafe.com/">Colonial Cafe</a>
+<a href="http://www.stcharleslibrary.org/">Saint Charles Public Library</a>
+<a href="http://www.elburn.lib.il.us/">Town and Country Public Library-  Elburn, IL</a>
+<a href="http://www.redcross.org/il/foxriver">Red Cross - Fox River</a>
+<a href="http://www.ncdc.noaa.gov/oa/ncdc.html">National Climatic Data Center</a>
+<a href="http://www.dailyherald.com/">Daily Herald Newspaper</a>
+<a href="http://www.traffic.com/">Traffic.com</a>
+<a href="http://st-charles.il.us/">City of St Charles, IL </a>
+<a href="http://elburn.il.us/">City of Elburn, IL</a>
+<a href="http://www.burlington.k12.il.us/">Central School District 201 - Burlington, IL</a>
+<a href="http://iirc.niu.edu/">Interactive Illinois Report Card</a>
+<a href="http://www.camptontownship.com">Campton Township - Located in Kane County, Illinois</a>
+<a href="http://www.co.kane.il.us/">Kane County Web Site</a>
+<a href="http://www.d303.org">St Charles School District 303</a>
+<a href="http://www.kcchronicle.com">Kane County Chronicle Newspaper</a>
+<a href="http://nws.noaa.gov/">NOAA</a>
+<a href="http://villageofcamptonhills.org/"><img src="CamptonHillslogo.jpg"><br>Village of Campton Hills</a>
+</div>
+
+
+</td>
+              </tr>
+
+              <tr>
+            <td colspan="2">
+              <b><font face="Arial" size="2">&nbsp;</font></b>
+            </td>
+              </tr>
+
+
+
+
+
+
+
+
+        </table>
+      </td>
+      <td valign="top" align="left">
+        <table border="0" cellspacing="0" bordercolor="#CCCCFF">
+          <tr>
+            <td bgcolor="#CCCCFF" colspan="2"><b><font face="Arial">Weather Advisories</font></b></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <table border="0" cellspacing="0">
+                <tr>
+                  <td><font face="Arial" size="2">^warning_time1^</font></td>
+                </tr>
+                <tr>
+                  <td><font face="Arial" size="2" color="#FF0000"><b>^warning_desc1^</b></font></td>
+                </tr>
+                <tr>
+                  <td><a href="#Full Warning Text"><font face="Arial" size="2">Full
+                    Advisory Text...</font></a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#CCCCFF" colspan="2"><b><font face="Arial"> Weather Map</font></b></td>
+          </tr>
+          <tr>
+            <td align="center" colspan="2">
+              <p align="center"><font face="Arial"><a href="http://www.wunderground.com/US/Region/US/IRSatellite.html"><img src="http://maps.wunderground.com/data/640x480/^world_id^_ir_anim.gif" border="0"></a></font></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#CCCCFF" colspan="2"><b><font face="Arial">Web Cam</font></b></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" colspan="2" bordercolor="#FFFFFF">
+            <p align="center"><font face="Arial">
+            <a href="http://grandpa.kozik.net:8888/">
+            <img src="http://weather.kozikfamily.net/~weather/webcam/axisfixed.jpg" border="0" width="320" height="240"></a></font></td>
+          </tr>
+
+
+
+
+
+
+          <tr>
+            <td bgcolor="#CCCCFF" colspan="2"><b><font face="Arial">Almanac</font></b></td>
+          </tr>
+          <tr>
+            <td colspan="2"><b><font face="Arial">&nbsp;</font></b></td>
+          </tr>
+          <tr>
+            <td align="center" colspan="2">
+              <table border="1" cellspacing="0" bordercolor="#CCCCFF">
+                <tr>
+                  <td><font size="2" face="Arial">Sunrise:</font> &nbsp; <font size="2" face="Arial"><br>
+                    <span class="ajax" id="ajaxsunrise">^vst144^</span></font></td>
+                  <td><font size="2" face="Arial">Moonrise:&nbsp;<br>
+ <span class="ajax" id="ajaxmoonrise">^vst146^</span></font></td>
+                  <td rowspan="2">
+                    <p align="center"><font size="2" face="Arial">Moon Phase:</font><br>
+                    <font size="2" face="Arial">^moon_percent^</font></td>
+                  <td rowspan="2" style="background-color: #000000; border: 1 solid #CCCCFF" align="center"><font size="2" face="Arial"><img border="0" src="http://www.wunderground.com/autoasp/downloads/moon/moon^moon_day^.gif"></font></td>
+                </tr>
+                <tr>
+                  <td><font size="2" face="Arial">Sunset:&nbsp;<br>
+ <span class="ajax" id="ajaxsunset">^vst145^</span></font></td>
+                  <td><font size="2" face="Arial">Moonset:</font> &nbsp; <font size="2" face="Arial"><br>
+                    <span class="ajax" id="ajaxmoonset">^vst147^</span></font></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" colspan="2"><font face="Arial"><b>&nbsp;</b><font size="2"><a href="http://www.wunderground.com/sky/ShowSky.asp?TheLat=^wslat^&amp;TheLon=^wslong^&amp;TimeZoneName=^forecast_tzname^">Star
+              Chart...</a></font></font></td>
+          </tr>
+          <tr>
+            <td align="left" colspan="2" bgcolor="#CCCCFF"><b><font face="Arial">Rainfall
+              Totals</font></b></td>
+          </tr>
+          <tr>
+            <td><font size="2" face="Arial">Hourly Rain</font></td>
+            <td><font face="Arial" size="2"><span class="ajax" id="ajaxrainhr">^vxv122^ ^uni122^</span></font></td>
+          </tr>
+          <tr>
+            <td><font size="2" face="Arial">Daily Rain:</font></td>
+            <td><font face="Arial" size="2"><span class="ajax" id="ajaxrain">^vxv121^ ^uni121^</span></font></td>
+          </tr>
+          <tr>
+            <td><font size="2" face="Arial">Monthly Rain:</font></td>
+            <td><font face="Arial" size="2"><span class="ajax" id="ajaxrainmo">^vxv129^ ^uni129^</span></font></td>
+          </tr>
+          <tr>
+            <td><font size="2" face="Arial">Yearly Rain:</font></td>
+            <td><font face="Arial" size="2"><span class="ajax" id="ajaxrainyr">^vxv009^ ^uni009^</span></font></td>
+          </tr>
+          <tr>
+            <td><font size="2" face="Arial">Normal Rain, month
+                    to date:</font></td>
+            <td><font face="Arial" size="2">^almmtd1^ ^uni009^</font></td>
+          </tr>
+          <tr>
+            <td><font size="2" face="Arial">Normal Rain, year
+                    to date:</font></td>
+            <td><font face="Arial" size="2">^almytd1^ ^uni009^</font></td>
+          </tr>
+
+          <tr>
+            <td bgcolor="#CCCCFF" colspan="2"><b><font face="Arial">Link to Village of Campton Hills Map</font></b></td>
+          </tr>
+          <tr>
+            <td bgcolor="#FFFFFF" colspan="2" bordercolor="#FFFFFF">
+            <p align="center"><font face="Arial">
+            <a href="http://villageofcamptonhills.org/about%20ch.htm">
+            <img src="villageofcamptonhillsmapsmall032208.jpg " border="0" width="200" height="200"></a></font></td>
+          </tr>
+
+
+
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" colspan="3" bgcolor="#CCCCFF">
+        <b><font face="Arial">Local Weather Exchange<font size="1"><sup>®</sup></font>
+              Network</font></b>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" colspan="3">
+
+
+        <style type="text/css">
+		table#meso2  {
+		font-family:Arial, san-serif;
+		font-size:10px;
+      	border-color: #CCCCFF;
+		border-width: 1px;
+		border-collapse: collapse; }
+		table#meso2 td{ 
+	       border-color: #CCCCFF; 
+		   vertical-align:top;}
+        </style>
+        <table id=meso2 border="1" cellspacing="0" >
+          <tr>
+            <td align="center"  >Station ID</td>
+            <td align="center">City&nbsp;<br />(Click for Map Location)</td>
+            <td align="center"  >Neighborhood&nbsp;<br />(Click for History)</td>
+            <td align="center"  >Last Update (Date &amp; Time)</td>
+            <td align="center">Temperature<br />&nbsp;(°)</td>
+            <td align="center"  >Dew<br />Point (°)</td>
+            <td align="center"  >Humidity&nbsp;<br />(%)</td>
+            <td align="center"  >Wind&nbsp;<br />(^uni002^)</td>
+            <td align="center"  >from the</td>
+            <td align="center" >Wind Gust&nbsp;<br />(^uni002^)&nbsp;</td>
+            <td align="center"  >Pressure(^uni023^)</td>
+            <td align="center"  >Hourly<br />Rain(^uni122^)</td>
+          </tr>
+
+ <tr>
+  <td align="center">^meso_stat1^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat1^&amp;longitude=^meso_lon1^">^meso_loc1^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_1^">^meso_neigh1^</a></td>
+  <td align="right">^meso_time1^</td>
+  <td align="right">^meso_temp1^</td>
+  <td align="right">^meso_dew1^</td>
+  <td align="center">^meso_rh1^</td>
+  <td align="right">^meso_wspeed1^</td>
+  <td align="left">^meso_dir1^</td>
+  <td align="right">^meso_gust1^</td>
+  <td align="right">^meso_barom1^</td>
+  <td align="right">^meso_rrate1^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat2^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat2^&amp;longitude=^meso_lon2^">^meso_loc2^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_2^">^meso_neigh2^</a></td>
+  <td align="right">^meso_time2^</td>
+  <td align="right">^meso_temp2^</td>
+  <td align="right">^meso_dew2^</td>
+  <td align="center">^meso_rh2^</td>
+  <td align="right">^meso_wspeed2^</td>
+  <td align="left">^meso_dir2^</td>
+  <td align="right">^meso_gust2^</td>
+  <td align="right">^meso_barom2^</td>
+  <td align="right">^meso_rrate2^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat3^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat3^&amp;longitude=^meso_lon3^">^meso_loc3^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_3^">^meso_neigh3^</a></td>
+  <td align="right">^meso_time3^</td>
+  <td align="right">^meso_temp3^</td>
+  <td align="right">^meso_dew3^</td>
+  <td align="center">^meso_rh3^</td>
+  <td align="right">^meso_wspeed3^</td>
+  <td align="left">^meso_dir3^</td>
+  <td align="right">^meso_gust3^</td>
+  <td align="right">^meso_barom3^</td>
+  <td align="right">^meso_rrate3^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat4^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat4^&amp;longitude=^meso_lon4^">^meso_loc4^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_4^">^meso_neigh4^</a></td>
+  <td align="right">^meso_time4^</td>
+  <td align="right">^meso_temp4^</td>
+  <td align="right">^meso_dew4^</td>
+  <td align="center">^meso_rh4^</td>
+  <td align="right">^meso_wspeed4^</td>
+  <td align="left">^meso_dir4^</td>
+  <td align="right">^meso_gust4^</td>
+  <td align="right">^meso_barom4^</td>
+  <td align="right">^meso_rrate4^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat5^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat5^&amp;longitude=^meso_lon5^">^meso_loc5^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_5^">^meso_neigh5^</a></td>
+  <td align="right">^meso_time5^</td>
+  <td align="right">^meso_temp5^</td>
+  <td align="right">^meso_dew5^</td>
+  <td align="center">^meso_rh5^</td>
+  <td align="right">^meso_wspeed5^</td>
+  <td align="left">^meso_dir5^</td>
+  <td align="right">^meso_gust5^</td>
+  <td align="right">^meso_barom5^</td>
+  <td align="right">^meso_rrate5^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat6^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat6^&amp;longitude=^meso_lon6^">^meso_loc6^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_6^">^meso_neigh6^</a></td>
+  <td align="right">^meso_time6^</td>
+  <td align="right">^meso_temp6^</td>
+  <td align="right">^meso_dew6^</td>
+  <td align="center">^meso_rh6^</td>
+  <td align="right">^meso_wspeed6^</td>
+  <td align="left">^meso_dir6^</td>
+  <td align="right">^meso_gust6^</td>
+  <td align="right">^meso_barom6^</td>
+  <td align="right">^meso_rrate6^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat7^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat7^&amp;longitude=^meso_lon7^">^meso_loc7^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_7^">^meso_neigh7^</a></td>
+  <td align="right">^meso_time7^</td>
+  <td align="right">^meso_temp7^</td>
+  <td align="right">^meso_dew7^</td>
+  <td align="center">^meso_rh7^</td>
+  <td align="right">^meso_wspeed7^</td>
+  <td align="left">^meso_dir7^</td>
+  <td align="right">^meso_gust7^</td>
+  <td align="right">^meso_barom7^</td>
+  <td align="right">^meso_rrate7^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat8^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat8^&amp;longitude=^meso_lon8^">^meso_loc8^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_8^">^meso_neigh8^</a></td>
+  <td align="right">^meso_time8^</td>
+  <td align="right">^meso_temp8^</td>
+  <td align="right">^meso_dew8^</td>
+  <td align="center">^meso_rh8^</td>
+  <td align="right">^meso_wspeed8^</td>
+  <td align="left">^meso_dir8^</td>
+  <td align="right">^meso_gust8^</td>
+  <td align="right">^meso_barom8^</td>
+  <td align="right">^meso_rrate8^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat9^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat9^&amp;longitude=^meso_lon9^">^meso_loc9^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_9^">^meso_neigh9^</a></td>
+  <td align="right">^meso_time9^</td>
+  <td align="right">^meso_temp9^</td>
+  <td align="right">^meso_dew9^</td>
+  <td align="center">^meso_rh9^</td>
+  <td align="right">^meso_wspeed9^</td>
+  <td align="left">^meso_dir9^</td>
+  <td align="right">^meso_gust9^</td>
+  <td align="right">^meso_barom9^</td>
+  <td align="right">^meso_rrate9^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat10^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat10^&amp;longitude=^meso_lon10^">^meso_loc10^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_10^">^meso_neigh10^</a></td>
+  <td align="right">^meso_time10^</td>
+  <td align="right">^meso_temp10^</td>
+  <td align="right">^meso_dew10^</td>
+  <td align="center">^meso_rh10^</td>
+  <td align="right">^meso_wspeed10^</td>
+  <td align="left">^meso_dir10^</td>
+  <td align="right">^meso_gust10^</td>
+  <td align="right">^meso_barom10^</td>
+  <td align="right">^meso_rrate10^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat11^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat11^&amp;longitude=^meso_lon11^">^meso_loc11^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_11^">^meso_neigh11^</a></td>
+  <td align="right">^meso_time11^</td>
+  <td align="right">^meso_temp11^</td>
+  <td align="right">^meso_dew11^</td>
+  <td align="center">^meso_rh11^</td>
+  <td align="right">^meso_wspeed11^</td>
+  <td align="left">^meso_dir11^</td>
+  <td align="right">^meso_gust11^</td>
+  <td align="right">^meso_barom11^</td>
+  <td align="right">^meso_rrate11^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat12^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat12^&amp;longitude=^meso_lon12^">^meso_loc12^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_12^">^meso_neigh12^</a></td>
+  <td align="right">^meso_time12^</td>
+  <td align="right">^meso_temp12^</td>
+  <td align="right">^meso_dew12^</td>
+  <td align="center">^meso_rh12^</td>
+  <td align="right">^meso_wspeed12^</td>
+  <td align="left">^meso_dir12^</td>
+  <td align="right">^meso_gust12^</td>
+  <td align="right">^meso_barom12^</td>
+  <td align="right">^meso_rrate12^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat13^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat13^&amp;longitude=^meso_lon13^">^meso_loc13^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_13^">^meso_neigh13^</a></td>
+  <td align="right">^meso_time13^</td>
+  <td align="right">^meso_temp13^</td>
+  <td align="right">^meso_dew13^</td>
+  <td align="center">^meso_rh13^</td>
+  <td align="right">^meso_wspeed13^</td>
+  <td align="left">^meso_dir13^</td>
+  <td align="right">^meso_gust13^</td>
+  <td align="right">^meso_barom13^</td>
+  <td align="right">^meso_rrate13^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat14^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat14^&amp;longitude=^meso_lon14^">^meso_loc14^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_14^">^meso_neigh14^</a></td>
+  <td align="right">^meso_time14^</td>
+  <td align="right">^meso_temp14^</td>
+  <td align="right">^meso_dew14^</td>
+  <td align="center">^meso_rh14^</td>
+  <td align="right">^meso_wspeed14^</td>
+  <td align="left">^meso_dir14^</td>
+  <td align="right">^meso_gust14^</td>
+  <td align="right">^meso_barom14^</td>
+  <td align="right">^meso_rrate14^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat15^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat15^&amp;longitude=^meso_lon15^">^meso_loc15^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_15^">^meso_neigh15^</a></td>
+  <td align="right">^meso_time15^</td>
+  <td align="right">^meso_temp15^</td>
+  <td align="right">^meso_dew15^</td>
+  <td align="center">^meso_rh15^</td>
+  <td align="right">^meso_wspeed15^</td>
+  <td align="left">^meso_dir15^</td>
+  <td align="right">^meso_gust15^</td>
+  <td align="right">^meso_barom15^</td>
+  <td align="right">^meso_rrate15^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat16^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat16^&amp;longitude=^meso_lon16^">^meso_loc16^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_16^">^meso_neigh16^</a></td>
+  <td align="right">^meso_time16^</td>
+  <td align="right">^meso_temp16^</td>
+  <td align="right">^meso_dew16^</td>
+  <td align="center">^meso_rh16^</td>
+  <td align="right">^meso_wspeed16^</td>
+  <td align="left">^meso_dir16^</td>
+  <td align="right">^meso_gust16^</td>
+  <td align="right">^meso_barom16^</td>
+  <td align="right">^meso_rrate16^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat17^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat17^&amp;longitude=^meso_lon17^">^meso_loc17^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_17^">^meso_neigh17^</a></td>
+  <td align="right">^meso_time17^</td>
+  <td align="right">^meso_temp17^</td>
+  <td align="right">^meso_dew17^</td>
+  <td align="center">^meso_rh17^</td>
+  <td align="right">^meso_wspeed17^</td>
+  <td align="left">^meso_dir17^</td>
+  <td align="right">^meso_gust17^</td>
+  <td align="right">^meso_barom17^</td>
+  <td align="right">^meso_rrate17^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat18^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat18^&amp;longitude=^meso_lon18^">^meso_loc18^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_18^">^meso_neigh18^</a></td>
+  <td align="right">^meso_time18^</td>
+  <td align="right">^meso_temp18^</td>
+  <td align="right">^meso_dew18^</td>
+  <td align="center">^meso_rh18^</td>
+  <td align="right">^meso_wspeed18^</td>
+  <td align="left">^meso_dir18^</td>
+  <td align="right">^meso_gust18^</td>
+  <td align="right">^meso_barom18^</td>
+  <td align="right">^meso_rrate18^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat19^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat19^&amp;longitude=^meso_lon19^">^meso_loc19^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_19^">^meso_neigh19^</a></td>
+  <td align="right">^meso_time19^</td>
+  <td align="right">^meso_temp19^</td>
+  <td align="right">^meso_dew19^</td>
+  <td align="center">^meso_rh19^</td>
+  <td align="right">^meso_wspeed19^</td>
+  <td align="left">^meso_dir19^</td>
+  <td align="right">^meso_gust19^</td>
+  <td align="right">^meso_barom19^</td>
+  <td align="right">^meso_rrate19^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat20^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat20^&amp;longitude=^meso_lon20^">^meso_loc20^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_20^">^meso_neigh20^</a></td>
+  <td align="right">^meso_time20^</td>
+  <td align="right">^meso_temp20^</td>
+  <td align="right">^meso_dew20^</td>
+  <td align="center">^meso_rh20^</td>
+  <td align="right">^meso_wspeed20^</td>
+  <td align="left">^meso_dir20^</td>
+  <td align="right">^meso_gust20^</td>
+  <td align="right">^meso_barom20^</td>
+  <td align="right">^meso_rrate20^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat21^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat21^&amp;longitude=^meso_lon21^">^meso_loc21^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_21^">^meso_neigh21^</a></td>
+  <td align="right">^meso_time21^</td>
+  <td align="right">^meso_temp21^</td>
+  <td align="right">^meso_dew21^</td>
+  <td align="center">^meso_rh21^</td>
+  <td align="right">^meso_wspeed21^</td>
+  <td align="left">^meso_dir21^</td>
+  <td align="right">^meso_gust21^</td>
+  <td align="right">^meso_barom21^</td>
+  <td align="right">^meso_rrate21^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat22^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat22^&amp;longitude=^meso_lon22^">^meso_loc22^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_22^">^meso_neigh22^</a></td>
+  <td align="right">^meso_time22^</td>
+  <td align="right">^meso_temp22^</td>
+  <td align="right">^meso_dew22^</td>
+  <td align="center">^meso_rh22^</td>
+  <td align="right">^meso_wspeed22^</td>
+  <td align="left">^meso_dir22^</td>
+  <td align="right">^meso_gust22^</td>
+  <td align="right">^meso_barom22^</td>
+  <td align="right">^meso_rrate22^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat23^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat23^&amp;longitude=^meso_lon23^">^meso_loc23^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_23^">^meso_neigh23^</a></td>
+  <td align="right">^meso_time23^</td>
+  <td align="right">^meso_temp23^</td>
+  <td align="right">^meso_dew23^</td>
+  <td align="center">^meso_rh23^</td>
+  <td align="right">^meso_wspeed23^</td>
+  <td align="left">^meso_dir23^</td>
+  <td align="right">^meso_gust23^</td>
+  <td align="right">^meso_barom23^</td>
+  <td align="right">^meso_rrate23^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat24^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat24^&amp;longitude=^meso_lon24^">^meso_loc24^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_24^">^meso_neigh24^</a></td>
+  <td align="right">^meso_time24^</td>
+  <td align="right">^meso_temp24^</td>
+  <td align="right">^meso_dew24^</td>
+  <td align="center">^meso_rh24^</td>
+  <td align="right">^meso_wspeed24^</td>
+  <td align="left">^meso_dir24^</td>
+  <td align="right">^meso_gust24^</td>
+  <td align="right">^meso_barom24^</td>
+  <td align="right">^meso_rrate24^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat25^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat25^&amp;longitude=^meso_lon25^">^meso_loc25^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_25^">^meso_neigh25^</a></td>
+  <td align="right">^meso_time25^</td>
+  <td align="right">^meso_temp25^</td>
+  <td align="right">^meso_dew25^</td>
+  <td align="center">^meso_rh25^</td>
+  <td align="right">^meso_wspeed25^</td>
+  <td align="left">^meso_dir25^</td>
+  <td align="right">^meso_gust25^</td>
+  <td align="right">^meso_barom25^</td>
+  <td align="right">^meso_rrate25^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat26^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat26^&amp;longitude=^meso_lon26^">^meso_loc26^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_26^">^meso_neigh26^</a></td>
+  <td align="right">^meso_time26^</td>
+  <td align="right">^meso_temp26^</td>
+  <td align="right">^meso_dew26^</td>
+  <td align="center">^meso_rh26^</td>
+  <td align="right">^meso_wspeed26^</td>
+  <td align="left">^meso_dir26^</td>
+  <td align="right">^meso_gust26^</td>
+  <td align="right">^meso_barom26^</td>
+  <td align="right">^meso_rrate26^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat27^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat27^&amp;longitude=^meso_lon27^">^meso_loc27^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_27^">^meso_neigh27^</a></td>
+  <td align="right">^meso_time27^</td>
+  <td align="right">^meso_temp27^</td>
+  <td align="right">^meso_dew27^</td>
+  <td align="center">^meso_rh27^</td>
+  <td align="right">^meso_wspeed27^</td>
+  <td align="left">^meso_dir27^</td>
+  <td align="right">^meso_gust27^</td>
+  <td align="right">^meso_barom27^</td>
+  <td align="right">^meso_rrate27^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat28^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat28^&amp;longitude=^meso_lon28^">^meso_loc28^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_28^">^meso_neigh28^</a></td>
+  <td align="right">^meso_time28^</td>
+  <td align="right">^meso_temp28^</td>
+  <td align="right">^meso_dew28^</td>
+  <td align="center">^meso_rh28^</td>
+  <td align="right">^meso_wspeed28^</td>
+  <td align="left">^meso_dir28^</td>
+  <td align="right">^meso_gust28^</td>
+  <td align="right">^meso_barom28^</td>
+  <td align="right">^meso_rrate28^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat29^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat29^&amp;longitude=^meso_lon29^">^meso_loc29^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_29^">^meso_neigh29^</a></td>
+  <td align="right">^meso_time29^</td>
+  <td align="right">^meso_temp29^</td>
+  <td align="right">^meso_dew29^</td>
+  <td align="center">^meso_rh29^</td>
+  <td align="right">^meso_wspeed29^</td>
+  <td align="left">^meso_dir29^</td>
+  <td align="right">^meso_gust29^</td>
+  <td align="right">^meso_barom29^</td>
+  <td align="right">^meso_rrate29^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat30^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat30^&amp;longitude=^meso_lon30^">^meso_loc30^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_30^">^meso_neigh30^</a></td>
+  <td align="right">^meso_time30^</td>
+  <td align="right">^meso_temp30^</td>
+  <td align="right">^meso_dew30^</td>
+  <td align="center">^meso_rh30^</td>
+  <td align="right">^meso_wspeed30^</td>
+  <td align="left">^meso_dir30^</td>
+  <td align="right">^meso_gust30^</td>
+  <td align="right">^meso_barom30^</td>
+  <td align="right">^meso_rrate30^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat31^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat31^&amp;longitude=^meso_lon31^">^meso_loc31^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_31^">^meso_neigh31^</a></td>
+  <td align="right">^meso_time31^</td>
+  <td align="right">^meso_temp31^</td>
+  <td align="right">^meso_dew31^</td>
+  <td align="center">^meso_rh31^</td>
+  <td align="right">^meso_wspeed31^</td>
+  <td align="left">^meso_dir31^</td>
+  <td align="right">^meso_gust31^</td>
+  <td align="right">^meso_barom31^</td>
+  <td align="right">^meso_rrate31^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat32^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat32^&amp;longitude=^meso_lon32^">^meso_loc32^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_32^">^meso_neigh32^</a></td>
+  <td align="right">^meso_time32^</td>
+  <td align="right">^meso_temp32^</td>
+  <td align="right">^meso_dew32^</td>
+  <td align="center">^meso_rh32^</td>
+  <td align="right">^meso_wspeed32^</td>
+  <td align="left">^meso_dir32^</td>
+  <td align="right">^meso_gust32^</td>
+  <td align="right">^meso_barom32^</td>
+  <td align="right">^meso_rrate32^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat33^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat33^&amp;longitude=^meso_lon33^">^meso_loc33^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_33^">^meso_neigh33^</a></td>
+  <td align="right">^meso_time33^</td>
+  <td align="right">^meso_temp33^</td>
+  <td align="right">^meso_dew33^</td>
+  <td align="center">^meso_rh33^</td>
+  <td align="right">^meso_wspeed33^</td>
+  <td align="left">^meso_dir33^</td>
+  <td align="right">^meso_gust33^</td>
+  <td align="right">^meso_barom33^</td>
+  <td align="right">^meso_rrate33^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat34^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat34^&amp;longitude=^meso_lon34^">^meso_loc34^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_34^">^meso_neigh34^</a></td>
+  <td align="right">^meso_time34^</td>
+  <td align="right">^meso_temp34^</td>
+  <td align="right">^meso_dew34^</td>
+  <td align="center">^meso_rh34^</td>
+  <td align="right">^meso_wspeed34^</td>
+  <td align="left">^meso_dir34^</td>
+  <td align="right">^meso_gust34^</td>
+  <td align="right">^meso_barom34^</td>
+  <td align="right">^meso_rrate34^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat35^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat35^&amp;longitude=^meso_lon35^">^meso_loc35^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_35^">^meso_neigh35^</a></td>
+  <td align="right">^meso_time35^</td>
+  <td align="right">^meso_temp35^</td>
+  <td align="right">^meso_dew35^</td>
+  <td align="center">^meso_rh35^</td>
+  <td align="right">^meso_wspeed35^</td>
+  <td align="left">^meso_dir35^</td>
+  <td align="right">^meso_gust35^</td>
+  <td align="right">^meso_barom35^</td>
+  <td align="right">^meso_rrate35^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat36^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat36^&amp;longitude=^meso_lon36^">^meso_loc36^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_36^">^meso_neigh36^</a></td>
+  <td align="right">^meso_time36^</td>
+  <td align="right">^meso_temp36^</td>
+  <td align="right">^meso_dew36^</td>
+  <td align="center">^meso_rh36^</td>
+  <td align="right">^meso_wspeed36^</td>
+  <td align="left">^meso_dir36^</td>
+  <td align="right">^meso_gust36^</td>
+  <td align="right">^meso_barom36^</td>
+  <td align="right">^meso_rrate36^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat37^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat37^&amp;longitude=^meso_lon37^">^meso_loc37^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_37^">^meso_neigh37^</a></td>
+  <td align="right">^meso_time37^</td>
+  <td align="right">^meso_temp37^</td>
+  <td align="right">^meso_dew37^</td>
+  <td align="center">^meso_rh37^</td>
+  <td align="right">^meso_wspeed37^</td>
+  <td align="left">^meso_dir37^</td>
+  <td align="right">^meso_gust37^</td>
+  <td align="right">^meso_barom37^</td>
+  <td align="right">^meso_rrate37^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat38^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat38^&amp;longitude=^meso_lon38^">^meso_loc38^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_38^">^meso_neigh38^</a></td>
+  <td align="right">^meso_time38^</td>
+  <td align="right">^meso_temp38^</td>
+  <td align="right">^meso_dew38^</td>
+  <td align="center">^meso_rh38^</td>
+  <td align="right">^meso_wspeed38^</td>
+  <td align="left">^meso_dir38^</td>
+  <td align="right">^meso_gust38^</td>
+  <td align="right">^meso_barom38^</td>
+  <td align="right">^meso_rrate38^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat39^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat39^&amp;longitude=^meso_lon39^">^meso_loc39^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_39^">^meso_neigh39^</a></td>
+  <td align="right">^meso_time39^</td>
+  <td align="right">^meso_temp39^</td>
+  <td align="right">^meso_dew39^</td>
+  <td align="center">^meso_rh39^</td>
+  <td align="right">^meso_wspeed39^</td>
+  <td align="left">^meso_dir39^</td>
+  <td align="right">^meso_gust39^</td>
+  <td align="right">^meso_barom39^</td>
+  <td align="right">^meso_rrate39^</td>
+ </tr>
+ <tr>
+  <td align="center">^meso_stat40^</td>
+  <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat40^&amp;longitude=^meso_lon40^">^meso_loc40^</a></td>
+  <td align="center"><a href="http://^meso_historyURL_40^">^meso_neigh40^</a></td>
+  <td align="right">^meso_time40^</td>
+  <td align="right">^meso_temp40^</td>
+  <td align="right">^meso_dew40^</td>
+  <td align="center">^meso_rh40^</td>
+  <td align="right">^meso_wspeed40^</td>
+  <td align="left">^meso_dir40^</td>
+  <td align="right">^meso_gust40^</td>
+  <td align="right">^meso_barom40^</td>
+  <td align="right">^meso_rrate40^</td>
+ </tr>
+
+
+
+
+
+<!--
+          <tr>
+            <td align="center">^meso_stat2^</td>
+            <td align="left"><a href="http://www.mapquest.com/maps/map.adp?latlongtype=decimal&amp;latitude=^meso_lat2^&amp;longitude=^meso_lon2^">^meso_loc2^</a></td>
+            <td align="center"><a href="http://^meso_historyURL_2^">^meso_neigh2^</a></td>
+            <td align="right">^meso_time2^</td>
+            <td align="right">^meso_temp2^</td>
+            <td align="right">^meso_dew2^</td>
+            <td align="center">^meso_rh2^</td>
+            <td align="right">^meso_wspeed2^</td>
+            <td align="left">^meso_dir2^</td>
+            <td align="right">^meso_gust2^</td>
+            <td align="right">^meso_barom2^</td>
+            <td align="right">^meso_rrate2^</td>
+          </tr>
+-->
+
+        </table></td>
+    </tr>
+    
+    <tr>
+      <td valign="top" align="left" colspan="3" bgcolor="#CCCCFF">
+        <b><font face="Arial"><a name="Full Warning Text">Full Advisory Text</a></font></b>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" colspan="3">
+        <font size="1">^default_dir\data\warning\1.txt^</font>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p align="center"><B>
+<FONT face=arial size=1> © <a href="http://www.AmbientWeather.com/">Ambient
+Weather</a> and <a href="http://www.Wunderground.com">Weather Underground<br>
+</a>&nbsp;<font color="gray" size="1">Never base important decisions on this or
+any weather information obtained from the Internet<br>
+<a href="http://www.ambientweather.com/viwestinedem.html"><font size="1">Updated
+Automatically by Ambient Weather's Virtual Weather Station&nbsp; ^vervws^</font></a></font></FONT></B></p>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2765956; 
+var sc_invisible=0; 
+var sc_partition=28; 
+var sc_security="fe56d753"; 
+var sc_text=2; 
+ </script>
+
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript>
+ <div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c29.statcounter.com/2765956/0/fe56d753/0/" alt="website metrics" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+
+</html>

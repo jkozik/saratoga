@@ -1,0 +1,1 @@
+Scripts=scripts&Site=http://saratoga-weather.org/wflash/&Prefix=&ConfigHome=Config&Distance=km&Altitude=m&Rain=mm&Wind=knots&Pressure=mb&Temperature=ºC&End=true

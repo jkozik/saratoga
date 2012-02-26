@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!-- menu control file for flyout-menu.php program -->
+<!-- Ken True - available at http://saratoga-weather.org/scripts-CSSmenu.php -->
+<!-- NOTE: this file must be correct XML with all tag items properly closed  -->
+<!-- Structure of file is
+
+  <menu>
+     <item caption="Main 1" link="main1.php" title="topmost menu item"/>
+	 <item caption="Main 2" title="Main menu number 2">
+	    <item caption="Drop down 1" link="dropdown1.php"/>
+	    <item caption="Drop down 2" link="dropdown2.php">
+		   <item caption="Flyout 1" link="flyout1.php"/>
+		   <item caption="Flyout 2" link="flyout2.php"/>
+		   <item caption="Flyout 3" link="flyout3.php">
+		     <item caption"Fourth Level Flyout 1" link"level4a.php"/>
+		     <item caption"Fourth Level Flyout 2" link"level4b.php"/>
+		     <item caption"Fourth Level Flyout 3" link"level4c.php"/>
+		   </item>
+		</item>
+	    <item caption="Drop down 3" link="dropdown3.php"/>
+	 </item>
+   </menu>
+   
+ Failure to follow this structure or nest more than 4 sublevels
+ may result in unexpected (and incorrect) results .. the top/sub1/sub2/sub3 four
+ level menu should allow for highly complex websites.
+ 
+ test your menu XML at http://validator.w3.org/ if you're having a problem.  The proper
+ syntax will be checked and (hopefully) erata spotted for you.
+ 
+ Note: some items have a wxonly="..." tag.  Those menu items are specific to a particular 
+ weather software package, and if you aren't running that package, that item will not
+ be displayed in the menu, but will appear in the HTML source as an HTML comment.
+-->
+<menu>
+	<item caption="Home" link="wxindex.php" title="Home Page"/>
+	<item wxonly="VWS" caption="Mesonet" title="Local Weather Exchange Stations" link="wxmesonet.php"/>
+	<item caption="Radar">
+	    <item caption="Local Radar" link="wxradar.php" title="Radar"/>
+<!--
+		<item caption="GRLevel3 Radar" link="wxgr3radar.php" title="NEXRAD Radar using GRLevel3" />
+-->
+	</item>
+<!--
+		<item caption="Nearby Buoys" link="wxbuoys.php"/>
+-->
+	<item caption="Forecast &amp;amp; Advisories" title="Weather outlook">
+		<item caption="Forecast details" link="wxforecast.php"/>
+		<item caption="Advisories" link="wxadvisory.php" />
+		<item caption="WXSIM Forecast details" link="wxsimforecast.php"/>
+		<item caption="UV Index Forecast" link="wxuvforecast.php"/>
+	</item>
+	<item caption="Almanac" title="Trends, Sun/Moon, Earthquakes">
+	    <item wxonly="WD" caption="Weather Trends" link="wxtrends.php"/>
+		<item caption="Station Graphs" link="wxgraphs.php"/>
+		<item wxonly="WD" caption="Station Monthly Reports" link="wxhistory.php"/>
+		<item wxonly="VWS,WL" caption="NOAA reports" link="wxnoaaclimatereports.php"/>
+		<item caption="Sun/Moon Almanac" link="wxastronomy.php"/>
+		<item caption="Earthquake activity" link="wxquake.php"/>
+		<item caption="NOAA IOD" link="wxnoaaiod.php" title="NOAA Image of the Day" />
+	</item>
+    <item caption="Links" link="wxlinks.php"/>
+    <item caption="About" link="wxabout.php"/>
+	<item caption="Status" link="wxstatus.php" title="Status of weather software" />
+<!--  remove this and the finishing HTML comment line to enable the wxcontact.php form (if installed)
+	<item caption="Contact" link="wxcontact.php"/>
+ -->
+    <item caption="Website Map" link="wxsitemap.php"/>
+</menu>

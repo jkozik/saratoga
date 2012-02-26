@@ -1,0 +1,416 @@
+/**********************************
+ * TITLE: Gila Screen Stylesheet  * 
+ * URI  : gila/gila-screen.css    *
+ * MODIF: 2003-Apr-30 19:09 +0800 *
+ **********************************/
+
+body {
+  color: black;
+  background-color: rgb(243,242,235);
+  font-family: verdana, helvetica, arial, sans-serif;
+  font-size: 73%;  /* Enables font size scaling in MSIE */
+  margin: 0;
+  padding: 0;
+}
+
+html > body {
+  font-size: 9pt;
+}
+
+#page {
+        background-color: white;
+        margin: 0 auto;
+        padding: 0;
+        width: 800px;
+        border: 1px solid #959596;
+}
+
+.doNotDisplay {
+  display: none !important;
+}
+
+.picfl {
+	   float:left;
+	   padding-right: 5px;
+	   position: relative;
+}
+
+.picfr {
+	   float:right;
+	   padding-left: 5px;
+	   position: relative;
+}
+
+.picfc {
+	   text-align: center;
+	   padding-left: 5px;
+	   padding-right: 5px;
+	   position: relative;
+}
+
+
+/* ##### Header ##### */
+
+/* ##### CHANGE background-color to change header color, hex code is OK ##### */
+/* ##### Hex Color Chart - http://www.w3schools.com/Html/html_colors.asp  ##### */
+
+#header {
+  color: inherit;
+  background-color: #FF9900;
+}
+
+.headerTitle {
+  margin: 0;
+  padding: 0.25em 4mm 0.25em 4mm;
+}
+
+.headerTitle a {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 110%;  /* For MSIE */
+  font-weight: bold;
+  font-style: italic;
+}
+
+.headerTitle > a {
+  font-size: 110%;  /* For fully standards-compliant user agents */
+}
+
+.headerTitle span {
+  color: white;
+  background-color: transparent;
+  font-weight: normal;
+}
+
+.headerTempOld {
+  font-size: 36px;
+  font-weight: bold;
+  position: absolute; 
+  text-align: right;
+  right: .5ex; 
+  margin-right: 5px;
+  top: 0.18em;
+}
+.headerTemp {
+  font-size: 36px;
+  font-weight: bold;
+  float: right;
+  right: .5ex; 
+  margin-right: 5px;
+  margin-left: 15px;
+  top: 0.18em;
+  color: white;
+
+}
+[class~="headerTemp"] {
+  top: 0.18em;  /* For fully standards-compliant user agents */
+}
+
+.subHeader {
+  color: white;
+  float: left;
+  clear: left;
+  position: relative;
+  background-color: black;
+  font-size: 109%;
+  margin: 0;
+  padding: 0.5ex 1ex;
+}
+
+.subHeaderRight {
+  color: white;
+  background-color: black;
+  font-size: 109%;
+  text-align: right;
+  margin:  0;
+  padding: 0.5ex 2ex;
+}
+
+.subHeader a {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 1ex;
+}
+
+.subHeader a:hover {
+  color: black;
+  background-color: white;
+}
+
+
+/* ##### Left Side Bar ##### */
+
+.leftSideBar {
+  width: 9.5em;
+  float: left;
+  clear: left;
+}
+
+.leftSideBar .sideBarTitle {
+  color: rgb(64,64,64);
+  background-color: rgb(230,223,207);
+  font-weight: bold;
+  margin: 0;
+  padding: 0.8ex 1ex;
+}
+
+.leftSideBar ul {
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+.leftSideBar li {
+  margin: 1ex;
+  padding: 0 0 0 0;
+}
+
+.leftSideBar a {
+  color: rgb(64,64,64);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.leftSideBar a:visited {
+  color: rgb(112,128,144);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.leftSideBar a:hover {
+  color: rgb(166,140,83);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.leftSideBar .sideBarText {
+  color: black;
+  background-color: transparent;
+  line-height: 1.25em;
+  margin: 1ex 0.25ex 1.5em 0.75ex;
+  padding: 0;
+  display: block;
+}
+
+.leftSideBar .sideBarText a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.leftSideBar .sideBarText a:visited {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.leftSideBar .sideBarText a:hover {
+  text-decoration: none;
+}
+
+.leftSideBar .thisPage {
+  color: rgb(64,64,64);
+  background-color: transparent;
+  font-weight: bold;
+}
+
+/* ##### Main Copy ##### */
+
+#main-copy {
+  color: black;
+  background-color: white;
+  text-align: justify;
+  line-height: 1.5em;
+  margin: 0 0 0 9.5em;
+  padding: .5ex 1em 1em 1em;
+  border-left: 1px solid rgb(216,210,195);
+}
+
+#main-copy-dark {
+  color: white;
+  background-color: black;
+  text-align: justify;
+  line-height: 1.5em;
+  margin: .1em 0 0 9.5em;
+  padding: .5ex 1em 1em 1em;
+  border-left: 1px solid rgb(216,210,195);
+}
+
+#main-copy h1 {
+  color: rgb(166,140,83);
+  background-color: transparent;
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 175%;
+  font-weight: bold;
+  font-style: italic;
+  margin: 1em 0 0 0;
+  padding: 1em 0 0 0;
+  border-top: 1px solid rgb(216,210,195);
+}
+
+#main-copy a {
+  color: rgb(168,140,83);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.table-top {
+  color: black;
+  background-color: rgb(230,223,207);
+  text-align: left;
+  font-weight: bold;
+}
+
+.column-dark {
+  color: black;
+  background-color: rgb(243,242,235);
+}
+
+.column-light {
+  color: black;
+  background-color: white;
+}
+
+#main-copy a:hover {
+  text-decoration: none;
+}
+
+p {
+  margin: 1em 0 1.5em 0;
+  padding: 0;
+}
+
+dt {
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0 0.5ex 0;
+}
+
+dd {
+  margin: 0 0 1.5em 1.5em;
+  padding: 0;
+}
+
+.watchBox {
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  background-color: #FF9900;
+  margin: 0 0 0 0;
+  padding: .5em 0em .5em 0em;
+  border: 1px dashed rgb(34,70,79);
+}
+
+.advisoryBox {
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  background-color: #FFCC00;
+  margin: 0 0 0 0;
+  padding: .5em 0em .5em 0em;
+  border: 1px dashed rgb(34,70,79);
+}
+
+.warningBox {
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  background-color: #CC0000;
+  margin: 0 0 0 0;
+  padding: .5em 0em .5em 0em;
+  border: 1px dashed rgb(255,255,255);
+}
+
+/* ##### ajaxSidebar ##### */
+.ajaxSidebar {
+    background-color:#FFFFFF;
+	border: none;
+	width: 114px;
+}
+.ajaxSidebar h2 {
+	font-size: 12pt;
+	color: #FFFFFF;
+	background-color: #CC6600;
+	text-align: center;
+	margin-right: 6px;
+}
+
+.ajaxSidebar .meas {
+	font : x-small Arial, Helvetica, sans-serif;
+	color : #000000;
+	text-align : right;
+	background-color: #FFFFFF;
+	width: 35%;
+	}
+.ajaxSidebar .data {
+	font : 9pt Arial, Helvetica, sans-serif;
+	color : #0000FF;
+	text-align : left;
+	background-color: #FFFFFF;
+	}
+.ajaxSidebar td {
+	 border: none;
+	 background-color: #FFFFFF;
+}
+.ajaxDashboard {
+    font-size: 96%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.ajaxDashboard .datahead {
+	font-size: 100%;
+	font-weight: bold;
+	color:  #FFFFFF;
+	background-color: #CC6600;
+	text-align: center;	
+}
+.ajaxDashboard .data1 {
+ 	 color: #000000;
+	 font-size: 100%;
+	 border-bottom: 1px solid #CCCCCC;
+	 background-color: #FFFFFF;
+	 text-align: left;
+}
+.ajaxDashboard td {
+	 border: none;
+	 background-color: #FFFFFF;
+}
+
+
+/* ##### Footer ##### */
+
+#footer {
+  color: black;
+  background-color: rgb(230,223,207);
+  font-size: 92%;
+  text-align: center;
+  line-height: 1.25em;
+  margin: 0;
+  padding: 1em 4mm 1em 4mm;
+  clear: both;
+}
+
+#footer div {
+  margin: 0;
+  padding: 0 0 1ex 0;
+}
+
+#footer a {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#footer a:visited {
+  color: rgb(112,128,144);
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#footer a:hover {
+  text-decoration: none;
+}
