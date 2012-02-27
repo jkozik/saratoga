@@ -57,11 +57,11 @@ v hi001|357:|:
 v ht001|12:27pm:|:
 v lo001|1:|:
 v lt001|10:54am:|:
-v va001|216:|:
+v va001|249:|:
 v da001|0:|:
 v ma001|0:|:
 v ya001|0:|:
-v vr001|69.1:|:
+v vr001|22.5:|:
 v rh001|128.9:|:
 v rt001|9:10pm:|:
 v rl001|-145.7:|:
@@ -79,7 +79,7 @@ v zt001|2:01pm:|:
 v zl001|1:|:
 v zs001|4:12am:|:
 v hv001|258:|:
-v dv001|18:|:
+v dv001|-28:|:
 u ni001|&deg;:|:
 v xv002|7:|:
 v hi002|34:|:
@@ -90,7 +90,7 @@ v va002|4:|:
 v da002|5:|:
 v ma002|4:|:
 v ya002|4:|:
-v vr002|2.7:|:
+v vr002|3.1:|:
 v rh002|12.3:|:
 v rt002|6:47pm:|:
 v rl002|-5.6:|:
@@ -108,18 +108,18 @@ v zt002|4:08am:|:
 v zl002|0:|:
 v zs002|12:18am:|:
 v hv002|0:|:
-v dv002|6:|:
+v dv002|3:|:
 u ni002|mph:|:
-v xv003|13:|:
+v xv003|11:|:
 v hi003|34:|:
 v ht003|2:19pm:|:
 v lo003|0:|:
 v lt003|12:00am:|:
-v va003|9:|:
+v va003|8:|:
 v da003|13:|:
 v ma003|9:|:
 v ya003|9:|:
-v vr003|4.1:|:
+v vr003|2.6:|:
 v rh003|10.9:|:
 v rt003|5:55pm:|:
 v rl003|-9.6:|:
@@ -137,18 +137,18 @@ v zt003|4:08am:|:
 v zl003|0:|:
 v zs003|7:20pm:|:
 v hv003|0:|:
-v dv003|13:|:
+v dv003|11:|:
 u ni003|mph:|:
-v xv004|34:|:
+v xv004|33:|:
 v hi004|34:|:
 v ht004|1:48pm:|:
 v lo004|30:|:
 v lt004|12:00am:|:
-v va004|34:|:
+v va004|33:|:
 v da004|32:|:
 v ma004|32:|:
 v ya004|32:|:
-v vr004|0.1:|:
+v vr004|-0.3:|:
 v rh004|1.0:|:
 v rt004|6:44pm:|:
 v rl004|-0.9:|:
@@ -165,19 +165,19 @@ v zh004|32:|:
 v zt004|5:53am:|:
 v zl004|28:|:
 v zs004|1:08am:|:
-v hv004|31:|:
+v hv004|30:|:
 v dv004|3:|:
 u ni004|%:|:
-v xv005|58:|:
+v xv005|64:|:
 v hi005|89:|:
 v ht005|2:06am:|:
 v lo005|38:|:
 v lt005|3:49pm:|:
-v va005|55:|:
+v va005|60:|:
 v da005|63:|:
 v ma005|76:|:
 v ya005|76:|:
-v vr005|2.9:|:
+v vr005|4.2:|:
 v rh005|8.1:|:
 v rt005|7:37pm:|:
 v rl005|-0.4:|:
@@ -194,23 +194,23 @@ v zh005|86:|:
 v zt005|11:53pm:|:
 v zl005|55:|:
 v zs005|2:27pm:|:
-v hv005|79:|:
-v dv005|-21:|:
+v hv005|83:|:
+v dv005|-19:|:
 u ni005|%:|:
-v xv006|71.9:|:
+v xv006|71.8:|:
 v hi006|72.1:|:
 v ht006|9:09pm:|:
 v lo006|67.5:|:
 v lt006|4:10am:|:
 v va006|71.8:|:
-v da006|69.9:|:
+v da006|70.0:|:
 v ma006|71.4:|:
 v ya006|71.0:|:
-v vr006|0.10:|:
+v vr006|-0.05:|:
 v rh006|0.31:|:
 v rt006|9:09pm:|:
-v rl006|-0.01:|:
-v rs006|6:11pm:|:
+v rl006|-0.06:|:
+v rs006|10:15pm:|:
 v mh006|75.0:|:
 v md006|2/3/12:|:
 v ml006|67.4:|:
@@ -223,19 +223,19 @@ v zh006|71.4:|:
 v zt006|12:00am:|:
 v zl006|67.9:|:
 v zs006|3:17am:|:
-v hv006|70.9:|:
-v dv006|1.0:|:
+v hv006|70.4:|:
+v dv006|1.4:|:
 u ni006|&deg;F:|:
-v xv007|43.6:|:
+v xv007|42.1:|:
 v hi007|52.9:|:
 v ht007|3:40pm:|:
 v lo007|15.7:|:
 v lt007|12:41am:|:
-v va007|44.8:|:
-v da007|35.1:|:
+v va007|43.1:|:
+v da007|35.6:|:
 v ma007|31.7:|:
 v ya007|30.5:|:
-v vr007|-1.24:|:
+v vr007|-1.03:|:
 v rh007|0.00:|:
 v rt007|5:55pm:|:
 v rl007|-3.27:|:
@@ -252,21 +252,21 @@ v zh007|28.2:|:
 v zt007|2:43pm:|:
 v zl007|15.7:|:
 v zs007|11:53pm:|:
-v hv007|18.8:|:
-v dv007|24.8:|:
+v hv007|16.4:|:
+v dv007|25.7:|:
 u ni007|&deg;F:|:
-v xv008|29.28:|:
+v xv008|29.30:|:
 v hi008|29.55:|:
 v ht008|12:57am:|:
 v lo008|29.21:|:
 v lt008|4:18pm:|:
-v va008|29.24:|:
+v va008|29.28:|:
 v da008|29.37:|:
 v ma008|29.33:|:
 v ya008|29.27:|:
-v vr008|0.033:|:
+v vr008|0.029:|:
 v rh008|0.033:|:
-v rt008|9:10pm:|:
+v rt008|9:16pm:|:
 v rl008|-0.003:|:
 v rs008|8:48pm:|:
 v mh008|29.69:|:
@@ -282,7 +282,7 @@ v zt008|8:16pm:|:
 v zl008|29.19:|:
 v zs008|12:00am:|:
 v hv008|29.55:|:
-v dv008|-0.28:|:
+v dv008|-0.25:|:
 u ni008|in:|:
 v xv009|2.32:|:
 v hi009|2.32:|:
@@ -489,14 +489,14 @@ v dv015|0:|:
 u ni015|%:|:
 v xv016|0.10:|:
 v hi016|0.10:|:
-v ht016|9:00pm:|:
+v ht016|10:00pm:|:
 v lo016|0.00:|:
 v lt016|12:00am:|:
-v va016|0.09:|:
-v da016|0.03:|:
+v va016|0.10:|:
+v da016|0.04:|:
 v ma016|0.02:|:
 v ya016|0.01:|:
-v vr016|0.003:|:
+v vr016|0.002:|:
 v rh016|0.004:|:
 v rt016|7:00pm:|:
 v rl016|0.000:|:
@@ -551,7 +551,7 @@ v ht018|11:53am:|:
 v lo018|0:|:
 v lt018|12:00am:|:
 v va018|0:|:
-v da018|179:|:
+v da018|167:|:
 v ma018|82:|:
 v ya018|66:|:
 v vr018|0.0:|:
@@ -574,20 +574,20 @@ v zs018|12:00am:|:
 v hv018|0:|:
 v dv018|0:|:
 u ni018|W/sqm:|:
-v xv019|39.5:|:
+v xv019|37.7:|:
 v hi019|52.9:|:
 v ht019|3:42pm:|:
 v lo019|8.5:|:
 v lt019|2:00am:|:
-v va019|42.8:|:
-v da019|32.1:|:
+v va019|41.3:|:
+v da019|32.8:|:
 v ma019|28.6:|:
 v ya019|27.2:|:
-v vr019|-3.36:|:
+v vr019|-3.61:|:
 v rh019|1.88:|:
 v rt019|5:58pm:|:
-v rl019|-6.63:|:
-v rs019|8:16pm:|:
+v rl019|-6.73:|:
+v rs019|9:16pm:|:
 v mh019|52.9:|:
 v md019|2/26/12:|:
 v ml019|-10.3:|:
@@ -600,23 +600,23 @@ v zh019|28.2:|:
 v zt019|3:41pm:|:
 v zl019|3.6:|:
 v zs019|6:51am:|:
-v hv019|18.8:|:
-v dv019|21.2:|:
+v hv019|16.4:|:
+v dv019|24.3:|:
 u ni019|&deg;F:|:
-v xv020|71.4:|:
+v xv020|71.2:|:
 v hi020|71.6:|:
 v ht020|9:10pm:|:
 v lo020|66.8:|:
 v lt020|4:10am:|:
 v va020|71.3:|:
-v da020|69.2:|:
+v da020|69.4:|:
 v ma020|70.7:|:
 v ya020|70.3:|:
-v vr020|0.10:|:
+v vr020|-0.07:|:
 v rh020|0.34:|:
 v rt020|7:34pm:|:
-v rl020|-0.01:|:
-v rs020|6:11pm:|:
+v rl020|-0.09:|:
+v rs020|10:15pm:|:
 v mh020|74.5:|:
 v md020|2/3/12:|:
 v ml020|66.4:|:
@@ -629,19 +629,19 @@ v zh020|70.6:|:
 v zt020|12:00am:|:
 v zl020|67.1:|:
 v zs020|3:17am:|:
-v hv020|70.2:|:
-v dv020|1.2:|:
+v hv020|69.6:|:
+v dv020|1.6:|:
 u ni020|&deg;F:|:
-v xv021|45.2:|:
+v xv021|44.4:|:
 v hi021|52.8:|:
 v ht021|3:40pm:|:
 v lo021|20.9:|:
 v lt021|12:41am:|:
-v va021|46.2:|:
-v da021|37.5:|:
+v va021|44.9:|:
+v da021|37.9:|:
 v ma021|35.7:|:
 v ya021|34.3:|:
-v vr021|-0.96:|:
+v vr021|-0.58:|:
 v rh021|0.00:|:
 v rt021|5:55pm:|:
 v rl021|-2.55:|:
@@ -658,21 +658,21 @@ v zh021|30.0:|:
 v zt021|2:43pm:|:
 v zl021|20.8:|:
 v zs021|11:53pm:|:
-v hv021|22.9:|:
-v dv021|22.3:|:
+v hv021|21.0:|:
+v dv021|23.3:|:
 u ni021|&deg;F:|:
-v xv022|29.8:|:
-v hi022|30.4:|:
-v ht022|7:54pm:|:
+v xv022|30.8:|:
+v hi022|31.0:|:
+v ht022|10:22pm:|:
 v lo022|12.5:|:
 v lt022|12:41am:|:
-v va022|29.7:|:
-v da022|22.6:|:
+v va022|30.1:|:
+v da022|23.1:|:
 v ma022|24.5:|:
 v ya022|23.2:|:
-v vr022|0.16:|:
-v rh022|1.04:|:
-v rt022|7:30pm:|:
+v vr022|0.74:|:
+v rh022|1.08:|:
+v rt022|10:22pm:|:
 v rl022|-0.69:|:
 v rs022|6:49pm:|:
 v mh022|39.1:|:
@@ -687,21 +687,21 @@ v zh022|18.8:|:
 v zt022|12:36am:|:
 v zl022|10.9:|:
 v zs022|6:29am:|:
-v hv022|13.4:|:
-v dv022|16.4:|:
+v hv022|12.2:|:
+v dv022|18.7:|:
 u ni022|&deg;F:|:
-v xv023|30.08:|:
+v xv023|30.11:|:
 v hi023|30.37:|:
 v ht023|12:57am:|:
 v lo023|30.02:|:
 v lt023|4:18pm:|:
-v va023|30.05:|:
+v va023|30.08:|:
 v da023|30.18:|:
 v ma023|30.14:|:
 v ya023|30.07:|:
-v vr023|0.034:|:
+v vr023|0.029:|:
 v rh023|0.034:|:
-v rt023|9:10pm:|:
+v rt023|9:16pm:|:
 v rl023|-0.003:|:
 v rs023|8:48pm:|:
 v mh023|30.51:|:
@@ -717,15 +717,15 @@ v zt023|8:16pm:|:
 v zl023|30.00:|:
 v zs023|12:00am:|:
 v hv023|30.37:|:
-v dv023|-0.28:|:
+v dv023|-0.25:|:
 u ni023|in:|:
-v xv024|600:|:
+v xv024|575:|:
 u ni024|ft:|:
-v xv025|3447:|:
+v xv025|2821:|:
 u ni025|ft:|:
-v xv026|-268:|:
+v xv026|-402:|:
 u ni026|ft:|:
-v xv027|44.7:|:
+v xv027|43.2:|:
 u ni027|&deg;F:|:
 v xv028|0.17:|:
 u ni028|in:|:
@@ -737,9 +737,9 @@ v xv123|0.11:|:
 u ni123|in:|:
 v xv124|0.000:|:
 u ni124|in/hr:|:
-v xv125|96:|:
+v xv125|100:|:
 u ni125|miles:|:
-v xv126|22.9:|:
+v xv126|24.1:|:
 u ni126|&deg;F:|:
 v xv127|0.0:|:
 u ni127|&deg;F:|:
@@ -747,23 +747,23 @@ v xv128|5:|:
 u ni128|:|:
 v xv129|0.92:|:
 u ni129|in:|:
-v xv130|770.8:|:
+v xv130|772.1:|:
 u ni130|&deg;F:|:
 v xv131|0.0:|:
 u ni131|&deg;F:|:
-v xv132|2065:|:
+v xv132|2069:|:
 u ni132|miles:|:
-v xv133|1780.5:|:
+v xv133|1781.7:|:
 u ni133|&deg;F:|:
 v xv134|0.0:|:
 u ni134|&deg;F:|:
-v xv135|4679:|:
+v xv135|4683:|:
 u ni135|miles:|:
 v st136|---:|:
 u ni136|:|:
 v st137|Cool:|:
 u ni137|:|:
-v st138|Increasing clouds with little temperature change. Precip possible within 24 to 48 hrs:|:
+v st138|Mostly clear with little temperature change:|:
 u ni138|:|:
 v st139|Rising:|:
 u ni139|:|:
@@ -773,7 +773,7 @@ v st141|Light Breeze:|:
 u ni141|:|:
 v st142|2/26/12:|:
 u ni142|:|:
-v st143|9:15pm:|:
+v st143|10:32pm:|:
 u ni143|:|:
 v st144|6:30am:|:
 u ni144|:|:
@@ -795,7 +795,7 @@ w staturl|http://www.ambientweather.com/dawest.html:|:
 w slong|-88.1200027:|:
 w slat|41.7900009:|:
 w orld_id|us:|:
-t emp_color|53d3f6:|:
+t emp_color|53d3ff:|:
 t emp_color_hi|53f753:|:
 t emp_color_lo|ff53d3:|:
 m tr001KSJC|mtr001KSJC:|:
@@ -1061,79 +1061,79 @@ f orecast_country1|US:|:
 f orecast_radregion1|a4:|:
 f orecast_tzname1|America/Chicago:|:
 f orecast_wmo1|:|:
-f orecast_day1_1|Sun:|:
-f orecast_hi1_1|51:|:
-f orecast_lo1_1|25:|:
-f orecast_conds1_1|Partly Cloudy:|:
-f orecast_icon1_1|partlycloudy:|:
-t emp_for_hi1_1|53df53:|:
-t emp_for_lo1_1|9353ff:|:
-f orecast_day1_2|Mon:|:
+f orecast_day1_1|Mon:|:
+f orecast_hi1_1|36:|:
+f orecast_lo1_1|12:|:
+f orecast_conds1_1|Clear:|:
+f orecast_icon1_1|clear:|:
+t emp_for_hi1_1|539fff:|:
+t emp_for_lo1_1|ff53d3:|:
+f orecast_day1_2|Tue:|:
 f orecast_hi1_2|39:|:
-f orecast_lo1_2|18:|:
-f orecast_conds1_2|Clear:|:
-f orecast_icon1_2|clear:|:
+f orecast_lo1_2|36:|:
+f orecast_conds1_2|Chance Rain:|:
+f orecast_icon1_2|chancerain:|:
 t emp_for_hi1_2|53c6ff:|:
-t emp_for_lo1_2|ec53d3:|:
-f orecast_day1_3|Tue:|:
-f orecast_hi1_3|39:|:
-f orecast_lo1_3|34:|:
-f orecast_conds1_3|Chance Snow:|:
-f orecast_icon1_3|chancesnow:|:
-t emp_for_hi1_3|53c6ff:|:
-t emp_for_lo1_3|5386ff:|:
-f orecast_day1_4|Wed:|:
-f orecast_hi1_4|48:|:
-f orecast_lo1_4|23:|:
-f orecast_conds1_4|Mostly Cloudy:|:
-f orecast_icon1_4|mostlycloudy:|:
-t emp_for_hi1_4|53d386:|:
-t emp_for_lo1_4|ac53f9:|:
-f orecast_day1_5|Thu:|:
+t emp_for_lo1_2|539fff:|:
+f orecast_day1_3|Wed:|:
+f orecast_hi1_3|48:|:
+f orecast_lo1_3|27:|:
+f orecast_conds1_3|Chance Rain:|:
+f orecast_icon1_3|chancerain:|:
+t emp_for_hi1_3|53d386:|:
+t emp_for_lo1_3|7953ff:|:
+f orecast_day1_4|Thu:|:
+f orecast_hi1_4|37:|:
+f orecast_lo1_4|28:|:
+f orecast_conds1_4|Partly Cloudy:|:
+f orecast_icon1_4|partlycloudy:|:
+t emp_for_hi1_4|53acff:|:
+t emp_for_lo1_4|6c53ff:|:
+f orecast_day1_5|Fri:|:
 f orecast_hi1_5|45:|:
-f orecast_lo1_5|30:|:
-f orecast_conds1_5|Mostly Cloudy:|:
-f orecast_icon1_5|mostlycloudy:|:
+f orecast_lo1_5|27:|:
+f orecast_conds1_5|Chance T-storms:|:
+f orecast_icon1_5|chancetstorms:|:
 t emp_for_hi1_5|53d3d2:|:
-t emp_for_lo1_5|5353ff:|:
+t emp_for_lo1_5|7953ff:|:
 f orecast_nexrad2|LOT:|:
 f orecast_country2|US:|:
 f orecast_radregion2|a4:|:
 f orecast_tzname2|America/Chicago:|:
 f orecast_wmo2|:|:
-f orecast_day2_1|Sun:|:
-f orecast_hi2_1|51:|:
-f orecast_lo2_1|25:|:
-f orecast_conds2_1|Partly Cloudy:|:
-f orecast_icon2_1|partlycloudy:|:
+f orecast_day2_1|Mon:|:
+f orecast_hi2_1|36:|:
+f orecast_lo2_1|12:|:
+f orecast_conds2_1|Clear:|:
+f orecast_icon2_1|clear:|:
 t emp_for_hi2_1|ffffff:|:
 t emp_for_lo2_1|ffffff:|:
-f orecast_day2_2|Mon:|:
+f orecast_day2_2|Tue:|:
 f orecast_hi2_2|39:|:
-f orecast_lo2_2|18:|:
-f orecast_conds2_2|Clear:|:
-f orecast_icon2_2|clear:|:
+f orecast_lo2_2|36:|:
+f orecast_conds2_2|Chance Rain:|:
+f orecast_icon2_2|chancerain:|:
 t emp_for_hi2_2|ffffff:|:
 t emp_for_lo2_2|ffffff:|:
-f orecast_day2_3|Tue:|:
-f orecast_hi2_3|39:|:
-f orecast_lo2_3|34:|:
-f orecast_conds2_3|Chance Snow:|:
-f orecast_icon2_3|chancesnow:|:
+f orecast_day2_3|Wed:|:
+f orecast_hi2_3|48:|:
+f orecast_lo2_3|27:|:
+f orecast_conds2_3|Chance Rain:|:
+f orecast_icon2_3|chancerain:|:
 t emp_for_hi2_3|ffffff:|:
 t emp_for_lo2_3|ffffff:|:
-f orecast_day2_4|Wed:|:
-f orecast_hi2_4|48:|:
-f orecast_lo2_4|23:|:
-f orecast_conds2_4|Mostly Cloudy:|:
-f orecast_icon2_4|mostlycloudy:|:
+f orecast_day2_4|Thu:|:
+f orecast_hi2_4|37:|:
+f orecast_lo2_4|28:|:
+f orecast_conds2_4|Partly Cloudy:|:
+f orecast_icon2_4|partlycloudy:|:
 t emp_for_hi2_4|ffffff:|:
 t emp_for_lo2_4|ffffff:|:
-f orecast_day2_5|Thu:|:
+f orecast_day2_5|Fri:|:
 f orecast_hi2_5|45:|:
-f orecast_lo2_5|30:|:
-f orecast_conds2_5|Mostly Cloudy:|:
-f orecast_icon2_5|mostlycloudy:|:
+f orecast_lo2_5|27:|:
+f orecast_conds2_5|Chance T-storms:|:
+f orecast_icon2_5|chancetstorms:|:
 t emp_for_hi2_5|ffffff:|:
 t emp_for_lo2_5|ffffff:|:
 f orecast_nexrad3|LOT:|:
@@ -1141,40 +1141,40 @@ f orecast_country3|US:|:
 f orecast_radregion3|a4:|:
 f orecast_tzname3|America/Chicago:|:
 f orecast_wmo3|:|:
-f orecast_day3_1|Sun:|:
-f orecast_hi3_1|51:|:
-f orecast_lo3_1|25:|:
-f orecast_conds3_1|Partly Cloudy:|:
-f orecast_icon3_1|partlycloudy:|:
-t emp_for_hi3_1|9353ff:|:
+f orecast_day3_1|Mon:|:
+f orecast_hi3_1|36:|:
+f orecast_lo3_1|12:|:
+f orecast_conds3_1|Clear:|:
+f orecast_icon3_1|clear:|:
+t emp_for_hi3_1|ff53d3:|:
 t emp_for_lo3_1|ffffff:|:
-f orecast_day3_2|Mon:|:
+f orecast_day3_2|Tue:|:
 f orecast_hi3_2|39:|:
-f orecast_lo3_2|18:|:
-f orecast_conds3_2|Clear:|:
-f orecast_icon3_2|clear:|:
-t emp_for_hi3_2|ec53d3:|:
+f orecast_lo3_2|36:|:
+f orecast_conds3_2|Chance Rain:|:
+f orecast_icon3_2|chancerain:|:
+t emp_for_hi3_2|539fff:|:
 t emp_for_lo3_2|ffffff:|:
-f orecast_day3_3|Tue:|:
-f orecast_hi3_3|39:|:
-f orecast_lo3_3|34:|:
-f orecast_conds3_3|Chance Snow:|:
-f orecast_icon3_3|chancesnow:|:
-t emp_for_hi3_3|5386ff:|:
+f orecast_day3_3|Wed:|:
+f orecast_hi3_3|48:|:
+f orecast_lo3_3|27:|:
+f orecast_conds3_3|Chance Rain:|:
+f orecast_icon3_3|chancerain:|:
+t emp_for_hi3_3|7953ff:|:
 t emp_for_lo3_3|ffffff:|:
-f orecast_day3_4|Wed:|:
-f orecast_hi3_4|48:|:
-f orecast_lo3_4|23:|:
-f orecast_conds3_4|Mostly Cloudy:|:
-f orecast_icon3_4|mostlycloudy:|:
-t emp_for_hi3_4|ac53f9:|:
+f orecast_day3_4|Thu:|:
+f orecast_hi3_4|37:|:
+f orecast_lo3_4|28:|:
+f orecast_conds3_4|Partly Cloudy:|:
+f orecast_icon3_4|partlycloudy:|:
+t emp_for_hi3_4|6c53ff:|:
 t emp_for_lo3_4|ffffff:|:
-f orecast_day3_5|Thu:|:
+f orecast_day3_5|Fri:|:
 f orecast_hi3_5|45:|:
-f orecast_lo3_5|30:|:
-f orecast_conds3_5|Mostly Cloudy:|:
-f orecast_icon3_5|mostlycloudy:|:
-t emp_for_hi3_5|5353ff:|:
+f orecast_lo3_5|27:|:
+f orecast_conds3_5|Chance T-storms:|:
+f orecast_icon3_5|chancetstorms:|:
+t emp_for_hi3_5|7953ff:|:
 t emp_for_lo3_5|ffffff:|:
 w arning_desc1|No Warning:|:
 w arning_time1|:|:
@@ -1214,14 +1214,14 @@ m eso_URLtext1|:|:
 m eso_historyURL1|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILNAPER15:|:
 m eso_lon1|-88.14:|:
 m eso_lat1|41.80:|:
-m eso_time1|02/26 10:20:10:|:
-m eso_temp1|37.4:|:
-m eso_dew1|24.0:|:
-m eso_rh1|58:|:
-m eso_dir1|SSE:|:
-m eso_wspeed1|2:|:
-m eso_gust1|2:|:
-m eso_barom1|29.29:|:
+m eso_time1|02/26 22:20:07:|:
+m eso_temp1|42.3:|:
+m eso_dew1|31.0:|:
+m eso_rh1|65:|:
+m eso_dir1|WNW:|:
+m eso_wspeed1|4:|:
+m eso_gust1|8:|:
+m eso_barom1|29.21:|:
 m eso_rrate1|0.00:|:
 m eso_stat2|KILNAPER21:|:
 m eso_loc2|Naperville:|:
@@ -1231,14 +1231,14 @@ m eso_URLtext2|:|:
 m eso_historyURL2|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILNAPER21:|:
 m eso_lon2|-88.14:|:
 m eso_lat2|41.79:|:
-m eso_time2|02/26 09:59:53:|:
-m eso_temp2|34.3:|:
-m eso_dew2|24.0:|:
-m eso_rh2|65:|:
-m eso_dir2|SE:|:
-m eso_wspeed2|11:|:
-m eso_gust2|21:|:
-m eso_barom2|30.19:|:
+m eso_time2|02/26 21:59:52:|:
+m eso_temp2|42.9:|:
+m eso_dew2|32.0:|:
+m eso_rh2|66:|:
+m eso_dir2|WNW:|:
+m eso_wspeed2|2:|:
+m eso_gust2|8:|:
+m eso_barom2|30.09:|:
 m eso_rrate2|0.00:|:
 m eso_stat3|KILNAPER19:|:
 m eso_loc3|Naperville:|:
@@ -1248,14 +1248,14 @@ m eso_URLtext3|:|:
 m eso_historyURL3|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILNAPER19:|:
 m eso_lon3|-88.20:|:
 m eso_lat3|41.78:|:
-m eso_time3|02/26 10:20:10:|:
-m eso_temp3|37.5:|:
-m eso_dew3|26.0:|:
-m eso_rh3|62:|:
-m eso_dir3|East:|:
-m eso_wspeed3|4:|:
-m eso_gust3|19:|:
-m eso_barom3|30.08:|:
+m eso_time3|02/26 22:20:05:|:
+m eso_temp3|42.0:|:
+m eso_dew3|33.0:|:
+m eso_rh3|69:|:
+m eso_dir3|NW:|:
+m eso_wspeed3|1:|:
+m eso_gust3|4:|:
+m eso_barom3|30.02:|:
 m eso_rrate3|0.00:|:
 m eso_stat4|KILNAPER7:|:
 m eso_loc4|Naperville:|:
@@ -1265,14 +1265,14 @@ m eso_URLtext4|NapervilleWeather.com Web Page:|:
 m eso_historyURL4|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILNAPER7:|:
 m eso_lon4|-88.12:|:
 m eso_lat4|41.79:|:
-m eso_time4|02/26 10:20:00:|:
-m eso_temp4|36.6:|:
-m eso_dew4|23.0:|:
-m eso_rh4|57:|:
-m eso_dir4|SSW:|:
-m eso_wspeed4|12:|:
-m eso_gust4|12:|:
-m eso_barom4|30.18:|:
+m eso_time4|02/26 22:20:06:|:
+m eso_temp4|42.5:|:
+m eso_dew4|31.0:|:
+m eso_rh4|63:|:
+m eso_dir4|WSW:|:
+m eso_wspeed4|2:|:
+m eso_gust4|2:|:
+m eso_barom4|30.10:|:
 m eso_rrate4|0.00:|:
 m eso_stat5|KILNAPER9:|:
 m eso_loc5|Naperville:|:
@@ -1282,14 +1282,14 @@ m eso_URLtext5|Misty The Weather Beagle:|:
 m eso_historyURL5|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILNAPER9:|:
 m eso_lon5|-88.14:|:
 m eso_lat5|41.74:|:
-m eso_time5|02/26 10:20:09:|:
-m eso_temp5|38.2:|:
-m eso_dew5|26.0:|:
-m eso_rh5|60:|:
-m eso_dir5|SE:|:
-m eso_wspeed5|8:|:
-m eso_gust5|20:|:
-m eso_barom5|30.14:|:
+m eso_time5|02/26 22:20:02:|:
+m eso_temp5|41.0:|:
+m eso_dew5|33.0:|:
+m eso_rh5|72:|:
+m eso_dir5|WSW:|:
+m eso_wspeed5|2:|:
+m eso_gust5|4:|:
+m eso_barom5|30.06:|:
 m eso_rrate5|0.00:|:
 m eso_stat6|KILAUROR18:|:
 m eso_loc6|Aurora:|:
@@ -1299,14 +1299,14 @@ m eso_URLtext6|:|:
 m eso_historyURL6|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILAUROR18:|:
 m eso_lon6|-88.23:|:
 m eso_lat6|41.79:|:
-m eso_time6|02/26 10:20:08:|:
-m eso_temp6|37.2:|:
-m eso_dew6|19.0:|:
-m eso_rh6|47:|:
-m eso_dir6|SSE:|:
-m eso_wspeed6|12:|:
-m eso_gust6|15:|:
-m eso_barom6|30.09:|:
+m eso_time6|02/26 22:20:07:|:
+m eso_temp6|41.4:|:
+m eso_dew6|27.0:|:
+m eso_rh6|54:|:
+m eso_dir6|WNW:|:
+m eso_wspeed6|2:|:
+m eso_gust6|4:|:
+m eso_barom6|30.03:|:
 m eso_rrate6|0.00:|:
 m eso_stat7|KILWHEAT8:|:
 m eso_loc7|Wheaton:|:
@@ -1316,14 +1316,14 @@ m eso_URLtext7|:|:
 m eso_historyURL7|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWHEAT8:|:
 m eso_lon7|-88.14:|:
 m eso_lat7|41.85:|:
-m eso_time7|02/26 10:06:47:|:
-m eso_temp7|36.3:|:
-m eso_dew7|26.0:|:
-m eso_rh7|67:|:
-m eso_dir7|NNW:|:
-m eso_wspeed7|7:|:
-m eso_gust7|16:|:
-m eso_barom7|30.16:|:
+m eso_time7|02/26 22:08:04:|:
+m eso_temp7|42.1:|:
+m eso_dew7|34.0:|:
+m eso_rh7|73:|:
+m eso_dir7|NE:|:
+m eso_wspeed7|0:|:
+m eso_gust7|3:|:
+m eso_barom7|30.08:|:
 m eso_rrate7|0.00:|:
 m eso_stat8|KILLISLE3:|:
 m eso_loc8|Lisle:|:
@@ -1333,14 +1333,14 @@ m eso_URLtext8|:|:
 m eso_historyURL8|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILLISLE3:|:
 m eso_lon8|-88.07:|:
 m eso_lat8|41.79:|:
-m eso_time8|02/26 10:20:12:|:
-m eso_temp8|37.2:|:
-m eso_dew8|26.0:|:
+m eso_time8|02/26 22:19:57:|:
+m eso_temp8|41.9:|:
+m eso_dew8|30.0:|:
 m eso_rh8|63:|:
-m eso_dir8|SSE:|:
+m eso_dir8|West:|:
 m eso_wspeed8|0:|:
 m eso_gust8|0:|:
-m eso_barom8|29.95:|:
+m eso_barom8|29.88:|:
 m eso_rrate8|0.00:|:
 m eso_stat9|KILAUROR16:|:
 m eso_loc9|Aurora:|:
@@ -1350,14 +1350,14 @@ m eso_URLtext9|:|:
 m eso_historyURL9|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILAUROR16:|:
 m eso_lon9|-88.24:|:
 m eso_lat9|41.75:|:
-m eso_time9|02/26 10:20:11:|:
-m eso_temp9|38.4:|:
-m eso_dew9|27.0:|:
-m eso_rh9|64:|:
-m eso_dir9|South:|:
-m eso_wspeed9|4:|:
+m eso_time9|02/26 22:20:05:|:
+m eso_temp9|43.1:|:
+m eso_dew9|34.0:|:
+m eso_rh9|70:|:
+m eso_dir9|WSW:|:
+m eso_wspeed9|1:|:
 m eso_gust9|0:|:
-m eso_barom9|29.37:|:
+m eso_barom9|29.32:|:
 m eso_rrate9|0.00:|:
 m eso_stat10|KILWHEAT5:|:
 m eso_loc10|Wheaton:|:
@@ -1367,524 +1367,524 @@ m eso_URLtext10|N9ABF.com Amateur Radio:|:
 m eso_historyURL10|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWHEAT5:|:
 m eso_lon10|-88.13:|:
 m eso_lat10|41.87:|:
-m eso_time10|02/26 10:06:04:|:
-m eso_temp10|35.2:|:
-m eso_dew10|19.0:|:
-m eso_rh10|51:|:
-m eso_dir10|SE:|:
-m eso_wspeed10|13:|:
+m eso_time10|02/26 22:06:08:|:
+m eso_temp10|40.2:|:
+m eso_dew10|26.0:|:
+m eso_rh10|57:|:
+m eso_dir10|WNW:|:
+m eso_wspeed10|0:|:
 m eso_gust10|0:|:
-m eso_barom10|30.11:|:
+m eso_barom10|30.05:|:
 m eso_rrate10|0.00:|:
-m eso_stat11|MD1973:|:
-m eso_loc11|Downers Grove:|:
-m eso_neigh11|APRSWXNET Woodridge                  IL US:|:
-m eso_url11|http://madis.noaa.gov:|:
-m eso_URLtext11|Meteorological Assimilation Data Ingest System:|:
-m eso_historyURL11|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MD1973:|:
-m eso_lon11|-88.06:|:
-m eso_lat11|41.77:|:
-m eso_time11|02/26 09:43:00:|:
-m eso_temp11|33.0:|:
-m eso_dew11|23.0:|:
-m eso_rh11|66:|:
-m eso_dir11|South:|:
-m eso_wspeed11|8:|:
-m eso_gust11|17:|:
-m eso_barom11|30.11:|:
+m eso_stat11|KILWHEAT7:|:
+m eso_loc11|Wheaton:|:
+m eso_neigh11|South Wheaton:|:
+m eso_url11|:|:
+m eso_URLtext11|:|:
+m eso_historyURL11|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWHEAT7:|:
+m eso_lon11|-88.08:|:
+m eso_lat11|41.86:|:
+m eso_time11|02/26 22:10:30:|:
+m eso_temp11|39.6:|:
+m eso_dew11|32.0:|:
+m eso_rh11|74:|:
+m eso_dir11|WSW:|:
+m eso_wspeed11|2:|:
+m eso_gust11|3:|:
+m eso_barom11|30.03:|:
 m eso_rrate11|0.00:|:
-m eso_stat12|KILWHEAT7:|:
-m eso_loc12|Wheaton:|:
-m eso_neigh12|South Wheaton:|:
-m eso_url12|:|:
-m eso_URLtext12|:|:
-m eso_historyURL12|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWHEAT7:|:
-m eso_lon12|-88.08:|:
-m eso_lat12|41.86:|:
-m eso_time12|02/26 10:20:09:|:
-m eso_temp12|34.3:|:
-m eso_dew12|26.0:|:
-m eso_rh12|73:|:
-m eso_dir12|South:|:
-m eso_wspeed12|6:|:
-m eso_gust12|8:|:
-m eso_barom12|30.12:|:
+m eso_stat12|MUP431:|:
+m eso_loc12|West Chicago:|:
+m eso_neigh12|MesoWest West Chicago                     IL US UPR:|:
+m eso_url12|http://madis.noaa.gov:|:
+m eso_URLtext12|Meteorological Assimilation Data Ingest System:|:
+m eso_historyURL12|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MUP431:|:
+m eso_lon12|-88.18:|:
+m eso_lat12|41.88:|:
+m eso_time12|02/26 20:45:00:|:
+m eso_temp12|41.0:|:
+m eso_dew12|0.0:|:
+m eso_rh12|0:|:
+m eso_dir12|North:|:
+m eso_wspeed12|0:|:
+m eso_gust12|0:|:
+m eso_barom12|0.00:|:
 m eso_rrate12|0.00:|:
-m eso_stat13|MUP431:|:
-m eso_loc13|West Chicago:|:
-m eso_neigh13|MesoWest West Chicago                     IL US UPR:|:
-m eso_url13|http://madis.noaa.gov:|:
-m eso_URLtext13|Meteorological Assimilation Data Ingest System:|:
-m eso_historyURL13|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MUP431:|:
-m eso_lon13|-88.18:|:
-m eso_lat13|41.88:|:
-m eso_time13|02/26 08:50:00:|:
-m eso_temp13|29.0:|:
-m eso_dew13|0.0:|:
-m eso_rh13|0:|:
-m eso_dir13|North:|:
-m eso_wspeed13|0:|:
-m eso_gust13|0:|:
-m eso_barom13|0.00:|:
+m eso_stat13|KILWOODR4:|:
+m eso_loc13|Woodridge:|:
+m eso_neigh13|Woodridge Neighborhood Weather:|:
+m eso_url13|:|:
+m eso_URLtext13|:|:
+m eso_historyURL13|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWOODR4:|:
+m eso_lon13|-88.05:|:
+m eso_lat13|41.76:|:
+m eso_time13|02/26 22:10:13:|:
+m eso_temp13|41.8:|:
+m eso_dew13|32.0:|:
+m eso_rh13|69:|:
+m eso_dir13|WSW:|:
+m eso_wspeed13|3:|:
+m eso_gust13|7:|:
+m eso_barom13|30.06:|:
 m eso_rrate13|0.00:|:
-m eso_stat14|KILWOODR4:|:
+m eso_stat14|KILWOODR2:|:
 m eso_loc14|Woodridge:|:
-m eso_neigh14|Woodridge Neighborhood Weather:|:
-m eso_url14|:|:
-m eso_URLtext14|:|:
-m eso_historyURL14|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWOODR4:|:
-m eso_lon14|-88.05:|:
-m eso_lat14|41.76:|:
-m eso_time14|02/26 10:06:13:|:
-m eso_temp14|36.3:|:
-m eso_dew14|26.0:|:
+m eso_neigh14|Woodridge:|:
+m eso_url14|http://www.tkhuman.com:|:
+m eso_URLtext14|TKHuman.com:|:
+m eso_historyURL14|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWOODR2:|:
+m eso_lon14|-88.04:|:
+m eso_lat14|41.77:|:
+m eso_time14|02/26 22:20:07:|:
+m eso_temp14|40.8:|:
+m eso_dew14|30.0:|:
 m eso_rh14|66:|:
-m eso_dir14|South:|:
-m eso_wspeed14|10:|:
-m eso_gust14|23:|:
-m eso_barom14|30.16:|:
+m eso_dir14|West:|:
+m eso_wspeed14|0:|:
+m eso_gust14|0:|:
+m eso_barom14|29.56:|:
 m eso_rrate14|0.00:|:
-m eso_stat15|KILWOODR2:|:
-m eso_loc15|Woodridge:|:
-m eso_neigh15|Woodridge:|:
-m eso_url15|http://www.tkhuman.com:|:
-m eso_URLtext15|TKHuman.com:|:
-m eso_historyURL15|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWOODR2:|:
-m eso_lon15|-88.04:|:
-m eso_lat15|41.77:|:
-m eso_time15|02/26 10:20:12:|:
-m eso_temp15|36.9:|:
-m eso_dew15|25.0:|:
+m eso_stat15|KILGLENE1:|:
+m eso_loc15|Glen Ellyn:|:
+m eso_neigh15|Butterfield West:|:
+m eso_url15|http://www.dupageweather.com:|:
+m eso_URLtext15|:|:
+m eso_historyURL15|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILGLENE1:|:
+m eso_lon15|-88.06:|:
+m eso_lat15|41.85:|:
+m eso_time15|02/26 22:19:56:|:
+m eso_temp15|41.6:|:
+m eso_dew15|30.0:|:
 m eso_rh15|63:|:
-m eso_dir15|SSW:|:
-m eso_wspeed15|17:|:
-m eso_gust15|17:|:
-m eso_barom15|29.63:|:
+m eso_dir15|SW:|:
+m eso_wspeed15|8:|:
+m eso_gust15|12:|:
+m eso_barom15|30.14:|:
 m eso_rrate15|0.00:|:
-m eso_stat16|KILGLENE1:|:
-m eso_loc16|Glen Ellyn:|:
-m eso_neigh16|Butterfield West:|:
-m eso_url16|http://www.dupageweather.com:|:
+m eso_stat16|KILWHEAT9:|:
+m eso_loc16|Wheaton:|:
+m eso_neigh16|NE Wheaton:|:
+m eso_url16|:|:
 m eso_URLtext16|:|:
-m eso_historyURL16|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILGLENE1:|:
-m eso_lon16|-88.06:|:
-m eso_lat16|41.85:|:
-m eso_time16|02/26 10:19:53:|:
-m eso_temp16|37.0:|:
-m eso_dew16|23.0:|:
-m eso_rh16|57:|:
-m eso_dir16|South:|:
-m eso_wspeed16|6:|:
-m eso_gust16|14:|:
-m eso_barom16|30.25:|:
-m eso_rrate16|0.02:|:
-m eso_stat17|KILWHEAT9:|:
-m eso_loc17|Wheaton:|:
-m eso_neigh17|NE Wheaton:|:
+m eso_historyURL16|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWHEAT9:|:
+m eso_lon16|-88.09:|:
+m eso_lat16|41.87:|:
+m eso_time16|02/26 22:20:03:|:
+m eso_temp16|42.8:|:
+m eso_dew16|30.0:|:
+m eso_rh16|59:|:
+m eso_dir16|WNW:|:
+m eso_wspeed16|8:|:
+m eso_gust16|11:|:
+m eso_barom16|29.22:|:
+m eso_rrate16|0.00:|:
+m eso_stat17|KILDOWNE2:|:
+m eso_loc17|Downers Grove:|:
+m eso_neigh17|Prentiss Creek:|:
 m eso_url17|:|:
 m eso_URLtext17|:|:
-m eso_historyURL17|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWHEAT9:|:
-m eso_lon17|-88.09:|:
-m eso_lat17|41.87:|:
-m eso_time17|02/26 10:19:59:|:
-m eso_temp17|37.2:|:
-m eso_dew17|20.0:|:
-m eso_rh17|50:|:
-m eso_dir17|South:|:
-m eso_wspeed17|11:|:
-m eso_gust17|15:|:
-m eso_barom17|29.29:|:
+m eso_historyURL17|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILDOWNE2:|:
+m eso_lon17|-88.04:|:
+m eso_lat17|41.77:|:
+m eso_time17|02/26 22:19:50:|:
+m eso_temp17|41.0:|:
+m eso_dew17|24.0:|:
+m eso_rh17|51:|:
+m eso_dir17|West:|:
+m eso_wspeed17|4:|:
+m eso_gust17|4:|:
+m eso_barom17|30.00:|:
 m eso_rrate17|0.00:|:
-m eso_stat18|KILDOWNE2:|:
-m eso_loc18|Downers Grove:|:
-m eso_neigh18|Prentiss Creek:|:
+m eso_stat18|KILBOLIN10:|:
+m eso_loc18|Bolingbrook:|:
+m eso_neigh18|Bolingbrook/Clow Airport:|:
 m eso_url18|:|:
 m eso_URLtext18|:|:
-m eso_historyURL18|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILDOWNE2:|:
-m eso_lon18|-88.04:|:
-m eso_lat18|41.77:|:
-m eso_time18|02/26 10:19:56:|:
-m eso_temp18|39.2:|:
-m eso_dew18|16.0:|:
-m eso_rh18|39:|:
-m eso_dir18|SE:|:
-m eso_wspeed18|8:|:
-m eso_gust18|8:|:
-m eso_barom18|30.09:|:
+m eso_historyURL18|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILBOLIN10:|:
+m eso_lon18|-88.11:|:
+m eso_lat18|41.70:|:
+m eso_time18|02/26 22:19:59:|:
+m eso_temp18|41.2:|:
+m eso_dew18|30.0:|:
+m eso_rh18|63:|:
+m eso_dir18|WSW:|:
+m eso_wspeed18|3:|:
+m eso_gust18|4:|:
+m eso_barom18|29.32:|:
 m eso_rrate18|0.00:|:
-m eso_stat19|KILBOLIN10:|:
-m eso_loc19|Bolingbrook:|:
-m eso_neigh19|Bolingbrook/Clow Airport:|:
+m eso_stat19|KILDOWNE3:|:
+m eso_loc19|Downers Grove:|:
+m eso_neigh19|Maple Woods West:|:
 m eso_url19|:|:
 m eso_URLtext19|:|:
-m eso_historyURL19|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILBOLIN10:|:
-m eso_lon19|-88.11:|:
-m eso_lat19|41.70:|:
-m eso_time19|02/26 10:20:12:|:
-m eso_temp19|38.2:|:
-m eso_dew19|22.0:|:
-m eso_rh19|52:|:
-m eso_dir19|SE:|:
-m eso_wspeed19|5:|:
-m eso_gust19|5:|:
-m eso_barom19|29.38:|:
+m eso_historyURL19|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILDOWNE3:|:
+m eso_lon19|-88.03:|:
+m eso_lat19|41.79:|:
+m eso_time19|02/26 22:20:03:|:
+m eso_temp19|42.5:|:
+m eso_dew19|35.0:|:
+m eso_rh19|76:|:
+m eso_dir19|NNW:|:
+m eso_wspeed19|3:|:
+m eso_gust19|3:|:
+m eso_barom19|30.10:|:
 m eso_rrate19|0.00:|:
-m eso_stat20|KILDOWNE3:|:
-m eso_loc20|Downers Grove:|:
-m eso_neigh20|Maple Woods West:|:
-m eso_url20|:|:
-m eso_URLtext20|:|:
-m eso_historyURL20|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILDOWNE3:|:
-m eso_lon20|-88.03:|:
-m eso_lat20|41.79:|:
-m eso_time20|02/26 10:20:11:|:
-m eso_temp20|36.9:|:
+m eso_stat20|MD0023:|:
+m eso_loc20|Glen Ellyn:|:
+m eso_neigh20|APRSWXNET Glen Ellyn                 IL US:|:
+m eso_url20|http://madis.noaa.gov:|:
+m eso_URLtext20|Meteorological Assimilation Data Ingest System:|:
+m eso_historyURL20|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MD0023:|:
+m eso_lon20|-88.05:|:
+m eso_lat20|41.84:|:
+m eso_time20|02/26 21:47:00:|:
+m eso_temp20|43.0:|:
 m eso_dew20|30.0:|:
-m eso_rh20|75:|:
+m eso_rh20|60:|:
 m eso_dir20|South:|:
-m eso_wspeed20|10:|:
-m eso_gust20|16:|:
-m eso_barom20|30.18:|:
+m eso_wspeed20|1:|:
+m eso_gust20|5:|:
+m eso_barom20|30.12:|:
 m eso_rrate20|0.00:|:
-m eso_stat21|MD0023:|:
+m eso_stat21|MAU162:|:
 m eso_loc21|Glen Ellyn:|:
-m eso_neigh21|APRSWXNET Glen Ellyn                 IL US:|:
+m eso_neigh21|APRSWXNET Glen Ellyn                   IL US:|:
 m eso_url21|http://madis.noaa.gov:|:
 m eso_URLtext21|Meteorological Assimilation Data Ingest System:|:
-m eso_historyURL21|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MD0023:|:
-m eso_lon21|-88.05:|:
-m eso_lat21|41.84:|:
-m eso_time21|02/26 09:47:00:|:
-m eso_temp21|36.0:|:
-m eso_dew21|22.0:|:
-m eso_rh21|56:|:
-m eso_dir21|ESE:|:
-m eso_wspeed21|10:|:
-m eso_gust21|11:|:
-m eso_barom21|30.26:|:
-m eso_rrate21|0.01:|:
-m eso_stat22|MAU162:|:
+m eso_historyURL21|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MAU162:|:
+m eso_lon21|-88.08:|:
+m eso_lat21|41.87:|:
+m eso_time21|02/26 21:55:00:|:
+m eso_temp21|40.0:|:
+m eso_dew21|30.0:|:
+m eso_rh21|68:|:
+m eso_dir21|WNW:|:
+m eso_wspeed21|0:|:
+m eso_gust21|0:|:
+m eso_barom21|30.11:|:
+m eso_rrate21|0.00:|:
+m eso_stat22|MC0472:|:
 m eso_loc22|Glen Ellyn:|:
-m eso_neigh22|APRSWXNET Glen Ellyn                   IL US:|:
+m eso_neigh22|APRSWXNET Wheaton                    IL US:|:
 m eso_url22|http://madis.noaa.gov:|:
 m eso_URLtext22|Meteorological Assimilation Data Ingest System:|:
-m eso_historyURL22|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MAU162:|:
-m eso_lon22|-88.08:|:
-m eso_lat22|41.87:|:
-m eso_time22|02/26 09:54:00:|:
-m eso_temp22|34.0:|:
-m eso_dew22|22.0:|:
-m eso_rh22|62:|:
-m eso_dir22|SW:|:
-m eso_wspeed22|1:|:
+m eso_historyURL22|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MC0472:|:
+m eso_lon22|-88.09:|:
+m eso_lat22|41.88:|:
+m eso_time22|02/26 21:02:00:|:
+m eso_temp22|44.0:|:
+m eso_dew22|20.0:|:
+m eso_rh22|38:|:
+m eso_dir22|East:|:
+m eso_wspeed22|0:|:
 m eso_gust22|0:|:
-m eso_barom22|30.24:|:
+m eso_barom22|29.16:|:
 m eso_rrate22|0.00:|:
-m eso_stat23|MC0472:|:
-m eso_loc23|Glen Ellyn:|:
-m eso_neigh23|APRSWXNET Wheaton                    IL US:|:
-m eso_url23|http://madis.noaa.gov:|:
-m eso_URLtext23|Meteorological Assimilation Data Ingest System:|:
-m eso_historyURL23|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MC0472:|:
-m eso_lon23|-88.09:|:
+m eso_stat23|KILWHEAT3:|:
+m eso_loc23|Wheaton:|:
+m eso_neigh23|Main and Geneva:|:
+m eso_url23|http://www.mychicagogarden.com:|:
+m eso_URLtext23|My Chicago Garden:|:
+m eso_historyURL23|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWHEAT3:|:
+m eso_lon23|-88.10:|:
 m eso_lat23|41.88:|:
-m eso_time23|02/26 09:32:00:|:
-m eso_temp23|34.0:|:
-m eso_dew23|12.0:|:
-m eso_rh23|40:|:
-m eso_dir23|East:|:
-m eso_wspeed23|0:|:
-m eso_gust23|0:|:
-m eso_barom23|29.30:|:
+m eso_time23|02/26 22:20:00:|:
+m eso_temp23|41.4:|:
+m eso_dew23|32.0:|:
+m eso_rh23|51:|:
+m eso_dir23|NW:|:
+m eso_wspeed23|3:|:
+m eso_gust23|5:|:
+m eso_barom23|30.06:|:
 m eso_rrate23|0.00:|:
-m eso_stat24|KILWHEAT3:|:
-m eso_loc24|Wheaton:|:
-m eso_neigh24|Main and Geneva:|:
-m eso_url24|http://www.mychicagogarden.com:|:
-m eso_URLtext24|My Chicago Garden:|:
-m eso_historyURL24|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWHEAT3:|:
-m eso_lon24|-88.10:|:
+m eso_stat24|MC5020:|:
+m eso_loc24|Glen Ellyn:|:
+m eso_neigh24|APRSWXNET Wheaton                    IL US:|:
+m eso_url24|http://madis.noaa.gov:|:
+m eso_URLtext24|Meteorological Assimilation Data Ingest System:|:
+m eso_historyURL24|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MC5020:|:
+m eso_lon24|-88.09:|:
 m eso_lat24|41.88:|:
-m eso_time24|02/26 10:19:52:|:
-m eso_temp24|36.7:|:
-m eso_dew24|32.0:|:
-m eso_rh24|45:|:
-m eso_dir24|South:|:
-m eso_wspeed24|5:|:
-m eso_gust24|12:|:
-m eso_barom24|30.12:|:
+m eso_time24|02/26 21:43:00:|:
+m eso_temp24|42.0:|:
+m eso_dew24|30.0:|:
+m eso_rh24|61:|:
+m eso_dir24|WSW:|:
+m eso_wspeed24|0:|:
+m eso_gust24|0:|:
+m eso_barom24|29.99:|:
 m eso_rrate24|0.00:|:
-m eso_stat25|MC5020:|:
-m eso_loc25|Glen Ellyn:|:
-m eso_neigh25|APRSWXNET Wheaton                    IL US:|:
-m eso_url25|http://madis.noaa.gov:|:
-m eso_URLtext25|Meteorological Assimilation Data Ingest System:|:
-m eso_historyURL25|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=MC5020:|:
+m eso_stat25|KILBOLIN8:|:
+m eso_loc25|Bolingbrook:|:
+m eso_neigh25|Bolingbrook Neighborhood Weather:|:
+m eso_url25|:|:
+m eso_URLtext25|:|:
+m eso_historyURL25|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILBOLIN8:|:
 m eso_lon25|-88.09:|:
-m eso_lat25|41.88:|:
-m eso_time25|02/26 09:43:00:|:
-m eso_temp25|33.0:|:
-m eso_dew25|21.0:|:
-m eso_rh25|61:|:
+m eso_lat25|41.69:|:
+m eso_time25|02/26 22:20:09:|:
+m eso_temp25|40.2:|:
+m eso_dew25|31.0:|:
+m eso_rh25|70:|:
 m eso_dir25|WSW:|:
 m eso_wspeed25|2:|:
-m eso_gust25|6:|:
-m eso_barom25|30.09:|:
+m eso_gust25|2:|:
+m eso_barom25|30.10:|:
 m eso_rrate25|0.00:|:
-m eso_stat26|KILBOLIN8:|:
-m eso_loc26|Bolingbrook:|:
-m eso_neigh26|Bolingbrook Neighborhood Weather:|:
+m eso_stat26|KILWESTC8:|:
+m eso_loc26|West Chicago:|:
+m eso_neigh26|Ingalton Hills Estates:|:
 m eso_url26|:|:
 m eso_URLtext26|:|:
-m eso_historyURL26|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILBOLIN8:|:
-m eso_lon26|-88.09:|:
-m eso_lat26|41.69:|:
-m eso_time26|02/26 10:20:11:|:
-m eso_temp26|37.8:|:
-m eso_dew26|25.0:|:
-m eso_rh26|60:|:
-m eso_dir26|SSW:|:
-m eso_wspeed26|6:|:
-m eso_gust26|10:|:
-m eso_barom26|30.19:|:
+m eso_historyURL26|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWESTC8:|:
+m eso_lon26|-88.20:|:
+m eso_lat26|41.91:|:
+m eso_time26|02/26 22:20:06:|:
+m eso_temp26|41.0:|:
+m eso_dew26|32.0:|:
+m eso_rh26|69:|:
+m eso_dir26|WSW:|:
+m eso_wspeed26|5:|:
+m eso_gust26|5:|:
+m eso_barom26|30.21:|:
 m eso_rrate26|0.00:|:
-m eso_stat27|KILWESTC8:|:
-m eso_loc27|West Chicago:|:
-m eso_neigh27|Ingalton Hills Estates:|:
+m eso_stat27|KILDARIE3:|:
+m eso_loc27|Darien:|:
+m eso_neigh27|Darien, Near 75th St and Lemont Rd (60561):|:
 m eso_url27|:|:
 m eso_URLtext27|:|:
-m eso_historyURL27|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWESTC8:|:
-m eso_lon27|-88.20:|:
-m eso_lat27|41.91:|:
-m eso_time27|02/26 10:20:09:|:
-m eso_temp27|37.0:|:
-m eso_dew27|24.0:|:
-m eso_rh27|60:|:
-m eso_dir27|SSW:|:
-m eso_wspeed27|10:|:
-m eso_gust27|10:|:
-m eso_barom27|30.27:|:
-m eso_rrate27|0.02:|:
-m eso_stat28|KILDARIE3:|:
-m eso_loc28|Darien:|:
-m eso_neigh28|Darien, Near 75th St and Lemont Rd (60561):|:
-m eso_url28|:|:
-m eso_URLtext28|:|:
-m eso_historyURL28|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILDARIE3:|:
-m eso_lon28|-88.01:|:
-m eso_lat28|41.74:|:
-m eso_time28|02/26 10:19:37:|:
-m eso_temp28|43.6:|:
-m eso_dew28|20.0:|:
-m eso_rh28|38:|:
-m eso_dir28|SSW:|:
-m eso_wspeed28|5:|:
-m eso_gust28|10:|:
-m eso_barom28|30.03:|:
+m eso_historyURL27|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILDARIE3:|:
+m eso_lon27|-88.01:|:
+m eso_lat27|41.74:|:
+m eso_time27|02/26 22:19:38:|:
+m eso_temp27|41.5:|:
+m eso_dew27|25.0:|:
+m eso_rh27|52:|:
+m eso_dir27|NW:|:
+m eso_wspeed27|0:|:
+m eso_gust27|2:|:
+m eso_barom27|29.91:|:
+m eso_rrate27|0.00:|:
+m eso_stat28|KILBATAV1:|:
+m eso_loc28|Batavia:|:
+m eso_neigh28|Tri-Cities on the Fox River:|:
+m eso_url28|http://www.mdweather.com:|:
+m eso_URLtext28|mdweather.com Weather Page:|:
+m eso_historyURL28|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILBATAV1:|:
+m eso_lon28|-88.31:|:
+m eso_lat28|41.85:|:
+m eso_time28|02/26 22:18:13:|:
+m eso_temp28|39.9:|:
+m eso_dew28|31.0:|:
+m eso_rh28|69:|:
+m eso_dir28|WNW:|:
+m eso_wspeed28|4:|:
+m eso_gust28|14:|:
+m eso_barom28|30.00:|:
 m eso_rrate28|0.00:|:
-m eso_stat29|KILBATAV1:|:
-m eso_loc29|Batavia:|:
-m eso_neigh29|Tri-Cities on the Fox River:|:
-m eso_url29|http://www.mdweather.com:|:
-m eso_URLtext29|mdweather.com Weather Page:|:
-m eso_historyURL29|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILBATAV1:|:
-m eso_lon29|-88.31:|:
-m eso_lat29|41.85:|:
-m eso_time29|02/26 10:19:58:|:
-m eso_temp29|37.3:|:
-m eso_dew29|23.0:|:
-m eso_rh29|56:|:
-m eso_dir29|South:|:
-m eso_wspeed29|12:|:
-m eso_gust29|34:|:
-m eso_barom29|30.22:|:
+m eso_stat29|KILWESTC5:|:
+m eso_loc29|West Chicago:|:
+m eso_neigh29|THEBROWNHOUSE.ORG:|:
+m eso_url29|http://www.thebrownhouse.org:|:
+m eso_URLtext29|http://www.thebrownhouse.org:|:
+m eso_historyURL29|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWESTC5:|:
+m eso_lon29|-88.21:|:
+m eso_lat29|41.92:|:
+m eso_time29|02/26 22:20:05:|:
+m eso_temp29|44.6:|:
+m eso_dew29|31.0:|:
+m eso_rh29|59:|:
+m eso_dir29|WNW:|:
+m eso_wspeed29|0:|:
+m eso_gust29|8:|:
+m eso_barom29|30.04:|:
 m eso_rrate29|0.00:|:
-m eso_stat30|KILWESTC5:|:
-m eso_loc30|West Chicago:|:
-m eso_neigh30|THEBROWNHOUSE.ORG:|:
-m eso_url30|http://www.thebrownhouse.org:|:
-m eso_URLtext30|http://www.thebrownhouse.org:|:
-m eso_historyURL30|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILWESTC5:|:
-m eso_lon30|-88.21:|:
-m eso_lat30|41.92:|:
-m eso_time30|02/26 10:20:11:|:
-m eso_temp30|44.6:|:
-m eso_dew30|26.0:|:
-m eso_rh30|47:|:
-m eso_dir30|South:|:
-m eso_wspeed30|7:|:
-m eso_gust30|16:|:
-m eso_barom30|30.09:|:
+m eso_stat30|KILLOMBA5:|:
+m eso_loc30|Lombard:|:
+m eso_neigh30|Lombard (East of Sunset Knoll):|:
+m eso_url30|http://www.knottme.com/weather/lombard:|:
+m eso_URLtext30|Dee and Audreys Lombard Weather:|:
+m eso_historyURL30|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILLOMBA5:|:
+m eso_lon30|-88.02:|:
+m eso_lat30|41.87:|:
+m eso_time30|02/26 22:20:05:|:
+m eso_temp30|42.4:|:
+m eso_dew30|27.0:|:
+m eso_rh30|55:|:
+m eso_dir30|West:|:
+m eso_wspeed30|5:|:
+m eso_gust30|10:|:
+m eso_barom30|30.16:|:
 m eso_rrate30|0.00:|:
-m eso_stat31|KILLOMBA5:|:
-m eso_loc31|Lombard:|:
-m eso_neigh31|Lombard (East of Sunset Knoll):|:
-m eso_url31|http://www.knottme.com/weather/lombard:|:
-m eso_URLtext31|Dee and Audreys Lombard Weather:|:
-m eso_historyURL31|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILLOMBA5:|:
-m eso_lon31|-88.02:|:
-m eso_lat31|41.87:|:
-m eso_time31|02/26 10:20:11:|:
-m eso_temp31|38.7:|:
-m eso_dew31|19.0:|:
-m eso_rh31|45:|:
-m eso_dir31|South:|:
-m eso_wspeed31|9:|:
-m eso_gust31|19:|:
-m eso_barom31|30.24:|:
+m eso_stat31|KILGLENE5:|:
+m eso_loc31|Glen Ellyn:|:
+m eso_neigh31|Near North Ave. and Main St. Glen Ellyn:|:
+m eso_url31|http://glenellyn.weather.patmulcahy.com:|:
+m eso_URLtext31|Father Pat's Glen Ellyn Weather:|:
+m eso_historyURL31|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILGLENE5:|:
+m eso_lon31|-88.06:|:
+m eso_lat31|41.90:|:
+m eso_time31|02/26 22:20:09:|:
+m eso_temp31|41.2:|:
+m eso_dew31|25.0:|:
+m eso_rh31|52:|:
+m eso_dir31|SW:|:
+m eso_wspeed31|3:|:
+m eso_gust31|3:|:
+m eso_barom31|29.21:|:
 m eso_rrate31|0.00:|:
-m eso_stat32|KILGLENE5:|:
-m eso_loc32|Glen Ellyn:|:
-m eso_neigh32|Near North Ave. and Main St. Glen Ellyn:|:
-m eso_url32|http://glenellyn.weather.patmulcahy.com:|:
-m eso_URLtext32|Father Pat's Glen Ellyn Weather:|:
-m eso_historyURL32|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILGLENE5:|:
-m eso_lon32|-88.06:|:
-m eso_lat32|41.90:|:
-m eso_time32|02/26 10:20:10:|:
-m eso_temp32|38.1:|:
-m eso_dew32|19.0:|:
-m eso_rh32|45:|:
-m eso_dir32|SE:|:
-m eso_wspeed32|4:|:
-m eso_gust32|4:|:
-m eso_barom32|29.42:|:
+m eso_stat32|KILCAROL5:|:
+m eso_loc32|Carol Stream:|:
+m eso_neigh32|Stonehenge Court:|:
+m eso_url32|http://www.mccreations.us/weather/:|:
+m eso_URLtext32|Carol Stream Live Weather:|:
+m eso_historyURL32|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILCAROL5:|:
+m eso_lon32|-88.17:|:
+m eso_lat32|41.92:|:
+m eso_time32|02/26 22:20:07:|:
+m eso_temp32|41.0:|:
+m eso_dew32|17.0:|:
+m eso_rh32|38:|:
+m eso_dir32|WNW:|:
+m eso_wspeed32|5:|:
+m eso_gust32|5:|:
+m eso_barom32|30.02:|:
 m eso_rrate32|0.00:|:
-m eso_stat33|KILCAROL5:|:
-m eso_loc33|Carol Stream:|:
-m eso_neigh33|Stonehenge Court:|:
-m eso_url33|http://www.mccreations.us/weather/:|:
-m eso_URLtext33|Carol Stream Live Weather:|:
-m eso_historyURL33|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILCAROL5:|:
-m eso_lon33|-88.17:|:
-m eso_lat33|41.92:|:
-m eso_time33|02/26 10:20:04:|:
-m eso_temp33|37.5:|:
-m eso_dew33|9.0:|:
-m eso_rh33|30:|:
-m eso_dir33|SSE:|:
-m eso_wspeed33|11:|:
-m eso_gust33|13:|:
-m eso_barom33|30.09:|:
+m eso_stat33|KILLOMBA6:|:
+m eso_loc33|Lombard:|:
+m eso_neigh33|Fairfield Townhome Assoc:|:
+m eso_url33|:|:
+m eso_URLtext33|:|:
+m eso_historyURL33|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILLOMBA6:|:
+m eso_lon33|-88.01:|:
+m eso_lat33|41.86:|:
+m eso_time33|02/26 22:19:25:|:
+m eso_temp33|43.1:|:
+m eso_dew33|32.0:|:
+m eso_rh33|65:|:
+m eso_dir33|NW:|:
+m eso_wspeed33|4:|:
+m eso_gust33|6:|:
+m eso_barom33|30.08:|:
 m eso_rrate33|0.00:|:
-m eso_stat34|KILLOMBA6:|:
-m eso_loc34|Lombard:|:
-m eso_neigh34|Fairfield Townhome Assoc:|:
+m eso_stat34|KILOSWEG9:|:
+m eso_loc34|Oswego:|:
+m eso_neigh34|Farmington Lakes:|:
 m eso_url34|:|:
 m eso_URLtext34|:|:
-m eso_historyURL34|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILLOMBA6:|:
-m eso_lon34|-88.01:|:
-m eso_lat34|41.86:|:
-m eso_time34|02/26 10:20:12:|:
-m eso_temp34|36.2:|:
-m eso_dew34|24.0:|:
-m eso_rh34|61:|:
-m eso_dir34|South:|:
-m eso_wspeed34|9:|:
-m eso_gust34|12:|:
-m eso_barom34|30.17:|:
+m eso_historyURL34|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILOSWEG9:|:
+m eso_lon34|-88.31:|:
+m eso_lat34|41.71:|:
+m eso_time34|02/26 22:15:40:|:
+m eso_temp34|41.9:|:
+m eso_dew34|32.0:|:
+m eso_rh34|67:|:
+m eso_dir34|NNW:|:
+m eso_wspeed34|5:|:
+m eso_gust34|6:|:
+m eso_barom34|29.84:|:
 m eso_rrate34|0.00:|:
-m eso_stat35|KILOSWEG9:|:
-m eso_loc35|Oswego:|:
-m eso_neigh35|Farmington Lakes:|:
+m eso_stat35|KILSTCHA8:|:
+m eso_loc35|St. Charles:|:
+m eso_neigh35|Ronzheimer Ave. & S. Tyler Rd.:|:
 m eso_url35|:|:
 m eso_URLtext35|:|:
-m eso_historyURL35|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILOSWEG9:|:
-m eso_lon35|-88.31:|:
-m eso_lat35|41.71:|:
-m eso_time35|02/26 10:17:57:|:
-m eso_temp35|41.8:|:
-m eso_dew35|27.0:|:
-m eso_rh35|55:|:
-m eso_dir35|SSE:|:
-m eso_wspeed35|5:|:
-m eso_gust35|18:|:
-m eso_barom35|29.88:|:
+m eso_historyURL35|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILSTCHA8:|:
+m eso_lon35|-88.29:|:
+m eso_lat35|41.91:|:
+m eso_time35|02/26 22:20:09:|:
+m eso_temp35|39.5:|:
+m eso_dew35|32.0:|:
+m eso_rh35|75:|:
+m eso_dir35|WSW:|:
+m eso_wspeed35|3:|:
+m eso_gust35|3:|:
+m eso_barom35|30.07:|:
 m eso_rrate35|0.00:|:
-m eso_stat36|KILSTCHA8:|:
-m eso_loc36|St. Charles:|:
-m eso_neigh36|Ronzheimer Ave. & S. Tyler Rd.:|:
+m eso_stat36|KILBATAV3:|:
+m eso_loc36|Batavia:|:
+m eso_neigh36|West Batavia:|:
 m eso_url36|:|:
 m eso_URLtext36|:|:
-m eso_historyURL36|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILSTCHA8:|:
-m eso_lon36|-88.29:|:
-m eso_lat36|41.91:|:
-m eso_time36|02/26 10:20:13:|:
-m eso_temp36|36.4:|:
-m eso_dew36|25.0:|:
-m eso_rh36|64:|:
-m eso_dir36|SSW:|:
-m eso_wspeed36|7:|:
-m eso_gust36|16:|:
-m eso_barom36|30.14:|:
+m eso_historyURL36|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILBATAV3:|:
+m eso_lon36|-88.36:|:
+m eso_lat36|41.83:|:
+m eso_time36|02/26 22:06:16:|:
+m eso_temp36|41.5:|:
+m eso_dew36|33.0:|:
+m eso_rh36|72:|:
+m eso_dir36|West:|:
+m eso_wspeed36|2:|:
+m eso_gust36|9:|:
+m eso_barom36|30.08:|:
 m eso_rrate36|0.00:|:
-m eso_stat37|KILBATAV3:|:
-m eso_loc37|Batavia:|:
-m eso_neigh37|West Batavia:|:
+m eso_stat37|KILROMEO4:|:
+m eso_loc37|Romeoville:|:
+m eso_neigh37|Lakewood Estates:|:
 m eso_url37|:|:
 m eso_URLtext37|:|:
-m eso_historyURL37|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILBATAV3:|:
-m eso_lon37|-88.36:|:
-m eso_lat37|41.83:|:
-m eso_time37|02/26 10:06:15:|:
-m eso_temp37|35.5:|:
-m eso_dew37|25.0:|:
-m eso_rh37|66:|:
-m eso_dir37|SSW:|:
-m eso_wspeed37|7:|:
-m eso_gust37|25:|:
-m eso_barom37|30.15:|:
+m eso_historyURL37|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILROMEO4:|:
+m eso_lon37|-88.10:|:
+m eso_lat37|41.65:|:
+m eso_time37|02/26 22:20:04:|:
+m eso_temp37|40.4:|:
+m eso_dew37|12.0:|:
+m eso_rh37|31:|:
+m eso_dir37|West:|:
+m eso_wspeed37|5:|:
+m eso_gust37|7:|:
+m eso_barom37|24.02:|:
 m eso_rrate37|0.00:|:
-m eso_stat38|KILROMEO4:|:
-m eso_loc38|Romeoville:|:
-m eso_neigh38|Lakewood Estates:|:
+m eso_stat38|KILLOMBA4:|:
+m eso_loc38|Lombard:|:
+m eso_neigh38|Madison Meadow:|:
 m eso_url38|:|:
 m eso_URLtext38|:|:
-m eso_historyURL38|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILROMEO4:|:
-m eso_lon38|-88.10:|:
-m eso_lat38|41.65:|:
-m eso_time38|02/26 10:20:05:|:
-m eso_temp38|41.0:|:
-m eso_dew38|10.0:|:
-m eso_rh38|28:|:
-m eso_dir38|SSW:|:
-m eso_wspeed38|15:|:
-m eso_gust38|18:|:
-m eso_barom38|24.02:|:
+m eso_historyURL38|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILLOMBA4:|:
+m eso_lon38|-88.00:|:
+m eso_lat38|41.88:|:
+m eso_time38|02/26 22:19:33:|:
+m eso_temp38|39.8:|:
+m eso_dew38|19.0:|:
+m eso_rh38|42:|:
+m eso_dir38|WSW:|:
+m eso_wspeed38|3:|:
+m eso_gust38|6:|:
+m eso_barom38|30.09:|:
 m eso_rrate38|0.00:|:
-m eso_stat39|KILLOMBA4:|:
-m eso_loc39|Lombard:|:
-m eso_neigh39|Madison Meadow:|:
+m eso_stat39|KDPA:|:
+m eso_loc39|Chicago DuPage:|:
+m eso_neigh39|Official Station:|:
 m eso_url39|:|:
 m eso_URLtext39|:|:
-m eso_historyURL39|www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILLOMBA4:|:
-m eso_lon39|-88.00:|:
-m eso_lat39|41.88:|:
-m eso_time39|02/26 10:19:25:|:
-m eso_temp39|36.2:|:
-m eso_dew39|18.0:|:
-m eso_rh39|46:|:
-m eso_dir39|SSW:|:
-m eso_wspeed39|6:|:
-m eso_gust39|9:|:
-m eso_barom39|30.15:|:
-m eso_rrate39|0.00:|:
-m eso_stat40|KDPA:|:
-m eso_loc40|Chicago DuPage:|:
+m eso_historyURL39|www.wunderground.com/history/airport/KDPA/2012/2/26/DailyHistory.html?FULLALMANAC=KDPA:|:
+m eso_lon39|-88.25:|:
+m eso_lat39|41.91:|:
+m eso_time39|02/26 21:52:00:|:
+m eso_temp39|39.0:|:
+m eso_dew39|29.0:|:
+m eso_rh39|67:|:
+m eso_dir39|West:|:
+m eso_wspeed39|8:|:
+m eso_gust39|---:|:
+m eso_barom39|30.06:|:
+m eso_rrate39|---:|:
+m eso_stat40|KLOT:|:
+m eso_loc40|Romeoville:|:
 m eso_neigh40|Official Station:|:
 m eso_url40|:|:
 m eso_URLtext40|:|:
-m eso_historyURL40|www.wunderground.com/history/airport/KDPA/2012/2/26/DailyHistory.html?FULLALMANAC=KDPA:|:
-m eso_lon40|-88.25:|:
-m eso_lat40|41.91:|:
-m eso_time40|02/26 09:52:00:|:
-m eso_temp40|33.0:|:
-m eso_dew40|20.0:|:
-m eso_rh40|59:|:
-m eso_dir40|South:|:
-m eso_wspeed40|20:|:
+m eso_historyURL40|www.wunderground.com/history/airport/KLOT/2012/2/26/DailyHistory.html?FULLALMANAC=KLOT:|:
+m eso_lon40|-88.09:|:
+m eso_lat40|41.61:|:
+m eso_time40|02/26 21:55:00:|:
+m eso_temp40|39.0:|:
+m eso_dew40|31.0:|:
+m eso_rh40|73:|:
+m eso_dir40|WSW:|:
+m eso_wspeed40|8:|:
 m eso_gust40|---:|:
-m eso_barom40|30.15:|:
+m eso_barom40|30.04:|:
 m eso_rrate40|---:|:
 END_OF_RAW_DATA_LINES;
 

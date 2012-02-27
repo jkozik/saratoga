@@ -2,3 +2,6 @@ For the weather website, napervilleweather.net, this repository holds
 the php scripts that generate the web pages.
 
 The scripts came from the saratoga-weather.org website.  I added my own customizations.
+Added Space Weather from http://www.642weather.com/weather/scripts-space-weather.php
+
+
