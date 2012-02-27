@@ -62,6 +62,7 @@
         <item caption="UK Earthquakes" link="wxquakeUK.php"/>
 -->
 	</item>
+    <item caption="Web Cam" link="wxwebcam.php"/>
     <item caption="Links" link="wxlinks.php"/>
     <item caption="About" link="wxabout.php"/>
 	<item caption="Status" link="wxstatus.php" title="Status of weather software" />
