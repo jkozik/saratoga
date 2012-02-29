@@ -107,5 +107,6 @@ if (isset($SITE['flyoutmenu']) and $SITE['flyoutmenu'] or
   print $FlyoutCSS;
 }
 ?>
+<script>var _gaq=[['_setAccount','UA-29575111-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 <!-- World-ML template from http://saratoga-weather.org/wxtemplates/ -->
 <!-- end of top -->
