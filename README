@@ -6,3 +6,5 @@ The scripts came from the saratoga-weather.org website.  I added my own customiz
 Added Space Weather from http://www.642weather.com/weather/scripts-space-weather.php
 
 Added Google Analytics to top.php
+
+Added Weather Underground Historical Data page from jcweather.us using http://saratoga-weather.org/wxtemplates/wxwuhistory.zip

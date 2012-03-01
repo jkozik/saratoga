@@ -96,6 +96,16 @@ $SITE['monthNames'] = array(  // for wxastronomy page .. replace with month name
 //'juli','august','september','oktober','november','december'
 //);
 
+###########################################################################
+# WU-History settings
+$SITE['WUID']           = 'KILNAPER7'; // set to Wunderground ID (upper case)
+//$SITE['WUunits']      = 'E';          // units to display 'E'=english, 'M'=metric, 'B'=both
+//             comment $SITE['WUunits'] above out to use uomTemp to select English or Metric
+$SITE['WUstationname'] = 'Naperville, IL  USA'; // for legend at bottom of page
+$SITE['WUbirthday']     = '01-01-2005'; //Stations first day of operation format dd-mm-yyyy
+###########################################################################
+
+
 ############################################################################
 # Sitewide configuration - Station location, identity and date/time info
 ############################################################################

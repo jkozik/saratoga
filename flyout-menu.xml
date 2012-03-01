@@ -59,6 +59,7 @@
 		<item caption="Earthquake activity" link="wxquake.php"/>
 		<item caption="Space Weather" link="wxspace.php"/>
 		<item caption="Nearby METAR Reports" link="wxmetar.php"/>
+		<item caption="Historical Data" link="wxwuhistory.php"/>
 <!--
         <item caption="UK Earthquakes" link="wxquakeUK.php"/>
 -->
