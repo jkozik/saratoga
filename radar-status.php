@@ -7,9 +7,8 @@
 //  Version 1.03 - 07-Apr-2008 - fixed $SITE['showradarstatus'] actions for true=show, false=suppress
 //  Version 1.04 - 04-Feb-2009 - fixed for NWS site format change
 //  Version 1.05 - 03-Jul-2009 - added support for PHP5 timezone setting
-//  Version 1.06 - 26-Jan-2011 - added support for $cacheFileDir global cache directory
 //
-    $Version = "radar-status.php V1.06 26-Jan-2011";
+    $Version = "radar-status.php V1.05 03-Jul-2009";
 //  error_reporting(E_ALL);  // uncomment to turn on full error reporting
 // script available at http://saratoga-weather.org/scripts.php
 //  
@@ -39,17 +38,16 @@
 //  change myRadar to your local NEXRAD radar site ID.
 //    other settings are optional
 // 
-  $myRadar = 'KMUX';   // San Francisco
+  $myRadar = 'LOT';   // San Francisco
 //
   $noMsgIfActive = true; // set to true to suppress message when radar is active
 //
-  $ourTZ   = 'PST8PDT'; // timezone
+  $ourTZ   = 'CST6CDT'; // timezone
   $timeFormat = 'D, d-M-Y g:ia T';
 //
 // boxStyle is used for <div> surrounding the output of the script .. change styling to suit.
   $boxStyle = 'style="border: dashed 1px black; background-color:#FFFFCC; margin: 5px; padding: 0 5px;"';  
 //
-  $cacheFileDir = './';   // default cache file directory
   $cacheName = "radar-status.txt";  // used to store the file so we don't have to
 //                          fetch it each time
   $refetchSeconds = 60;     // refetch every nnnn seconds
@@ -66,7 +64,6 @@ if (isset($SITE['GR3radar'])) 	{$myRadar = $SITE['GR3radar'];}
 if (isset($SITE['tz'])) 		{$ourTZ = $SITE['tz'];}
 if (isset($SITE['timeFormat'])) {$timeFormat = $SITE['timeFormat'];}
 if (isset($SITE['showradarstatus'])) {$noMsgIfActive = ! $SITE['showradarstatus'];}
-if (isset($SITE['cacheFileDir']))     {$cacheFileDir = $SITE['cacheFileDir']; }
 // end of overrides from Settings.php if available
 
 // ------ start of code -------
@@ -107,6 +104,7 @@ if (isset($_REQUEST['nexrad']) ) { // for testing
 
   $myRadar = substr(strtoupper($_REQUEST['nexrad']),0,4);
 }
+$myRadar = 'KLOT';
 
 if (isset($_REQUEST['cache'])) {$refetchSeconds = 1; }
 
@@ -134,7 +132,6 @@ echo "<!-- $Version -->\n";
 
 // refresh cached copy of page if needed
 // fetch/cache code by Tom at carterlake.org
-$cacheName = $cacheFileDir . $cacheName;
 
 if (file_exists($cacheName) and filemtime($cacheName) + $refetchSeconds > time()) {
       print "<!-- using Cached version of $cacheName -->\n";

@@ -8,3 +8,6 @@ Added Space Weather from http://www.642weather.com/weather/scripts-space-weather
 Added Google Analytics to top.php
 
 Added Weather Underground Historical Data page from jcweather.us using http://saratoga-weather.org/wxtemplates/wxwuhistory.zip
+
+Added El Dorado Weather NOAA Animated Ridge Radar Script http://www.eldoradocountyweather.com/scripts/weather-scripts.php
+ - I customized it for Chicago
