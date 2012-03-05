@@ -68,10 +68,13 @@
 	</item>
     <item caption="Web Cam" link="wxwebcam.php"/>
     <item caption="Links" link="wxlinks.php"/>
-    <item caption="About" link="wxabout.php"/>
+    <item caption="About">
+        <item caption="About" link="wxabout.php"/>
 	<item caption="Status" link="wxstatus.php" title="Status of weather software" />
+	<item caption="CWOP Data Quality" link="wxcwopstats.php" title="CWOP Data Quality" />
 <!--  remove this and the finishing HTML comment line to enable the wxcontact.php form (if installed)
 	<item caption="Contact" link="wxcontact.php"/>
  -->
+    </item>
     <item caption="Website Map" link="wxsitemap.php"/>
 </menu>

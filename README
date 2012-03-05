@@ -15,3 +15,8 @@ Added El Dorado Weather NOAA Animated Ridge Radar Script http://www.eldoradocoun
 Added Air Quality from http://relayweather.com
  - http://www.relayweather.com/downloads.php
  - pulls data from http://www.airnow.gov/
+
+Added CWOP CWOP Statistics Viewer from  http://relayweather.com
+ - http://www.relayweather.com/downloads.php
+ - scrapes content from http://weather.gladstonefamily.net/
+ - Thanks to PHillip Gladstone!
