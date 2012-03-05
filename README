@@ -11,3 +11,7 @@ Added Weather Underground Historical Data page from jcweather.us using http://sa
 
 Added El Dorado Weather NOAA Animated Ridge Radar Script http://www.eldoradocountyweather.com/scripts/weather-scripts.php
  - I customized it for Chicago
+
+Added Air Quality from http://relayweather.com
+ - http://www.relayweather.com/downloads.php
+ - pulls data from http://www.airnow.gov/

@@ -50,6 +50,7 @@
 		<item caption="Advisories" link="wxadvisory.php" />
 		<item caption="WXSIM Forecast details" link="wxsimforecast.php"/>
 		<item caption="UV Index Forecast" link="wxuvforecast.php"/>
+		<item caption="Air Quality Index" link="wxaqirssV2.php"/>
 	</item>
 	<item caption="Almanac" title="Trends, Sun/Moon, Earthquakes">
 	    <item wxonly="WD,MH" caption="Weather Trends" link="wxtrends.php"/>
