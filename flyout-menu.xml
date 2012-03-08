@@ -66,6 +66,7 @@
         <item caption="UK Earthquakes" link="wxquakeUK.php"/>
 -->
 	</item>
+    <item caption="River" link="wxriverpage.php" title="Chicago area river levels"/>
     <item caption="Web Cam" link="wxwebcam.php"/>
     <item caption="Links" link="wxlinks.php"/>
     <item caption="About">

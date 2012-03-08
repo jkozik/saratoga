@@ -20,3 +20,10 @@ Added CWOP CWOP Statistics Viewer from  http://relayweather.com
  - http://www.relayweather.com/downloads.php
  - scrapes content from http://weather.gladstonefamily.net/
  - Thanks to PHillip Gladstone!
+
+Added river levels for the Chicago River
+ - http://eastmasonvilleweather.com/downloads.php
+ - content from Advanced Hydrologic Prediction Service http://water.weather.gov/ahps/
+ - Thanks to Dennis at East Masonville Weather 
+ - in ./River directory is a README with a crontab script, runs every 15 minutes
+

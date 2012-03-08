@@ -1,0 +1,2 @@
+# need to run this cron job to keep river data current
+5,20,35,50 * * * * cd /home/weather/public_html/saratoga/River;/usr/bin/php river-fetch.php
