@@ -167,7 +167,7 @@ $SITE['UVscript']		= 'get-UV-forecast-inc.php'; // worldwide forecast script for
 //	comment out above line to exclude UV forecast from dashboard, gizmo and wxuvforecast.php page
 //
 // if you have WXSIM installed set $SITE['WXSIM'] = true; otherwise set it to false
-$SITE['WXSIM']			= false;  // Set to false if you have not installed WXSIM
+$SITE['WXSIM']			= true;  // Set to false if you have not installed WXSIM
 $SITE['WXSIMscript'] 	= 'plaintext-parser.php'; // script for decoding plaintext.txt into icons
 $SITE['defaultlang']	= 'en';   // 'en' for English (WXSIM plaintext-parser.php)
 

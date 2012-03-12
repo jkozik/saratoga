@@ -27,3 +27,13 @@ Added river levels for the Chicago River
  - Thanks to Dennis at East Masonville Weather 
  - in ./River directory is a README with a crontab script, runs every 15 minutes
 
+Added support for WXSIM.  
+ - just tweaked a line in Settings.php
+ - every 6 hours a new plaintext.txt file gets uploaded
+ - a "WXSIM" references shows on the home page and under the forecast menu
+ - on my weather PC, I added WXSIM, WXSIMATE, and WRET. 
+ - I also added a new scheduler ($30): http://www.splinterware.com/download/index.htm
+ - The scheduler wakes up WXSIMATE, collects data, wakes up WXSIM, generates a forecast, plaintext.txt
+ - fling uploads it to my home directory
+ - The wxstatus page detects whether the plaintext file is fresh
+

@@ -1,0 +1,37 @@
+   WXSIM text forecast for Naperville, initialized at  3:00 PM Mar 12, 2012
+ _______________________________________________________________________________
+ 
+ This afternoon: Cloudy. A slight chance of rain. Breezy and mild. High 65. Wind
+ west-southwest around 12 mph, gusting to 21 mph. Chance of precipitation 20
+ percent. Precipitation mostly less than a tenth of an inch.
+ 
+ Tonight: Partly cloudy in the evening, becoming fair after midnight. Patchy
+ light fog after midnight. Low 43. Wind west-southwest around 8 mph, gusting to
+ 17 mph.
+ 
+ Tuesday: Sunny. Patchy light fog in the morning. Unusually warm. High 70. UV
+ index up to 4. Wind west-southwest around 5 mph.
+ 
+ Tuesday night: Clear. Low 44. Wind south near calm in the evening, becoming 5
+ mph after midnight.
+ 
+ Wednesday: Sunny. Unusually warm. High 80. UV index up to 4. Wind south around 9
+ mph, gusting to 21 mph, in the morning, becoming 12 mph, gusting to 22 mph, in
+ the afternoon.
+ 
+ Wednesday night: Fair in the evening, becoming mostly cloudy after midnight.
+ Relatively mild. Low 56. Wind south around 7 mph, gusting to 15 mph.
+ 
+ Thursday: Mostly cloudy to cloudy. A slight chance of rain in the morning, then
+ a chance of rain in the afternoon. Scattered thundershowers possible. Unusually
+ warm. High 73. UV index up to 2. Wind south-southwest around 8 mph, gusting to
+ 18 mph. Chance of precipitation 50 percent. Precipitation mostly less than a
+ quarter of an inch.
+ 
+ Thursday night: Partly to mostly cloudy in the evening, becoming mostly cloudy
+ to cloudy after midnight. Moderate fog in the evening, then light to moderate
+ fog after midnight. A chance of rain. Precipitation showery or intermittent.
+ Mild. Low 56. Wind southwest around 4 mph. Chance of precipitation 50 percent.
+ Precipitation mostly around a tenth of an inch.
+ 
+ * THIS FORECAST WAS MADE IN AUTOMATED MODE AND MAY BE LESS ACCURATE THAN OTHERWISE *
