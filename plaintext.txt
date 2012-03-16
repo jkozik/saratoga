@@ -1,37 +1,62 @@
-   WXSIM text forecast for Naperville, initialized at  3:00 PM Mar 12, 2012
+   WXSIM text forecast for Naperville, initialized at 11:00 AM 16 Mar, 2012
  _______________________________________________________________________________
  
- This afternoon: Cloudy. A slight chance of rain. Breezy and mild. High 65. Wind
- west-southwest around 12 mph, gusting to 21 mph. Chance of precipitation 20
+ This afternoon: Partly to mostly cloudy. Unusually warm. High 78. UV index up to
+ 4. Wind south around 3 mph.
+ 
+ Tonight: Partly cloudy in the evening, becoming fair to partly cloudy after
+ midnight. Patchy light fog after midnight. Relatively mild. Low 55. Wind south
+ around 7 mph.
+ 
+ Saturday: Partly cloudy in the morning, becoming partly to mostly cloudy in the
+ afternoon. Patchy light fog in the morning. Unusually warm. High 78. UV index up
+ to 4. Wind south around 8 mph, gusting to 17 mph.
+ 
+ Saturday night: Partly cloudy in the evening, becoming mostly cloudy after
+ midnight. A slight chance of rain. Scattered thunderstorms likely, some possibly
+ severe. Mild. Low 57. Wind south around 7 mph. Chance of precipitation 20
  percent. Precipitation mostly less than a tenth of an inch.
  
- Tonight: Partly cloudy in the evening, becoming fair after midnight. Patchy
- light fog after midnight. Low 43. Wind west-southwest around 8 mph, gusting to
- 17 mph.
+ Sunday: Partly cloudy in the morning, becoming sunny in the afternoon. Unusually
+ hot. High 83. UV index up to 5. Wind south-southwest around 9 mph, gusting to 20
+ mph.
  
- Tuesday: Sunny. Patchy light fog in the morning. Unusually warm. High 70. UV
- index up to 4. Wind west-southwest around 5 mph.
+ Sunday night: Clear in the evening, becoming fair after midnight. Relatively
+ mild. Low 53. Wind south-southwest around 7 mph, gusting to 16 mph.
  
- Tuesday night: Clear. Low 44. Wind south near calm in the evening, becoming 5
- mph after midnight.
+ Monday: Partly cloudy in the morning, becoming partly to mostly cloudy in the
+ afternoon. Unusually warm. High 80. UV index up to 4. Wind south-southwest
+ around 7 mph, gusting to 18 mph, in the morning, becoming 11 mph, gusting to 21
+ mph, in the afternoon.
  
- Wednesday: Sunny. Unusually warm. High 80. UV index up to 4. Wind south around 9
- mph, gusting to 21 mph, in the morning, becoming 12 mph, gusting to 22 mph, in
- the afternoon.
+ Monday night: Fair to partly cloudy. Patchy light fog after midnight. Relatively
+ mild. Low 52. Wind south-southeast around 9 mph, gusting to 18 mph.
  
- Wednesday night: Fair in the evening, becoming mostly cloudy after midnight.
- Relatively mild. Low 56. Wind south around 7 mph, gusting to 15 mph.
+ Tuesday: Partly to mostly sunny in the morning, becoming partly cloudy in the
+ afternoon. Patchy light fog in the morning. Breezy and unusually warm. High 78.
+ UV index up to 5. Wind south-southeast around 11 mph, gusting to 22 mph.
  
- Thursday: Mostly cloudy to cloudy. A slight chance of rain in the morning, then
- a chance of rain in the afternoon. Scattered thundershowers possible. Unusually
- warm. High 73. UV index up to 2. Wind south-southwest around 8 mph, gusting to
- 18 mph. Chance of precipitation 50 percent. Precipitation mostly less than a
- quarter of an inch.
+ Tuesday night: Partly cloudy in the evening, becoming partly to mostly cloudy
+ after midnight. Relatively mild. Low 54. Wind south-southeast around 8 mph,
+ gusting to 18 mph.
  
- Thursday night: Partly to mostly cloudy in the evening, becoming mostly cloudy
- to cloudy after midnight. Moderate fog in the evening, then light to moderate
- fog after midnight. A chance of rain. Precipitation showery or intermittent.
- Mild. Low 56. Wind southwest around 4 mph. Chance of precipitation 50 percent.
- Precipitation mostly around a tenth of an inch.
+ Wednesday: Partly to mostly cloudy in the morning, becoming partly cloudy in the
+ afternoon. Unusually warm. High 80. UV index up to 5. Wind south-southeast
+ around 10 mph, gusting to 20 mph.
+ 
+ Wednesday night: Partly cloudy. Mild. Low 56. Wind south-southeast around 7 mph,
+ gusting to 16 mph.
+ 
+ Thursday: Mostly cloudy in the morning, becoming dense overcast in the
+ afternoon. A slight chance of rain in the morning, then a chance of rain in the
+ afternoon. Scattered thunderstorms likely. Unusually warm. High 74. UV index up
+ to 3. Wind south-southeast around 10 mph, gusting to 22 mph. Chance of
+ precipitation 50 percent. Precipitation mostly around a tenth of an inch.
+ 
+ Thursday night: Cloudy in the evening, becoming partly cloudy after midnight.
+ Light to moderate fog in the evening, then moderate fog after midnight. A chance
+ of rain in the evening, then a slight chance of rain after midnight. Scattered
+ thunderstorms likely. Relatively mild. Low 54. Wind south around 4 mph. Chance
+ of precipitation 60 percent. Precipitation mostly around a quarter of an inch.
  
  * THIS FORECAST WAS MADE IN AUTOMATED MODE AND MAY BE LESS ACCURATE THAN OTHERWISE *

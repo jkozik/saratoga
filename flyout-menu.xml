@@ -49,6 +49,7 @@
 		<item caption="Forecast details" link="wxforecast.php"/>
 		<item caption="Advisories" link="wxadvisory.php" />
 		<item caption="WXSIM Forecast details" link="wxsimforecast.php"/>
+		<item caption="WXSIM Meteogram" link="wxsim3in1.php"/>
 		<item caption="UV Index Forecast" link="wxuvforecast.php"/>
 		<item caption="Air Quality Index" link="wxaqirssV2.php"/>
 	</item>

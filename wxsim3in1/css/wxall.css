@@ -1,0 +1,1200 @@
+
+table {border-collapse:collapse;border-spacing:0;}
+
+/*
+ * jQuery UI CSS Framework 1.9m6
+ */
+.ui-helper-hidden { display: none; }
+.ui-helper-hidden-accessible { position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px); }
+.ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+* html .ui-helper-clearfix { height:1%; }
+.ui-helper-clearfix { display:block; }
+.ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter:Alpha(Opacity=0); }
+
+.ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 1.1em; }
+.ui-widget .ui-widget { font-size: 1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
+.ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff; color: #222222;}
+.ui-widget-content a { color: #222222; }
+.ui-widget-header { border: 1px solid #aaaaaa; background: #cccccc url(http://static.nordicweather.net/img/ui-bg_gloss-wave_80_8bc0e5_500x100.png) 50% 50% repeat-x; color: #222222; font-weight: bold; }
+.ui-widget-header a { color: #222222; }
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #d3d3d3; background: #e6e6e6 url(../img/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #555555; }
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited { color: #555555; text-decoration: none; }
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #999999; background: #dadada url(../img/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
+.ui-state-hover a, .ui-state-hover a:hover { color: #212121; text-decoration: none; }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #aaaaaa; background: #ffffff url(../img/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { color: #212121; text-decoration: none; }
+.ui-widget :active { outline: none; }
+
+.ui-corner-all { -moz-border-radius: 4px; -webkit-border-radius: 4px; -khtml-border-radius: 4px; border-radius: 4px; }
+/*
+ * jQuery UI Button 1.9m6
+ */
+.ui-button { display: inline-block; position: relative; margin-right: .1em; text-decoration: none !important; cursor: pointer; text-align: center; zoom: 1; overflow: visible;background-position: right -6px; background-image: url(http://static.nordicweather.net/nordic/images/button.png);border: 1px solid #ccc;font-size: 11px;font-weight: bold;color: #2779aa;font-family:Verdana, Tahoma, Arial, sans-serif;text-shadow: 0px 1px 0px #ffffff;white-space: nowrap; }
+.ui-button:hover {	background-position: left -41px;text-decoration: none;}
+.ui-button:active, .ui-button .button-active , .ui-button.active{background: url(http://static.nordicweather.net/nordic/images/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x;color:#2e6093;border-color:#88BCCE;}
+.ui-button-icon-only { width: 2.2em; }
+button.ui-button-icon-only { width: 2.4em; }
+.ui-button-icons-only { width: 3.4em; } 
+button.ui-button-icons-only { width: 3.7em; } 
+.ui-button .ui-button-text { display: block; line-height: 1.4;  }
+.ui-button-text-only .ui-button-text { padding: .4em 1em; }
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text { padding: .4em; text-indent: -9999999px; }
+.ui-button-text-icon-primary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 1em .4em 2.1em; }
+.ui-button-text-icon-secondary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 2.1em .4em 1em; }
+.ui-button-text-icons .ui-button-text { padding-left: 2.1em; padding-right: 2.1em; }
+input.ui-button { padding: .4em 1em; }
+.ui-button-icon-only .ui-icon, .ui-button-text-icon-primary .ui-icon, .ui-button-text-icon-secondary .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon { position: absolute; top: 50%; margin-top: -8px; }
+.ui-button-icon-only .ui-icon { left: 50%; margin-left: -8px; }
+.ui-button-text-icon-primary .ui-button-icon-primary, .ui-button-text-icons .ui-button-icon-primary, .ui-button-icons-only .ui-button-icon-primary { left: .5em; }
+.ui-button-text-icon-secondary .ui-button-icon-secondary, .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+.ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+.ui-buttonset { margin-right: 7px; }
+.ui-buttonset .ui-button { margin-left: 0; margin-right: -.3em; }
+button.ui-button::-moz-focus-inner { border: 0; padding: 0; }
+/*
+ * jQuery UI Tabs 1.9m6
+ */
+#tabs {border:0;}
+.ui-tabs { position: relative; padding: .2em; zoom: 1;}
+#wxsimtabs {background:transparent;border:0;}
+.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0 .4em; background:transparent;border:0;}
+.ui-tabs .ui-tabs-nav li { display:block;list-style: none; float: left; position: relative; top: 3px; margin: 1px .2em 0 0; border:1px solid #88BCCE;border-bottom: 0 !important; padding: 0; white-space: nowrap; background:#ddd url(http://static.nordicweather.net/img/ui-bg_gloss-wave_80_8bc0e5_500x100.png) 50% 50% repeat-x;margin-right:3px;	-webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0;border-radius: 4px 4px 0 0;-webkit-box-shadow: 0px 0px 5px #808080;-moz-box-shadow: 0px 0px 5px #808080;box-shadow:inset 0px -5px 5px -5px #808080;z-index:6;}
+.ui-tabs .ui-tabs-nav li a { display:block;float: left; padding: .5em 1em; color:#2e6093;text-decoration: none; font-size:11px;line-height: 14px;}
+.ui-tabs .ui-tabs-nav li a:hover {  background:  url(http://static.nordicweather.net/nordic/images/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x;color:#2e6093;text-decoration: none; -webkit-border-radius: 4px 4px 0 0;-moz-border-radius: 4px 4px 0 0;border-radius: 4px 4px 0 0;}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a:hover {background: #f7f7f7;color:#2e6093;text-decoration: none; -webkit-border-radius: 4px 4px 0 0;-moz-border-radius: 4px 4px 0 0;border-radius: 4px 4px 0 0;}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active { margin-bottom: -1px; padding-bottom: 1px; border:0;background:#f7f7f7;-webkit-box-shadow: 0 0 4px 2px #ccc;-moz-box-shadow: 0 0 4px 2px #ccc;box-shadow:0 0 4px 2px #ccc;z-index:8;}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-tabs-loading a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a { cursor: pointer; }
+.ui-tabs .ui-tabs-panel { display: block; background: #f7f7f7;padding:5px;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;-webkit-box-shadow: 0 0 4px 2px #ccc;-moz-box-shadow: 0 0 4px 2px #ccc;box-shadow:0 0 4px 2px #ccc;position:relative;zoom:1;z-index:7;}
+.ui-tabs ul { list-style:none; margin:0 !important; padding:0;padding-left:5px;	border-bottom:0px solid #ccc;	height:30px;width:813px;overflow:hidden;}
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: #f7f7f7; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+/*
+ * jQuery UI Tooltip 1.9m6
+ */
+.ui-tooltip {padding:8px;position:absolute;z-index:9999;-o-box-shadow: 0 0 5px #aaa;-webkit-box-shadow: 0 0 4px 2px #ccc;-moz-box-shadow: 0 0 4px 2px #ccc;box-shadow:0 0 4px 2px #ccc;	border:1px solid #bbb;background:#fff;color:#333;font-size:11px;font-family:Veradana,Tahoma, Arial, sans-serif;line-height:14px;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;}
+* html .ui-tooltip {background-image: none;}
+body .ui-tooltip { border-width:1px; }
+
+.download-box, .warning-box, .wxsiminfo-box, .note-box {
+	clear:both;
+	padding:20px;
+	margin: 10px 0px;
+	padding-left:45px;
+	background:#eee;
+	padding-bottom:15px;
+	padding-top:12px;
+}
+.wxsiminfo-box {
+	background:#bfe4f9 url(../img/icn-info.png) no-repeat scroll 10px 10px;
+	border-top:1px solid #68a2cf;
+	color:#2e6093;
+}
+.flotwrap {
+padding:10px;
+background-color: #f7f7f7;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: 0 0 4px 2px #ccc;-moz-box-shadow: 0 0 4px 2px #ccc;box-shadow:0 0 4px 2px #ccc;
+}
+.legendLabel{padding-right:10px;}
+.wxall-button, .button:link, .button:visited {
+	position: relative; 
+    overflow: hidden; 
+   /* display: block; */
+    padding: 5px 10px; 
+    border: 1px solid #ccc; 
+    text-decoration: none;
+	font-size: 11px;
+	font-weight: bold;
+	color: #2779aa;
+	cursor: pointer;
+	font-family:Verdana, Tahoma, Arial, sans-serif;
+	text-shadow: 0px 1px 0px #ffffff;
+    white-space: nowrap; 
+    cursor: pointer;
+    background-position: right -6px;
+    background-image: url(../img/button.png); 
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px; 
+    border-radius: 3px;
+}
+.wxall-button span {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: -20px;
+	width: 20px;
+	height: 30px;
+	background-position: right top;
+}
+.wxall-button, .wxall-button span {
+	background-image: url(../img/button.png);
+/*	float: left;*/
+}
+
+.wxall-button:hover, .wxall-button.active {
+	background-position: left -41px;
+	text-decoration: none;
+}
+.wxall-button:hover span {
+	background-position: right -37px;
+	text-decoration: none;
+}
+.wxall-button a {
+	color: #3a3a3a;
+}
+
+#tooltip{
+	position:absolute;
+	border:1px solid #bbb;
+	background:#fff;
+	padding:6px;
+	color:#333;
+	display:none;
+	font-size:11px;
+	font-family:Veradana,Tahoma, Arial, sans-serif;
+	line-height:14px;
+	border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  z-index:99;
+}
+
+/* 3in1 */
+.wxsimtbl{font-family:verdana;margin:0 auto;font-size:8pt;width:100%;text-align:left;color:#3D3D3D;background-color:#FFF;}
+.wxsimtbl_header{
+font-family:Verdana, Tahoma, Arial, sans-serif;
+	height:28px;
+	border-style:solid;
+	border-width: 0 0 1px 0;
+	border-color:#88BCCE;
+  background:#dfeffc url(../img/ui-bg_gloss-wave_80_8bc0e5_500x100.png) 50% 50% repeat-x;
+  padding:5px;
+  text-align:center;
+  font-weight:bold;
+  color: #2779aa;
+  font-size:11px;
+  
+}
+.wxsimdata{background-color:#f9f9f9;}
+.wxsimdataodd{background-color:#EBF0F6;}
+.wxsimdateline{
+height:28px;
+background:#dfeffc url(../img/ui-bg_glass_75_d0e5f5_1x400.png) 50% 50% repeat-x;
+color: #555;
+font-size:11px;
+}
+.wxsimdateline-td{
+text-align:left;
+padding:6px;
+border-style:solid;
+border-width: 1px 0 1px 0;
+border-color:#88BCCE;
+}
+div.popwrap {position:relative;}
+span#pop{
+position:absolute;
+float:right;
+display:block;
+top:70px;
+right:10px;
+padding:1px 3px;
+font-family: arial,helvetica;
+font-size:8px;
+font-weight:bold;
+white-space: nowrap;
+opacity:0.7;
+filter:alpha(opacity=70);
+border-radius: 5px 5px 5px 5px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+}
+#pop.percip0 { color:#2e6e9e; background-color:#D7E7F2; border: 1px #2e6e9e solid; }
+#pop.percip1 { color:#fff; background-color:#6DA8CF; border: 1px #2e6e9e solid; }
+#pop.percip2 { color:#fff; background-color:#2e6e9e; border: 2px #D7E7F2 solid; }
+#meteogrambuttons{ margin:0 auto;text-align:center;margin-bottom:10px;position:relative;line-height:30px;}
+.highcharts-tooltip{position:absolute;top:200px;}
+
+/* Border for browsers what not understand shadow */
+.no-boxshadow div.nwnwrap,.no-boxshadow .ui-tabs .ui-tabs-nav li.ui-tabs-active,.no-boxshadow div.ui-tabs-panel,.flotwrap{
+border: 1px solid #ccc;
+}
+
+.temps{background-image:url(../img/temps.png);background-color:transparent;background-repeat:no-repeat;}
+.t0_png{height:20px;width:28px;background-position:0 0;}
+.t2_png{height:20px;width:28px;background-position:-28px 0;}
+.t3_png{height:20px;width:28px;background-position:-56px 0;}
+.t1_png{height:20px;width:28px;background-position:-84px 0;}
+.t4_png{height:20px;width:28px;background-position:-112px 0;}
+.t6_png{height:20px;width:28px;background-position:-140px 0;}
+.t12_png{height:20px;width:35px;background-position:-168px 0;}
+.t18_png{height:20px;width:35px;background-position:-203px 0;}
+.t24_png{height:20px;width:40px;background-position:-238px 0;}
+.t5_png{height:20px;width:28px;background-position:-278px 0;}
+.t30_png{height:20px;width:40px;background-position:-306px 0;}
+.t7_png{height:20px;width:28px;background-position:-346px 0;}
+.t13_png{height:20px;width:35px;background-position:-374px 0;}
+.t19_png{height:20px;width:35px;background-position:-409px 0;}
+.t25_png{height:20px;width:40px;background-position:-444px 0;}
+.t40_png{height:20px;width:42px;background-position:-484px 0;}
+.t31_png{height:20px;width:40px;background-position:-526px 0;}
+.t8_png{height:20px;width:28px;background-position:-566px 0;}
+.t14_png{height:20px;width:35px;background-position:-594px 0;}
+.t20_png{height:20px;width:40px;background-position:-629px 0;}
+.t26_png{height:20px;width:40px;background-position:-669px 0;}
+.tn1_png{height:20px;width:34px;background-position:-709px 0;}
+.t32_png{height:20px;width:40px;background-position:-743px 0;}
+.t9_png{height:20px;width:28px;background-position:-783px 0;}
+.t15_png{height:20px;width:35px;background-position:-811px 0;}
+.t21_png{height:20px;width:40px;background-position:-846px 0;}
+.t27_png{height:20px;width:40px;background-position:-886px 0;}
+.tn2_png{height:20px;width:34px;background-position:-926px 0;}
+.t33_png{height:20px;width:40px;background-position:-960px 0;}
+.t10_png{height:20px;width:35px;background-position:-1000px 0;}
+.t16_png{height:20px;width:35px;background-position:-1035px 0;}
+.t22_png{height:20px;width:40px;background-position:-1070px 0;}
+.t28_png{height:20px;width:40px;background-position:-1110px 0;}
+.tn3_png{height:20px;width:34px;background-position:-1150px 0;}
+.t34_png{height:20px;width:40px;background-position:-1184px 0;}
+.t17_png{height:20px;width:35px;background-position:-1224px 0;}
+.t11_png{height:20px;width:35px;background-position:-1259px 0;}
+.t23_png{height:20px;width:40px;background-position:-1294px 0;}
+.t29_png{height:20px;width:40px;background-position:-1334px 0;}
+.tn4_png{height:20px;width:34px;background-position:-1374px 0;}
+.t35_png{height:20px;width:40px;background-position:-1408px 0;}
+.t37_png{height:20px;width:40px;background-position:-1448px 0;}
+.t36_png{height:20px;width:40px;background-position:-1488px 0;}
+.t38_png{height:20px;width:40px;background-position:-1528px 0;}
+.t39_png{height:20px;width:40px;background-position:-1568px 0;}
+.tn5_png{height:20px;width:34px;background-position:-1608px 0;}
+.tn6_png{height:20px;width:34px;background-position:-1642px 0;}
+.tn7_png{height:20px;width:34px;background-position:-1676px 0;}
+.tn8_png{height:20px;width:34px;background-position:-1710px 0;}
+.tn9_png{height:20px;width:34px;background-position:-1744px 0;}
+.tn10_png{height:20px;width:42px;background-position:-1778px 0;}
+.tn11_png{height:20px;width:42px;background-position:-1820px 0;}
+.tn12_png{height:20px;width:42px;background-position:-1862px 0;}
+.tn13_png{height:20px;width:42px;background-position:-1904px 0;}
+.tn14_png{height:20px;width:42px;background-position:-1946px 0;}
+.tn15_png{height:20px;width:42px;background-position:-1988px 0;}
+.tn16_png{height:20px;width:42px;background-position:-2030px 0;}
+.tn17_png{height:20px;width:42px;background-position:-2072px 0;}
+.tn18_png{height:20px;width:42px;background-position:-2114px 0;}
+.tn19_png{height:20px;width:48px;background-position:-2156px 0;}
+.tn20_png{height:20px;width:42px;background-position:-2204px 0;}
+.tn21_png{height:20px;width:48px;background-position:-2246px 0;}
+.tn22_png{height:20px;width:48px;background-position:-2294px 0;}
+.tn23_png{height:20px;width:48px;background-position:-2342px 0;}
+.tn24_png{height:20px;width:48px;background-position:-2390px 0;}
+.tn25_png{height:20px;width:48px;background-position:-2438px 0;}
+.tn26_png{height:20px;width:48px;background-position:-2486px 0;}
+.tn27_png{height:20px;width:48px;background-position:-2534px 0;}
+.tn28_png{height:20px;width:48px;background-position:-2582px 0;}
+.tn29_png{height:20px;width:48px;background-position:-2630px 0;}
+.tn30_png{height:20px;width:48px;background-position:-2678px 0;}
+.tn31_png{height:20px;width:48px;background-position:-2726px 0;}
+.tn32_png{height:20px;width:48px;background-position:-2774px 0;}
+.tn33_png{height:20px;width:48px;background-position:-2822px 0;}
+.tn34_png{height:20px;width:48px;background-position:-2870px 0;}
+.tn35_png{height:20px;width:48px;background-position:-2918px 0;}
+.tn36_png{height:20px;width:48px;background-position:-2966px 0;}
+.tn37_png{height:20px;width:48px;background-position:-3014px 0;}
+.tn38_png{height:20px;width:48px;background-position:-3062px 0;}
+.tn39_png{height:20px;width:48px;background-position:-3110px 0;}
+.tn40_png{height:20px;width:49px;background-position:-3158px 0;}
+
+.misc{background-image:url(../img/nordicicons.png);background-color:transparent;background-repeat:no-repeat;}
+.android{ background-position: 0 0; width: 16px; height: 16px; } 
+.ax{ background-position: -17px 0; width: 18px; height: 12px; } 
+.balloon{ background-position: -36px 0; width: 16px; height: 20px; } 
+.bft_0{ background-position: -53px 0; width: 11px; height: 10px; } 
+.bft_1{ background-position: -65px 0; width: 11px; height: 10px; } 
+.bft_10{ background-position: -77px 0; width: 92px; height: 10px; } 
+.bft_2{ background-position: -170px 0; width: 20px; height: 10px; } 
+.bft_3{ background-position: -191px 0; width: 29px; height: 10px; } 
+.bft_4{ background-position: -221px 0; width: 38px; height: 10px; } 
+.bft_5{ background-position: -260px 0; width: 47px; height: 10px; } 
+.bft_6{ background-position: -308px 0; width: 56px; height: 10px; } 
+.bft_7{ background-position: -365px 0; width: 65px; height: 10px; } 
+.bft_8{ background-position: -431px 0; width: 74px; height: 10px; } 
+.bft_9{ background-position: -506px 0; width: 83px; height: 10px; } 
+.chart_line{ background-position: -590px 0; width: 16px; height: 16px; } 
+.cold{ background-position: -607px 0; width: 26px; height: 26px; } 
+.cross{ background-position: -634px 0; width: 12px; height: 12px; } 
+.dk{ background-position: -647px 0; width: 18px; height: 12px; } 
+.down_blue{ background-position: -666px 0; width: 7px; height: 8px; } 
+.down_red{ background-position: -674px 0; width: 7px; height: 8px; } 
+.drop{ background-position: -682px 0; width: 10px; height: 10px; } 
+.fi{ background-position: -693px 0; width: 18px; height: 12px; } 
+.gb{ background-position: -712px 0; width: 18px; height: 12px; } 
+.gl{ background-position: -731px 0; width: 18px; height: 12px; } 
+.home{ background-position: -750px 0; width: 22px; height: 22px; } 
+.icn-block{ background-position: -773px 0; width: 26px; height: 23px; } 
+.icn-check{ background-position: -800px 0; width: 12px; height: 12px; } 
+.icn-download{ background-position: -813px 0; width: 20px; height: 22px; } 
+.icn-info{ background-position: -834px 0; width: 20px; height: 21px; } 
+.is{ background-position: -855px 0; width: 18px; height: 12px; } 
+.no{ background-position: -874px 0; width: 18px; height: 12px; } 
+.se{ background-position: -893px 0; width: 18px; height: 12px; } 
+.selmenu{ background-position: -912px 0; width: 200px; height: 28px; } 
+.sidebottom{ background-position: -1113px 0; width: 200px; height: 300px; } 
+.sidemiddle{ background-position: -1314px 0; width: 200px; height: 300px; } 
+.sidetop{ background-position: -1515px 0; width: 200px; height: 300px; } 
+.snow{ background-position: -1716px 0; width: 10px; height: 10px; } 
+.star{ background-position: -1727px 0; width: 16px; height: 16px; } 
+.sun_down{ background-position: -1744px 0; width: 16px; height: 16px; } 
+.sun_up{ background-position: -1761px 0; width: 16px; height: 16px; } 
+.ufo{ background-position: -1778px 0; width: 35px; height: 27px; } 
+.up_green{ background-position: -1814px 0; width: 7px; height: 8px; } 
+.up_red{ background-position: -1822px 0; width: 7px; height: 8px; } 
+.warm{ background-position: -1830px 0; width: 26px; height: 26px; } 
+.wet{ background-position: -1857px 0; width: 26px; height: 26px; } 
+.wind{ background-position: -1884px 0; width: 26px; height: 26px; } 
+
+.cond45{background-image:url(../img/cond45.png);background-color:transparent;background-repeat:no-repeat;}
+.cond45-1{ background-position: 0 0; width: 54px; height: 45px; } 
+.cond45-10{ background-position: 0 -46px; width: 54px; height: 45px; } 
+.cond45-10n{ background-position: 0 -92px; width: 54px; height: 45px; } 
+.cond45-11{ background-position: 0 -138px; width: 54px; height: 45px; } 
+.cond45-11n{ background-position: 0 -184px; width: 49px; height: 45px; } 
+.cond45-12{ background-position: 0 -230px; width: 49px; height: 45px; } 
+.cond45-12n{ background-position: 0 -276px; width: 49px; height: 45px; } 
+.cond45-13{ background-position: 0 -322px; width: 49px; height: 45px; } 
+.cond45-13n{ background-position: 0 -368px; width: 49px; height: 45px; } 
+.cond45-14{ background-position: 0 -414px; width: 54px; height: 45px; } 
+.cond45-1n{ background-position: 0 -460px; width: 54px; height: 45px; } 
+.cond45-21{ background-position: 0 -506px; width: 49px; height: 45px; } 
+.cond45-21n{ background-position: 0 -552px; width: 49px; height: 45px; } 
+.cond45-22{ background-position: 0 -598px; width: 49px; height: 45px; } 
+.cond45-22n{ background-position: 0 -644px; width: 49px; height: 45px; } 
+.cond45-23{ background-position: 0 -690px; width: 54px; height: 45px; } 
+.cond45-24{ background-position: 0 -736px; width: 54px; height: 45px; } 
+.cond45-24n{ background-position: 0 -782px; width: 49px; height: 45px; } 
+.cond45-25{ background-position: 0 -828px; width: 49px; height: 45px; } 
+.cond45-25n{ background-position: 0 -874px; width: 49px; height: 45px; } 
+.cond45-26{ background-position: 0 -920px; width: 54px; height: 45px; } 
+.cond45-27{ background-position: 0 -966px; width: 49px; height: 45px; } 
+.cond45-27n{ background-position: 0 -1012px; width: 49px; height: 45px; } 
+.cond45-28{ background-position: 0 -1058px; width: 49px; height: 45px; } 
+.cond45-28n{ background-position: 0 -1104px; width: 49px; height: 45px; } 
+.cond45-29{ background-position: 0 -1150px; width: 54px; height: 45px; } 
+.cond45-3{ background-position: 0 -1196px; width: 54px; height: 45px; } 
+.cond45-31{ background-position: 0 -1242px; width: 54px; height: 45px; } 
+.cond45-31n{ background-position: 0 -1288px; width: 54px; height: 45px; } 
+.cond45-32{ background-position: 0 -1334px; width: 49px; height: 45px; } 
+.cond45-32n{ background-position: 0 -1380px; width: 49px; height: 45px; } 
+.cond45-33{ background-position: 0 -1426px; width: 54px; height: 45px; } 
+.cond45-34{ background-position: 0 -1472px; width: 49px; height: 45px; } 
+.cond45-34n{ background-position: 0 -1518px; width: 49px; height: 45px; } 
+.cond45-35{ background-position: 0 -1564px; width: 49px; height: 45px; } 
+.cond45-35n{ background-position: 0 -1610px; width: 49px; height: 45px; } 
+.cond45-36{ background-position: 0 -1656px; width: 49px; height: 45px; } 
+.cond45-37{ background-position: 0 -1702px; width: 49px; height: 45px; } 
+.cond45-37n{ background-position: 0 -1748px; width: 49px; height: 45px; } 
+.cond45-38{ background-position: 0 -1794px; width: 49px; height: 45px; } 
+.cond45-38n{ background-position: 0 -1840px; width: 49px; height: 45px; } 
+.cond45-39{ background-position: 0 -1886px; width: 49px; height: 45px; } 
+.cond45-3n{ background-position: 0 -1932px; width: 49px; height: 45px; } 
+.cond45-41{ background-position: 0 -1978px; width: 54px; height: 45px; } 
+.cond45-41n{ background-position: -55px 0; width: 54px; height: 45px; } 
+.cond45-42{ background-position: -55px -46px; width: 49px; height: 45px; } 
+.cond45-42n{ background-position: -55px -92px; width: 49px; height: 45px; } 
+.cond45-43{ background-position: -55px -138px; width: 54px; height: 45px; } 
+.cond45-51{ background-position: -55px -184px; width: 49px; height: 45px; } 
+.cond45-51n{ background-position: -55px -230px; width: 49px; height: 45px; } 
+.cond45-52{ background-position: -55px -276px; width: 49px; height: 45px; } 
+.cond45-52n{ background-position: -55px -322px; width: 49px; height: 45px; } 
+.cond45-53{ background-position: -55px -368px; width: 54px; height: 45px; } 
+.cond45-54{ background-position: -55px -414px; width: 49px; height: 45px; } 
+.cond45-54n{ background-position: -55px -460px; width: 49px; height: 45px; } 
+.cond45-55{ background-position: -55px -506px; width: 49px; height: 45px; } 
+.cond45-55n{ background-position: -55px -552px; width: 49px; height: 45px; } 
+.cond45-56{ background-position: -55px -598px; width: 54px; height: 45px; } 
+.cond45-57{ background-position: -55px -644px; width: 54px; height: 45px; } 
+.cond45-57n{ background-position: -55px -690px; width: 54px; height: 45px; } 
+.cond45-58{ background-position: -55px -736px; width: 49px; height: 45px; } 
+.cond45-58n{ background-position: -55px -782px; width: 49px; height: 45px; } 
+.cond45-59{ background-position: -55px -828px; width: 54px; height: 45px; } 
+
+.wind-b{background-image:url(../img/windiconsB.png);background-color:transparent;background-repeat:no-repeat;}
+.E0{ background-position: 0 0; width: 39px; height: 39px; } 
+.E1{ background-position: -40px 0; width: 39px; height: 39px; } 
+.E10{ background-position: -80px 0; width: 39px; height: 39px; } 
+.E11{ background-position: -120px 0; width: 39px; height: 39px; } 
+.E12{ background-position: -160px 0; width: 39px; height: 39px; } 
+.E2{ background-position: -200px 0; width: 39px; height: 39px; } 
+.E3{ background-position: -240px 0; width: 39px; height: 39px; } 
+.E4{ background-position: -280px 0; width: 39px; height: 39px; } 
+.E5{ background-position: -320px 0; width: 39px; height: 39px; } 
+.E6{ background-position: -360px 0; width: 39px; height: 39px; } 
+.E7{ background-position: -400px 0; width: 39px; height: 39px; } 
+.E8{ background-position: -440px 0; width: 39px; height: 39px; } 
+.E9{ background-position: -480px 0; width: 39px; height: 39px; } 
+.ENE1{ background-position: -520px 0; width: 39px; height: 39px; } 
+.ENE10{ background-position: -560px 0; width: 39px; height: 39px; } 
+.ENE11{ background-position: -600px 0; width: 39px; height: 39px; } 
+.ENE12{ background-position: -640px 0; width: 39px; height: 39px; } 
+.ENE2{ background-position: -680px 0; width: 39px; height: 39px; } 
+.ENE3{ background-position: -720px 0; width: 39px; height: 39px; } 
+.ENE4{ background-position: -760px 0; width: 39px; height: 39px; } 
+.ENE5{ background-position: -800px 0; width: 39px; height: 39px; } 
+.ENE6{ background-position: -840px 0; width: 39px; height: 39px; } 
+.ENE7{ background-position: -880px 0; width: 39px; height: 39px; } 
+.ENE8{ background-position: -920px 0; width: 39px; height: 39px; } 
+.ENE9{ background-position: -960px 0; width: 39px; height: 39px; } 
+.ESE1{ background-position: -1000px 0; width: 39px; height: 39px; } 
+.ESE10{ background-position: -1040px 0; width: 39px; height: 39px; } 
+.ESE11{ background-position: -1080px 0; width: 39px; height: 39px; } 
+.ESE12{ background-position: -1120px 0; width: 39px; height: 39px; } 
+.ESE2{ background-position: -1160px 0; width: 39px; height: 39px; } 
+.ESE3{ background-position: -1200px 0; width: 39px; height: 39px; } 
+.ESE4{ background-position: -1240px 0; width: 39px; height: 39px; } 
+.ESE5{ background-position: -1280px 0; width: 39px; height: 39px; } 
+.ESE6{ background-position: -1320px 0; width: 39px; height: 39px; } 
+.ESE7{ background-position: -1360px 0; width: 39px; height: 39px; } 
+.ESE8{ background-position: -1400px 0; width: 39px; height: 39px; } 
+.ESE9{ background-position: -1440px 0; width: 39px; height: 39px; } 
+.N1{ background-position: -1480px 0; width: 39px; height: 39px; } 
+.N10{ background-position: -1520px 0; width: 39px; height: 39px; } 
+.N11{ background-position: -1560px 0; width: 39px; height: 39px; } 
+.N12{ background-position: -1600px 0; width: 39px; height: 39px; } 
+.N2{ background-position: -1640px 0; width: 39px; height: 39px; } 
+.N3{ background-position: -1680px 0; width: 39px; height: 39px; } 
+.N4{ background-position: -1720px 0; width: 39px; height: 39px; } 
+.N5{ background-position: -1760px 0; width: 39px; height: 39px; } 
+.N6{ background-position: -1800px 0; width: 39px; height: 39px; } 
+.N7{ background-position: -1840px 0; width: 39px; height: 39px; } 
+.N8{ background-position: -1880px 0; width: 39px; height: 39px; } 
+.N9{ background-position: -1920px 0; width: 39px; height: 39px; } 
+.NE1{ background-position: -1960px 0; width: 39px; height: 39px; } 
+.NE10{ background-position: -2000px 0; width: 39px; height: 39px; } 
+.NE11{ background-position: -2040px 0; width: 39px; height: 39px; } 
+.NE12{ background-position: -2080px 0; width: 39px; height: 39px; } 
+.NE2{ background-position: -2120px 0; width: 39px; height: 39px; } 
+.NE3{ background-position: -2160px 0; width: 39px; height: 39px; } 
+.NE4{ background-position: -2200px 0; width: 39px; height: 39px; } 
+.NE5{ background-position: -2240px 0; width: 39px; height: 39px; } 
+.NE6{ background-position: -2280px 0; width: 39px; height: 39px; } 
+.NE7{ background-position: -2320px 0; width: 39px; height: 39px; } 
+.NE8{ background-position: -2360px 0; width: 39px; height: 39px; } 
+.NE9{ background-position: -2400px 0; width: 39px; height: 39px; } 
+.NNE1{ background-position: -2440px 0; width: 39px; height: 39px; } 
+.NNE10{ background-position: -2480px 0; width: 39px; height: 39px; } 
+.NNE11{ background-position: -2520px 0; width: 39px; height: 39px; } 
+.NNE12{ background-position: -2560px 0; width: 39px; height: 39px; } 
+.NNE2{ background-position: -2600px 0; width: 39px; height: 39px; } 
+.NNE3{ background-position: -2640px 0; width: 39px; height: 39px; } 
+.NNE4{ background-position: -2680px 0; width: 39px; height: 39px; } 
+.NNE5{ background-position: -2720px 0; width: 39px; height: 39px; } 
+.NNE6{ background-position: -2760px 0; width: 39px; height: 39px; } 
+.NNE7{ background-position: -2800px 0; width: 39px; height: 39px; } 
+.NNE8{ background-position: -2840px 0; width: 39px; height: 39px; } 
+.NNE9{ background-position: -2880px 0; width: 39px; height: 39px; } 
+.NNW1{ background-position: -2920px 0; width: 39px; height: 39px; } 
+.NNW10{ background-position: -2960px 0; width: 39px; height: 39px; } 
+.NNW11{ background-position: -3000px 0; width: 39px; height: 39px; } 
+.NNW12{ background-position: -3040px 0; width: 39px; height: 39px; } 
+.NNW2{ background-position: -3080px 0; width: 39px; height: 39px; } 
+.NNW3{ background-position: -3120px 0; width: 39px; height: 39px; } 
+.NNW4{ background-position: -3160px 0; width: 39px; height: 39px; } 
+.NNW5{ background-position: -3200px 0; width: 39px; height: 39px; } 
+.NNW6{ background-position: -3240px 0; width: 39px; height: 39px; } 
+.NNW7{ background-position: -3280px 0; width: 39px; height: 39px; } 
+.NNW8{ background-position: -3320px 0; width: 39px; height: 39px; } 
+.NNW9{ background-position: -3360px 0; width: 39px; height: 39px; } 
+.NW1{ background-position: -3400px 0; width: 39px; height: 39px; } 
+.NW10{ background-position: -3440px 0; width: 39px; height: 39px; } 
+.NW11{ background-position: -3480px 0; width: 39px; height: 39px; } 
+.NW12{ background-position: -3520px 0; width: 39px; height: 39px; } 
+.NW2{ background-position: -3560px 0; width: 39px; height: 39px; } 
+.NW3{ background-position: -3600px 0; width: 39px; height: 39px; } 
+.NW4{ background-position: -3640px 0; width: 39px; height: 39px; } 
+.NW5{ background-position: -3680px 0; width: 39px; height: 39px; } 
+.NW6{ background-position: -3720px 0; width: 39px; height: 39px; } 
+.NW7{ background-position: -3760px 0; width: 39px; height: 39px; } 
+.NW8{ background-position: -3800px 0; width: 39px; height: 39px; } 
+.NW9{ background-position: -3840px 0; width: 39px; height: 39px; } 
+.S1{ background-position: -3880px 0; width: 39px; height: 39px; } 
+.S10{ background-position: -3920px 0; width: 39px; height: 39px; } 
+.S11{ background-position: -3960px 0; width: 39px; height: 39px; } 
+.S12{ background-position: -4000px 0; width: 39px; height: 39px; } 
+.S2{ background-position: -4040px 0; width: 39px; height: 39px; } 
+.S3{ background-position: -4080px 0; width: 39px; height: 39px; } 
+.S4{ background-position: -4120px 0; width: 39px; height: 39px; } 
+.S5{ background-position: -4160px 0; width: 39px; height: 39px; } 
+.S6{ background-position: -4200px 0; width: 39px; height: 39px; } 
+.S7{ background-position: -4240px 0; width: 39px; height: 39px; } 
+.S8{ background-position: -4280px 0; width: 39px; height: 39px; } 
+.S9{ background-position: -4320px 0; width: 39px; height: 39px; } 
+.SE1{ background-position: -4360px 0; width: 39px; height: 39px; } 
+.SE10{ background-position: -4400px 0; width: 39px; height: 39px; } 
+.SE11{ background-position: -4440px 0; width: 39px; height: 39px; } 
+.SE12{ background-position: -4480px 0; width: 39px; height: 39px; } 
+.SE2{ background-position: -4520px 0; width: 39px; height: 39px; } 
+.SE3{ background-position: -4560px 0; width: 39px; height: 39px; } 
+.SE4{ background-position: -4600px 0; width: 39px; height: 39px; } 
+.SE5{ background-position: -4640px 0; width: 39px; height: 39px; } 
+.SE6{ background-position: -4680px 0; width: 39px; height: 39px; } 
+.SE7{ background-position: -4720px 0; width: 39px; height: 39px; } 
+.SE8{ background-position: -4760px 0; width: 39px; height: 39px; } 
+.SE9{ background-position: -4800px 0; width: 39px; height: 39px; } 
+.SSE1{ background-position: -4840px 0; width: 39px; height: 39px; } 
+.SSE10{ background-position: -4880px 0; width: 39px; height: 39px; } 
+.SSE11{ background-position: -4920px 0; width: 39px; height: 39px; } 
+.SSE12{ background-position: -4960px 0; width: 39px; height: 39px; } 
+.SSE2{ background-position: -5000px 0; width: 39px; height: 39px; } 
+.SSE3{ background-position: -5040px 0; width: 39px; height: 39px; } 
+.SSE4{ background-position: -5080px 0; width: 39px; height: 39px; } 
+.SSE5{ background-position: -5120px 0; width: 39px; height: 39px; } 
+.SSE6{ background-position: -5160px 0; width: 39px; height: 39px; } 
+.SSE7{ background-position: -5200px 0; width: 39px; height: 39px; } 
+.SSE8{ background-position: -5240px 0; width: 39px; height: 39px; } 
+.SSE9{ background-position: -5280px 0; width: 39px; height: 39px; } 
+.SSW1{ background-position: -5320px 0; width: 39px; height: 39px; } 
+.SSW10{ background-position: -5360px 0; width: 39px; height: 39px; } 
+.SSW11{ background-position: -5400px 0; width: 39px; height: 39px; } 
+.SSW12{ background-position: -5440px 0; width: 39px; height: 39px; } 
+.SSW2{ background-position: -5480px 0; width: 39px; height: 39px; } 
+.SSW3{ background-position: -5520px 0; width: 39px; height: 39px; } 
+.SSW4{ background-position: -5560px 0; width: 39px; height: 39px; } 
+.SSW5{ background-position: -5600px 0; width: 39px; height: 39px; } 
+.SSW6{ background-position: -5640px 0; width: 39px; height: 39px; } 
+.SSW7{ background-position: -5680px 0; width: 39px; height: 39px; } 
+.SSW8{ background-position: -5720px 0; width: 39px; height: 39px; } 
+.SSW9{ background-position: -5760px 0; width: 39px; height: 39px; } 
+.SW1{ background-position: -5800px 0; width: 39px; height: 39px; } 
+.SW10{ background-position: -5840px 0; width: 39px; height: 39px; } 
+.SW11{ background-position: -5880px 0; width: 39px; height: 39px; } 
+.SW12{ background-position: -5920px 0; width: 39px; height: 39px; } 
+.SW2{ background-position: -5960px 0; width: 39px; height: 39px; } 
+.SW3{ background-position: -6000px 0; width: 39px; height: 39px; } 
+.SW4{ background-position: -6040px 0; width: 39px; height: 39px; } 
+.SW5{ background-position: -6080px 0; width: 39px; height: 39px; } 
+.SW6{ background-position: -6120px 0; width: 39px; height: 39px; } 
+.SW7{ background-position: -6160px 0; width: 39px; height: 39px; } 
+.SW8{ background-position: -6200px 0; width: 39px; height: 39px; } 
+.SW9{ background-position: -6240px 0; width: 39px; height: 39px; } 
+.W1{ background-position: -6280px 0; width: 39px; height: 39px; } 
+.W10{ background-position: -6320px 0; width: 39px; height: 39px; } 
+.W11{ background-position: -6360px 0; width: 39px; height: 39px; } 
+.W12{ background-position: -6400px 0; width: 39px; height: 39px; } 
+.W2{ background-position: -6440px 0; width: 39px; height: 39px; } 
+.W3{ background-position: -6480px 0; width: 39px; height: 39px; } 
+.W4{ background-position: -6520px 0; width: 39px; height: 39px; } 
+.W5{ background-position: -6560px 0; width: 39px; height: 39px; } 
+.W6{ background-position: -6600px 0; width: 39px; height: 39px; } 
+.W7{ background-position: -6640px 0; width: 39px; height: 39px; } 
+.W8{ background-position: -6680px 0; width: 39px; height: 39px; } 
+.W9{ background-position: -6720px 0; width: 39px; height: 39px; } 
+.WNW1{ background-position: -6760px 0; width: 39px; height: 39px; } 
+.WNW10{ background-position: -6800px 0; width: 39px; height: 39px; } 
+.WNW11{ background-position: -6840px 0; width: 39px; height: 39px; } 
+.WNW12{ background-position: -6880px 0; width: 39px; height: 39px; } 
+.WNW2{ background-position: -6920px 0; width: 39px; height: 39px; } 
+.WNW3{ background-position: -6960px 0; width: 39px; height: 39px; } 
+.WNW4{ background-position: -7000px 0; width: 39px; height: 39px; } 
+.WNW5{ background-position: -7040px 0; width: 39px; height: 39px; } 
+.WNW6{ background-position: -7080px 0; width: 39px; height: 39px; } 
+.WNW7{ background-position: -7120px 0; width: 39px; height: 39px; } 
+.WNW8{ background-position: -7160px 0; width: 39px; height: 39px; } 
+.WNW9{ background-position: -7200px 0; width: 39px; height: 39px; } 
+.WSW1{ background-position: -7240px 0; width: 39px; height: 39px; } 
+.WSW10{ background-position: -7280px 0; width: 39px; height: 39px; } 
+.WSW11{ background-position: -7320px 0; width: 39px; height: 39px; } 
+.WSW12{ background-position: -7360px 0; width: 39px; height: 39px; } 
+.WSW2{ background-position: -7400px 0; width: 39px; height: 39px; } 
+.WSW3{ background-position: -7440px 0; width: 39px; height: 39px; } 
+.WSW4{ background-position: -7480px 0; width: 39px; height: 39px; } 
+.WSW5{ background-position: -7520px 0; width: 39px; height: 39px; } 
+.WSW6{ background-position: -7560px 0; width: 39px; height: 39px; } 
+.WSW7{ background-position: -7600px 0; width: 39px; height: 39px; } 
+.WSW8{ background-position: -7640px 0; width: 39px; height: 39px; } 
+.WSW9{ background-position: -7680px 0; width: 39px; height: 39px; } 
+
+.wind-o1{background-image:url(../img/windiconsO1.png);background-color:transparent;background-repeat:no-repeat;}
+.O-E10{ background-position: 0 0; width: 39px; height: 39px; } 
+.O-E11{ background-position: -40px 0; width: 39px; height: 39px; } 
+.O-E12{ background-position: -80px 0; width: 39px; height: 39px; } 
+.O-E13{ background-position: -120px 0; width: 39px; height: 39px; } 
+.O-E14{ background-position: -160px 0; width: 39px; height: 39px; } 
+.O-E15{ background-position: -200px 0; width: 39px; height: 39px; } 
+.O-E16{ background-position: -240px 0; width: 39px; height: 39px; } 
+.O-E17{ background-position: -280px 0; width: 39px; height: 39px; } 
+.O-E18{ background-position: -320px 0; width: 39px; height: 39px; } 
+.O-E19{ background-position: -360px 0; width: 39px; height: 39px; } 
+.O-E20{ background-position: -400px 0; width: 39px; height: 39px; } 
+.O-E21{ background-position: -440px 0; width: 39px; height: 39px; } 
+.O-E22{ background-position: -480px 0; width: 39px; height: 39px; } 
+.O-E7{ background-position: -520px 0; width: 39px; height: 39px; } 
+.O-E8{ background-position: -560px 0; width: 39px; height: 39px; } 
+.O-E9{ background-position: -600px 0; width: 39px; height: 39px; } 
+.O-ENE10{ background-position: -640px 0; width: 39px; height: 39px; } 
+.O-ENE11{ background-position: -680px 0; width: 39px; height: 39px; } 
+.O-ENE12{ background-position: -720px 0; width: 39px; height: 39px; } 
+.O-ENE13{ background-position: -760px 0; width: 39px; height: 39px; } 
+.O-ENE14{ background-position: -800px 0; width: 39px; height: 39px; } 
+.O-ENE15{ background-position: -840px 0; width: 39px; height: 39px; } 
+.O-ENE16{ background-position: -880px 0; width: 39px; height: 39px; } 
+.O-ENE17{ background-position: -920px 0; width: 39px; height: 39px; } 
+.O-ENE18{ background-position: -960px 0; width: 39px; height: 39px; } 
+.O-ENE19{ background-position: -1000px 0; width: 39px; height: 39px; } 
+.O-ENE20{ background-position: -1040px 0; width: 39px; height: 39px; } 
+.O-ENE21{ background-position: -1080px 0; width: 39px; height: 39px; } 
+.O-ENE22{ background-position: -1120px 0; width: 39px; height: 39px; } 
+.O-ENE7{ background-position: -1160px 0; width: 39px; height: 39px; } 
+.O-ENE8{ background-position: -1200px 0; width: 39px; height: 39px; } 
+.O-ENE9{ background-position: -1240px 0; width: 39px; height: 39px; } 
+.O-ESE10{ background-position: -1280px 0; width: 39px; height: 39px; } 
+.O-ESE11{ background-position: -1320px 0; width: 39px; height: 39px; } 
+.O-ESE12{ background-position: -1360px 0; width: 39px; height: 39px; } 
+.O-ESE13{ background-position: -1400px 0; width: 39px; height: 39px; } 
+.O-ESE14{ background-position: -1440px 0; width: 39px; height: 39px; } 
+.O-ESE15{ background-position: -1480px 0; width: 39px; height: 39px; } 
+.O-ESE16{ background-position: -1520px 0; width: 39px; height: 39px; } 
+.O-ESE17{ background-position: -1560px 0; width: 39px; height: 39px; } 
+.O-ESE18{ background-position: -1600px 0; width: 39px; height: 39px; } 
+.O-ESE19{ background-position: -1640px 0; width: 39px; height: 39px; } 
+.O-ESE20{ background-position: -1680px 0; width: 39px; height: 39px; } 
+.O-ESE21{ background-position: -1720px 0; width: 39px; height: 39px; } 
+.O-ESE22{ background-position: -1760px 0; width: 39px; height: 39px; } 
+.O-ESE7{ background-position: -1800px 0; width: 39px; height: 39px; } 
+.O-ESE8{ background-position: -1840px 0; width: 39px; height: 39px; } 
+.O-ESE9{ background-position: -1880px 0; width: 39px; height: 39px; } 
+.O-N10{ background-position: -1920px 0; width: 39px; height: 39px; } 
+.O-N11{ background-position: -1960px 0; width: 39px; height: 39px; } 
+.O-N12{ background-position: -2000px 0; width: 39px; height: 39px; } 
+.O-N13{ background-position: -2040px 0; width: 39px; height: 39px; } 
+.O-N14{ background-position: -2080px 0; width: 39px; height: 39px; } 
+.O-N15{ background-position: -2120px 0; width: 39px; height: 39px; } 
+.O-N16{ background-position: -2160px 0; width: 39px; height: 39px; } 
+.O-N17{ background-position: -2200px 0; width: 39px; height: 39px; } 
+.O-N18{ background-position: -2240px 0; width: 39px; height: 39px; } 
+.O-N19{ background-position: -2280px 0; width: 39px; height: 39px; } 
+.O-N20{ background-position: -2320px 0; width: 39px; height: 39px; } 
+.O-N21{ background-position: -2360px 0; width: 39px; height: 39px; } 
+.O-N22{ background-position: -2400px 0; width: 39px; height: 39px; } 
+.O-N7{ background-position: -2440px 0; width: 39px; height: 39px; } 
+.O-N8{ background-position: -2480px 0; width: 39px; height: 39px; } 
+.O-N9{ background-position: -2520px 0; width: 39px; height: 39px; } 
+.O-NE10{ background-position: -2560px 0; width: 39px; height: 39px; } 
+.O-NE11{ background-position: -2600px 0; width: 39px; height: 39px; } 
+.O-NE12{ background-position: -2640px 0; width: 39px; height: 39px; } 
+.O-NE13{ background-position: -2680px 0; width: 39px; height: 39px; } 
+.O-NE14{ background-position: -2720px 0; width: 39px; height: 39px; } 
+.O-NE15{ background-position: -2760px 0; width: 39px; height: 39px; } 
+.O-NE16{ background-position: -2800px 0; width: 39px; height: 39px; } 
+.O-NE17{ background-position: -2840px 0; width: 39px; height: 39px; } 
+.O-NE18{ background-position: -2880px 0; width: 39px; height: 39px; } 
+.O-NE19{ background-position: -2920px 0; width: 39px; height: 39px; } 
+.O-NE20{ background-position: -2960px 0; width: 39px; height: 39px; } 
+.O-NE21{ background-position: -3000px 0; width: 39px; height: 39px; } 
+.O-NE22{ background-position: -3040px 0; width: 39px; height: 39px; } 
+.O-NE7{ background-position: -3080px 0; width: 39px; height: 39px; } 
+.O-NE8{ background-position: -3120px 0; width: 39px; height: 39px; } 
+.O-NE9{ background-position: -3160px 0; width: 39px; height: 39px; } 
+.O-NNE10{ background-position: -3200px 0; width: 39px; height: 39px; } 
+.O-NNE11{ background-position: -3240px 0; width: 39px; height: 39px; } 
+.O-NNE12{ background-position: -3280px 0; width: 39px; height: 39px; } 
+.O-NNE13{ background-position: -3320px 0; width: 39px; height: 39px; } 
+.O-NNE14{ background-position: -3360px 0; width: 39px; height: 39px; } 
+.O-NNE15{ background-position: -3400px 0; width: 39px; height: 39px; } 
+.O-NNE16{ background-position: -3440px 0; width: 39px; height: 39px; } 
+.O-NNE17{ background-position: -3480px 0; width: 39px; height: 39px; } 
+.O-NNE18{ background-position: -3520px 0; width: 39px; height: 39px; } 
+.O-NNE19{ background-position: -3560px 0; width: 39px; height: 39px; } 
+.O-NNE20{ background-position: -3600px 0; width: 39px; height: 39px; } 
+.O-NNE21{ background-position: -3640px 0; width: 39px; height: 39px; } 
+.O-NNE22{ background-position: -3680px 0; width: 39px; height: 39px; } 
+.O-NNE7{ background-position: -3720px 0; width: 39px; height: 39px; } 
+.O-NNE8{ background-position: -3760px 0; width: 39px; height: 39px; } 
+.O-NNE9{ background-position: -3800px 0; width: 39px; height: 39px; } 
+.O-NNW10{ background-position: -3840px 0; width: 39px; height: 39px; } 
+.O-NNW11{ background-position: -3880px 0; width: 39px; height: 39px; } 
+.O-NNW12{ background-position: -3920px 0; width: 39px; height: 39px; } 
+.O-NNW13{ background-position: -3960px 0; width: 39px; height: 39px; } 
+.O-NNW14{ background-position: -4000px 0; width: 39px; height: 39px; } 
+.O-NNW15{ background-position: -4040px 0; width: 39px; height: 39px; } 
+.O-NNW16{ background-position: -4080px 0; width: 39px; height: 39px; } 
+.O-NNW17{ background-position: -4120px 0; width: 39px; height: 39px; } 
+.O-NNW18{ background-position: -4160px 0; width: 39px; height: 39px; } 
+.O-NNW19{ background-position: -4200px 0; width: 39px; height: 39px; } 
+.O-NNW20{ background-position: -4240px 0; width: 39px; height: 39px; } 
+.O-NNW21{ background-position: -4280px 0; width: 39px; height: 39px; } 
+.O-NNW22{ background-position: -4320px 0; width: 39px; height: 39px; } 
+.O-NNW7{ background-position: -4360px 0; width: 39px; height: 39px; } 
+.O-NNW8{ background-position: -4400px 0; width: 39px; height: 39px; } 
+.O-NNW9{ background-position: -4440px 0; width: 39px; height: 39px; } 
+.O-NW10{ background-position: -4480px 0; width: 39px; height: 39px; } 
+.O-NW11{ background-position: -4520px 0; width: 39px; height: 39px; } 
+.O-NW12{ background-position: -4560px 0; width: 39px; height: 39px; } 
+.O-NW13{ background-position: -4600px 0; width: 39px; height: 39px; } 
+.O-NW14{ background-position: -4640px 0; width: 39px; height: 39px; } 
+.O-NW15{ background-position: -4680px 0; width: 39px; height: 39px; } 
+.O-NW16{ background-position: -4720px 0; width: 39px; height: 39px; } 
+.O-NW17{ background-position: -4760px 0; width: 39px; height: 39px; } 
+.O-NW18{ background-position: -4800px 0; width: 39px; height: 39px; } 
+.O-NW19{ background-position: -4840px 0; width: 39px; height: 39px; } 
+.O-NW20{ background-position: -4880px 0; width: 39px; height: 39px; } 
+.O-NW21{ background-position: -4920px 0; width: 39px; height: 39px; } 
+.O-NW22{ background-position: -4960px 0; width: 39px; height: 39px; } 
+.O-NW7{ background-position: -5000px 0; width: 39px; height: 39px; } 
+.O-NW8{ background-position: -5040px 0; width: 39px; height: 39px; } 
+.O-NW9{ background-position: -5080px 0; width: 39px; height: 39px; } 
+.O-S10{ background-position: -5120px 0; width: 39px; height: 39px; } 
+.O-S11{ background-position: -5160px 0; width: 39px; height: 39px; } 
+.O-S12{ background-position: -5200px 0; width: 39px; height: 39px; } 
+.O-S13{ background-position: -5240px 0; width: 39px; height: 39px; } 
+.O-S14{ background-position: -5280px 0; width: 39px; height: 39px; } 
+.O-S15{ background-position: -5320px 0; width: 39px; height: 39px; } 
+.O-S16{ background-position: -5360px 0; width: 39px; height: 39px; } 
+.O-S17{ background-position: -5400px 0; width: 39px; height: 39px; } 
+.O-S18{ background-position: -5440px 0; width: 39px; height: 39px; } 
+.O-S19{ background-position: -5480px 0; width: 39px; height: 39px; } 
+.O-S20{ background-position: -5520px 0; width: 39px; height: 39px; } 
+.O-S21{ background-position: -5560px 0; width: 39px; height: 39px; } 
+.O-S22{ background-position: -5600px 0; width: 39px; height: 39px; } 
+.O-S7{ background-position: -5640px 0; width: 39px; height: 39px; } 
+.O-S8{ background-position: -5680px 0; width: 39px; height: 39px; } 
+.O-S9{ background-position: -5720px 0; width: 39px; height: 39px; } 
+.O-SE10{ background-position: -5760px 0; width: 39px; height: 39px; } 
+.O-SE11{ background-position: -5800px 0; width: 39px; height: 39px; } 
+.O-SE12{ background-position: -5840px 0; width: 39px; height: 39px; } 
+.O-SE13{ background-position: -5880px 0; width: 39px; height: 39px; } 
+.O-SE14{ background-position: -5920px 0; width: 39px; height: 39px; } 
+.O-SE15{ background-position: -5960px 0; width: 39px; height: 39px; } 
+.O-SE16{ background-position: -6000px 0; width: 39px; height: 39px; } 
+.O-SE17{ background-position: -6040px 0; width: 39px; height: 39px; } 
+.O-SE18{ background-position: -6080px 0; width: 39px; height: 39px; } 
+.O-SE19{ background-position: -6120px 0; width: 39px; height: 39px; } 
+.O-SE20{ background-position: -6160px 0; width: 39px; height: 39px; } 
+.O-SE21{ background-position: -6200px 0; width: 39px; height: 39px; } 
+.O-SE22{ background-position: -6240px 0; width: 39px; height: 39px; } 
+.O-SE7{ background-position: -6280px 0; width: 39px; height: 39px; } 
+.O-SE8{ background-position: -6320px 0; width: 39px; height: 39px; } 
+.O-SE9{ background-position: -6360px 0; width: 39px; height: 39px; } 
+.O-SSE10{ background-position: -6400px 0; width: 39px; height: 39px; } 
+.O-SSE11{ background-position: -6440px 0; width: 39px; height: 39px; } 
+.O-SSE12{ background-position: -6480px 0; width: 39px; height: 39px; } 
+.O-SSE13{ background-position: -6520px 0; width: 39px; height: 39px; } 
+.O-SSE14{ background-position: -6560px 0; width: 39px; height: 39px; } 
+.O-SSE15{ background-position: -6600px 0; width: 39px; height: 39px; } 
+.O-SSE16{ background-position: -6640px 0; width: 39px; height: 39px; } 
+.O-SSE17{ background-position: -6680px 0; width: 39px; height: 39px; } 
+.O-SSE18{ background-position: -6720px 0; width: 39px; height: 39px; } 
+.O-SSE19{ background-position: -6760px 0; width: 39px; height: 39px; } 
+.O-SSE20{ background-position: -6800px 0; width: 39px; height: 39px; } 
+.O-SSE21{ background-position: -6840px 0; width: 39px; height: 39px; } 
+.O-SSE22{ background-position: -6880px 0; width: 39px; height: 39px; } 
+.O-SSE7{ background-position: -6920px 0; width: 39px; height: 39px; } 
+.O-SSE8{ background-position: -6960px 0; width: 39px; height: 39px; } 
+.O-SSE9{ background-position: -7000px 0; width: 39px; height: 39px; } 
+.O-SSW10{ background-position: -7040px 0; width: 39px; height: 39px; } 
+.O-SSW11{ background-position: -7080px 0; width: 39px; height: 39px; } 
+.O-SSW12{ background-position: -7120px 0; width: 39px; height: 39px; } 
+.O-SSW13{ background-position: -7160px 0; width: 39px; height: 39px; } 
+.O-SSW14{ background-position: -7200px 0; width: 39px; height: 39px; } 
+.O-SSW15{ background-position: -7240px 0; width: 39px; height: 39px; } 
+.O-SSW16{ background-position: -7280px 0; width: 39px; height: 39px; } 
+.O-SSW17{ background-position: -7320px 0; width: 39px; height: 39px; } 
+.O-SSW18{ background-position: -7360px 0; width: 39px; height: 39px; } 
+.O-SSW19{ background-position: -7400px 0; width: 39px; height: 39px; } 
+.O-SSW20{ background-position: -7440px 0; width: 39px; height: 39px; } 
+.O-SSW21{ background-position: -7480px 0; width: 39px; height: 39px; } 
+.O-SSW22{ background-position: -7520px 0; width: 39px; height: 39px; } 
+.O-SSW7{ background-position: -7560px 0; width: 39px; height: 39px; } 
+.O-SSW8{ background-position: -7600px 0; width: 39px; height: 39px; } 
+.O-SSW9{ background-position: -7640px 0; width: 39px; height: 39px; } 
+.O-SW10{ background-position: -7680px 0; width: 39px; height: 39px; } 
+.O-SW11{ background-position: -7720px 0; width: 39px; height: 39px; } 
+.O-SW12{ background-position: -7760px 0; width: 39px; height: 39px; } 
+.O-SW13{ background-position: -7800px 0; width: 39px; height: 39px; } 
+.O-SW14{ background-position: -7840px 0; width: 39px; height: 39px; } 
+.O-SW15{ background-position: -7880px 0; width: 39px; height: 39px; } 
+.O-SW16{ background-position: -7920px 0; width: 39px; height: 39px; } 
+.O-SW17{ background-position: -7960px 0; width: 39px; height: 39px; } 
+.O-SW18{ background-position: -8000px 0; width: 39px; height: 39px; } 
+.O-SW19{ background-position: -8040px 0; width: 39px; height: 39px; } 
+.O-SW20{ background-position: -8080px 0; width: 39px; height: 39px; } 
+.O-SW21{ background-position: -8120px 0; width: 39px; height: 39px; } 
+.O-SW22{ background-position: -8160px 0; width: 39px; height: 39px; } 
+.O-SW7{ background-position: -8200px 0; width: 39px; height: 39px; } 
+.O-SW8{ background-position: -8240px 0; width: 39px; height: 39px; } 
+.O-SW9{ background-position: -8280px 0; width: 39px; height: 39px; } 
+.O-W10{ background-position: -8320px 0; width: 39px; height: 39px; } 
+.O-W11{ background-position: -8360px 0; width: 39px; height: 39px; } 
+.O-W12{ background-position: -8400px 0; width: 39px; height: 39px; } 
+.O-W13{ background-position: -8440px 0; width: 39px; height: 39px; } 
+.O-W14{ background-position: -8480px 0; width: 39px; height: 39px; } 
+.O-W15{ background-position: -8520px 0; width: 39px; height: 39px; } 
+.O-W16{ background-position: -8560px 0; width: 39px; height: 39px; } 
+.O-W17{ background-position: -8600px 0; width: 39px; height: 39px; } 
+.O-W18{ background-position: -8640px 0; width: 39px; height: 39px; } 
+.O-W19{ background-position: -8680px 0; width: 39px; height: 39px; } 
+.O-W20{ background-position: -8720px 0; width: 39px; height: 39px; } 
+.O-W21{ background-position: -8760px 0; width: 39px; height: 39px; } 
+.O-W22{ background-position: -8800px 0; width: 39px; height: 39px; } 
+.O-W7{ background-position: -8840px 0; width: 39px; height: 39px; } 
+.O-W8{ background-position: -8880px 0; width: 39px; height: 39px; } 
+.O-W9{ background-position: -8920px 0; width: 39px; height: 39px; } 
+.O-WNW10{ background-position: -8960px 0; width: 39px; height: 39px; } 
+.O-WNW11{ background-position: -9000px 0; width: 39px; height: 39px; } 
+.O-WNW12{ background-position: -9040px 0; width: 39px; height: 39px; } 
+.O-WNW13{ background-position: -9080px 0; width: 39px; height: 39px; } 
+.O-WNW14{ background-position: -9120px 0; width: 39px; height: 39px; } 
+.O-WNW15{ background-position: -9160px 0; width: 39px; height: 39px; } 
+.O-WNW16{ background-position: -9200px 0; width: 39px; height: 39px; } 
+.O-WNW17{ background-position: -9240px 0; width: 39px; height: 39px; } 
+.O-WNW18{ background-position: -9280px 0; width: 39px; height: 39px; } 
+.O-WNW19{ background-position: -9320px 0; width: 39px; height: 39px; } 
+.O-WNW20{ background-position: -9360px 0; width: 39px; height: 39px; } 
+.O-WNW21{ background-position: -9400px 0; width: 39px; height: 39px; } 
+.O-WNW22{ background-position: -9440px 0; width: 39px; height: 39px; } 
+.O-WNW7{ background-position: -9480px 0; width: 39px; height: 39px; } 
+.O-WNW8{ background-position: -9520px 0; width: 39px; height: 39px; } 
+.O-WNW9{ background-position: -9560px 0; width: 39px; height: 39px; } 
+.O-WSW10{ background-position: -9600px 0; width: 39px; height: 39px; } 
+.O-WSW11{ background-position: -9640px 0; width: 39px; height: 39px; } 
+.O-WSW12{ background-position: -9680px 0; width: 39px; height: 39px; } 
+.O-WSW13{ background-position: -9720px 0; width: 39px; height: 39px; } 
+.O-WSW14{ background-position: -9760px 0; width: 39px; height: 39px; } 
+.O-WSW15{ background-position: -9800px 0; width: 39px; height: 39px; } 
+.O-WSW16{ background-position: -9840px 0; width: 39px; height: 39px; } 
+.O-WSW17{ background-position: -9880px 0; width: 39px; height: 39px; } 
+.O-WSW18{ background-position: -9920px 0; width: 39px; height: 39px; } 
+.O-WSW19{ background-position: -9960px 0; width: 39px; height: 39px; } 
+.O-WSW20{ background-position: -10000px 0; width: 39px; height: 39px; } 
+.O-WSW21{ background-position: -10040px 0; width: 39px; height: 39px; } 
+.O-WSW22{ background-position: -10080px 0; width: 39px; height: 39px; } 
+.O-WSW7{ background-position: -10120px 0; width: 39px; height: 39px; } 
+.O-WSW8{ background-position: -10160px 0; width: 39px; height: 39px; } 
+.O-WSW9{ background-position: -10200px 0; width: 39px; height: 39px; } 
+
+.wind-o2{background-image:url(../img/windiconsO2.png);background-color:transparent;background-repeat:no-repeat;}
+.O-E23{ background-position: 0 0; width: 39px; height: 39px; } 
+.O-E24{ background-position: -40px 0; width: 39px; height: 39px; } 
+.O-E25{ background-position: -80px 0; width: 39px; height: 39px; } 
+.O-E26{ background-position: -120px 0; width: 39px; height: 39px; } 
+.O-E27{ background-position: -160px 0; width: 39px; height: 39px; } 
+.O-E28{ background-position: -200px 0; width: 39px; height: 39px; } 
+.O-E29{ background-position: -240px 0; width: 39px; height: 39px; } 
+.O-E30{ background-position: -280px 0; width: 39px; height: 39px; } 
+.O-E31{ background-position: -320px 0; width: 39px; height: 39px; } 
+.O-E32{ background-position: -360px 0; width: 39px; height: 39px; } 
+.O-E33{ background-position: -400px 0; width: 39px; height: 39px; } 
+.O-E34{ background-position: -440px 0; width: 39px; height: 39px; } 
+.O-E35{ background-position: -480px 0; width: 39px; height: 39px; } 
+.O-E36{ background-position: -520px 0; width: 39px; height: 39px; } 
+.O-E37{ background-position: -560px 0; width: 39px; height: 39px; } 
+.O-E38{ background-position: -600px 0; width: 39px; height: 39px; } 
+.O-E39{ background-position: -640px 0; width: 39px; height: 39px; } 
+.O-E40{ background-position: -680px 0; width: 39px; height: 39px; } 
+.O-ENE23{ background-position: -720px 0; width: 39px; height: 39px; } 
+.O-ENE24{ background-position: -760px 0; width: 39px; height: 39px; } 
+.O-ENE25{ background-position: -800px 0; width: 39px; height: 39px; } 
+.O-ENE26{ background-position: -840px 0; width: 39px; height: 39px; } 
+.O-ENE27{ background-position: -880px 0; width: 39px; height: 39px; } 
+.O-ENE28{ background-position: -920px 0; width: 39px; height: 39px; } 
+.O-ENE29{ background-position: -960px 0; width: 39px; height: 39px; } 
+.O-ENE30{ background-position: -1000px 0; width: 39px; height: 39px; } 
+.O-ENE31{ background-position: -1040px 0; width: 39px; height: 39px; } 
+.O-ENE32{ background-position: -1080px 0; width: 39px; height: 39px; } 
+.O-ENE33{ background-position: -1120px 0; width: 39px; height: 39px; } 
+.O-ENE34{ background-position: -1160px 0; width: 39px; height: 39px; } 
+.O-ENE35{ background-position: -1200px 0; width: 39px; height: 39px; } 
+.O-ENE36{ background-position: -1240px 0; width: 39px; height: 39px; } 
+.O-ENE37{ background-position: -1280px 0; width: 39px; height: 39px; } 
+.O-ENE38{ background-position: -1320px 0; width: 39px; height: 39px; } 
+.O-ENE39{ background-position: -1360px 0; width: 39px; height: 39px; } 
+.O-ENE40{ background-position: -1400px 0; width: 39px; height: 39px; } 
+.O-ESE23{ background-position: -1440px 0; width: 39px; height: 39px; } 
+.O-ESE24{ background-position: -1480px 0; width: 39px; height: 39px; } 
+.O-ESE25{ background-position: -1520px 0; width: 39px; height: 39px; } 
+.O-ESE26{ background-position: -1560px 0; width: 39px; height: 39px; } 
+.O-ESE27{ background-position: -1600px 0; width: 39px; height: 39px; } 
+.O-ESE28{ background-position: -1640px 0; width: 39px; height: 39px; } 
+.O-ESE29{ background-position: -1680px 0; width: 39px; height: 39px; } 
+.O-ESE30{ background-position: -1720px 0; width: 39px; height: 39px; } 
+.O-ESE31{ background-position: -1760px 0; width: 39px; height: 39px; } 
+.O-ESE32{ background-position: -1800px 0; width: 39px; height: 39px; } 
+.O-ESE33{ background-position: -1840px 0; width: 39px; height: 39px; } 
+.O-ESE34{ background-position: -1880px 0; width: 39px; height: 39px; } 
+.O-ESE35{ background-position: -1920px 0; width: 39px; height: 39px; } 
+.O-ESE36{ background-position: -1960px 0; width: 39px; height: 39px; } 
+.O-ESE37{ background-position: -2000px 0; width: 39px; height: 39px; } 
+.O-ESE38{ background-position: -2040px 0; width: 39px; height: 39px; } 
+.O-ESE39{ background-position: -2080px 0; width: 39px; height: 39px; } 
+.O-ESE40{ background-position: -2120px 0; width: 39px; height: 39px; } 
+.O-N23{ background-position: -2160px 0; width: 39px; height: 39px; } 
+.O-N24{ background-position: -2200px 0; width: 39px; height: 39px; } 
+.O-N25{ background-position: -2240px 0; width: 39px; height: 39px; } 
+.O-N26{ background-position: -2280px 0; width: 39px; height: 39px; } 
+.O-N27{ background-position: -2320px 0; width: 39px; height: 39px; } 
+.O-N28{ background-position: -2360px 0; width: 39px; height: 39px; } 
+.O-N29{ background-position: -2400px 0; width: 39px; height: 39px; } 
+.O-N30{ background-position: -2440px 0; width: 39px; height: 39px; } 
+.O-N31{ background-position: -2480px 0; width: 39px; height: 39px; } 
+.O-N32{ background-position: -2520px 0; width: 39px; height: 39px; } 
+.O-N33{ background-position: -2560px 0; width: 39px; height: 39px; } 
+.O-N34{ background-position: -2600px 0; width: 39px; height: 39px; } 
+.O-N35{ background-position: -2640px 0; width: 39px; height: 39px; } 
+.O-N36{ background-position: -2680px 0; width: 39px; height: 39px; } 
+.O-N37{ background-position: -2720px 0; width: 39px; height: 39px; } 
+.O-N38{ background-position: -2760px 0; width: 39px; height: 39px; } 
+.O-N39{ background-position: -2800px 0; width: 39px; height: 39px; } 
+.O-N40{ background-position: -2840px 0; width: 39px; height: 39px; } 
+.O-NE23{ background-position: -2880px 0; width: 39px; height: 39px; } 
+.O-NE24{ background-position: -2920px 0; width: 39px; height: 39px; } 
+.O-NE25{ background-position: -2960px 0; width: 39px; height: 39px; } 
+.O-NE26{ background-position: -3000px 0; width: 39px; height: 39px; } 
+.O-NE27{ background-position: -3040px 0; width: 39px; height: 39px; } 
+.O-NE28{ background-position: -3080px 0; width: 39px; height: 39px; } 
+.O-NE29{ background-position: -3120px 0; width: 39px; height: 39px; } 
+.O-NE30{ background-position: -3160px 0; width: 39px; height: 39px; } 
+.O-NE31{ background-position: -3200px 0; width: 39px; height: 39px; } 
+.O-NE32{ background-position: -3240px 0; width: 39px; height: 39px; } 
+.O-NE33{ background-position: -3280px 0; width: 39px; height: 39px; } 
+.O-NE34{ background-position: -3320px 0; width: 39px; height: 39px; } 
+.O-NE35{ background-position: -3360px 0; width: 39px; height: 39px; } 
+.O-NE36{ background-position: -3400px 0; width: 39px; height: 39px; } 
+.O-NE37{ background-position: -3440px 0; width: 39px; height: 39px; } 
+.O-NE38{ background-position: -3480px 0; width: 39px; height: 39px; } 
+.O-NE39{ background-position: -3520px 0; width: 39px; height: 39px; } 
+.O-NE40{ background-position: -3560px 0; width: 39px; height: 39px; } 
+.O-NNE23{ background-position: -3600px 0; width: 39px; height: 39px; } 
+.O-NNE24{ background-position: -3640px 0; width: 39px; height: 39px; } 
+.O-NNE25{ background-position: -3680px 0; width: 39px; height: 39px; } 
+.O-NNE26{ background-position: -3720px 0; width: 39px; height: 39px; } 
+.O-NNE27{ background-position: -3760px 0; width: 39px; height: 39px; } 
+.O-NNE28{ background-position: -3800px 0; width: 39px; height: 39px; } 
+.O-NNE29{ background-position: -3840px 0; width: 39px; height: 39px; } 
+.O-NNE30{ background-position: -3880px 0; width: 39px; height: 39px; } 
+.O-NNE31{ background-position: -3920px 0; width: 39px; height: 39px; } 
+.O-NNE32{ background-position: -3960px 0; width: 39px; height: 39px; } 
+.O-NNE33{ background-position: -4000px 0; width: 39px; height: 39px; } 
+.O-NNE34{ background-position: -4040px 0; width: 39px; height: 39px; } 
+.O-NNE35{ background-position: -4080px 0; width: 39px; height: 39px; } 
+.O-NNE36{ background-position: -4120px 0; width: 39px; height: 39px; } 
+.O-NNE37{ background-position: -4160px 0; width: 39px; height: 39px; } 
+.O-NNE38{ background-position: -4200px 0; width: 39px; height: 39px; } 
+.O-NNE39{ background-position: -4240px 0; width: 39px; height: 39px; } 
+.O-NNE40{ background-position: -4280px 0; width: 39px; height: 39px; } 
+.O-NNW23{ background-position: -4320px 0; width: 39px; height: 39px; } 
+.O-NNW24{ background-position: -4360px 0; width: 39px; height: 39px; } 
+.O-NNW25{ background-position: -4400px 0; width: 39px; height: 39px; } 
+.O-NNW26{ background-position: -4440px 0; width: 39px; height: 39px; } 
+.O-NNW27{ background-position: -4480px 0; width: 39px; height: 39px; } 
+.O-NNW28{ background-position: -4520px 0; width: 39px; height: 39px; } 
+.O-NNW29{ background-position: -4560px 0; width: 39px; height: 39px; } 
+.O-NNW30{ background-position: -4600px 0; width: 39px; height: 39px; } 
+.O-NNW31{ background-position: -4640px 0; width: 39px; height: 39px; } 
+.O-NNW32{ background-position: -4680px 0; width: 39px; height: 39px; } 
+.O-NNW33{ background-position: -4720px 0; width: 39px; height: 39px; } 
+.O-NNW34{ background-position: -4760px 0; width: 39px; height: 39px; } 
+.O-NNW35{ background-position: -4800px 0; width: 39px; height: 39px; } 
+.O-NNW36{ background-position: -4840px 0; width: 39px; height: 39px; } 
+.O-NNW37{ background-position: -4880px 0; width: 39px; height: 39px; } 
+.O-NNW38{ background-position: -4920px 0; width: 39px; height: 39px; } 
+.O-NNW39{ background-position: -4960px 0; width: 39px; height: 39px; } 
+.O-NNW40{ background-position: -5000px 0; width: 39px; height: 39px; } 
+.O-NW23{ background-position: -5040px 0; width: 39px; height: 39px; } 
+.O-NW24{ background-position: -5080px 0; width: 39px; height: 39px; } 
+.O-NW25{ background-position: -5120px 0; width: 39px; height: 39px; } 
+.O-NW26{ background-position: -5160px 0; width: 39px; height: 39px; } 
+.O-NW27{ background-position: -5200px 0; width: 39px; height: 39px; } 
+.O-NW28{ background-position: -5240px 0; width: 39px; height: 39px; } 
+.O-NW29{ background-position: -5280px 0; width: 39px; height: 39px; } 
+.O-NW30{ background-position: -5320px 0; width: 39px; height: 39px; } 
+.O-NW31{ background-position: -5360px 0; width: 39px; height: 39px; } 
+.O-NW32{ background-position: -5400px 0; width: 39px; height: 39px; } 
+.O-NW33{ background-position: -5440px 0; width: 39px; height: 39px; } 
+.O-NW34{ background-position: -5480px 0; width: 39px; height: 39px; } 
+.O-NW35{ background-position: -5520px 0; width: 39px; height: 39px; } 
+.O-NW36{ background-position: -5560px 0; width: 39px; height: 39px; } 
+.O-NW37{ background-position: -5600px 0; width: 39px; height: 39px; } 
+.O-NW38{ background-position: -5640px 0; width: 39px; height: 39px; } 
+.O-NW39{ background-position: -5680px 0; width: 39px; height: 39px; } 
+.O-NW40{ background-position: -5720px 0; width: 39px; height: 39px; } 
+.O-S23{ background-position: -5760px 0; width: 39px; height: 39px; } 
+.O-S24{ background-position: -5800px 0; width: 39px; height: 39px; } 
+.O-S25{ background-position: -5840px 0; width: 39px; height: 39px; } 
+.O-S26{ background-position: -5880px 0; width: 39px; height: 39px; } 
+.O-S27{ background-position: -5920px 0; width: 39px; height: 39px; } 
+.O-S28{ background-position: -5960px 0; width: 39px; height: 39px; } 
+.O-S29{ background-position: -6000px 0; width: 39px; height: 39px; } 
+.O-S30{ background-position: -6040px 0; width: 39px; height: 39px; } 
+.O-S31{ background-position: -6080px 0; width: 39px; height: 39px; } 
+.O-S32{ background-position: -6120px 0; width: 39px; height: 39px; } 
+.O-S33{ background-position: -6160px 0; width: 39px; height: 39px; } 
+.O-S34{ background-position: -6200px 0; width: 39px; height: 39px; } 
+.O-S35{ background-position: -6240px 0; width: 39px; height: 39px; } 
+.O-S36{ background-position: -6280px 0; width: 39px; height: 39px; } 
+.O-S37{ background-position: -6320px 0; width: 39px; height: 39px; } 
+.O-S38{ background-position: -6360px 0; width: 39px; height: 39px; } 
+.O-S39{ background-position: -6400px 0; width: 39px; height: 39px; } 
+.O-S40{ background-position: -6440px 0; width: 39px; height: 39px; } 
+.O-SE23{ background-position: -6480px 0; width: 39px; height: 39px; } 
+.O-SE24{ background-position: -6520px 0; width: 39px; height: 39px; } 
+.O-SE25{ background-position: -6560px 0; width: 39px; height: 39px; } 
+.O-SE26{ background-position: -6600px 0; width: 39px; height: 39px; } 
+.O-SE27{ background-position: -6640px 0; width: 39px; height: 39px; } 
+.O-SE28{ background-position: -6680px 0; width: 39px; height: 39px; } 
+.O-SE29{ background-position: -6720px 0; width: 39px; height: 39px; } 
+.O-SE30{ background-position: -6760px 0; width: 39px; height: 39px; } 
+.O-SE31{ background-position: -6800px 0; width: 39px; height: 39px; } 
+.O-SE32{ background-position: -6840px 0; width: 39px; height: 39px; } 
+.O-SE33{ background-position: -6880px 0; width: 39px; height: 39px; } 
+.O-SE34{ background-position: -6920px 0; width: 39px; height: 39px; } 
+.O-SE35{ background-position: -6960px 0; width: 39px; height: 39px; } 
+.O-SE36{ background-position: -7000px 0; width: 39px; height: 39px; } 
+.O-SE37{ background-position: -7040px 0; width: 39px; height: 39px; } 
+.O-SE38{ background-position: -7080px 0; width: 39px; height: 39px; } 
+.O-SE39{ background-position: -7120px 0; width: 39px; height: 39px; } 
+.O-SE40{ background-position: -7160px 0; width: 39px; height: 39px; } 
+.O-SSE23{ background-position: -7200px 0; width: 39px; height: 39px; } 
+.O-SSE24{ background-position: -7240px 0; width: 39px; height: 39px; } 
+.O-SSE25{ background-position: -7280px 0; width: 39px; height: 39px; } 
+.O-SSE26{ background-position: -7320px 0; width: 39px; height: 39px; } 
+.O-SSE27{ background-position: -7360px 0; width: 39px; height: 39px; } 
+.O-SSE28{ background-position: -7400px 0; width: 39px; height: 39px; } 
+.O-SSE29{ background-position: -7440px 0; width: 39px; height: 39px; } 
+.O-SSE30{ background-position: -7480px 0; width: 39px; height: 39px; } 
+.O-SSE31{ background-position: -7520px 0; width: 39px; height: 39px; } 
+.O-SSE32{ background-position: -7560px 0; width: 39px; height: 39px; } 
+.O-SSE33{ background-position: -7600px 0; width: 39px; height: 39px; } 
+.O-SSE34{ background-position: -7640px 0; width: 39px; height: 39px; } 
+.O-SSE35{ background-position: -7680px 0; width: 39px; height: 39px; } 
+.O-SSE36{ background-position: -7720px 0; width: 39px; height: 39px; } 
+.O-SSE37{ background-position: -7760px 0; width: 39px; height: 39px; } 
+.O-SSE38{ background-position: -7800px 0; width: 39px; height: 39px; } 
+.O-SSE39{ background-position: -7840px 0; width: 39px; height: 39px; } 
+.O-SSE40{ background-position: -7880px 0; width: 39px; height: 39px; } 
+.O-SSW23{ background-position: -7920px 0; width: 39px; height: 39px; } 
+.O-SSW24{ background-position: -7960px 0; width: 39px; height: 39px; } 
+.O-SSW25{ background-position: -8000px 0; width: 39px; height: 39px; } 
+.O-SSW26{ background-position: -8040px 0; width: 39px; height: 39px; } 
+.O-SSW27{ background-position: -8080px 0; width: 39px; height: 39px; } 
+.O-SSW28{ background-position: -8120px 0; width: 39px; height: 39px; } 
+.O-SSW29{ background-position: -8160px 0; width: 39px; height: 39px; } 
+.O-SSW30{ background-position: -8200px 0; width: 39px; height: 39px; } 
+.O-SSW31{ background-position: -8240px 0; width: 39px; height: 39px; } 
+.O-SSW32{ background-position: -8280px 0; width: 39px; height: 39px; } 
+.O-SSW33{ background-position: -8320px 0; width: 39px; height: 39px; } 
+.O-SSW34{ background-position: -8360px 0; width: 39px; height: 39px; } 
+.O-SSW35{ background-position: -8400px 0; width: 39px; height: 39px; } 
+.O-SSW36{ background-position: -8440px 0; width: 39px; height: 39px; } 
+.O-SSW37{ background-position: -8480px 0; width: 39px; height: 39px; } 
+.O-SSW38{ background-position: -8520px 0; width: 39px; height: 39px; } 
+.O-SSW39{ background-position: -8560px 0; width: 39px; height: 39px; } 
+.O-SSW40{ background-position: -8600px 0; width: 39px; height: 39px; } 
+.O-SW23{ background-position: -8640px 0; width: 39px; height: 39px; } 
+.O-SW24{ background-position: -8680px 0; width: 39px; height: 39px; } 
+.O-SW25{ background-position: -8720px 0; width: 39px; height: 39px; } 
+.O-SW26{ background-position: -8760px 0; width: 39px; height: 39px; } 
+.O-SW27{ background-position: -8800px 0; width: 39px; height: 39px; } 
+.O-SW28{ background-position: -8840px 0; width: 39px; height: 39px; } 
+.O-SW29{ background-position: -8880px 0; width: 39px; height: 39px; } 
+.O-SW30{ background-position: -8920px 0; width: 39px; height: 39px; } 
+.O-SW31{ background-position: -8960px 0; width: 39px; height: 39px; } 
+.O-SW32{ background-position: -9000px 0; width: 39px; height: 39px; } 
+.O-SW33{ background-position: -9040px 0; width: 39px; height: 39px; } 
+.O-SW34{ background-position: -9080px 0; width: 39px; height: 39px; } 
+.O-SW35{ background-position: -9120px 0; width: 39px; height: 39px; } 
+.O-SW36{ background-position: -9160px 0; width: 39px; height: 39px; } 
+.O-SW37{ background-position: -9200px 0; width: 39px; height: 39px; } 
+.O-SW38{ background-position: -9240px 0; width: 39px; height: 39px; } 
+.O-SW39{ background-position: -9280px 0; width: 39px; height: 39px; } 
+.O-SW40{ background-position: -9320px 0; width: 39px; height: 39px; } 
+.O-W23{ background-position: -9360px 0; width: 39px; height: 39px; } 
+.O-W24{ background-position: -9400px 0; width: 39px; height: 39px; } 
+.O-W25{ background-position: -9440px 0; width: 39px; height: 39px; } 
+.O-W26{ background-position: -9480px 0; width: 39px; height: 39px; } 
+.O-W27{ background-position: -9520px 0; width: 39px; height: 39px; } 
+.O-W28{ background-position: -9560px 0; width: 39px; height: 39px; } 
+.O-W29{ background-position: -9600px 0; width: 39px; height: 39px; } 
+.O-W30{ background-position: -9640px 0; width: 39px; height: 39px; } 
+.O-W31{ background-position: -9680px 0; width: 39px; height: 39px; } 
+.O-W32{ background-position: -9720px 0; width: 39px; height: 39px; } 
+.O-W33{ background-position: -9760px 0; width: 39px; height: 39px; } 
+.O-W34{ background-position: -9800px 0; width: 39px; height: 39px; } 
+.O-W35{ background-position: -9840px 0; width: 39px; height: 39px; } 
+.O-W36{ background-position: -9880px 0; width: 39px; height: 39px; } 
+.O-W37{ background-position: -9920px 0; width: 39px; height: 39px; } 
+.O-W38{ background-position: -9960px 0; width: 39px; height: 39px; } 
+.O-W39{ background-position: -10000px 0; width: 39px; height: 39px; } 
+.O-W40{ background-position: -10040px 0; width: 39px; height: 39px; } 
+.O-WNW23{ background-position: -10080px 0; width: 39px; height: 39px; } 
+.O-WNW24{ background-position: -10120px 0; width: 39px; height: 39px; } 
+.O-WNW25{ background-position: -10160px 0; width: 39px; height: 39px; } 
+.O-WNW26{ background-position: -10200px 0; width: 39px; height: 39px; } 
+.O-WNW27{ background-position: -10240px 0; width: 39px; height: 39px; } 
+.O-WNW28{ background-position: -10280px 0; width: 39px; height: 39px; } 
+.O-WNW29{ background-position: -10320px 0; width: 39px; height: 39px; } 
+.O-WNW30{ background-position: -10360px 0; width: 39px; height: 39px; } 
+.O-WNW31{ background-position: -10400px 0; width: 39px; height: 39px; } 
+.O-WNW32{ background-position: -10440px 0; width: 39px; height: 39px; } 
+.O-WNW33{ background-position: -10480px 0; width: 39px; height: 39px; } 
+.O-WNW34{ background-position: -10520px 0; width: 39px; height: 39px; } 
+.O-WNW35{ background-position: -10560px 0; width: 39px; height: 39px; } 
+.O-WNW36{ background-position: -10600px 0; width: 39px; height: 39px; } 
+.O-WNW37{ background-position: -10640px 0; width: 39px; height: 39px; } 
+.O-WNW38{ background-position: -10680px 0; width: 39px; height: 39px; } 
+.O-WNW39{ background-position: -10720px 0; width: 39px; height: 39px; } 
+.O-WNW40{ background-position: -10760px 0; width: 39px; height: 39px; } 
+.O-WSW23{ background-position: -10800px 0; width: 39px; height: 39px; } 
+.O-WSW24{ background-position: -10840px 0; width: 39px; height: 39px; } 
+.O-WSW25{ background-position: -10880px 0; width: 39px; height: 39px; } 
+.O-WSW26{ background-position: -10920px 0; width: 39px; height: 39px; } 
+.O-WSW27{ background-position: -10960px 0; width: 39px; height: 39px; } 
+.O-WSW28{ background-position: -11000px 0; width: 39px; height: 39px; } 
+.O-WSW29{ background-position: -11040px 0; width: 39px; height: 39px; } 
+.O-WSW30{ background-position: -11080px 0; width: 39px; height: 39px; } 
+.O-WSW31{ background-position: -11120px 0; width: 39px; height: 39px; } 
+.O-WSW32{ background-position: -11160px 0; width: 39px; height: 39px; } 
+.O-WSW33{ background-position: -11200px 0; width: 39px; height: 39px; } 
+.O-WSW34{ background-position: -11240px 0; width: 39px; height: 39px; } 
+.O-WSW35{ background-position: -11280px 0; width: 39px; height: 39px; } 
+.O-WSW36{ background-position: -11320px 0; width: 39px; height: 39px; } 
+.O-WSW37{ background-position: -11360px 0; width: 39px; height: 39px; } 
+.O-WSW38{ background-position: -11400px 0; width: 39px; height: 39px; } 
+.O-WSW39{ background-position: -11440px 0; width: 39px; height: 39px; } 
+.O-WSW40{ background-position: -11480px 0; width: 39px; height: 39px; } 
+
+.wxallwind{background: url(http://static.nordicweather.net/nordic/images/wxall_wind.png) no-repeat top left;background-color:transparent;}
+.wxall-E{ background-position: 0 0; width: 41px; height: 41px; } 
+.wxall-ENE{ background-position: -43px 0; width: 41px; height: 41px; } 
+.wxall-ESE{ background-position: -86px 0; width: 41px; height: 41px; } 
+.wxall-N{ background-position: -129px 0; width: 41px; height: 41px; } 
+.wxall-NE{ background-position: -172px 0; width: 41px; height: 41px; } 
+.wxall-NNE{ background-position: -215px 0; width: 41px; height: 41px; } 
+.wxall-NNW{ background-position: -258px 0; width: 41px; height: 41px; } 
+.wxall-NW{ background-position: -301px 0; width: 41px; height: 41px; } 
+.wxall-S{ background-position: -344px 0; width: 41px; height: 41px; } 
+.wxall-SE{ background-position: -387px 0; width: 41px; height: 41px; } 
+.wxall-SSE{ background-position: -430px 0; width: 41px; height: 41px; } 
+.wxall-SSW{ background-position: -473px 0; width: 41px; height: 41px; } 
+.wxall-SW{ background-position: -516px 0; width: 41px; height: 41px; } 
+.wxall-W-E{ background-position: -559px 0; width: 41px; height: 41px; } 
+.wxall-W-ENE{ background-position: -602px 0; width: 41px; height: 41px; } 
+.wxall-W-ESE{ background-position: -645px 0; width: 41px; height: 41px; } 
+.wxall-W-N{ background-position: -688px 0; width: 41px; height: 41px; } 
+.wxall-W-NE{ background-position: -731px 0; width: 41px; height: 41px; } 
+.wxall-W-NNE{ background-position: -774px 0; width: 41px; height: 41px; } 
+.wxall-W-NNW{ background-position: -817px 0; width: 41px; height: 41px; } 
+.wxall-W-NW{ background-position: -860px 0; width: 41px; height: 41px; } 
+.wxall-W-S{ background-position: -903px 0; width: 41px; height: 41px; } 
+.wxall-W-SE{ background-position: -946px 0; width: 41px; height: 41px; } 
+.wxall-W-SSE{ background-position: -989px 0; width: 41px; height: 41px; } 
+.wxall-W-SSW{ background-position: -1032px 0; width: 41px; height: 41px; } 
+.wxall-W-SW{ background-position: -1075px 0; width: 41px; height: 41px; } 
+.wxall-W-W{ background-position: -1118px 0; width: 41px; height: 41px; } 
+.wxall-W-WNW{ background-position: -1161px 0; width: 41px; height: 41px; } 
+.wxall-W-WSW{ background-position: -1204px 0; width: 41px; height: 41px; } 
+.wxall-W{ background-position: -1247px 0; width: 41px; height: 41px; } 
+.wxall-WNW{ background-position: -1290px 0; width: 41px; height: 41px; } 
+.wxall-WSW{ background-position: -1333px 0; width: 41px; height: 41px; } 
