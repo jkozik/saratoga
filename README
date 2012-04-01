@@ -69,3 +69,10 @@ $mainwidth = "625";     # to fit in saratoga template width
    -- I set F (not C) for temperature
  - created wxsim3in1.php from wxnewpage.php
  - Looks like width of 625 means 5 day forecast instead of squishing 7 days
+
+Added Juneau County Weather's Forecast Compare for WXsim
+ - http://jcweather.us/scripts.php
+ - http://jcweather.us/forecast-compare.zip?1333311217
+ - installed raw download files in home directory ~/public_html/saratoga/
+
+
