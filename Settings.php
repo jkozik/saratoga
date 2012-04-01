@@ -173,7 +173,7 @@ $SITE['defaultlang']	= 'en';   // 'en' for English (WXSIM plaintext-parser.php)
 
 # fcsturlNWS is the point-printable forecast URL from http://www.weather.gov/ (used by advforecast2.php)
 #$SITE['fcsturlNWS']		= 'http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=41.7900009&textField2=-88.1200027&e=1&TextType=2';
-$SITE['fcsturlNWS']		= 'http://forecast.weather.gov/MapClick.php?CityName=Naperville&state=IL&site=LOT&lat=41.7626&lon=-88.1543';
+$SITE['fcsturlNWS']             = 'http://forecast.weather.gov/MapClick.php?CityName=Naperville&state=IL&site=LOT&textField1=41.7626&textField2=-88.1543&e=0&TextType=2';
 $SITE['fcsticonsdir'] = './forecast/images/'; // NOAA-style icons for NWS, WU, WXSIM forecast scripts
 $SITE['fcsticonstype']= '.jpg'; // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
 // 

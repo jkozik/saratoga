@@ -75,4 +75,22 @@ Added Juneau County Weather's Forecast Compare for WXsim
  - http://jcweather.us/forecast-compare.zip?1333311217
  - installed raw download files in home directory ~/public_html/saratoga/
 
+Tweaked forecast-compare files
+ - advforecaset2.php:  make sure $fileName (~line 99) is right.  test http://napervilleweather.net/advforecast2.php.  Verify correct, not blank
+ - fc-config.php: $fileLoc="" and $analdays=5
+ - fc-LogTemps.php:
+   -- create blank fc-temps.txt chmod 777
+   -- if using VWS, be sure to setup testtags.php (see fc-readme.txt)
+   -- if using VWS, make sure to include 
+      $entry[0] = $maxtempyest;
+      $entry[1] = $mintempovernight;
+   -- and comment out code 33,36
+ - create blank forecastAM.log and forecastPM.log, chmod 777
+ - crontab
+# 7am and 8am GMT-5, 7am->12, 8am->13
+0  12 * * * wget -q http://napervilleweather.net/fc-LogTemps.php
+0  13 * * * wget -q http://napervilleweather.net/forecast-compare-include.php?log\&config=am
+# 7am and 8pm, 7pm->0, 8pm->1
+0 0 * * * wget -q http://napervilleweather.net/fc-LogTemps.php
+0 1 * * * wget -q http://napervilleweather.net/forecast-compare-include.php?log\&config=pm
 

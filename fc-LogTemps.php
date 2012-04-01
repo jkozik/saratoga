@@ -24,11 +24,16 @@ $now = date("G",time());
 $lines = file($log);                                 // Reads into an array
 $entry = explode(",",$lines[0]);                     // to get the contents of the 1st (and only ) record
 
+/*
 if ($now < 12) {                                     // It's morning, so capture the nightly low
 	$entry[1] = $mintempovernight;
 } else {                                             // It's evening, so capture the daily high
 	$entry[0] = $maxtemp;
 }
+*/
+
+$entry[0] = $maxtempyest;
+$entry[1] = $mintempovernight;
 
 /*
 $entry[0] = $maxtempyest;

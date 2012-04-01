@@ -15,7 +15,8 @@ $datestr     = "m-d-y";                         // See http://us.php.net/date fo
 $timestr     = "g:i a";
 
 // Files                                        No leading slash on any of the files or folders!!
-$fileLoc     = "fcreal/";                              // Location of these forecast files.  "" if in the web root folder, otherwise something like "forecast/"
+//$fileLoc     = "fcreal/";                              // Location of these forecast files.  "" if in the web root folder, otherwise something like "forecast/"
+$fileLoc     = "";                              // Location of these forecast files.  "" if in the web root folder, otherwise something like "forecast/"
  
 // Log file(s)
 $logfile = array (                              // The last two letters of your log files must must be unique because they're used to name the selectors 
@@ -48,7 +49,7 @@ $tagsfile = "testtags.php";              // The script that generates the two ta
 //$TheMin   = $mintempovernight;           // If you use something different, you'll have to change at approx line 38 in forecast-compare-include.php
 
 // Configure the storage/display            NWS will produce up to 4 1/2 forecast days, Wunderground 5 days and Environment Canada 4 1/2 - 5 days
-$analdays     = "5";                      // How many forecast days to log (D+1, D+2 etc).  Both forecast systems must produce at least this many days!!  
+$analdays     = "7";                      // How many forecast days to log (D+1, D+2 etc).  Both forecast systems must produce at least this many days!!  
 $logdays      = "365";		  			  // Days to maintain in the datafile
 $Danaldays    = "4";                      // Default number of days to display horizontally
 $Dlogdays     = "14";                     // Default number of days to display vertically

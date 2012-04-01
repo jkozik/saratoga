@@ -96,7 +96,7 @@ $NWSforecasts = array(
  $NOAAZone = 'ILZ013';  // change this line to your NOAA warning zone.
 // set $fileName to the URL for the point-printable forecast for your area
  //$fileName = "http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2";//
- $fileName = "http://forecast.weather.gov/MapClick.php?CityName=Naperville&state=IL&site=LOT&lat=41.7626&lon=-88.1543";
+ $fileName = "http://forecast.weather.gov/MapClick.php?CityName=Naperville&state=IL&site=LOT&textField1=41.7626&textField2=-88.1543&e=0&TextType=2";
 $iconDir = './forecast/images/';
 $iconType = '.jpg';        // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
 $cacheFileDir = './';      // default cache file directory
