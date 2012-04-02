@@ -94,3 +94,16 @@ Tweaked forecast-compare files
 0 0 * * * wget -q http://napervilleweather.net/fc-LogTemps.php
 0 1 * * * wget -q http://napervilleweather.net/forecast-compare-include.php?log\&config=pm
 
+Updating to current Saratoga version new files from VWS.zip 4/2/12
+ - new VWS-def.php - new VWS.def files have local rain override for METAR conds, pure replace
+ - Settings-weather.php
+$SITE['graphImageDir']  = './vwsimages/';
+$SITE['wflashdir']      = '../WxFlash/Data/';
+$SITE['graphImageDir']  = './vwsimages/';
+$SITE['conditionsMETAR'] = 'KDPA'; // dist=11 mi (18 km), dir=NW, Chicago/Dupage, Illinois, USA elev=231, dated=09-NOV-04
+$SITE['overrideRain']   = true;
+ - downloaded http://saratoga-weather.org/wxtemplates/VWS-plugin.zip
+ - verified on http://napervilleweather.net/wxmetar.php
+
+
+

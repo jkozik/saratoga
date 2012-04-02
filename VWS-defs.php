@@ -8,10 +8,10 @@
  
  Author: Ken True - webmaster@saratoga-weather.org
 
- (created by gen-defs.php - V1.05 - 09-Sep-2011)
- Generated on 2011-12-09 18:12:19 PST
+ (created by gen-defs.php - V1.06 - 09-Jan-2012)
+ Generated on 2012-03-24 14:03:26 PDT
 
-//Version VWS-defs.php - V1.02 - 09-Dec-2011
+//Version VWS-defs.php - V1.03 - 24-Mar-2012
 
 */
 // --------------------------------------------------------------------------
@@ -169,6 +169,11 @@ if(isset($SITE['conditionsMETAR'])) { // override with METAR conditions for text
 	global $SITE;
 	include_once("get-metar-conditions-inc.php");
 	list($Currentsolardescription,$iconnumber) = mtr_conditions($SITE['conditionsMETAR'], $time, $sunrise, $sunset);
+    if(isset($currentrainratehr) and 
+      (!isset($SITE['overrideRain']) or (isset($SITE['overrideRain']) and $SITE['overrideRain'])) ) {
+	  list($Currentsolardescription,$iconnumber) = 
+	  VWS_RainRateIcon($Currentsolardescription,$iconnumber,$currentrainratehr,$uomrain,$time,$sunrise,$sunset);
+    }
 }
 
 $beaufortnum =  VWS_beaufortNumber($avgspd,$uomwind);
@@ -179,6 +184,53 @@ list($chandler,$chandlertxt,$chandlerimg) = VWS_CBI($temperature,$uomtemp,$humid
 # generate the separate date/time variables by dissection of input date/time and format
 list($date_year,$date_month,$date_day,$time_hour,$time_minute,$monthname,$dayname)
   = VWS_setDateTimes($WX['vst142'],$WX['vst143'],$SITE['WDdateMDY']);
+
+#-------------------------------------------------------------------------------------
+# WCT support function - VWS_RainRateIcon
+#-------------------------------------------------------------------------------------
+
+function VWS_RainRateIcon($inText,$inIcon,$inRate,$inUOM,$time,$sunrise,$sunset,$lastRain='0000-00-00T00:00:00') {
+   global $Debug;
+   
+/*
+Rainfall intensity is classified according to the rate of precipitation:
+
+    Light rain — rate is < 2.5 mm (0.098 in) per hour
+    Moderate rain — rate is between 2.5 mm (0.098 in) - 7.6 mm (0.30 in) or 10 mm (0.39 in) per hour
+    Heavy rain — rate is > 7.6 mm (0.30 in) per hour, or between 10 mm (0.39 in) and 50 mm (2.0 in) per hour
+    Violent rain — rate is > 50 mm (2.0 in) per hour
+*/	
+   $Debug .= "<!-- VWS_RainRateIcon in='$inText' icon='$inIcon' rate='$inRate' uom='$inUOM' -->\n";
+   $newText = '';  // assume no changes
+   $newIcon = $inIcon;
+   
+   $rate = $inRate;
+   if(preg_match('|in|i',$inUOM)) { // convert to mm/hr rate
+     $rate = $inRate * 25.4;
+   }
+   
+   if(substr($lastRain,0,4) <> '0000') {
+	  if($rate < 0.001 and time()-strtotime($lastRain) < 30*60) {
+		 $newText = 'Moderate Drizzle';
+	  }
+   }
+
+   if ($rate > 0.0 and $rate < 2.5) { $newText = 'Light Rain'; }
+   if ($rate >=2.5 and $rate < 7.6) { $newText = 'Moderate Rain'; }
+   if ($rate >=7.6 and $rate < 50.0) { $newText = 'Heavy Rain'; }
+   if ($rate >= 50.0)         { $newText = 'Violent Rain'; }
+   
+   if($newText <> '' or $rate == 0.0) {
+	   if ($newText <> '' and $inText <> '') {$newText .= ', ';}
+	   $newText .= 
+	      preg_replace('/(Light|Moderate|Heavy|Violent|Extreme){0,1}\s*(Rain|Mist|Drizzle), /i','',$inText);
+	   $newIcon = mtr_get_iconnumber ($time,$newText,$sunrise,$sunset); 
+   } else {
+	   $newText = $inText;
+   }
+   $Debug .= "<!-- VWS_RainRateIcon out='$newText' icon='$newIcon' rate='$rate' mm/hr -->\n";
+   return(array($newText,$newIcon));
+}
 
 #-------------------------------------------------------------------------------------
 # VWS support function - VWS_icons

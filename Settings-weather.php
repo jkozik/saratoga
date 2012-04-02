@@ -29,6 +29,7 @@
 ############################################################################
 #	This document uses Tab 4 Settings
 ############################################################################
+// Version 1.01 - 24-Mar-2012 - added local rain override for METAR conditions
 global $SITE;
 #---------------------------------------------------------------------------
 #  required settings for Virtual Weather Station (VWS) software
@@ -46,7 +47,10 @@ $SITE['NOAAdir']        = './noaa/';   // relative location of the NOAA report f
 # $SITE['conditionsMETAR'] = 'KSJC';  // set to nearby METAR for current conditions icon/text
 $SITE['conditionsMETAR'] = 'KDPA'; // dist=11 mi (18 km), dir=NW, Chicago/Dupage, Illinois, USA elev=231, dated=09-NOV-04
 # comment out conditionsMETAR to use built-in VWS icon/text conditions setting for ^climate_ccond1^ and ^climate_icon1^
-
+$SITE['overrideRain']   = true; // =true then rain rate will set rain words instead of METAR rain words
+#                               // =false - no change to METAR rain words (station rain rate not used)
+# Note: overrideRain only works if conditionsMETAR is enabled
+#
 $SITE['DavisVP']		= true;  // set to false if not a Davis VP weather station
 $SITE['UV']				= true;  // set to false if no UV sensor
 $SITE['SOLAR']			= true;  // set to false if no Solar sensor
