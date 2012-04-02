@@ -12,6 +12,7 @@
 // Version 1.07 - 02-Apr-2011 - fixed WLrealtime offsets for WeatherLink
 // Version 1.08 - 29-Jul-2011 - added support for Meteohub clientraw.txt
 // Version 1.09 - 14-Jan-2012 - added support for WeatherSnoop via WSNtags/WSN-defs
+// Version 1.10 - 24-Mar-2012 - added support for WeatherCat via WCTtags/WCT-defs or WCT_realtime.txt
 //
 // script available at http://saratoga-weather.org/scripts.php
 //  
@@ -77,6 +78,7 @@ if (isset($SITE['clientrawfile']) ) {$clientrawfile = $SITE['clientrawfile']; }
 if (isset($SITE['wflashdir']) ) {$wflashDir = $SITE['wflashdir']; }
 if (isset($SITE['realtimefile']) ) {$realtimefile = $SITE['realtimefile']; }
 if (isset($SITE['WLrealtime']) ) {$WLrealtime = $SITE['WLrealtime']; }
+if (isset($SITE['WCTrealtime']) ) {$WCTrealtime = $SITE['WCTrealtime']; }
 if (isset($SITE['WXsoftware']) ) {$wxSoftware = $SITE['WXsoftware']; }
 
 $CSSstyle = '';
@@ -120,6 +122,7 @@ if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'cu') { $wxSoftwar
 if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'wl') { $wxSoftware = 'WL'; } // testing
 if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'mh') { $wxSoftware = 'MH'; } // testing
 if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'wsn') { $wxSoftware = 'WSN'; } // testing
+if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'wct') { $wxSoftware = 'WCT'; } // testing
 
 if (isset($_REQUEST['uom']) and strtolower($_REQUEST['uom']) == 'c') { $UOM = 'C'; }
 if (isset($_REQUEST['uom']) and strtolower($_REQUEST['uom']) == 'f') { $UOM = 'F'; }
@@ -240,8 +243,72 @@ if ($wxSoftware == 'WL') { // Process WeatherLink
 	 }
 	   
 	} // end fetch it from $WLrealtime
+} // end WeatherLink handling
 
-}
+if ($wxSoftware == 'WCT') { // Process WeatherCat
+  if(!isset($WCTrealtime)) { // get from WCTtags.php
+
+	   if (file_exists($SITE['WXtags'])) {
+		   global $WX;
+		   include_once($SITE['WXtags']);
+	   }
+	   $inUOM = 'F';
+	   $curtemp = 70;
+	   $mintemp = 60;
+	   $maxtemp = 80;
+	   
+	   if(preg_match("|C|i",$WX['TEMPUNITS'])) {
+		  $inUOM = 'C';
+	   } else {
+		  $inUOM = 'F';
+	   }
+	  if ($inUOM == 'F' and $UOM == 'C') {
+		$curtemp = FtoC($WX['STAT:TEMPERATURE:CURRENT'],1);
+		$mintemp = FtoC($WX['STAT:TEMPERATURE:MIN:TODAY'],1);
+		$maxtemp = FtoC($WX['STAT:TEMPERATURE:MAX:TODAY'],1);
+	  } elseif ($inUOM == 'C' and $UOM == 'F') {
+		$curtemp = CtoF($WX['STAT:TEMPERATURE:CURRENT'],1);
+		$mintemp = CtoF($WX['STAT:TEMPERATURE:MIN:TODAY'],1);
+		$maxtemp = CtoF($WX['STAT:TEMPERATURE:MAX:TODAY'],1);
+	  } elseif (isset($WX['STAT:TEMPERATURE:CURRENT'])) {
+		$curtemp = $WX['STAT:TEMPERATURE:CURRENT'];
+		$mintemp = $WX['STAT:TEMPERATURE:MIN:TODAY'];
+		$maxtemp = $WX['STAT:TEMPERATURE:MAX:TODAY'];
+		$UOM = $inUOM;
+	  }
+  } else { // get from WCT_realtime.txt
+	 $dataraw = file_get_contents($WCTrealtime);
+	
+	 // clean up any blank lines
+	 $dataraw = trim($dataraw);
+	 $dataraw = preg_replace("/[\r\n]+/",'',$dataraw);
+	 $data = explode("|", $dataraw);
+	 if(preg_match("/C/i",$data[14])) {
+		 $inUOM = 'C';
+	 } else {
+		 $inUOM = 'F';
+	 }
+	 if ($inUOM == 'F' and $UOM == 'C') {
+			$curtemp = FtoC($data[2],1);
+			$mintemp = FtoC($data[28],1);
+			$maxtemp = FtoC($data[26],1);
+	 } elseif ($inUOM == 'C' and $UOM == 'F') {
+			$curtemp = CtoF($data[2],1);
+			$mintemp = CtoF($data[28],1);
+			$maxtemp = CtoF($data[26],1);
+	 } else {
+			$curtemp = $data[2];
+			$mintemp = $data[28];
+			$maxtemp = $data[26];
+			$UOM = $inUOM;
+	 }
+  
+  
+  
+  } // end get from WCT_realtime.txt
+
+} // end WeatherCat processing
+
 
 if ($wxSoftware == 'WSN') { // Process WeatherSnoop (tags files only)
 	     if (file_exists($SITE['WXtags'])) {

@@ -9,6 +9,7 @@
 // Version 1.04 - 26-Jan-2011 - added support for $cacheFileDir for cache file
 // Version 1.05 - 15-Feb-2011 - fixed undefined index Notice: errata
 // Version 1.06 - 18-Feb-2011 - added support for comma decimal point in returned UVfcstUVI array
+// Version 1.07 - 30-Mar-2011 - added support for date formatting
 //
 // error_reporting(E_ALL); // uncomment for error checking
 // this script is designed to be used by
@@ -41,9 +42,10 @@
 //   $ourTZ = "Europe/Paris";  
 //   $ourTZ = "Pacific/Auckland";
   $commaDecimal = false;     // =true to use comma as decimal point in UVfcstUVI
+  $dateOnlyFormat = 'd M Y'; // dd MON YYYY
 // -------------End Settings -----------------------------
 //
-$UVversion = 'get-UV-forecast-inc.php V1.06 - 18-Feb-2011';
+$UVversion = 'get-UV-forecast-inc.php V1.07 - 30-Mar-2012';
 // the following note is required by agreement with the authors of the website www.temis.nl
 /* -----------------------------------------------------------------------------------------
 Date: Wed, 20 Feb 2008 11:30:43 +0100
@@ -75,6 +77,7 @@ if (isset($SITE['longitude'])) 	{$myLong = $SITE['longitude'];}
 if (isset($SITE['tz'])) {$ourTZ = $SITE['tz']; }
 if(isset($SITE['cacheFileDir']))     {$cacheFileDir = $SITE['cacheFileDir']; }
 if(isset($SITE['commaDecimal']))     {$commaDecimal = $SITE['commaDecimal']; }
+if(isset($SITE['dateOnlyFormat']))   {$dateOnlyFormat = $SITE['dateOnlyFormat']; }
 // end of overrides from Settings.php
 
 $myLat = round($myLat,4);
@@ -212,11 +215,11 @@ foreach ($uvsets as $n => $uvtext) { // take each row forecast and slice it up
    
 //   print "<!-- $indx : matches \n" . print_r($matches,true) . " -->\n";
    if (is_numeric(trim($matches[1][1]))) {
-     $UVfcstDate[$indx] = trim($matches[1][0]);  // save the values found
-	 $UVfcstUVI[$indx] = trim($matches[1][1]);   // save UV index
-	 $t = strtotime($UVfcstDate[$indx]);
+	 $t = strtotime(trim($matches[1][0]));
+     $UVfcstDate[$indx] = date($dateOnlyFormat,$t);  // save the values found
 	 $UVfcstDOW[$indx] = date('l',$t); // sets to 'Sunday' thru 'Saturday'
 	 $UVfcstYMD[$indx] = date('Ymd',$t);  // sets to YYYYMMDD
+	 $UVfcstUVI[$indx] = trim($matches[1][1]);   // save UV index
 	 $indx++;
    }
 

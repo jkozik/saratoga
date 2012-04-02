@@ -27,7 +27,8 @@
 ############################################################################
 #	This document uses Tab 4 Settings
 ############################################################################
-//Version V1.01 - 9-Aug-2011 - added Meteohub support
+//Version 1.01 - 9-Aug-2011 - added Meteohub support
+//Version 1.02 - 24-Mar-2012 - added WeatherCat support
 require_once("Settings.php");
 require_once("common.php");
 ############################################################################
@@ -189,6 +190,58 @@ if(isset($SITE['graphImageDir'])) {$graphImageDir = $SITE['graphImageDir']; }
     <?php } // only UV sensor present ?>
 
 <?php } // end MH graph names    ?>
+
+<?php if($SITE['WXsoftware'] == 'WCT') { // WeatherCat graph names
+/*
+$WX['GRTEMPO'] = 'temperature1.jpg'; // Current outside temperature graph.
+$WX['GRDEW'] = 'dewpoint1.jpg'; // Current dew point graph.
+$WX['GRHUMO'] = 'rh1.jpg'; // Current outside humidity graph.
+$WX['GRWINDCH'] = 'windchill1.jpg'; // Current wind chill graph.
+$WX['GRHEATI'] = 'heatindex1.jpg'; // Current heat index graph.
+$WX['GRSOLAR'] = 'solarrad1.jpg'; // Current solar radiation graph.
+$WX['GRUV'] = 'uv1.jpg'; // Current U.V. graph. Note: There's no U.V. sensor on the station here.
+$WX['GRWINDD'] = 'winddirection1.jpg'; // Current wind direction graph.
+$WX['GRWINDS'] = 'windspeed1.jpg'; // Current wind speed graph.
+$WX['GRPRESSURE'] = 'pressure1.jpg'; // Current barometric pressure graph.
+$WX['GRCLOUDB'] = 'cloudbase1.jpg'; // Current calculated cloud base graph.
+$WX['GRRAIN1'] = 'precipitation1.jpg'; // Current 1 hour rain rate graph.
+$WX['GRRAIN24'] = 'precipitationc1.jpg'; // Current daily rain rate graph.
+
+*/
+ ?>
+    <h2><?php echo langtransstr('Temperature') . ' / ' . langtransstr('Humidity'); ?></h2>
+	<?php genImageLink($WX['GRTEMPO'],'Temperature'); ?>
+    <?php genImageLink($WX['GRHUMO'],'Humidity'); ?>
+    <br />
+    <?php genImageLink($WX['GRWINDCH'],'Wind Chill'); ?>
+    <?php genImageLink($WX['GRHEATI'],'Heat Index'); ?>
+    <h2><?php echo langtransstr('Dew Point') . ' / ' . langtransstr('Barometer'); ?></h2>
+    <?php genImageLink($WX['GRDEW'],'Dew Point'); ?>
+    <?php genImageLink($WX['GRPRESSURE'],'Barometer'); ?>
+    <br />
+    <h2><?php echo langtransstr('Wind'); ?></h2>
+    <?php genImageLink($WX['GRWINDS'],'Wind Speed'); ?>
+    <?php genImageLink($WX['GRWINDD'],'Wind Direction'); ?>
+    <br />
+    <h2><?php langtrans('Rain'); ?></h2>
+    <?php genImageLink($WX['GRRAIN24'],'Rain'); ?>
+    <?php genImageLink($WX['GRRAIN1'],'Rain Rate'); ?>
+    <br />
+    <?php // figure out to display solar and/or UV based on site settings
+	if($SITE['SOLAR'] and $SITE['UV']) { // have both sensors ?>
+    <h2><?php echo langtransstr('Solar Radiation') . ' / ' . langtransstr('UV Index'); ?></h2>
+    <?php genImageLink($WX['GRSOLAR'],'Solar Radiation'); ?>
+    <?php genImageLink($WX['GRUV'],'UV Index'); ?>
+    <?php } elseif ($SITE['SOLAR']) { ?>
+     <h2><?php echo langtransstr('Solar Radiation'); ?></h2>
+    <?php genImageLink($WX['GRSOLAR'],'Solar Radiation'); ?>
+    <?php } elseif ($SITE['UV']) { ?>
+     <h2><?php echo langtransstr('UV Index'); ?></h2>
+    <?php genImageLink($WX['GRUV'],'UV Index'); ?>
+    <?php } // end solar/uv selection ?>
+    
+<?php } // end WeatherCat graph names    ?>
+
 
 </div><!-- end main-copy -->
 

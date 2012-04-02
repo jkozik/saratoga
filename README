@@ -105,5 +105,17 @@ $SITE['overrideRain']   = true;
  - downloaded http://saratoga-weather.org/wxtemplates/VWS-plugin.zip
  - verified on http://napervilleweather.net/wxmetar.php
 
-
+Updating to current Saratoga version V3.89 Base-USA
+ - http://saratoga-weather.org/wxtemplates/Base-USA.zip
+ - UV and Weather Cat
+ - wxuvforecast.php updated
+ - get-UV-forecast-inc.php updated
+ - ajaxWCTwx.js new
+ - flyout-menu.xml updates for WCT weather software.  I did not port
+ - include-wxstatus.php updated
+ - wxgraphs.php updated with one customization
+$graphImageDim = 'vwsimages/';
+ - Thermometer.php updated with one customerizion
+$wflashDir     = '../WxFlash/Data/';
+ - verify http://napervilleweather.net http://napervilleweather.net/wxstatus.php http://napervilleweather.net/wxuvforecast.php http://napervilleweather.net/wxgraphs.php
 

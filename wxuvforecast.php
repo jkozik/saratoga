@@ -27,6 +27,7 @@
 ############################################################################
 #	This document uses Tab 4 Settings
 ############################################################################
+# Version 1.01 - 31-Mar-2012 - day-of-week fix for get-UV-forecast-inc.php V1.07
 require_once("Settings.php");
 require_once("common.php");
 ############################################################################
@@ -85,7 +86,7 @@ if (isset($SITE['UVscript'])) 	{$UVscript = $SITE['UVscript'];}
       <table width="620" style="border: none" cellspacing="3" cellpadding="3">
          <tr class="column-dark">
           <?php for ($i=0;$i < $maxIcons;$i++) {  ?>
-          <td align="center"><?php langtrans(date('D',strtotime($UVfcstDate[$i]))); ?></td>
+          <td align="center"><?php langtrans(date('D',strtotime($UVfcstYMD[$i]))); ?></td>
           <?php } // end for
 		  ?>
         </tr>

@@ -13,9 +13,9 @@
 # Version - 1.01 - 21-Nov-2011 - add check for Cumulus NOAA report (per Beau n9mfk9 ) and WD NOAA+month reports + some ML fixes
 # Version - 1.02 - 14-Jan-2012 - add support for WeatherSnoop
 # Version - 1.03 - 22-Jan-2012 - fix support for dd.mm.yy format dates in tags
-#
+# Version - 1.04 - 24-Mar-2011 - add support for WeatherCat
 ############################################################################
-$WXSIVer = 'include-wxstatus.php - V1.03 - 21-Jan-2012';
+$WXSIVer = 'include-wxstatus.php - V1.04 - 24-Mar-2012';
 //--self downloader --
 if(isset($_REQUEST['sce']) and strtolower($_REQUEST['sce']) == 'view') {
    $filenameReal = __FILE__;
@@ -51,7 +51,10 @@ print "<!-- $WXSIVer -->\n";
 	do_check($SITE['WXsoftwareLongName']." ".langtransstr("realtime"),$SITE['realtimefile'],15,'file');
   }
   if($SITE['WXsoftware'] == 'WL' and isset($SITE['WLrealtime'])) {
-	do_check($SITE['WXsoftwareLongName']." ".langtransstr("realtime"),$SITE['WLrealtime'],90,'file');  // weatherlink updates at 60 second intervals
+	do_check($SITE['WXsoftwareLongName']." ".langtransstr("realtime"),$SITE['WLrealtime'],90,'file');  // weatherlink updates at 90 second intervals
+  }
+  if($SITE['WXsoftware'] == 'WCT' and isset($SITE['WCTrealtime'])) {
+	do_check($SITE['WXsoftwareLongName']." ".langtransstr("realtime"),$SITE['WCTrealtime'],90,'file');  // weatherlink updates at 90 second intervals
   }
   
   // check the weather tags themselves
