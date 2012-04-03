@@ -126,7 +126,7 @@ $Version = "plaintext-parser.php Version 1.28 - 27-Dec-2011";
 // Settings ---------------------------------------------------------------
 $iconDir ='./forecast/images/';           // directory for carterlake icons
 $iconType = '.jpg';        // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
-$WXSIMstation = "Saratoga-Weather.org";   // name of your weather station
+$WXSIMstation = "NapervilleWeather.net";   // name of your weather station
 $plaintextFile = './plaintext.txt';       // location of the WXSIM plaintext.txt
 $lang = 'en';                             // default language is 'en' = English
 $tempDegrees = '&deg;';                   // set to '' to omit degree sign

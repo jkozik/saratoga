@@ -86,7 +86,7 @@ $maxAge = 75*60; // max age for metar in seconds = 75 minutes
 # will be applied and replace what you change below.
 #
 $condIconDir = './ajax-images/';  // directory for ajax-images with trailing slash
-$condIconType = '.jpg'; // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
+$condIconType = '.gif'; // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
 $uomTemp = '&deg;F';
 $uomBaro = ' inHg';
 $uomWind = ' mph';

@@ -175,7 +175,7 @@ $SITE['defaultlang']	= 'en';   // 'en' for English (WXSIM plaintext-parser.php)
 #$SITE['fcsturlNWS']		= 'http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=41.7900009&textField2=-88.1200027&e=1&TextType=2';
 $SITE['fcsturlNWS']             = 'http://forecast.weather.gov/MapClick.php?CityName=Naperville&state=IL&site=LOT&textField1=41.7626&textField2=-88.1543&e=0&TextType=2';
 $SITE['fcsticonsdir'] = './forecast/images/'; // NOAA-style icons for NWS, WU, WXSIM forecast scripts
-$SITE['fcsticonstype']= '.jpg'; // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
+$SITE['fcsticonstype']= '.gif'; // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
 // 
 // in the following section, enable settings for ONE primary forecast organization
 // pick which script AND org are to be used for your forecast here: (last uncommented pair will

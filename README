@@ -119,3 +119,15 @@ $graphImageDim = 'vwsimages/';
 $wflashDir     = '../WxFlash/Data/';
  - verify http://napervilleweather.net http://napervilleweather.net/wxstatus.php http://napervilleweather.net/wxuvforecast.php http://napervilleweather.net/wxgraphs.php
 
+Updating forecast icons from www.meteotreviglio.com
+ - http://www.meteotreviglio.com/downloads/ajax_forecast/forecast.zip
+ - update Settings.php
+$SITE['fcsticonstype']= '.gif'; 
+ - www.meteotreviglio.com/downloads/ajax_images/ajax_animated_icons.rar
+ - update wxmetar.php   jpg->gif
+ - copy/overwrite .gif files into ajax-images/
+ - Verify
+   http://napervilleweather.net/wxsimforecast.php
+   http://napervilleweather.net/wxforecast.php
+
+
