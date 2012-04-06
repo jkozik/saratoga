@@ -130,4 +130,6 @@ $SITE['fcsticonstype']= '.gif';
    http://napervilleweather.net/wxsimforecast.php
    http://napervilleweather.net/wxforecast.php
 
-
+Added 
+ - sitemap.xml (turned on Google webmaster tools)
+ - snapshot of current crontab -l output

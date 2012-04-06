@@ -1,0 +1,7 @@
+5,20,35,50 * * * * cd /home/weather/public_html/saratoga/River;/usr/bin/php river-fetch.php
+# 7am and 8am GMT-5, 7am->12, 8am->13
+0  12 * * * wget -q http://napervilleweather.net/fc-LogTemps.php
+0  13 * * * wget -q http://napervilleweather.net/forecast-compare-include.php?log\&config=am
+# 7am and 8pm, 7pm->0, 8pm->1
+0 0 * * * wget -q http://napervilleweather.net/fc-LogTemps.php
+0 1 * * * wget -q http://napervilleweather.net/forecast-compare-include.php?log\&config=pm
