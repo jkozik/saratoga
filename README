@@ -133,3 +133,25 @@ $SITE['fcsticonstype']= '.gif';
 Added 
  - sitemap.xml (turned on Google webmaster tools)
  - snapshot of current crontab -l output
+
+Added Midwestern Weather Network Meso-map
+ - http://www.midwesternweather.net/MWWN-code.php#homepage
+ - http://www.midwesternweather.net/MWWN-mesomap.zip
+ - created directory MWWN-mesomap
+ - copied zip file into directory
+ - chmod 777 MWWN-conditions.txt
+ - edit MWWN-mesomap/MWWN-mesomap.php
+$LinksFile = "./MWWN-mesomap/MWWN-stations-cc.txt"; 
+$Graphic = "./MWWN-mesomap/MWWN_meso.jpg"; 
+$ThisStation = "NapervilleWeather.net"; 
+ - in home dir copy wxnewpage.php -> MWWN.php
+ - edit MWWN.php following: 
+   http://www.midwesternweather.net/MWWN-code.php#PHPprocess
+ - add a menu item to flyout-menu.xml
+ - in menubar.php, add logo to home page, make link
+<a href="MWWN.php">
+<img src="MWWN-mesomap/MWWN_roundsmall.png"
+alt="Midwestern Weather Network"
+title="Midwestern Weather Network"
+width="90" height="90" />
+</a>

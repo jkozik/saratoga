@@ -1,0 +1,67 @@
+<?php
+// This is a optional configuration file for SWN-mesomap.php
+// In this file you can override some settings for the program so you
+//   can keep customizations intact between mesomap program updates.
+// Please be careful to change only the variables below (and not add new
+//   ones to the file as it may disrupt program operation)
+//
+//
+// ------------- Settings ----------------------------------------
+//
+// Name/location of the control file:
+$LinksFile = "MWWN-stations-cc.txt"; // master control file
+//
+$Graphic = "./MWWN_meso.jpg";  // used for display on this page and in code gen.
+//
+$ThisStation = "This station"; // change to your station name like
+//$ThisStation = "Saratoga-weather.org"; // or
+//$ThisStation = "Stillweather.com";
+
+//$timeFormat = 'D, Y-m-d H:i:s T';  // Fri, 2006-03-31 14:03:22 TZone
+  $timeFormat = 'D, d-M-Y H:i:s T';  // Fri, 31-Mar-2006 14:03:22 TZone
+  $ourTZ = "CST6CDT";  //NOTE: this *MUST* be set correctly to
+// translate UTC times to your LOCAL time for the displays.
+// cacheName is name of file used to store cached NDBC webpage
+// 
+  $windArrowDir = './MWWN-images/'; // set to directory with wind arrows, or
+//                        set to '' if wind arrows are not wanted
+//                        the program will test to see if images are 
+//                        available, and set it to '' if no images are
+//                        found in the directory specified.
+//
+//                        // used for rotating legend display :
+  $windArrowSize = 'S';   // ='S' for Small 9x9 arrows   (*-sm.gif)
+//                           ='L' for Large 14x14 arrows (*.gif)
+//
+  $showNoData = true;   // show table rows with no conditions data available
+//
+  $maxAge = 62*60;     // max age in seconds for conditions
+//                       (62*60 = 62 minutes)
+  $maxAgeMetar = 90*60; // max age for Metar is 90 minutes V2.10
+//
+//
+// cacheName is name of file used to store cached current conditions
+// 
+  $cacheName = "MWWN-conditions.txt";  // used to store the file so we 
+//                                        don't have to fetch it each time
+//                                        cache is normally filed from master site
+//
+  $refetchSeconds = 600;     // refetch every nnnn seconds (600=10 minutes)
+//
+  $showBaroTrendArrow = true; // set to false to suppress trend arrows
+  $showMapCondIcons = true;   // set to false to supress tiny icons on map
+  $includeConfig = true;     // set to true to allow SWN-mesomap-config.txt
+  	                          // to override these settings
+  $condIconsDir = './MWWN-images/'; // for condition icons (same as Anole's)
+//
+// URL to fetch master cached conditions from
+  $masterCacheURL = 'http://Midwesternweather.net/MWWN-conditions.txt';
+//   set to '' to disable master cache url fetch (not recommended!).
+//
+// 
+// optional - display this text on map if no station report 
+  $NAtext = 'Offline';  // text to display on rotating conditions if no station report
+// 
+// -------------------------------------------------------------
+// ------- end of settings ------
+?>

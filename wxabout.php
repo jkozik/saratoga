@@ -49,17 +49,23 @@ include("menubar.php");
   
 	<h3>About This Station</h3> 
 
-	<p>The station is powered by a -somekindof- weather station.  The data is collected every X seconds and the site is updated every X minutes. This site and its data is collected using <a href="http://www.weather-display.com/">Weather Display</a> Software. The station is comprised of an anemometer, a rain gauge and a thermo-hydro sensor situated in optimal positions for highest accuracy possible.</p>
+	<p>The station is powered by a <a href="http://www.davisnet.com/weather/products/weather_product.asp?pnum=06163">Davis Vantage Pro2 Plus</a> weather station, located in the backyard of my residence in Naperville, Illinois USA.
 
-	<h3>About This City</h3> 
+The weather station is polled every few seconds with updates sent to this web site every 2 minutes.  The main software engine behind this web site is Virtual Weather Station (VWS) by <a href="http://www.ambientweather.com/">Ambient Weather</a>.
 
-	<p>Springfield was founded in 1796 by settlers who were trying to find a passage to Maryland after mis-interpreting a passage in the Bible. In its early days, the city was the target of many Indian raids, and to this day many forts and trading posts remain (including Fort Springfield and Fort Sensible).</p>
+The station is composed of an anemometer, located on the roof of our house, and a sensor assembly, on my patio, that captures rain, solar, UV, temperature and  humidity.
+</p>
 
-	<p>The founder of Springfield was pioneer Jebediah Springfield, widely celebrated in the town as a brave and proud American hero. The town motto "a noble spirit embiggens the smallest man" is attributed to Jebediah.</p>
+	<h3>About Naperville</h3> 
 
-	<p>In the mid-20th century, the city reached perhaps the pinnacle of its success when it became the home of the Aquacar, a car which could be driven in water like a boat. At this point, the city's streets were literally paved with gold. But unfortunately, as related in the Are We There Yet? Guide to Springfield, this fortune imploded when it was discovered that the Aquacar was prone to spontaneous explosion after 10,000 miles and/or knots. The town has never really recovered from this tragedy (the gold was reportedly shipped to the Sultan of Brunei to encase one of his many elephant herds), but some heavy industry remains in the town, including factories for Ah! Fudge chocolate, Southern Cracker, fireworks, candy, and boxes, as well as a steel mill.</p>
+Naperville (<a href="http://en.wikipedia.org/wiki/Naperville,_Illinois">WIKI</a>) is a city of 141000 located in the South West suburbs of Chicago.  As you can see on the Neighboring Stations report, I am one of many weather station enthusiasts living in the Naperville area.
+
+
 
 	<h3>About This Website</h3> 
+<p>The weather enthusiast community shares their weather data on the Internet leveraging many different software tools.  The VWS package has a built in website generater that creates a very nice single page weather web page.  My original web site, <a href="http://NapervilleWeather.com">NapervilleWeather.com</a> was built using VWS.  I first hosted this site back in 2005.  </p>
+
+<p>Over the years many web design experts have created an open-source style community of weather website modules, where enthusiast like me can create sophisticated multi-page weather web sites by leveraging the work of others.  The following describes in more detail:</p>
 
 	<p>This site is a template design by <a href="http://www.carterlake.org">CarterLake.org</a> with PHP conversion by <a href="http://saratoga-weather.org/">Saratoga-Weather.org</a>.<br/>
 	 Special thanks go to Kevin Reed at <a href="http://www.tnetweather.com">TNET Weather</a> for his work on the original Carterlake templates, and his design for the common website PHP management.<br/>

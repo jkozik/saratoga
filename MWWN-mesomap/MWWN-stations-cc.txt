@@ -1,0 +1,118 @@
+#  MWWN-stations-cc.txt - control file for MWWN-mesomap.php
+#  Ken True - 28-Apr-2008 webmaster@saratoga-weather.org for Northeastern Weather Network
+#
+# NOTE: Line numbers are IMPORTANT.  to remove a station once implemented, put a '#' in the first character
+#  but DON'T delete the line.
+#
+# format: | delimited text
+# State, URL, Name, map-coords, Features [Weather, Lightning, WebCam],swn_data.htm,raw-type,raw-url,offset,METAR
+#
+# --- sample like this: New York|http://www.cnyweather.com/|Westmoreland|185,214,197,226|Weather, Lightning, WebCam|none|CR|weather/clientraw.txt||KGRR|
+#
+Michigan|http://www.thanko.info/|Walker|373,270,385,282|Weather, Lightning, WebCam|none|CR|clientraw.txt||KGRR|42.9397,-85.7819|
+#Illinois|http://www.texasilweather.com/|Texas Township-Clinton|267,397,278,409|Weather, Lightning, WebCam|none|ST|VWS_stickertags.htm|+9,-37|KAAA|40.14942169,-88.95816040|
+Ohio|http://fairfieldcountyweather.com/|Lancaster|478,415,487,424|Weather|none|ST|VWS_stickertags.htm|+3,-11|KLHQ|39.70727921,-82.60787964|
+Wisconsin|http://jcweather.us/|Mauston|233,230,245,242|Weather, Lightning, WebCam|none|CR|clientraw.txt||KVOK|43.79676819,-90.07982635|
+# -- removed: 1-Jan-2001 Michigan|http://www.grrweather.com/wxstation/index.php|Cascade|378,276,389,286|Weather, Lightning, WebCam|none|CR|weatherdata/clientraw.txt||KGRR|42.94088364,-85.59375000|
+Iowa|http://www.weatheraardvark.com/|Des Moines|116,330,125,339|Weather|none|CR|weatherdata/clientraw.txt|+2,-15|KDSM|41.60494995,-93.63194275|
+Indiana|http://www.tristate-weather.com/|Newburgh|321,489,333,501|Weather, Lightning|none|CR|clientraw.txt||KEVV|37.95677948,-87.40277863|
+Iowa|http://www.sandhillweather.com/|Olin|200,312,209,321|Weather, WebCam|none|CR|clientraw.txt||KMXO|42.00297546,-91.13761139|
+Illinois|http://vermilionweather.com/|Danville|311,391,320,400|Weather, Webcam|none|CR|clientraw.txt||KDNV|40.13325119,-87.62850952|
+Wisconsin|http://www.desotowiwx.com/|DeSoto|200,250,212,262|Weather, Lightning, Webcam|none|CR|clientraw.txt|||43.4208,-91.1920|
+Iowa|http://www.carterlake.org/|Carter Lake|42,339,54,351|Weather, Lightning, Webcam|none|CR|clientraw.txt||KOMA|41.29286194,-95.91270447|
+Nebraska|http://friendweather.com/|Friend|2,371,14,383|Weather, Lightning|none|CR|clientraw.txt|-10,+3|KJYR|40.64111710,-97.26678467|
+Minnesota|http://www.minnetonkaweather.com/|Minnetonka|145,156,157,167|Weather, Lightning|none|CR|clientraw.txt||KMPX|44.95238876,-93.43895721|
+Wisconsin|http://weather.athelstanewi.com/|Athelstane|300,160,309,169|Weather, Webcam|none|ST|VWS_stickertags.htm||KIMT|45.45090103,-88.23132324|
+Wisconsin|http://depereweather.com/|De Pere|299,206,308,211|Weather, Webcam|none|CR|clientraw.txt||KGRB|44.438,-88.071|
+#Michigan|http://tumbleweeds-place.com/|St Louis|413,252,421,260|Weather|none|CR|clientraw.txt|+3,-14|KAMN|43.41084290,-84.59778595|
+# offline 5/3/2011 Michigan|http://www.wxflint.com/|Flint|444,271,453,276|Weather, Webcam|none|CR|clientraw.txt|+18,-18|KFNT|42.96615982,-83.77717590|
+Illinois|http://www.gooselakeweather.com/|Morris|319,367,328,376|Weather, Webcam|none|CR|wxlive/clientraw.txt||KC09|41.341667,-88.297778|
+Indiana|http://www.evansville-weather.com/|Evansville|312,490,321,499|Weather|none|CR|clientraw.txt|+6,+2|KEVV|37.97457886,-87.57350159|
+Kentucky|http://cavecountryweather.com/|Cave City|369,530,378,539|Weather, Webcam|none|CR|clientraw.txt||KGLW|37.12076187,-85.91770172|
+Michigan|http://www.wxbeacon.com/|Burton|444,275,453,283|Weather|none|ST|wxsticker/data.txt||KFNT|43.03232193,-83.58655548|
+Illinois|http://www.daybreakimagery.com/weather/|Alma|275,457,284,466|Weather|none|ST|weather/VWS_stickertags.htm|+2,-12|KSLO|38.73557281,-88.91991425|
+Michigan|http://www.bigbaywx.com/|Big Bay|310,98,319,107|Weather, Webcam|none|CR|clientraw.txt||KSAW|46.81830978,-87.73062897|
+Iowa|http://www.strandediniowa.com/|Otley|134,337,146,349|Weather, Lightning, Webcam|none|ST|VWS_stickertags.htm||KPEA|41.45918655,-93.03980255|
+Kentucky|http://eetee.us/station/station.php|Anchorage|413,465,422,474|Weather, Webcam|none|ST|station/data1.txt||KLOU|38.25593948,-85.51403809|
+Illinois|http://www.burgus.org/|Stronghurst|202,372,213,383|Weather, Lightning|none|CR|clientraw.txt|+2,-17|KBRL|40.74432755,-90.90836334|
+# station decommissioned - 29-Oct-2010 Illinois|http://www.n9mfk.com/|Springfield|249,412,258,421|Weather|none|STCU|realtime.txt||KSPI|39.80081558,-89.64972687|
+Missouri|http://www.tstolze.net/|OFallon|213,455,222,464|Weather, WebCam|none|ST|weather/WL_stickertags.htm|+2,+32|KSTL|38.839083,-90.728686|
+Indiana|http://home.comcast.net/~pdconner/weathermap.htm|Muncie|386,392,395,401|Weather, Webcam|none|ST|http://home.comcast.net/~pdconner/VWS_stickertags.htm||KMIE|40.186,-85.372|
+Minnesota|http://www.bemidjiwx.com/|Bemidji|78,70,87,79|Weather|none|CR|clientraw.txt||KBJI|47.6643,-94.9842|
+#Indiana|http://wildcatweather.home.comcast.net/~wildcatweather/|Indianapolis|365,417,376,428|Weather, Lightning, Webcam|none|ST|http://wildcatweather.home.comcast.net/~wildcatweather/WL_stickertags.html||KIND|39.6875,-86.0251|
+# -- removed: 6-Sep-2010 Wisconsin|http://www.lorickweatherlive.com/|Eau Claire|187,187,199,199|Weather, Lightning|none|ST|davis/WL_stickertags.html||KEAU|44.788,-91.516|
+Ohio|http://home.roadrunner.com/~weathership/|Groveport|478,425,487,434|Weather, Webcam|none|CR|~weathership/clientraw.txt|+2,-8|KLCK|39.8619,-82.9201|
+Illinois|http://www.eastcentralilwx.net/|Mahomet|288,395,297,404|Weather|none|CR|clientraw.txt|+5,-3|KCMI|40.21617,-88.35917|
+# -- removed: 6-Feb-2010 Ohio|http://www.westervilleweather.com/|Westerville 1|465,398,474,403|Weather|none|CR|clientraw.txt|+9,-29|KOSU|40.0965,-82.9063|
+#Minnesota|http://home.meltel.net/conrad/weather/myweather.htm|Richmond|90,161,98,169|Weather, Webcam|none|CR|http://home.meltel.net/conrad/clientraw.txt||KSTC|45.44243,-94.51395|
+Michigan|http://www.tawasbayweather.com/|East Tawas|448,211,457,220|Weather, Webcam|none|ST|VWS_stickertags.htm||KOSC|44.283,-83.483|
+Illinois|http://www.dupageweather.com/|Glen Ellyn|319,304,328,313|Weather|none|ST|WL_stickertags.htm|+2,-11|KDPA|41.84117,-88.04633|
+Illinois|http://willcookweather.com/|Tinley Park|319,322,328,331|Weather, WebCam|none|CR|clientraw.txt|+2,-11|KLOT|41.554150,-87.781075|
+# -- removed: 6-Sep-2010 Illinois|http://wx.k9eew.com/|Coal City|318,292,330,304|Weather, Lightning, Webcam|none|ST|mwwn/WL_stickertags.htm|+2,-14|KC09|41.29445648,-88.32237244|
+Kansas|http://www.opweather.com/|Overland Park|83,445,95,457|Weather, Lightning, Webcam|none|ST|sticker/VWS_stickertags.htm|+2,-10|KOJC|38.974289,-94.668533|
+Ohio|http://www.olsonweather.com/|Westerville|465,403,473,407|Weather|none|CR|clientraw.txt|+12,-17|KCMH|40.132030,-82.968073|
+Missouri|http://www.houseofstauss.com/weather/wxindex.php|Trimble|86,424,98,436|Weather, Lightning, Webcam|none|CR|weather/clientraw.txt|+2,-16|KMCI|39.4743,-94.5757|
+# -- removed: 13-Oct-2008 Indiana|http://www.weather.ricksturf.com/|Elkhart|367,327,378,338|Weather, Lightning, Webcam|none|ST|midwest/VWS_stickertags.htm||KSBN|41.70606,-86.04158|
+# offline since 27-Apr-2011 07:55:22 CDT Ohio|http://wx.malott.us/|Pickerington|478,405,487,414|Weather|none|ST|VWS_stickertags.htm|+2,-14|KCMH|39.935,-82.731|
+Kansas|http://www.mclwx.info/|McLouth|67,436,76,445|Weather|none|CR|clientraw.txt|+2,-12|KLWC|39.19479,-95.23824|
+Wisconsin|http://www.otlweather.com/|Waupaca|264,211,273,220|Weather,WebCam|none|ST|stickertags.htm|+2,-7|KPCZ|44.341286,-89.114403|
+# -- removed: 26-Jun-2010 Ohio|http://www.allenjunction.org/|Sylvania 1|440,326,449,331|Weather, Lightning, Webcam|none|ST|wx/VWS_stickertags.htm|+18,-18|KTOL|41.715004,-83.777138|
+Minnesota|http://fmweather.com/|N Moorhead|19,94,28,103|Weather|none|ST|VWS_stickertags.htm||KFAR|46.8875008,-96.7477036|
+Missouri|http://www.eds-weather.info/|Fulton|171,453,183,465|Weather, Lightning, WebCam|none|CR|weather/clientraw.txt|-10,-27|KCOU|+38.752,-91.967|
+Illinois|http://www.jolietweather.com/|Joliet|319,334,327,338|Weather, Webcam|none|ST|VWS_stickertags.htm|+2,-11|KJOT|41.502,-88.159|
+Minnesota|http://www.websterweatherlive.com/|Webster|147,214,156,223|Weather, Webcam|none|CR|clientraw.txt||KFCM|46.0194,-93.3469|
+Wisconsin|http://www.keetosworld.com/weather.htm|Green Bay|299,202,308,207|Weather|none|ST|VWS_stickertags.htm|+2,-14|KGRB|44.4678,-88.0216|
+Kansas|http://www.kskoellers.com/liveweather/wxindex.php|Lenexa|76,461,85,470|Weather|none|CR|liveweather/clientraw.txt||KOJC|38.984132,-94.753432|
+Minnesota|http://www.farmingtonweather.com/|Farmington|147,191,156,200|Weather|none|CR|clientraw.txt|+2,-13|KLVN|44.646111,-93.183333|
+Ohio|http://www.sylvaniaweather.com/|Sylvania|440,330,449,335|Weather|none|ST|VWS_stickertags.htm|+2,-13|KTOL|41.7168,-83.7415|
+Iowa|http://www.iowagenerators.com/weather.htm|Waterloo|158,290,170,302|Weather, Lightning, Webcam|none|ST|images/weather/VWS_stickertags.htm||KALO|42.472621,-92.415786|
+Illinois|http://www.centraliaweather.com/|Centralia|265,469,274,478|Weather|none|ST|VWS_stickertags.htm||KENL|38.523117,-89.109680|
+Ohio|http://www.lfweathercenter.com/|Hamilton|413,428,422,437|Weather|none|ST|VWS_stickertags.htm|+5,-1|KHAO|39.3933,-84.4770|
+Wisconsin|http://www.sunprairieweather.com/|Sun Prairie|264,271,273,280|Weather, Webcam|none|CR|clientraw.txt||KMSN|43.193,-89.217|
+# -- removed: 6-Feb-2010 Wisconsin|http://www.wd9hxc.com/|Wisconsin Dells|246,243,255,252|Weather|none|CR|clientraw.txt||KDLL|43.63179,-89.76892|
+Indiana|http://www.tristateweather.net|Boonville|312,479,321,488|Weather|none|CR|clientraw.txt||KVWX|38.057,-87.262|
+Ohio|http://billhogsett.com/wd/wxindex.php|Cleveland|458,361,467,370|Weather|none|CR|http://billhogsett.com/wd/wdData/clientraw.txt|+2,-13|KBKL|41.525556,-81.668889|
+Illinois|http://www.peotoneweather.com|Peotone|319,345,328,354|Weather|none|ST|VWS_stickertags.htm||KIKK|41.3337,-87.7890|
+# no website 17-Feb-2012 Illinois|http://www.okawweather.com/|Okawville|253,474,262,483|Weather|none|CR|clientraw.txt|-9,-0|KBLV|38.424957,-89.548973|
+# -- removed: 6-Sep -2010 Missouri|http://travelingrvwx.com/|Branson|134,551,143,560|Weather|none|CR|clientraw.txt|||36.636013,-93.217964|
+Iowa|http://www.llamasrus.net/weather.aspx|Van Horne|154,315,163,319|Weather|none|ST|http://www.lluminousllamas.com/wl_stickertags.htm|+3,-3|KVTI|42.021381,-92.111397|
+Iowa|http://www.vintonweather.com/|Vinton|154,311,163,316|Weather, WebCam|none|ST|wxwebsite/WL_stickertags.htm|+3,-13|KVTI|42.154839,-92.032845|
+Canada: Ontario|http://wawaweather.net/|Wawa|413,65,422,74|Weather, Webcam|none|CR|clientraw.txt||CYXZ|47.5625,-84.4946|
+Michigan|http://irontonwebcams.com/|Ironton|392,167,401,176|Weather, Webcam|none|ST|VWS_stickertags.htm||KCVX|45.258,-85.217|
+Illinois|http://www.silweather.com/|Mulkeytown|264,515,273,524|Weather|none|ST|WL_stickertags.htm||KMDH|37.95541,-89.11427|
+Missouri|http://weather.xsintrk.net/|Imperial|225,474,234,483|Weather|none|CR|live/clientraw.txt|+3,-45|KSTL|38.365,-90.380|
+Missouri|http://www.jacksonmoweather.com/|Jackson|247,518,256,527|Weather, Webcam|none|CR|clientraw.txt|-8,0|KCGI|37.39012,-89.67809|
+# no update since Sunday, June 19, 2011 04:15 AM Ohio|http://starkcountyweather.com/|Canton|458,371,467,380|Weather|none|CR|wxdata/clientraw.txt|+2,-13|KACK|40.935989,-81.403077|
+Wisconsin|http://wx.w0wdx.com/|Dodgeville|231,280,243,292|Weather, Lightning|none|CR|clientraw.txt||KMRJ|42.9549,-90.1330|
+Illinois|http://mountprospectweather.us/|Mt Prospect|319,294,328,303|Weather|none|CR|clientraw.txt||KORD|42.038,-87.929|
+Wisconsin|http://www.wxkjbc.com/|Kenosha|319,283,328,292|Weather|none|CR|WDUpload/clientraw.txt|+2,-13|KENW|42.550,-87.787|
+Illinois|http://www.tkhuman.com/|Woodridge|319,315,328,324|Weather|none|CR|clientraw.txt||KLOT|41.7663612,-88.0438919|
+Michigan|http://www.sandpointweather.com/|Sand Point|451,228,462,239|Weather, Lightning, Webcam|none|CR|weather/clientraw.txt||KBAX|43.91033,-83.38417|
+# no report since 3-Nov-2010 Michigan|http://www.localareaweather.com/|East Jordan|392,171,400,175|Weather|none|ST|vws_stickertags.htm||KCVX|45.180833,-85.198055|
+Kentucky|http://kbweather.net/|Crab Orchard|417,516,425,524|Weather,Webcam|none|STCU|realtime.txt||KDVK|37.473,-84.512|
+# domain parked: 25-Feb-2011 Ohio|http://www.avonlakeweather.com/|Avon Lake|495,334,506,345|Weather,Lightning,Webcam|none|CR|weatherdisplay/clientraw.txt||KCLE|41.49963,-82.00835|
+Minnesota|http://weather.rms.rdale.org/|Robbinsdale|146,170,155,179|Weather|none|ST|WL_stickertags.htm|+2,-13|KMIC|45.022929,-93.346517|
+Illinois|http://www.jolietwx.com/|Joliet-2|319,339,327,343|Weather|none|CR|clientraw.txt||KJOT|41.551590,-88.109772|
+Ohio|http://www.vernonweathercenter.com/|Columbus|465,399,473,402|Weather|none|CR|clientraw.txt|+12,-23|KTZR|39.952488,-83.090652|
+Michigan|http://fivelakesventures.com/|Marne|375,257,384,266|Weather|none|CR|clientraw.txt||KGRR|42.98800,-85.81025|
+Minnesota|http://lakevilleweather.com/|Lakeville|147,202,156,211|Weather, WebCam|none|CR|clientraw.txt||KLVN|44.700500,-93.219299|
+Minnesota|http://www.madeliasliveweather.com/|Madelia|92,224,101,233|Weather|none|ST|VWS_stickertags.htm||KJYG|44.046360,-94.416344|
+Kansas|http://burson-weather.info/wichita/|Wichita|1,505,10,514|Weather, WebCam|none|CR|wichita/clientraw.txt||KICT|37.700447,-97.261688|
+Missouri|http://www.inclinemedialive.com/|Foristell|207,432,216,441|Weather|none|CR|wd/clientraw.txt|+2,-14|KSUS|38.863552,-90.967636|
+Minnesota|http://www.downtownwestweather.com/myweb/index.html|Minneapolis|146,180,155,189|Weather|none|CR|myweb/uploads/clientraw.txt||KMIC|44.982635,-93.265022|
+# site dead 18-Sep-2011 Missouri|http://boothillbilly.com/weather/Dunklin/wxindex.php|Kennett|236,571,245,580|Weather|none|CR|weather/wd/clientraw.txt||KHKA|36.239521,-90.030632|
+Minnesota|http://www.madeliasliveweather.com/thompsonfarms/|Hanska|93,215,102,224|Weather|none|ST|thompsonfarms/VWS_stickertags.htm||KJYG|44.170147,-94.381630|
+Nebraska|http://www.gwwilkins.org/|Lincoln|12,366,24,376|Weather, Lightning, WebCam|none|CR|http://206.222.212.210/clientraw.txt||KLNK|40.816277,-96.644318|
+Minnesota|http://saginawmnwx.x10.mx/index.php|Saginaw|159,98,168,107|Weather, WebCam|none|STCU|realtime.txt||KCOQ}46.845741,-92.469330|
+Ohio|http://walj.net/cumulus/|New Philadelphia|458,371,467,380|Weather, Lightning, WebCam|none|STCU|cumulus/realtime.txt||KPHD|40.480099,-81.479424|
+Ohio|http://www.avon-weather.com/|Avon|458,348,467,357|Weather, WebCam|none|ST|LWC_uploader.txt||KCLE|+41.437,-82.048|
+Wisconsin|http://greendaleweather.com/|Greendale|312,258,321,267|Weather|none|ST|weather/WL_stickertags.htm||KMKE|42.940937,-87.982315|
+Illinois|http://b2weather.com/|Bourbonnais|319,356,328,365|Weather|none|CR|clientraw.txt||KLOT|41.171265,-87.822052|
+Wisconsin|http://northlandsweather.com/|Winter|202,144,211,153|Weather|none|STCU|realtime.txt||KDLH|45.873779,-91.073448|
+Kentucky|http://www.northwoods.net/cedargrove/|Shepherdsville|413,477,422,486|Weather, WebCam|none|CR|cedargrove/clientraw.txt||KSDF|37.973679,-85.583687|
+Iowa|http://chicagoland.stormcentral1st.com/|Davenport|216,334,225,343|Weather|none|CR|clientraw.txt||KDVN|41.537354,-90.554108|
+Iowa|http://www.madridiowaweather.com/|Madrid|112,317,121,326|Weather|none|CR|clientraw.txt|-10,-20|KBNW|41.871666,-93.813332|
+Kentucky|http://wxchris.com/|Rineyville|413,487,422,496|Weather|none|CR|http://wxchris.pcriot.com/weather/clientraw.txt||KFTK|37.740459,-85.918365|
+Illinois|http://www.mdweather.com/|Batavia|316,271,329,282|Weather, Lightning, WebCam|none|ST|VWS_stickertags.htm||KDPA|41.848137,-88.314484|
+Illinois|http://napervilleweather.net/|Naperville|319,377,328,386|Weather, WebCam|none|ST|VWS_stickertags.htm||KDPA|41.789825,-88.124222|
+#

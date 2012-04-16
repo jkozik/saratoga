@@ -1,0 +1,1 @@
+<!--stationTime-->,<!--stationDate-->,<!--outsideTemp-->,<!--outsideHeatIndex-->,<!--windChill-->,<!--outsideHumidity-->,<!--outsideDewPt-->,<!--barometer-->,<!--BarTrend-->,<!--wind10Avg-->,<!--windDirection-->,<!--dailyRain-->,,<!--sunriseTime-->,<!--sunsetTime-->,<!--windAvg10-->,<!--windHigh10-->,<!--tempUnit-->|<!--windUnit-->|<!--barUnit-->|<!--rainUnit-->

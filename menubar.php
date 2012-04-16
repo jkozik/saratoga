@@ -93,7 +93,14 @@ $html = '
 <ul>
    <li><a href="http://www.wunderground.com/" title="Weather Underground">Weather Underground</a></li>
    <li><a href="http://www.wxforum.net/" title="WXForum">WXforum.net</a></li>
+   <li><a href="http://napervilleweather.com/" title="NapervilleWeather.com">NapervilleWeather.com</a></li>
 </ul>
+<a href="MWWN.php">
+<img src="MWWN-mesomap/MWWN_roundsmall.png" 
+alt="Midwestern Weather Network" 
+title="Midwestern Weather Network" 
+width="90" height="90" />
+</a>
 <!-- end external links -->
 <?php if($SITE['allowThemeSwitch']) { // insert code for theme switcher ?>
   <!-- begin Color Theme Switcher Plugin http://www.642weather.com/weather/scripts.php -->

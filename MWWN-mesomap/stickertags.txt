@@ -1,0 +1,1 @@
+%time%,%stationDate%,%temp%,%heati%,%windch%,%hum%,%dew%,%baro%,%pressuretrendname%,%avgspd%,%dirlabel%,%dayrnusa%
