@@ -155,3 +155,12 @@ alt="Midwestern Weather Network"
 title="Midwestern Weather Network"
 width="90" height="90" />
 </a>
+
+Added Wildwood Naturist's NOAA Report generators
+ - Script Developed by Murry Conarroe of Wildwood Weather. Thanks!
+ - http://weather.wildwoodnaturist.com/downloadsCVW.php
+ - Daily Records for VWS
+   http://weather.wildwoodnaturist.com/ccount/click.php?id=18
+   wxnoaarecords.php: $path_dailynoaa = "./noaa/";
+ - continue with Detail/Summary Scripts 
+

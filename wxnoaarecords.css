@@ -1,0 +1,336 @@
+/* 
+############################################################################
+# CSS external file for wxraintemprecords.php template page
+############################################################################
+*/
+
+#rain{
+     font-family: arial;
+     color: #000000;
+}
+
+#rain table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#rain form {
+    display: inline; 
+}
+    
+#rain .labels {
+	background-color: #666666;
+	color: #cccccc;
+	border: 1px solid #222222;
+    text-align: center;
+    font-size: 90%;    
+    padding: 0px;   
+}
+
+#rain .labels1 {
+    background-color: #666666;
+    color: white ;/* #cccccc;  */
+    border: 1px solid #222222;
+    text-align: center;
+    padding: 2px;
+    font-size: 170%;
+    font-weight:bold;
+}
+
+#rain .rainttl {
+    background-color: #666666; 
+    color: #cccccc; 
+    border: 1px solid #222222;
+    font-size: 90%;
+    font-weight:bold;   
+    text-align: center;
+    padding: 0px;
+}  
+
+#rain .rainday {
+    color: green; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .temps {
+    border: 1px solid #22464F;
+    padding: 0px;
+}
+
+#rain .hightemp {
+    color: red; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F; 
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .hightemp1 {
+    color: red; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 0px solid #22464F; 
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .highestlowtemp {
+    color: red; 
+    font-size: 80%;
+    font-weight: bold;     
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .lowtemp {
+    color: blue; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F; 
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .lowtemp1 {
+    color: blue; 
+    font-size: 80%;
+    font-weight: bold;
+    border: 0px solid #22464F;      
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .lowesthightemp {
+    color: blue; 
+    font-size: 80%;
+    font-weight: bold;     
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .mtdday {
+    color: green; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .ytdday {
+    color: green; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .windday {
+    color: #802A2A; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .gustday {
+    color: #802A2A; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .nodata {
+    color: black; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #666666;     
+}  
+
+#rain .nodata1 {
+    color: black; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 0px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #666666;     
+} 
+
+#rain .getraindtbxfloat {
+    float: right; 
+    padding: 0px 5px 0px 5px; 
+    border: 1px ridge #22464F; 
+    background-color: #666666;
+    color: #FFFFFF;
+}
+
+#rain .getraindtbx {
+    font-size: 80%; 
+    font-weight: bold; 
+    padding: 0px;   
+    text-align: center;
+}
+
+#rain .dev {
+	padding: 5px 0px 10px 0px;
+	font-size: 80%;
+}
+
+#rain .raindaynewrecord {
+    color: black; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #AAFF00;    
+}
+
+#rain .hightempnewrecord {
+    color: black; 
+    font-size: 80%;
+    font-weight: bold;
+    border: 1px solid #22464F;         
+    text-align: center;
+    padding: 0px;
+    background-color: orange;    
+}
+
+#rain .lowtempnewrecord {
+    color: black; 
+    font-size: 80%;
+    font-weight: bold;
+    border: 1px solid #22464F;     
+    text-align: center;
+    padding: 0px;
+    background-color: #D2E4FE;    
+}
+
+#rain .hightempnewrecord1 {
+    color: black; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 0px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: orange;    
+}
+
+#rain .lowtempnewrecord1 {
+    color: black; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 0px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #D2E4FE;    
+}
+
+#rain .mtddaynewrecord {
+    color: black; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #AAFF00;    
+}
+
+#rain .ytddaynewrecord {
+    color: black; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #AAFF00;    
+}
+
+#rain .gustnewrecord {
+    color: white; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #802A2A;
+}
+
+#rain .windnewrecord {
+    color: white; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #802A2A;
+}
+
+#rain .snowday {
+    color: #00008B; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .snowdaynewrecord {
+    color: #00008B; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #FF99FF /* #7FFFD4 */
+}
+
+#rain .hibaroday {
+    color: red; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 0px solid #22464F;
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .lowbaroday {
+    color: blue; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 0px solid #22464F;
+    text-align: center;
+    padding: 0px;
+}
+
+#rain .baronewrecord {
+    color: #FFFFFF; 
+    font-size: 80%;
+    font-weight: bold;     
+    border: 0px solid #22464F;
+    text-align: center;
+    padding: 0px;
+    background-color: #9900FF 
+}
+
+#rain .today {
+    background-color: #cccccc;
+    color: #666666;
+    border: 1px solid #222222;
+    text-align: center;
+    padding: 0px;
+}
+
