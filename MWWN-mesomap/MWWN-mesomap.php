@@ -35,7 +35,7 @@ $ThisStation = "NapervilleWeather.net"; // change to your station name like
 // translate UTC times to your LOCAL time for the displays.
 // cacheName is name of file used to store cached NDBC webpage
 // 
-  $windArrowDir = './MWWN-images/'; // set to directory with wind arrows, or
+  $windArrowDir = './MWWN-mesomap/MWWN-images/'; // set to directory with wind arrows, or
 //                        set to '' if wind arrows are not wanted
 //                        the program will test to see if images are 
 //                        available, and set it to '' if no images are
@@ -68,7 +68,7 @@ $ThisStation = "NapervilleWeather.net"; // change to your station name like
   $mapOnly = false;           // set to true to have map only in $MWWN_MAP
   $includeConfig = true;     // set to true to allow MWWN-mesomap-config.txt
   	                          // to override these settings
-  $condIconsDir = './MWWN-images/'; // for condition icons (same as Anole's)
+  $condIconsDir = './MWWN-mesomap/MWWN-images/'; // for condition icons (same as Anole's)
 //
 // V2.09 - URL to fetch master cached conditions from
   $masterCacheURL = 'http://midwesternweather.net/MWWN-conditions.txt';
