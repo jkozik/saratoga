@@ -164,3 +164,15 @@ Added Wildwood Naturist's NOAA Report generators
    wxnoaarecords.php: $path_dailynoaa = "./noaa/";
  - continue with Detail/Summary Scripts 
 
+Fixed Midwestern Weather Network Meso-map
+ - weather condition images not displaying correctly on member station table
+ - fixed pathes in MWWN-mesomap.php
+$windArrowDir = './MWWN-mesomap/MWWN-images/';
+$condIconsDir = './MWWN-mesomap/MWWN-images/';
+
+Added another Wildwood Naturist's NOAA Report
+ - Details and Summary Files
+ - http://weather.wildwoodnaturist.com/ccount/click.php?id=21
+ - must be put in home directory, I tried to create a sub dir
+ - add to menu under Reports:  Detail & Summary Reports
+   http://napervilleweather.net/wxtempdetail.php?r=wxtempdetail.php

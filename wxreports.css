@@ -1,0 +1,529 @@
+/*
+############################################################################
+# CSS external file for Summary and detail pages
+############################################################################
+*/
+
+#report{
+     font-family: arial;
+     color: #000000;
+}
+
+#report table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+#report form {
+    display: inline; 
+}
+    
+#report .labels {
+	background-color: #666666;
+	color: #cccccc;
+	border: 1px solid #222222;
+	text-align: center;
+	padding: 2px;
+}
+
+#report .labelshdd {
+    background-color: #ff6600;
+    color: black;
+    border: 1px solid #222222;
+    text-align: center;
+    padding: 2px;
+}
+
+#report .labelscdd {
+    background-color: #00ccff;
+    color: black;
+    border: 1px solid #222222;
+    text-align: center;
+    padding: 2px;
+}
+
+#report .tableheading {
+	background-color: #00ccff;
+	color: black;
+	border: 1px solid #222222;
+	text-align: center;
+	padding: 2px;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+#report .reportttl {
+	background-color: #666666; 
+	color: #cccccc;
+	border: 1px solid #222222;
+	font-size: 85%;
+    font-weight:bold;   
+	text-align: center;
+	padding: 2px;
+}
+
+#report .reportttl2 {
+   border: 1px solid #222222;
+   border-width: 2px 1px 1px 1px;
+} 
+
+
+#report .reportdt {
+    background-color: #666666;
+    color: #cccccc;
+    font-size: 95%;
+    font-weight: bold;
+    border: 1px solid #222222;
+    text-align: center;
+    padding: 2px;
+}
+
+.reportday {
+    background-color: #808080;
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 2px;
+    font-weight:bold;
+    font-size: 85%;
+}   
+
+#report .reportdayr {
+    background-color: #D2E4FE;
+    color: #000000;
+    border: 1px solid #22464F;
+    text-align: center;
+    padding: 2px;
+}
+#report .reportday {
+    border: 1px solid #22464F;
+	text-align: center;
+	padding: 2px;
+}
+
+#report .getreportdtbxfloat {
+    float: right; 
+    padding: 0px 5px 0px 5px; 
+    border: 1px ridge #22464F; 
+    background-color: #666666;
+    color: #FFFFFF;
+}
+
+#report .getreportdtbx {
+    font-size: 100%; 
+    font-weight: bold; 
+    padding: 0px;   
+    text-align: center;
+}
+
+#report .dev {
+	padding: 5px 0px 10px 0px;
+	font-size: 75%;
+}
+
+#report .separator {
+	background-color: #ffffff; 
+}
+
+#report .colorband {
+	border-style: solid;
+	border-width: 0px 1px 0px 1px;
+	border-color: #666666;
+	text-align: center;
+	padding: 2px;
+	background-color: #666666;
+	color: #cccccc;	
+	font-size: 85%;
+    font-weight: bold;
+}
+
+
+
+#report .level_1 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #0000cc;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_2 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #0066cc;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 85%;;
+}
+
+#report .level_3 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #0099cc;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_4 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #00ccff;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_5 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #00ffcc;
+    font-weight: bold;
+    font-size: 85%;;
+}
+
+#report .level_6 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #00ff99;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_7 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #ccff00;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_8 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #ffff66;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_9 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #ffcc00;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_10 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #ff9933;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_11 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #ff6600;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_12 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #ff3300;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_13 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #cc3300;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_14 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #ff6600;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_15 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #ff3300;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .level_16 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #cc3300;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .colorkeyborder {
+    border-style: solid;
+    border-width: 8px 3px 8px 3px;
+    border-color: #666666;
+    background-color: green; /* #FF0000; */
+}
+
+#report .yeartotals {
+	border: 1px solid #222222;
+	text-align: center;
+	background-color: #CCFFbb;
+    font-weight: bold;
+	font-size: 85%;
+}
+
+#report .noday {
+	background-color: #666666; 
+	background-repeat: repeat-x;
+}
+
+#report .button {
+    font-family: arial, verdana, ms sans serif;
+    font-weight: bold;
+    font-size: 9px;
+    width: 65px;
+    height: 38px; 
+    vertical-align: middle;
+    padding: 0px;
+
+}
+
+#report .beaufort0 {
+    background-color: #ffffff;
+
+}
+
+#report .beaufort1 {
+    background-color: #ccffff;
+}
+
+#report .beaufort2 {
+    background-color: #99ffcc;
+}
+
+#report .beaufort3 {
+    background-color: #99ff99;
+}
+
+#report .beaufort4 {
+    background-color: #99ff66;
+}
+
+#report .beaufort5 {
+    background-color: #99ff00;
+}
+
+#report .beaufort6 {
+    background-color: #99cc00;
+}
+
+#report .beaufort7 {
+    background-color: #cccc00;
+}
+
+#report .beaufort8 {
+    background-color: #ffcc00;
+}
+
+#report .beaufort9 {
+    background-color: #ff9900;
+}
+
+#report .beaufort10 {
+    background-color: #ff6600;
+}
+
+#report .beaufort11 {
+    background-color: #ff3300;
+}
+
+#report .beaufort12 {
+    background-color: #ff0000;
+}
+
+#report .levelb_0 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_1 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #CCFFFF;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_2 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #99FFCC;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_3 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #99FF99;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_4 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #99FF66;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_5 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #99FF00;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_6 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #99CC00;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_7 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #CCCC00;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_8 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #FFCC00;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_9 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #FF9900;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_10 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #FF6600;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_11 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #FF3300;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_12 {
+    border: 1px solid #22464F;
+    text-align: center;
+    background-color: #FF0000;
+    font-weight: bold;
+    padding: 2px;
+    font-size: 85%;
+}
+
+#report .levelb_13 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #cc3300;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .uv_1 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .uv_2 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    font-size: 85%;;
+}
+
+#report .uv_3 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .uv_4 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: red;
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#report .uv_5 {
+    border: 1px solid #666666;
+    text-align: center;
+    background-color: #ee82ee;
+    font-weight: bold;
+    font-size: 85%;;
+}
+
+#report .infotext {
+    background-color: #ccffff;
+    font-weight: bold;
+    border: 1px solid #666666;  
+}
+
