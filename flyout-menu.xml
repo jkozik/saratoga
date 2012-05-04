@@ -73,6 +73,7 @@
         <item caption="Reports" title="NOAA-based Reports" >
             <item caption="Daily Records" link="wxnoaarecords.php" />
             <item caption="Detail and Summary Reports" link="wxtempdetail.php?r=wxtempdetail.php" />
+            <item caption="Graphs" link="wxnoaagraphs.php" />
         </item>
 
     <item caption="River" link="wxriverpage.php" title="Chicago area river levels"/>

@@ -176,3 +176,30 @@ Added another Wildwood Naturist's NOAA Report
  - must be put in home directory, I tried to create a sub dir
  - add to menu under Reports:  Detail & Summary Reports
    http://napervilleweather.net/wxtempdetail.php?r=wxtempdetail.php
+
+Added yet another WIldwood Naturist's NOAA Graphing tool
+ - install jpgraph following instructions at 
+   http://www.weather-watch.com/smf/index.php/topic,27489.0.html
+ - http://jpgraph.net/download/download.php?p=5 -> jpgraph-3.5.0b1
+ - copy jpgraph-3.5.0b1/src contents to ./jpgraph
+ - create ./jpgraph/ttf then copy arialbd.ttf and arial.ttf from windows fonts
+ - edit ./jpgraph/jpg-config.inc.php
+ define('TTF_DIR','/home/weather/public_html/saratoga/jpgraph/ttf/');
+ - copy http://weather.wildwoodnaturist.com/ccount/click.php?id=24 -> orig/wxnoaagraphs.zip
+ - copy the six files to ./
+ - follow insturctions at http://www.wxforum.net/index.php?topic=14082.0
+ - for  wxnoaarain.php wxnoaatemps.php wxnoaawind.php
+$loc = "./noaa/";
+$first_year_of_data = "2010"; 
+ - create wxnoaagraphs.php (from wxnewpage.php).  Put into "Main-copy"
+<center>
+    <h2> Daily Interval Temperature Graph</h2>
+    <img src="wxnoaatemps.php" alt="Temperature Graph" ></img>
+    <h2> Monthly Interval Rain Bargraph</h2>
+    <img src="wxnoaarain.php" alt="Rain Graph" ></img>
+    <h2> Monthly Interval Wind Graph</h2>
+    <img src="wxnoaawind.php" alt="Wind Graph" ></img>
+</center>
+ - update flyout-menu.xml
+ - put noaadata.csv in ./cache, chmod 777
+
