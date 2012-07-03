@@ -25,8 +25,10 @@
 //  Version 3.00 - 12-Mar-2011 - support for multi-forecast added by Curly at http://www.ricksturf.com/
 //  Version 3.01 - 01-Oct-2011 - added support for alternative animated icon set from http://www.meteotreviglio.com/
 //  Version 3.02 - 05-Oct-2011 - corrected warning links to forecast.weather.gov
+//  Version 3.03 - 02-Jul-2012 - added fixes for NWS website changes
+//  Version 3.04 - 03-Jul-2012 - added fixes for W3C validation issues
 //
-$Version = 'advforecast2.php (multi) - V3.02 - 05-Oct-2011';
+$Version = 'advforecast2.php (multi) - V3.04 - 03-Jul-2012';
 //
 //import NOAA Forecast info
 //data ends up in four different arrays:
@@ -74,8 +76,9 @@ $Version = 'advforecast2.php (multi) - V3.02 - 05-Oct-2011';
 /*
 $NWSforecasts = array(
  // ZONE|Location|point-forecast-URL  (separated by | characters
- 
- 'INZ005|Elkhart|http://forecast.weather.gov/MapClick.php?site=mtr&smap=1&textField1=41.6868&textField2=-85.9688&TextType=2',
+"CAZ513|Saratoga|http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2",
+"ALZ064|Gulf Shores|http://forecast.weather.gov/MapClick.php?CityName=Gulf+Shores&state=AL&site=MOB&textField1=30.27&textField2=-87.7015&e=0&TextType=2",
+'INZ005|Elkhart|http://forecast.weather.gov/MapClick.php?site=mtr&smap=1&textField1=41.6868&textField2=-85.9688&TextType=2',
  'INZ003|LaPorte County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.6154423246811&lon=-86.72607421875&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
  'INZ004|St Joe County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.69855129353962&lon=-86.27975463867188&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
  'INZ006|LaGrange County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.64007838467894&lon=-85.418701171875&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
@@ -93,10 +96,9 @@ $NWSforecasts = array(
 //*/
 
 //
- $NOAAZone = 'ILZ013';  // change this line to your NOAA warning zone.
+ $NOAAZone = 'CAZ513';  // change this line to your NOAA warning zone.
 // set $fileName to the URL for the point-printable forecast for your area
- //$fileName = "http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2";//
- $fileName = "http://forecast.weather.gov/MapClick.php?CityName=Naperville&state=IL&site=LOT&textField1=41.7626&textField2=-88.1543&e=0&TextType=2";
+ $fileName = "http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2";//
 $iconDir = './forecast/images/';
 $iconType = '.jpg';        // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
 $cacheFileDir = './';      // default cache file directory
@@ -300,18 +302,30 @@ if ($isZone) { // using the zone forecast
         $usingFile = "(Zone forecast)";
         $Conditions = array();  // prepare for parsing the icon based on the text forecast
         load_cond_data(); // initialize the conditions to look for
-        preg_match(
-         '|<a name="contents"></a>(.*)<td valign="top" align="center" width="50%">|Uis',
-        $html, $betweenspan);
+//        preg_match(
+//         '|<a name="contents"></a>(.*)<td valign="top" align="center" width="50%">|Uis',
+//        $html, $betweenspan);
 //           $Status .= "<!-- betweenspan \n" . print_r($betweenspan,true) . "-->\n";
-        $forecastop = $betweenspan[1];
-	  preg_match_all('|<a href="(.*)"><span class="(.*)">(.*)</span></a>|Uis',$forecastop,$warns);
+//        $forecastop = $betweenspan[1];
+$startgrab = strpos($html, '<a name="contents">');
+if(preg_match('|class=\'blue|i',$html) ) {
+  $start = strpos($html, '3 Day History:',$startgrab);
+} else {
+  $start = strpos($html, '<br><b>',$startgrab);
+}
+$finish = strpos($html, '<td valign="top" align="center" width="50%">',$start);
+$length = $finish-$start;
+$forecastop = substr($html, $start, $length);
+// print "<!-- startgrab=$startgrab start=$start finish=$finish length=$length -->\n";
+// print "<!-- \n".$forecastop."\n-->\n";
+
+	  preg_match_all('|<a href="(.*)"><span class="(.*)">(.*)</span></a>|Uis',$html,$warns);
 //	  print "<!-- forecastwarnings \n".print_r($warns,true)." -->\n";
 
 //     slice off the text forecast from the Zone forecast
-        preg_match_all("|<b>(.*)</b>\.\.\.(.*)<br><br>|Uis", $forecastop, $headers);
+        preg_match_all("|<b>(.*): </b>(.*)<br>\s*<br>|Uis", $forecastop, $headers);
         $forecaststuff = $headers[1];
-//           $Status .= "<!-- headers \n" . print_r($headers,true) . "-->\n";
+           $Status .= "<!-- headers \n" . print_r($headers,true) . "-->\n";
 
 //     Breakup multi-day forecasts if needed
         $i = 0;
@@ -361,40 +375,51 @@ if ($isZone) { // using the zone forecast
 		  $forecasticons[$i] = preg_replace('/&/','&amp;',$forecasticons[$i]);
    }
 
- } else { // original format point printable forecast
+ } else { // format is point printable forecast &TextType=2
 
-      preg_match('|<tr valign ="top" align="center">(.*)<table width="670"|s', $html, $betweenspan);
-      $forecastop  = $betweenspan[1];
+//      preg_match('|<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">(.+)</tr></table>"|is', $html, $betweenspan);
+//      $forecastop  = $betweenspan[1];
+//      print "<!-- betweenspan 1 \n".print_r($betweenspan,true)." -->\n";
+      
+$startgrab = strpos($html, '<table width="100%"');
+$start = strpos($html, '<tr valign ="top" align="center">',$startgrab);
+$finish = strpos($html, '</tr></table>',$start);
+$length = $finish-$start;
+$forecastop = substr($html, $start, $length);
 
       // Chop up each icon html and place in array
-      preg_match_all("/<td.*>(.*)<\/td>/Uis", $forecastop, $headers);
+      preg_match_all("|<td.*>(.*)</td>|Uis", $forecastop, $headers);
       $forecasticons = $headers[1];
+//      print "<!-- forecasticons \n".print_r($forecasticons,true)." -->\n";
 
           }
 
 // saratoga-weather.org mod: fix up html for XHTML 1.0-Strict
 //     $Status .= "<!-- \n" . print_r($forecasticons,true) . "-->\n";
                 for ($i=0;$i<count($forecasticons);$i++) {
-                   $forecasticons[$i] = preg_replace('|/images/wtf|Uis',
+                   $forecasticons[$i] = preg_replace('|/images/wtf/small|Uis',
                    '/forecast/images',$forecasticons[$i]);
-                    $forecasticons[$i] = preg_replace('|"images/|Uis',
-                   '"/forecast/images/',$forecasticons[$i]);
+//                   $forecasticons[$i] = preg_replace('|/images/wtf|Uis',
+//                   '/forecast/images',$forecasticons[$i]);
+//                    $forecasticons[$i] = preg_replace('|"images/|Uis',
+//                   '"/forecast/images/',$forecasticons[$i]);
                   $forecasticons[$i] = preg_replace('|/forecast/images/|Uis',
                    $iconDir,$forecasticons[$i]);
-				   $forecasticons[$i] = preg_replace('|\.jpg|Uis',$iconType,$forecasticons[$i]); // support .gif icons
+				   $forecasticons[$i] = preg_replace('|\.png|Uis',$iconType,$forecasticons[$i]); // support .gif icons
                    $forecasticons[$i] = preg_replace('|<br><br>\s+$|is',
                     "",$forecasticons[$i]);
 //                   $forecasticons[$i] = preg_replace('|temperatures|is','temps',$forecasticons[$i]);
 //                   $forecasticons[$i] = preg_replace('|Falling|is',' Falling',$forecasticons[$i]);
 //                   $forecasticons[$i] = preg_replace('|\'|is','"',$forecasticons[$i]);  // change all ' to "
-                   $forecasticons[$i] = preg_replace('|\\\\" ><br>|is','" /><br />',$forecasticons[$i]);
+                   $forecasticons[$i] = preg_replace('|" ><br>|is','" /><br />',$forecasticons[$i]);
                    $forecasticons[$i] = preg_replace('|<font color="(.*)\">(.*)</font>|Uis',
                      "<span style=\"color: $1;\">$2</span>",$forecasticons[$i]);
                    preg_match_all('|<br>([^<]+)(<span.*</span>.*)|is',$forecasticons[$i],$matches);
 //                   $Status .= "<!-- matches\n ".print_r($matches,true). "-->\n";
            if(isset($matches[2][0]) and preg_match('|<img .*>|i',$matches[2][0])) {
                      $t = $matches[2][0];
-                         $t = preg_replace('|<img src="([^"]+)" (border="0") alt="([^"]+)">|i',
+//<img src="/images/wtf/small/bkn.png" width="55" height="58" alt="Becoming Sunny" title="Becoming Sunny" >
+                         $t = preg_replace('|<img src="([^"]+)" .* title="([^"]+)" >|i',
                           "<img src=\"\\1\" style=\"border: none;\" alt=\"\\3\" title=\"\\3\" />",$t);
                          $matches[2][0] = $t;
                    }
@@ -414,6 +439,7 @@ if ($isZone) { // using the zone forecast
 //                   $forecasttemp[$i] = preg_replace('|<br>|Uis','<br />',$forecasttemp[$i]);
 //                   $forecasttemp[$i] = trim($forecasttemp[$i]);
                      $forecasticons[$i] = preg_replace('/&/','&amp;',$forecasticons[$i]);
+					 $forecasticons[$i] = preg_replace('|Thunderstorm|','T-Storm',$forecasticons[$i]);
                 }
 
 //          $Status .= "<!-- \n" . print_r($forecasticons,true) . "-->\n";
@@ -423,10 +449,10 @@ if ($isZone) { // using the zone forecast
       if ($isZone) { // special handling for ERH->CRH redirection
 
       // Grab the Last Update date and time.
-      preg_match('|<b>Last Update:</b></a>(.*)<br></td>|', $html, $betweenspan);
+      preg_match('|<b>Last Update:</b></a>(.*?)<br></td>|', $html, $betweenspan);
       $forecastupdated  = $betweenspan[1];
       # mchallis added security feature
-      $forecastupdated = strip_tags($forecastupdated, '<b><br><img><span>');
+      $forecastupdated = strip_tags($forecastupdated);
 // saratoga-weather.org mod:
           // Grab the NWS Forecast for (city name)
           preg_match('|class="white1">\s*(.*)<a href|',$html,$betweenspan);
@@ -442,10 +468,18 @@ if ($isZone) { // using the zone forecast
           } else { // begin regular handling
 
       // Now get just the bottom of the NWS page for editing
-      preg_match('|</table>(.*)<hr>|s', $html, $betweenspan);
-      $forecast  = $betweenspan[1];
+//      preg_match('|<td colspan="2" valign="top" align="left">(.*)<hr><br>|Us', $html, $betweenspan);
+//      $forecast  = $betweenspan[1];
+$startgrab = strpos($html, '<td colspan="2" valign="top" align="left">');
+$start = strpos($html, '<td colspan="2" valign="top" align="left">',$startgrab+1); // need second one
+$finish = strpos($html, '<hr><br>',$start);
+$length = $finish-$start;
+$forecast = substr($html, $start, $length);
+
       # mchallis added security feature
 	  preg_match_all('|<a href="(.*)"><span class="(.*)">(.*)</span></a>|Uis',$forecast,$warns);
+	  
+	  
 //	  print "<!-- forecastwarnings \n".print_r($warns,true)." -->\n";
       $forecast = strip_tags($forecast, '<b><br><img><span>');
 
@@ -465,20 +499,20 @@ if ($isZone) { // using the zone forecast
       # EOF mchallis added security feature
 
       // Grab the Last Update date and time.
-      preg_match('|Last Update: (.*)|', $html, $betweenspan);
+      preg_match('|<b>Last Update: </b></a>(.*?)</td>|', $html, $betweenspan);
       $forecastupdated  = $betweenspan[1];
-          $forecastupdated  = preg_replace('|<[^>]+>|Uis','',$forecastupdated); // remove html markup
+      //    $forecastupdated  = preg_replace('|<[^>]+>|Uis','',$forecastupdated); // remove html markup
 
 
 // saratoga-weather.org mod:
           // Grab the NWS Forecast for (city name)
-          preg_match('|<b>NWS Forecast for: (.*)</b>|',$html,$betweenspan);
+          preg_match('|<b>NWS Forecast for: (.*?)</b>|is',$html,$betweenspan);
           $forecastcity  = $betweenspan[1];
           # mchallis added security feature
           $forecastcity = strip_tags($forecastcity, '<b><br><img><span>');
 
           // Grab the Issued by office
-          preg_match('|Issued by: (.*)<br>|',$html,$betweenspan);
+          preg_match('|Issued by: (.*?)<br>|',$html,$betweenspan);
           $forecastoffice  = $betweenspan[1];
           # mchallis added security feature
           $forecastoffice = strip_tags($forecastoffice, '<b><br><img><span>');
@@ -777,13 +811,13 @@ print $Status;
 // if the forecast text is blank, prompt the visitor to force an update
 
 if (strlen($forecasttext[0])<2 and $PrintMode ) {
-
+  if(!isset($PHP_SELF)) { $PHP_SELF = $_SERVER['PHP_SELF']; }
   echo '<br/><br/>Forecast blank? <a href="' . $PHP_SELF . '?force=1">Force Update</a><br/><br/>';
 
 }
 if ($PrintMode) {?>
   <table width="640" style="border: none;">
-    <tr align="center" style="background-color: #FFFFFF;">
+    <tr align="center">
       <td><b>National Weather Service Forecast for: </b><span style="color: green;">
            <?php echo $forecastcity; ?></span><br />
         Issued by: <?php echo $forecastoffice; ?>
@@ -791,11 +825,11 @@ if ($PrintMode) {?>
     </tr>
     <tr>
       <td align="center">Updated: <?php echo $forecastupdated; ?>
-          </td>
+          </td><!--end forecastupdated-->
     </tr>
     <?php echo $ddMenu ?>
     <tr>
-	  <td align="center" style="font-size: 18px; margin: 0px auto 0px auto;"><b><?php echo $NOAAlocation; ?></b></td>
+	  <td align="center" style="font-size: 18px; margin: 0px auto;"><b><?php echo $NOAAlocation; ?></b></td>
     </tr>
     <tr>
       <td align="center">&nbsp;

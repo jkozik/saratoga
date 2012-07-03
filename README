@@ -203,3 +203,22 @@ $first_year_of_data = "2010";
  - update flyout-menu.xml
  - put noaadata.csv in ./cache, chmod 777
 
+Fix Forecast.  NWS web page changed 7/3/12
+ - advforecast2.php v3.04
+ - http://saratoga-weather.org/wxtemplates/updates.php#updates
+ - used file as is, over wrote old file; it seemed to work.  
+ - Tested with WXSIM; seemed ok.
+ - I hand editted the previous version:
+96c96
+<  $NOAAZone = 'CAZ513';  // change this line to your NOAA warning zone.
+---
+>  $NOAAZone = 'ILZ013';  // change this line to your NOAA warning zone.
+98c98,99
+<  $fileName = "http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2";//
+---
+>  //$fileName = "http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2";//
+>  $fileName = "http://forecast.weather.gov/MapClick.php?CityName=Naperville&state=IL&site=LOT&textField1=41.7626&textField2=-88.1543&e=0&TextType=2";
+
+ - The above changes don't appear to be needed.  The defaults from the 
+   settings file seem to cover
+
