@@ -222,3 +222,12 @@ Fix Forecast.  NWS web page changed 7/3/12
  - The above changes don't appear to be needed.  The defaults from the 
    settings file seem to cover
 
+Fix http://napervilleweather.net/wxnoaagraphs.php
+ - It was displaying NOAA no records found
+ - Fixed wxnoaacsvdata.php at line 428:
+//$wxsoftware = $SITE['WXsoftware'];
+$wxsoftware = 'VWS';
+ - I shouldn't have to do this. WXsoftware is set in Settings file
+ - Hmmm...
+
+

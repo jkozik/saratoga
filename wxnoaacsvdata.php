@@ -333,7 +333,8 @@ fclose($fp);
 #################################################################
 function get_noaa_filename ($year, $m, $current_month){
     global $SITE;
-    $wxsoftware = $SITE['WXsoftware'];
+    //$wxsoftware = $SITE['WXsoftware'];
+    $wxsoftware = 'VWS';
     if ($wxsoftware == ''){     // if using V2 Weather Display template
         $wxsoftware = 'WD';
     }
