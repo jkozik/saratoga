@@ -230,4 +230,31 @@ $wxsoftware = 'VWS';
  - I shouldn't have to do this. WXsoftware is set in Settings file
  - Hmmm...
 
+Add a weather station sticker
+ - http://scripts.anolecomputer.com/wxgraphic/
+ - http://scripts.anolecomputer.com/downloads/wxgraphic_6.3.zip
+ - copy wxgraphic directory to root folder, except for *.htx files
+ - copy VWS_graphicstags.htx to c:\vws\root on weather PC.  Program VWS Internet / HTML to generate VWS_graphicstags.htm along with all the other templates.  Every 10 minutes is good.
+ - copy arial.ttf from my PC's windows\font directory to wxgraphic dir
+ - edit config.txt
+$data_file_path  = '../VWS_graphictags.htm';
+$font_file = './arial.ttf';
+update Title in default, avatar and banner write sections
+//imagecenteredtext(90, 12, "A Title Here", 3, 10, $color2, 0);
+imagecenteredtext(90, 12, "Naperville", 3, 10, $color2, 0);
+//imagecenteredtext(90, 12, "A Title Here", 5, 10, $color2, 0);
+imagecenteredtext(90, 12, "Naperville", 5, 10, $color2, 0);
+//imagecenteredtext(250, 10, "A Title Here", 5, 14, $color2, 0);
+imagecenteredtext(250, 10, "Naperville", 5, 14, $color2, 0);
+//imagecenteredtext(65, 10, "Title Here", 2, 8, $color2, 0);
+imagecenteredtext(65, 10, "Naperville", 2, 8, $color2, 0);
+ - verify http://napervilleweather.net/wxgraphic/wxgraphic.php generates a 150x150 sticker
+ - update wordpress text widget
+<a href="http://NapervilleWeather.net">
+<img src="http://napervilleweather.net/wxgraphic/wxgraphic.php" width="150" height="150"
+alt="Naperville Weather"
+title="Naperville Weather">
+</a>
+ - add sticker reference to about page
+
 

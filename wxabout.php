@@ -60,6 +60,23 @@ The station is composed of an anemometer, located on the roof of our house, and 
 
 Naperville (<a href="http://en.wikipedia.org/wiki/Naperville,_Illinois">WIKI</a>) is a city of 141000 located in the South West suburbs of Chicago.  As you can see on the Neighboring Stations report, I am one of many weather station enthusiasts living in the Naperville area.
 
+	<h3>Sticker</h3>
+You can add a widget to your blog which gives snapshot of the weather data, with data refreshed on the server every 10 minutes.  The widget is does not dynamically refresh itself.  The following code can be cut/pasted into a text widget.
+<p>
+Weather Graphic (120x120)
+<br>
+<img src="http://napervilleweather.net/wxgraphic/wxgraphic.php" width="150" height="150"
+alt="Naperville Weather"
+title="Naperville Weather">
+<p>
+<textarea rows="7" cols="65">
+<a href="http://NapervilleWeather.net">
+<img src="http://napervilleweather.net/wxgraphic/wxgraphic.php" width="150" height="150"
+alt="Naperville Weather"
+title="Naperville Weather">
+</a>
+</textarea>
+
 
 
 	<h3>About This Website</h3> 
