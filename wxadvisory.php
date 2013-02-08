@@ -1,6 +1,6 @@
 <?php
 ############################################################################
-# A Project of TNET Services, Inc. and Saratoga-Weather.org (WD-USA template set)
+# A Project of TNET Services, Inc. and Saratoga-Weather.org (Base-USA template set)
 ############################################################################
 #
 #   Project:    Sample Included Website Design
@@ -27,6 +27,7 @@
 ############################################################################
 #	This document uses Tab 4 Settings
 ############################################################################
+//Version 1.01 - 28-Jul-2012 - integrated support for nws-alerts scripts
 require_once("Settings.php");
 require_once("common.php");
 ############################################################################
@@ -46,19 +47,24 @@ include("menubar.php");
 ?>
 
 <div id="main-copy">
-  
+ 
+<?php // insert desired warning box at top of page
+
+  if(isset($SITE['NWSalertsCodes']) and count($SITE['NWSalertsCodes']) > 0) {
+    include_once("nws-alerts-summary-inc.php");  
+
+  } else { // use atom scripts of choice
+?> 
 	  <h3>Watches, Warnings, and Advisories</h3> 
         
     <div class="advisoryBox" style="text-align: left; background-color:#FFFF99">
 	<?php 
 	   $_REQUEST['inc'] = 'y';
-	   if(phpversion() < 5.0) { 
-	     include("rss-advisory.php");
-	   } else { 
-	     include("atom-advisory.php");
-	   }
+	   include("atom-advisory.php");
 	 ?>
 	</div>
+
+<?php } // end nws-alerts / original atom alerts selection ?>
 
 <img src="http://maps.wunderground.com/data/severe/current_severe_nostatefarm.gif?dontcache=y" width="630" height="480" border="0" alt="national advisories"/>
 

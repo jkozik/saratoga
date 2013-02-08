@@ -29,6 +29,7 @@
 ############################################################################
 //Version 1.01 - 9-Aug-2011 - added Meteohub support
 //Version 1.02 - 24-Mar-2012 - added WeatherCat support
+//Version 1.03 - 03-Jul-2012 - added wview support
 require_once("Settings.php");
 require_once("common.php");
 ############################################################################
@@ -241,6 +242,129 @@ $WX['GRRAIN24'] = 'precipitationc1.jpg'; // Current daily rain rate graph.
     <?php } // end solar/uv selection ?>
     
 <?php } // end WeatherCat graph names    ?>
+
+<?php if($SITE['WXsoftware'] == 'WV') { // wview graph names
+  $WVgraphDescs = array(
+     'd' => 'Daily',
+	 'w' => 'Weekly',
+	 'm' => 'Monthly',
+	 'y' => 'Yearly',
+  );
+  $WVgraphPeriods = array(
+     'd' => '24h',
+	 'w' => '7d',
+	 'm' => '28d',
+	 'y' => '365d',
+  );
+
+$WVgraphs = array(
+# 24h graphs
+'24h-temp' => 'tempdaycomp.png',
+'24h-hc' => 'heatchillcomp.png',
+'24h-hum' => 'humidday.png',
+'24h-baro' => 'baromday.png',
+'24h-rain' => 'rainday.png',
+'24h-wdir' => 'wdirday.png',
+'24h-wsp' => 'wspeeddaycomp.png',
+'24h-rad' => 'radiationDay.png',
+'24h-uv' => 'UVDay.png',
+
+# 7d graphs
+'7d-temp' => 'tempweekcomp.png',
+'7d-hc' => 'heatchillweekcomp.png',
+'7d-hum' => 'humidweek.png',
+'7d-baro' => 'baromweek.png',
+'7d-rain' => 'rainweek.png',
+'7d-wdir' => 'wdirweek.png',
+'7d-wsp' => 'wspeedweekcomp.png',
+'7d-rad' => 'radiationWeek.png',
+'7d-uv' => 'UVWeek.png',
+
+# 28d graphs
+'28d-temp' => 'tempmonthcomp.png',
+'28d-hc' => 'heatchillmonthcomp.png',
+'28d-hum' => 'humidmonth.png',
+'28d-baro' => 'barommonth.png',
+'28d-rain' => 'rainmonth.png',
+'28d-wdir' => 'wdirmonth.png',
+'28d-wsp' => 'wspeedmonthcomp.png',
+'28d-rad' => 'radiationMonth.png',
+'28d-uv' => 'UVMonth.png',
+
+# 365d graphs
+'365d-temp' => 'tempyear.png',
+'365d-hum' => 'humidyear.png',
+# http://192.168.189.133/weather/wchillyear.png',
+# http://192.168.189.133/weather/hindexyear.png',
+'365d-hc' => 'hindexyear.png',
+'365d-baro' => 'baromyear.png',
+'365d-rain' => 'rainyear.png',
+# http://192.168.189.133/weather/dewyear.png',
+'365d-wsp' => 'wspeedyear.png',
+'365d-wdir' => 'wdiryear.png',
+# http://192.168.189.133/weather/hiwspeedyear.png',
+'365d-rad' => 'radiationYear.png',
+'365d-uv' => 'UVYear.png',
+
+);
+
+$WVgraphIdx = 'w';  // default is 7-day set
+$WVgraphName = $WVgraphDescs[$WVgraphIdx];
+$WVgraphSet =  $WVgraphPeriods[$WVgraphIdx];
+
+
+if(isset($_REQUEST['graph'])) { // check out selection
+  $req = strtolower($_REQUEST['graph']);
+  foreach ($WVgraphDescs as $i => $v) {
+	  if ($req == $i) {
+		$WVgraphIdx = $i;  // default is 7-day set
+		$WVgraphName = $WVgraphDescs[$i];
+		$WVgraphSet =  $WVgraphPeriods[$i];
+		break;  
+	  }
+  }
+}
+// generate the links for the available periods to display
+print "<p style=\"text-align: center\">";
+foreach ($WVgraphDescs as $i => $v) {
+	if ($i == $WVgraphIdx) {
+		print "<strong>".langtransstr($v)."</strong>&nbsp;&nbsp;";
+	} else {
+		print "<a href=\"?graph=$i\">".langtransstr($v)."</a>&nbsp;&nbsp;";
+	}
+}
+print "</p>\n";	
+ ?>
+    <h2><?php echo langtransstr('Temperature') . ' - ' . langtransstr('Dew Point') . ' / ' . langtransstr('Wind Chill') . ' - ' .langtransstr('Heat Index'); ?></h2>
+	<?php genImageLink($WVgraphs[$WVgraphSet."-temp"],'Temperature'); ?>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-hc"],'Wind Chill'); ?>
+    <br />
+    <h2><?php echo langtransstr('Humidity') . ' / ' . langtransstr('Barometer'); ?></h2>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-hum"],'Humidity'); ?>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-baro"],'Barometer'); ?>
+    <br />
+    <h2><?php echo langtransstr('Wind'); ?></h2>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-wsp"],'Wind Speed'); ?>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-wdir"],'Wind Direction'); ?>
+    <br />
+    <h2><?php langtrans('Rain'); ?></h2>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-rain"],'Rain'); ?>
+    <br />
+        <?php // figure out to display solar and/or UV based on site settings
+	if($SITE['SOLAR'] and $SITE['UV']) { // have both sensors ?>
+    <h2><?php echo langtransstr('Solar Radiation') . ' / ' . langtransstr('UV Index'); ?></h2>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-rad"],'Solar Radiation'); ?>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-uv"],'UV Index'); ?>
+    <?php } elseif ($SITE['SOLAR']) { ?>
+     <h2><?php echo langtransstr('Solar Radiation'); ?></h2>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-rad"],'Solar Radiation'); ?>
+    <?php } elseif ($SITE['UV']) { ?>
+     <h2><?php echo langtransstr('UV Index'); ?></h2>
+    <?php genImageLink($WVgraphs[$WVgraphSet."-uv"],'UV Index'); ?>
+    <?php } // end solar/uv selection ?>
+
+    
+<?php } // end wview graph names    ?>
 
 
 </div><!-- end main-copy -->

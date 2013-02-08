@@ -33,7 +33,8 @@ require_once("Settings.php");
 global $forwardTrans,$reverseTrans,$missingTrans;
 ############################################################################
 # Version 1.04 - 29-Nov-2011 - improved language translations for conditions
-$CMNVersion = 'common.php - Version 1.04 - 29-Nov-2011';
+# Version 1.05 - 01-Dec-2012 - minor fix to cGetSeasonInfo
+$CMNVersion = 'common.php - Version 1.05 - 01-Dec-2012';
 # Common Functions
 ############################################################################
 
@@ -642,7 +643,7 @@ $Q3Moons = array( // unixtime values in UTC/GMT
 return $info;
 }
 // -----------------------------------------------------------------------------
-// SEASON FUNTIONS  return season dates base on USNO dates for Spring, Summer, Fall, Winter                                                             .
+// SEASON FUNCTIONS  return season dates based on USNO dates for Spring, Summer, Fall, Winter                                                             .
 // -----------------------------------------------------------------------------
 function cGetSeasonInfo ($YY=0) { // feed it the year
   $seasonList = array( // seasons from USNO in WD date format
@@ -662,7 +663,7 @@ function cGetSeasonInfo ($YY=0) { // feed it the year
   ); // end of seasonList
 
   if($YY<2009) {$YY = idate('Y');} // use current year 
-
+  $info = new stdClass();
   if(!isset($seasonList[$YY])) {
 	   $info->error = "Year $YY not in list";
 	   return $info;

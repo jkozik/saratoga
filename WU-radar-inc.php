@@ -31,6 +31,8 @@
 //                                using <iframe> include.
 //  Version 1.05 - 24-Jul-2008 -  Fixed legend for severe weather (thanks to Michael at http://www.relayweather.com/ )
 //  Version 1.06 - 15-Apr-2011 -  Fixed wandering animation scale (changed 'type=N1'R to 'type=N0R' for 5 occurrence)
+//  Version 1.07 - 31-Aug-2012 -  Added support for alternate WU radblast servers
+//  Version 1.08 - 02-Sep-2012 -  fixed bug for maps 10-20 display
 //
 // settings ----------------------------- */
 $imagesDir = './ajax-images/';  // directory for ajax-images+radar buttons with trailing slash
@@ -75,20 +77,25 @@ $WUname5	= 'Entire US';		// tooltip label for mode=5
 //  Repeat the procedure for $CityPos2 through $CityPos9 
 //
 // $CityPos1 - for City Level radar/animation
-$CityPos1  =  'left: 389px; top: -254px;';
+//$CityPos1  =  'left: 389px; top: -254px;';
+$CityPos1  =  'left: 421px; top: -233px;';
 $CityColor1 = '#FFFFFF';  // color of legend display
 // see instructions above to set  $CityURL value
-$CityURL = 'http://radblast-aa.wunderground.com/cgi-bin/radar/WUNIDS_map?station=MUX&brand=wui&num=1&delay=15&type=N0R&frame=0&scale=0.125&noclutter=0&t=1199816619&lat=37.27153397&lon=-122.02274323&label=Saratoga%2C+CA&showstorms=0&map.x=400&map.y=240&centerx=478&centery=335&transx=78&transy=95&showlabels=1&severe=0&rainsnow=0&lightning=0';
+//$CityURL = 'http://radblast-aa.wunderground.com/cgi-bin/radar/WUNIDS_map?station=MUX&brand=wui&num=1&delay=15&type=N0R&frame=0&scale=0.125&noclutter=0&t=1199816619&lat=37.27153397&lon=-122.02274323&label=Saratoga%2C+CA&showstorms=0&map.x=400&map.y=240&centerx=478&centery=335&transx=78&transy=95&showlabels=1&severe=0&rainsnow=0&lightning=0';
+$CityURL = 'http://radblast-aws.wunderground.com/cgi-bin/radar/WUNIDS_map?station=LOT&brand=wui&num=1&delay=15&type=N0R&frame=0&scale=0.189&noclutter=0&t=1359130345&lat=41.78580093&lon=-88.14720154&label=Naperville%2C+IL&showstorms=0&map.x=400&map.y=240&centerx=421&centery=255&transx=21&transy=15&showlabels=1&severe=0&rainsnow=0&lightning=0&smooth=0';
 
 // $CityPos2 - for Metro Level radar/animation	 
-$CityPos2  =  'left: 394px; top: -260px;';
+//$CityPos2  =  'left: 394px; top: -260px;';
+$CityPos2  =  'left: 431px; top: -248px;';
 $CityColor2 = '#FFFFFF';  // color of legend display
 // see instructions above to set  $MetroURL value
-$MetroURL = 'http://radblast-aa.wunderground.com/cgi-bin/radar/WUNIDS_map?station=MUX&brand=wui&num=1&delay=15&type=N0R&frame=0&scale=0.272&noclutter=0&t=1199816502&lat=37.27153397&lon=-122.02274323&label=Saratoga%2C+CA&showstorms=0&map.x=400&map.y=240&centerx=436&centery=276&transx=36&transy=36&showlabels=1&severe=0&rainsnow=0&lightning=0';
+//$MetroURL = 'http://radblast-aa.wunderground.com/cgi-bin/radar/WUNIDS_map?station=MUX&brand=wui&num=1&delay=15&type=N0R&frame=0&scale=0.272&noclutter=0&t=1199816502&lat=37.27153397&lon=-122.02274323&label=Saratoga%2C+CA&showstorms=0&map.x=400&map.y=240&centerx=436&centery=276&transx=36&transy=36&showlabels=1&severe=0&rainsnow=0&lightning=0';
+$MetroURL = 'http://radblast-aws.wunderground.com/cgi-bin/radar/WUNIDS_map?station=LOT&brand=wui&num=1&delay=15&type=N0R&frame=0&scale=0.315&noclutter=0&t=1359130171&lat=41.78580093&lon=-88.14720154&label=Naperville%2C+IL&showstorms=0&map.x=400&map.y=240&centerx=431&centery=240&transx=31&transy=0&showlabels=1&severe=0&rainsnow=0&lightning=0&smooth=0';
 
 
 // $CityPos3 - for unzoomed radar/animation
-$CityPos3  =  'left: 386px; top: -262px;';
+//$CityPos3  =  'left: 386px; top: -262px;';
+$CityPos3  =  'left: 400px; top: -248px;';
 $CityColor3 = '#FFFFFF';  // color of legend display
 
 // $CityPos4 - for US Advisory map
@@ -96,23 +103,28 @@ $CityPos4  =  'left: 35px; top: -324px;';
 $CityColor4 = '#FFFFFF';  // color of legend display
 
 // $CityPos5 = USA Radar/animation	 
-$CityPos5  =  'left: 50px; top: -345px;';
+//$CityPos5  =  'left: 50px; top: -345px;';
+$CityPos5  =  'left: 434px; top: -244px;';
 $CityColor5 = '#FFFFFF';  // color of legend display
 
 // $CityPos6 - for USA Radar Map
-$CityPos6  =  'left: 29px; top: -319px;';
+//$CityPos6  =  'left: 29px; top: -319px;';
+$CityPos6  =  'left: 413px; top: -325px;';
 $CityColor6 = '#FFFFFF';  // color of legend display
 
 // $CityPos7 - Regional maps (Fronts, Satellite, Wind, Jet Stream, Snow Depth, etc)
-$CityPos7  =  'left: 51px; top: -345px;';
+//$CityPos7  =  'left: 51px; top: -345px;';
+$CityPos7  =  'left: 436px; top: -244px;';
 $CityColor7 = '#FFFFFF';  // color of legend display
 
 // $CityPos8 - for USA Flu map
-$CityPos8  =  'left: 34px; top: -318px;';
+//$CityPos8  =  'left: 34px; top: -318px;';
+$CityPos8  =  'left: 413px; top: -325px;';
 $CityColor8 = '#0000FF';  // color of legend display
 
 // $CityPos9 - for Regional Advisories map
-$CityPos9  =  'left: 49px; top: -326px;';
+//$CityPos9  =  'left: 49px; top: -326px;';
+$CityPos9  =  'left: 431px; top: -211px;';
 $CityColor9 = '#FFFFFF';  // color of legend display
 
 // end of settings
@@ -131,19 +143,8 @@ if (isset($_REQUEST['sce']) && strtolower($_REQUEST['sce']) == 'view' ) {
    readfile($filenameReal);
    exit;
 }
-?><!-- WU-radar-inc.php - Version 1.06 - 15-Apr-2011 - http://saratoga-weather.org/scripts.php --><?php
+?><!-- WU-radar-inc.php - Version 1.08 - 02-Sep-2012 - http://saratoga-weather.org/scripts.php --><?php
 
-$PHP_SELF = $_SERVER['PHP_SELF'];
-if ( empty($_REQUEST['mode']) ) 
-        $_REQUEST['mode']="3";
-if ( empty($_REQUEST['animated']) ) 
-        $_REQUEST['animated']="0";
-if ( empty($_REQUEST['advisories']) ) 
-        $_REQUEST['advisories']="0";
-if ( empty($_REQUEST['track']) ) 
-        $_REQUEST['track']="0";
-if ( empty($_REQUEST['lightning']) ) 
-        $_REQUEST['lightning']="0";
 //------------------------------------------------
 // overrides from Settings.php if available
 global $SITE;
@@ -163,6 +164,9 @@ if (isset($SITE['WUname5'])) 	{$WUname5 = $SITE['WUname5'];}	// tooltip label fo
 // end of overrides from Settings.php if available
 
 $UTCtime = time(); // not random, but needed for URL fetches.
+$WU = parse_url($MetroURL);
+$WUhost = $WU['host'];
+print "\n<!-- using '$WUhost' for City, Metro, and Full radar images -->\n";
 //------------------------------------------------
 //Get values from web - set as default if nothing
 //------------------------------------------------
@@ -180,13 +184,18 @@ if ( empty($_REQUEST['lightning']) )
 //------------------------------------------------
 
 //------------------------------------------------
-//Pass into PHP variables
+//Pass into PHP variables with caution
 //------------------------------------------------
-$Mode = $_REQUEST['mode'];
-$Animated = $_REQUEST['animated'];
-$Advisories = $_REQUEST['advisories'];
-$Track = $_REQUEST['track'];
-$Lightning = $_REQUEST['lightning'];
+$Mode = preg_replace('|[^\d]+|','',$_REQUEST['mode']);
+if($Mode < 1 or $Mode > 20) {$Mode = '3'; }
+$Animated = preg_replace('/[^0|1]+/','',$_REQUEST['animated']);
+if($Animated == '') {$Animated = '0'; }
+$Advisories = preg_replace('/[^0|1]+/','',$_REQUEST['advisories']);
+if($Advisories == '') {$Advisories = '0'; }
+$Track = preg_replace('/[^0|1]+/','',$_REQUEST['track']);
+if($Track == '') {$Track = '0'; }
+$Lightning = preg_replace('/[^0|1]+/','',$_REQUEST['lightning']);
+if($Lightning == '') {$Lightning = '0'; }
 
 $doShow = '';
 if(isset($_REQUEST['show'])) {
@@ -362,7 +371,7 @@ $CityParms = getParmsFromURL($CityURL);
 echo "<!-- CityParms='$CityParms' -->\n";
 ?>
 
-<span style="position: relative; left: 0px; top: 0px; border: none;"><img id="WUimage" src="http://radblast-aa.wunderground.com/cgi-bin/radar/WUNIDS_map?station=<?php echo $RDR; ?>&amp;brand=wui<?php echo $AnText; ?>&amp;type=N0R&amp;frame=0&amp;noclutter=0&amp;t=<?php echo $UTCtime; ?>&amp;lat=<?php echo $Lat; ?>&amp;lon=<?php echo $Long; ?>&amp;label=<?php echo urlencode($City); ?><?php echo $TrText; ?>&amp;map.x=400&amp;map.y=240<?php echo $CityParms; ?>&amp;showlabels=1<?php echo $AdText; ?>&amp;rainsnow=1<?php echo $LightText; ?>" width="640" height="480" alt="" /></span>
+<span style="position: relative; left: 0px; top: 0px; border: none;"><img id="WUimage" src="http://<?php echo $WUhost; ?>/cgi-bin/radar/WUNIDS_map?station=<?php echo $RDR; ?>&amp;brand=wui<?php echo $AnText; ?>&amp;type=N0R&amp;frame=0&amp;noclutter=0&amp;t=<?php echo $UTCtime; ?>&amp;lat=<?php echo $Lat; ?>&amp;lon=<?php echo $Long; ?>&amp;label=<?php echo urlencode($City); ?><?php echo $TrText; ?>&amp;map.x=400&amp;map.y=240<?php echo $CityParms; ?>&amp;showlabels=1<?php echo $AdText; ?>&amp;rainsnow=1<?php echo $LightText; ?>" width="640" height="480" alt="" /></span>
 <span id="cityloc" style="position: relative; <?php echo $CityPos1; ?> font-size: 10pt; color:#FF0000">&bull;&nbsp;<span style="color:<?php echo $CityColor1; ?>; font-size: 9pt;"><b><?php echo $City; ?></b></span></span><?php echo $AdKey; ?>
 
 <?php
@@ -377,7 +386,7 @@ $MetroParms = getParmsFromURL($MetroURL);
 echo "<!-- MetroParms='$MetroParms' -->\n";
 ?>
 
-<span style="position: relative; left: 0px; top: 0px; border: none;"><img id="WUimage" src="http://radblast-aa.wunderground.com/cgi-bin/radar/WUNIDS_map?station=<?php echo $RDR; ?>&amp;brand=wui<?php echo $AnText; ?>&amp;type=N0R&amp;frame=0&amp;noclutter=0&amp;t=<?php echo $UTCtime; ?><?php echo $TrText; ?>&amp;map.x=400&amp;map.y=240<?php echo $MetroParms; ?>&amp;showlabels=1<?php echo $AdText; ?>&amp;rainsnow=1<?php echo $LightText; ?>&amp;lat=<?php echo $Lat; ?>&amp;lon=<?php echo $Long; ?>&amp;label=<?php echo urlencode($City); ?>" width="640" height="480" alt="" /></span>
+<span style="position: relative; left: 0px; top: 0px; border: none;"><img id="WUimage" src="http://<?php echo $WUhost; ?>/cgi-bin/radar/WUNIDS_map?station=<?php echo $RDR; ?>&amp;brand=wui<?php echo $AnText; ?>&amp;type=N0R&amp;frame=0&amp;noclutter=0&amp;t=<?php echo $UTCtime; ?><?php echo $TrText; ?>&amp;map.x=400&amp;map.y=240<?php echo $MetroParms; ?>&amp;showlabels=1<?php echo $AdText; ?>&amp;rainsnow=1<?php echo $LightText; ?>&amp;lat=<?php echo $Lat; ?>&amp;lon=<?php echo $Long; ?>&amp;label=<?php echo urlencode($City); ?>" width="640" height="480" alt="" /></span>
 <span id="cityloc" style="position: relative; <?php echo $CityPos2; ?> font-size: 10pt; color:#FF0000">&bull;&nbsp;<span style="color:<?php echo $CityColor2; ?>; font-size: 9pt;"><b><?php echo $City; ?></b></span></span><?php echo $AdKey; ?>
 
 <?php
@@ -390,7 +399,7 @@ if ($Mode == "3") {
 $MapScale = 3;
 ?>
 
-<span style="position: relative; left: 0px; top: 0px; border: none;"><img id="WUimage" src="http://radblast-aa.wunderground.com/cgi-bin/radar/WUNIDS_map?station=<?php echo $RDR; ?>&amp;brand=wui<?php echo $AnText; ?>&amp;type=N0R&amp;frame=0&amp;scale=0.999&amp;noclutter=0&amp;t=<?php echo $UTCtime; ?><?php echo $TrText; ?>&amp;map.x=400&amp;map.y=240&amp;centerx=400&amp;centery=240&amp;transx=0&amp;transy=0&amp;showlabels=1<?php echo $AdText; ?>&amp;rainsnow=1<?php echo $LightText; ?>&amp;lat=<?php echo $Lat; ?>&amp;lon=<?php echo $Long; ?>&amp;label=<?php echo urlencode($City); ?>" width="640" height="480" alt="" /></span>
+<span style="position: relative; left: 0px; top: 0px; border: none;"><img id="WUimage" src="http://<?php echo $WUhost; ?>/cgi-bin/radar/WUNIDS_map?station=<?php echo $RDR; ?>&amp;brand=wui<?php echo $AnText; ?>&amp;type=N0R&amp;frame=0&amp;scale=0.999&amp;noclutter=0&amp;t=<?php echo $UTCtime; ?><?php echo $TrText; ?>&amp;map.x=400&amp;map.y=240&amp;centerx=400&amp;centery=240&amp;transx=0&amp;transy=0&amp;showlabels=1<?php echo $AdText; ?>&amp;rainsnow=1<?php echo $LightText; ?>&amp;lat=<?php echo $Lat; ?>&amp;lon=<?php echo $Long; ?>&amp;label=<?php echo urlencode($City); ?>" width="640" height="480" alt="" /></span>
 <span id="cityloc" style="position: relative; <?php echo $CityPos3; ?> font-size: 10pt; color:#FF0000">&bull;&nbsp;<span style="color:<?php echo $CityColor3; ?>; font-size: 9pt;"><b><?php echo $City; ?></b></span></span><?php echo $AdKey; ?>
 <?php
 }

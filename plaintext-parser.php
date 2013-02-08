@@ -36,8 +36,9 @@
 // Version 1.26 - 22-Feb-2011 - added more Wind-Chill processing for WXSIM 12.8.5+
 // Version 1.27 - 01-Oct-2011 - added support for alternative animated icon set from http://www.meteotreviglio.com/
 // Version 1.28 - 27-Dec-2011 - added support for RTL languages (Hebrew)
+// Version 1.29 - 08-Dec-2012 - added fixes for PHP 5.4
 //
-$Version = "plaintext-parser.php Version 1.28 - 27-Dec-2011";
+$Version = "plaintext-parser.php Version 1.29 - 08-Dec-2012";
 //
 // error_reporting(E_ALL);  // uncomment to turn on full error reporting
 //
@@ -440,7 +441,7 @@ if (preg_match('|WXSIM text forecast for (.*), initialized at\s+(.*)|i',$plainte
 //  $Status .= "<!-- wdate split\n" . print_r($wdateParts,true) . " -->\n";
   $i=0;
   if (preg_match('!AM|PM!i',$wdateParts[1]) ) { // got US style date.
-    list($wHrs,$wMins) = split(':',$wdateParts[0]);
+    list($wHrs,$wMins) = explode(':',$wdateParts[0]);
 	if (strtolower($wdateParts[1]) == 'pm' and $wHrs <> 12 ) {$wHrs += 12; }
 	if (strtolower($wdateParts[1]) == 'am' and $wHrs == 12 ) {$wHrs = '00'; }
     $wTime = "$wHrs:$wMins";

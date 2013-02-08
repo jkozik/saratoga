@@ -1,6 +1,6 @@
 <?php
 ############################################################################
-# A Project of TNET Services, Inc. and Saratoga-Weather.org (USA template set)
+# A Project of TNET Services, Inc. and Saratoga-Weather.org (Base-USA template set)
 ############################################################################
 #
 #   Project:    Sample Included Website Design
@@ -27,6 +27,7 @@
 ############################################################################
 #	This document uses Tab 4 Settings
 ############################################################################
+//Version 1.01 - 28-Jul-2012 - integrated support for nws-alerts scripts
 require_once("Settings.php");
 require_once("common.php");
 ############################################################################
@@ -51,22 +52,27 @@ $useTopWarning = true;  // set to true to use only the rss-top-warning script
 <div id="main-copy">
     
 <?php // insert desired warning box at top of page
-  if ($useTopWarning) {
-	 if (phpversion() < 5.0) { 
-       include_once("rss-top-warning.php");
-	 } else {
-	   include_once("atom-top-warning.php");
-	 }
-  } else {
-   print "      <div class=\"advisoryBox\">\n";
-   $_REQUEST['inc'] = 'y';
-   $_REQUEST['summary'] = 'Y';
-   if (phpversion() < 5.0) {
-     include_once("rss-advisory.php");
-   } else { 
-     include_once("atom-advisory.php");
-   }
-   print "      </div>\n";
+
+  if(isset($SITE['NWSalertsCodes']) and count($SITE['NWSalertsCodes']) > 0) {
+	// Add nws-alerts alert box cache file
+	include_once("nws-alerts-config.php");
+	include($cacheFileDir.$aboxFileName);
+	// Insert nws-alerts alert box
+	echo $alertBox;
+	?>
+<script type="text/javascript" src="nws-alertmap.js"></script>
+<?php
+	  
+  } else { // use atom scripts of choice
+	if ($useTopWarning) {
+	  include_once("atom-top-warning.php");
+	} else {
+	 print "      <div class=\"advisoryBox\">\n";
+	 $_REQUEST['inc'] = 'y';
+	 $_REQUEST['summary'] = 'Y';
+	 include_once("atom-advisory.php");
+	 print "      </div>\n";
+	}
   }
 ?>
 <div class="column-dark">

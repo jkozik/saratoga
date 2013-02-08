@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+<!-- version 1.00 - 10-Jun-2012 -->
+<channel>
+  <title>SF Bay Area Weather Alerts</title>
+  <link>saratoga-weather.org/</link>
+  <description>Courtesy of the National Weather Service</description>
+  <language>en-us</language>
+  <generator>RSS feed version 1.00 - 10-Jun-2012</generator>
+  <copyright>Curly at ricksturf.com</copyright>
+  <pubDate>2012-07-28T19:30:03 PDT</pubDate>
+  <ttl>15</ttl>
+  <lastBuildDate>2012-07-28T19:30:03 PDT</lastBuildDate>
+  <item>
+    <title>Santa Clara Valley</title>
+    <link>href="http://saratoga-weather.org/"</link>
+    <pubDate>Sat, 28 Jul 2012 19:30:03 PDT</pubDate>
+    <description>&lt;a href=&quot;wxnws-details.php?a=CAZ513#WA1&quot; title=&quot;There are no details&quot;&gt;No Alerts&lt;/a&gt; &lt;br/&gt;Severe weather is not expected&lt;br/&gt;&lt;br/&gt; &lt;br/&gt;</description>
+  </item>
+  <item>
+    <title>Santa Cruz</title>
+    <link>href="http://saratoga-weather.org/"</link>
+    <pubDate>Sat, 28 Jul 2012 19:30:03 PDT</pubDate>
+    <description>&lt;a href=&quot;wxnws-details.php?a=CAZ529#WA1&quot; title=&quot;There are no details&quot;&gt;No Alerts&lt;/a&gt; &lt;br/&gt;Severe weather is not expected&lt;br/&gt;&lt;br/&gt; &lt;br/&gt;</description>
+  </item>
+</channel>
+</rss>

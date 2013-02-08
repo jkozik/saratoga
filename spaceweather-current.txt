@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/simple_template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Today's Space Weather</title>
+<meta http-equiv="Refresh" content="300">
+
+<!-- InstanceEndEditable --> 
+<meta name="DC.title" content="Space Weather Prediction Center" >
+<meta name="DC.description" content="The Space Weather Prediction Center, part of NOAA's National Weather Service, provides space weather alerts, forecasts, watches, warnings and near-real-time data characterizing the space environment." > 
+<meta name="DC.creator" content="NOAA / NWS Space Weather Prediction Center" >
+<meta name="DC.publisher" content="NOAA / NWS Space Weather Prediction Center" >
+<meta name="DC.contributor" content="NOAA / NWS Space Weather Prediction Center" >
+<meta name="DC.rights" content="http://www.weather.gov/disclaimer.php" >
+<meta name="DC.date.created" scheme="ISO8601" content="2007-10-01" >
+<meta name="DC.date.reviewed" scheme="ISO8601" content="2007-10-01" >
+<meta name="DC.language" scheme="DCTERMS.RFC1766" content="EN-US" >
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link rel="icon" type="image/ico" href="/nwscwi/favicon.ico">
+
+<style type="text/css" media="all">
+body, table{font-family: Arial, Verdana, sans-serif; font-size: 85%}
+table#footer {font-size: 75%;}
+.head {display: block; background-color: #23356F; color: #FFFFFF; font: bold; font-size: 200%}
+.head A:link {text-decoration: none; color: #FFFFFF;}
+.head A:visited {text-decoration: none; color: #FFFFFF;}
+.head A:active {text-decoration: none; color: #FFFFFF;}
+.head A:hover {color: #FFFFFF;}
+}
+</style>
+<!-- InstanceBeginEditable name="head" -->
+<STYLE type=text/css media=all>
+.bisque {color:#FF3333; font-size:12pt; font-weight:bolder; }
+</STYLE>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+
+<p><span class="head">NOAA / <a href="/index.html">Space Weather Prediction Center</a></span></p>
+
+<!-- InstanceBeginEditable name="Content" -->
+<h1 align="center"><b>Today's Space Weather</b></h1>
+<h3 align="center">Updated 2013 February  8 01:13 UTC</h3>
+<hr><!--<p class=bisque>Jan 10, 2011 -- 
+<a href="/Data/goes.html">GOES 15 will replace GOES 11 as the 
+secondary SWPC GOES Proton, Electron and Magnetometer satellite the 
+end of February</a></p>-->
+
+This page with <a href="/today.html">white background plots</a> 
+ or <a href="/today2.html">black background plots</a></p>
+<!--  Latest GOES Solar X-ray Image -->
+<hr noshade>
+<table width="96%" border=0>
+  <tr>
+    <td width=185><a href="/sxi/images/latest_sxi.png">   <img align=top src="/sxi/images/latest_sxi_small.png"   border=0
+   alt="Latest GOES Solar X-ray Image, link to large image"></a></td>
+  <td><p><b>Latest GOES Solar X-ray Image Image</b><p>
+    <a href="/sxi/index.html">SWPC GOES SXI Web Page</a> 
+  <p>See <a href="/solar_sites.html">Solar Image References</a>    for other solar image sites.</p>
+</td></tr></table>
+<hr noshade>
+<!--  Forecast and reference links -->
+<blockquote>
+<h3>Latest <a href="/forecast.html">3-day Solar-Geophysical Forecast</a></h3>  </blockquote>
+<hr noshade>
+<!--  X-ray flux plot -->
+<h2 align=center><a name=xray></a> Solar X-ray Flux </h2>
+  <p align=center>
+    <a href="/rt_plots/xray_5m.html" TARGET="_blank"> <img src="/rt_plots/Xray.gif" 
+alt="3-day Solar Xray Flux graph" height=480 width=640></a>
+  </p>
+  <blockquote>
+  <p> This plot shows 3-days of 5-minute solar x-ray flux values 
+    measured on the SWPC primary GOES satellite. 
+    One low value may appear prior to eclipse periods. 
+    Click on the plot to open an updating secondary window. 
+    <a href="/rt_plots/xray_1m.html" TARGET="_blank"> 6-hour 1-min Solar X-ray Flux plot</a>.
+    <!--  Satellite Environment Plot -->
+  </p>
+</blockquote>
+<hr noshade>
+<h2 align=center><a name=satenv></a> Satellite Environment Plot</h2>
+  <p align=center>
+  <img src="/rt_plots/SatEnv.gif" height=480 width=640 
+    alt="3-day Satellite Environment graph and image map."
+    USEMAP="#satenv_map">
+  <MAP NAME="satenv_map">
+    <AREA SHAPE=rect COORDS=" 0,0,   640,120" 
+  HREF="/rt_plots/pro_3d.html" TARGET="_blank" alt="link to Proton Plot">
+    <AREA SHAPE=rect COORDS=" 0,120, 640,230"
+   HREF="/rt_plots/elec_3d.html" TARGET="_blank" alt="link to Electron Plot">
+    <AREA SHAPE=rect COORDS=" 0,230, 640,330"
+  HREF="/rt_plots/mag_3d.html" TARGET="_blank" alt="link to GOES Mag. Plot">
+    <AREA SHAPE=rect COORDS=" 0,330, 640,480"
+  HREF="/rt_plots/kp_3d.html" TARGET="_blank" alt="link to Kp Plot">
+  </MAP>
+</p>
+    <p align=center><b>Proton Flux from GOES-13, 
+  Electron Flux and GOES Hp from GOES-13 &amp; GOES-15</b></p>
+<blockquote>
+  <p>The Satellite Environment Plot combines satellite and ground-based 
+    data to provide an overview of the current geosynchronous satellite 
+    environment. Click on a data panel to open an updating secondary window. 
+    An updating 
+    <a href="/rt_plots/satenv.html" TARGET="_blank">Satellite Environment Plot</a> 
+    window is also available.</p>
+  <p> Although these data are of interest to the satellite
+    community, they do not include all parameters and energy ranges 
+    known to be associated with satellite anomalies. 
+    See related information from the NOAA POES satellite -- 
+    <a href="/pmap/index.html">Auroral Activity Estimates</a>,
+    <a href="/tiger/index.html">Relative Intensities of Energetic Particles</a>, and 
+    <a href="/tiger/SolarProtons.html">Solar Protons.</a>  </p>
+</blockquote>
+<hr noshade>
+<h4><b>Most recent Space Weather data</b></h4>
+<ul>
+  <li><a href="/rt_plots/xray_1m.html" TARGET="_blank"> 1-min X-ray Flux plot</a></li>
+  <li><a href="/rt_plots/bou_12h.html" TARGET="_blank"> 1-min Boulder-NOAA Magnetometer plot</a></li>
+  <li><a href="/ftpmenu/forecasts/SRS.html"> Solar Region Summary reports</a </li>
+  <li><a href="/ftpmenu/indices/events.html"> Solar Event reports</a></li>
+  <li><a href="/ftpmenu/latest.html"> Latest Solar-Geophysical Data reports and summaries</a></li>
+  <li><a href="/ftpmenu/index.html"> Space Weather data from Anonymous FTP server</a></li>
+</ul>
+<h4><b>Older Space Weather data</b></h4>
+<ul>
+  <li><a href="/ftpmenu/plots.html">Plots of Solar-Geophysical Data</a></li>
+  <li><a href="/ftpmenu/lists.html">Lists of Solar-Geophysical Data</a></li>
+  <li><a href="/solar_sites.html">Solar Images</a> </li>
+  <li><a href="/ftpmenu/index.html"> Space Weather data from Anonymous FTP server</a></li>
+  <li><a href="/ftpmenu/warehouse.html">Historical SWPC Products from 1996</a></li>
+  <li><a href="http://www.ngdc.noaa.gov/stp/stp.html"> Solar-Terrestrial Physics Archives</a> 
+   at the National Geophysical Data Center</li>
+</ul>
+<h4><a href="/Data/index.html"><b>All online data</b></a></h4>
+<p>&nbsp;</p>
+
+
+<!-- InstanceEndEditable -->
+
+
+
+<hr noshade>
+<table width="90%" border="0" cellspacing="0" cellpadding="3" id="footer">
+  <tr>
+    <td width="21%" scope="col"> <a href="/index.html">
+	<img src="/images/sunearth_smblue.gif" alt="Sun Earth graphic" width="65" height="46" border="0" align="middle"></a>&nbsp;&nbsp;
+	<a href="/index.html"> SWPC Home</a></td>
+    <td width="79%" bgcolor="#FFFFFF" scope="col" align="center">
+      Space Weather Topics:<br>
+      <a 
+            href="/alerts/index.html"> Alerts / Warnings</a>, <a 
+            href="/SWN/index.html">Space Weather Now</a>, <a 
+            href="/today.html">Today's Space Wx</a>, <a 
+            href="/Data/index.html">Data and Products</a>, <a 
+			href="/AboutUs/index.html">About Us </a>,<br>
+      <a href="https://pss.swpc.noaa.gov/">Email Products</a>,
+      <a href="/sww/index.html">Space Wx Workshop </a>,
+      <a href="/Education/index.html">Education/Outreach</a>,
+      <a href="http://www.weather.gov/disclaimer.php">Disclaimer,</a> 
+      <A href="/Services/index.html">Customer Services</A>,
+      <a href="/contacts.html">Contact Us</a>   </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+<!-- InstanceEnd --></html>

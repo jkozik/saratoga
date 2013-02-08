@@ -27,8 +27,9 @@
 //  Version 1.23 - 29-Nov-2011 - improved language translations for conditions+ DavisVP handling for forecast
 //  Version 1.24 - 14-Jan-2012 - added support for WeatherSnoop display
 //  Version 1.25 - 22-Jan-2012 - added fix for dd.mm.yyyy format dates
+//  Version 1.26 - 12-Jan-2013 - added moonrise/set swap when moonrise is later than moonset
 //
-$ADBversion = 'ajax-dashboard.php - Version 1.25 - 22-Jan-2012 - Multilingual';
+$ADBversion = 'ajax-dashboard.php - Version 1.26 - 12-Jan-2013 - Multilingual';
 //error_reporting(E_ALL);
 // --- settings for standalone use --------------------------
 $Lang    = 'en';
@@ -49,7 +50,7 @@ $dateOnlyFormat = 'd-M-Y';   // d-Mon-YYYY
 $WDdateMDY = true;     // true=dates by WD are 'month/day/year'
 //                     // false=dates by WD are 'day/month/year'
 
-$ourTZ = "America/Los_Angeles";  //NOTE: this *MUST* be set correctly to
+$ourTZ = "America/Chicago";  //NOTE: this *MUST* be set correctly to
 // translate UTC times to your LOCAL time for the displays.
 //
 // optional settings for the Wind Rose graphic in ajaxwindiconwr as wrName . winddir . wrType
@@ -781,6 +782,23 @@ document.write('<b> - <?php langtrans('updated'); ?> <span id="ajaxcounter"></sp
 				  <?php echo fixup_time($sunset); ?>
 				</td>
               </tr>
+              <?php if(isset($moonrise) and isset($moonset) and 
+			    (strtotime("$moonset") < strtotime("$moonrise")) ) { 
+				echo "<!-- moonset='$moonset' before moonrise='$moonrise' today -->\n"; ?>
+              <tr>
+                <td class="data1"><?php langtrans('Moonset'); ?>:</td>
+                <td style="text-align: right;" class="data1">
+				  <?php echo fixup_time($moonset); ?>
+				</td>
+              </tr>
+               <tr>
+                <td class="data1"><?php langtrans('Moonrise'); ?>:</td>
+                <td style="text-align: right;" class="data1">
+				  <?php echo fixup_time($moonrise); ?>
+				</td>
+              </tr>
+              <?php } elseif (isset($moonrise) and isset($moonset)) { 
+			  echo "<!--   moonrise='$moonrise' before moonset='$moonset' today -->\n";?>
               <tr>
                 <td class="data1"><?php langtrans('Moonrise'); ?>:</td>
                 <td style="text-align: right;" class="data1">
@@ -793,7 +811,22 @@ document.write('<b> - <?php langtrans('updated'); ?> <span id="ajaxcounter"></sp
 				  <?php echo fixup_time($moonset); ?>
 				</td>
               </tr>
-            </table>
+              <?php } else { // end moonset > moonrise time 
+			    echo "<!-- no moon rise/set data -->\n"; ?>
+               <tr>
+                <td class="data1"><?php langtrans('Moonrise'); ?>:</td>
+                <td style="text-align: right;" class="data1">
+				  <?php langtrans('N/A'); ?>
+				</td>
+              </tr>
+              <tr>
+                <td class="data1"><?php langtrans('Moonset'); ?>:</td>
+                <td style="text-align: right;" class="data1">
+				  <?php langtrans('N/A'); ?>
+				</td>
+              </tr>
+             <?php } // end moon fixup ?>
+           </table>
 		  </td>
           <td rowspan="3" valign="middle" align="center">
 		    <table border="0" cellpadding="4" cellspacing="0">

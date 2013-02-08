@@ -62,6 +62,7 @@
 		<item wxonly="CU,VWS,WL" caption="NOAA reports" link="wxnoaaclimatereports.php"/>
 		<item caption="Sun/Moon Almanac" link="wxastronomy.php"/>
 		<item caption="Earthquake activity" link="wxquake.php"/>
+		<item caption="NOAA IOD" link="wxnoaaiod.php" title="NOAA Image of the Day" />
 		<item caption="Space Weather" link="wxspace.php"/>
 		<item caption="Nearby METAR Reports" link="wxmetar.php"/>
 		<item caption="Historical Data" link="wxwuhistory.php"/>

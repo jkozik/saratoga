@@ -66,11 +66,13 @@ Version 1.08 - 22-Nov-2011 - fixed Notice: type errata
 Version 1.09 - 23-Nov-2011 - fix for metar reports with >1 runway reports or limited visibility reports
 Version 1.10 - 24-Nov-2011 - fix for CAVOK with km/miles selection based on wind units
 Version 1.11 - 29-Nov-2011 - added cloud-details return for wxmetar.php page
+Version 1.12 - 04-May-2012 - added fix for variable wind decode like VRB02G03KT
+Version 1.13 - 31-Aug-2012 - added fixes for incomplete visibility and multiple conditions decode
 
 */
 global $Debug, $GMCVersion;
 
-$GMCVersion = 'get-metar-conditions-inc.php - Version 1.11 - 29-Nov-2011';
+$GMCVersion = 'get-metar-conditions-inc.php - Version 1.13 - 31-Aug-2012';
 
 if (isset($_REQUEST['sce']) && ( strtolower($_REQUEST['sce']) == 'view' or
     strtolower($_REQUEST['sce']) == 'show') ) {
@@ -199,6 +201,9 @@ function mtr_conditions ($icao,$curtime='',$sunrise='',$sunset='',$useJpgIcon=fa
 	$metar = preg_replace('| \s+|is',' ',$metar);    // remove multiple spaces
 	$metar = preg_replace('| COR |i',' ',$metar);    // remove COR (correction) from raw metar
 	$metar = preg_replace('|(\d{5}) KT|i','${1}KT',$metar);    // fix any space in wind value
+	$metar = preg_replace('| 999 |',' 9999 ',$metar); // fix malformed unlimited visibility
+	$metar = preg_replace('| LRA |',' -RA ',$metar); // fix malformed light rain
+	$metar = preg_replace('| HRA |',' +RA ',$metar); // fix malformed light rain
 	// $metar = preg_replace('| (\d)SM|i',' 0${1}SM',$metar); // fix malformed visibility to two digits
  	// $metar = preg_replace('| (\d+) (\d+)/(\d+)SM |i',' $1_$2/${3}SM ',$metar); // fix NOAA visibility
 
@@ -852,7 +857,7 @@ function mtr_get_wind($part)
 { global $lang,$Debug, $mtrInfo, $metarPtr, $group;
   
   
-  if (preg_match('/^([0-9G]{5,10}|VRB[0-9]{2,3})(KT|MPS|KMH)$/',$part,$pieces))
+  if (preg_match('/^([0-9G]{5,10}|VRB[0-9G]{2,7})(KT|MPS|KMH)$/',$part,$pieces))
   {
     $part = $pieces[1];
     $unit = $pieces[2];
@@ -1088,9 +1093,11 @@ global $lang,$Debug, $mtrInfo, $metarPtr, $group;
 		// The 'showers' code 'SH' is moved behind the next 2-letter code to make the English translation read better.
 		if (substr($part,0,2) == 'SH') $part = substr($part,2,2) . substr($part,0,2). substr($part, 4);
 		while ($code = substr($part,0,2)) {
-			$conditions .= $wxCode[$code]. ' ';
+			$join = (strlen($conditions) < 1)?' ':', ';
+			$conditions .= $wxCode[$code]. $join;
 			$part = substr($part,2);
 			}
+		$conditions = preg_replace('|, $|','',$conditions);  // remove trailing comma if any
 		$conditions = preg_replace('| , |is',', ',$conditions); // replace space before comma
 		$conditions = preg_replace('|\s+|is',' ',$conditions);  // remove multiple spaces
 		$mtrInfo['CONDITIONS'] = $conditions;

@@ -27,8 +27,12 @@
 //  Version 3.02 - 05-Oct-2011 - corrected warning links to forecast.weather.gov
 //  Version 3.03 - 02-Jul-2012 - added fixes for NWS website changes
 //  Version 3.04 - 03-Jul-2012 - added fixes for W3C validation issues
+//  Version 3.05 - 05-Jul-2012 - added fixes for Zone forecast use with new NWS website design
+//  Version 3.06 - 07-Jul-2012 - fixed validation issue for Rising/Falling temp arrows with new NWS website design
+//  Version 3.07 - 09-Aug-2012 - fixed failover to Zone forecast with new NWS website design
+//  Version 3.08 - 23-Nov-2012 - fixed issue with Zone forecast parsing due to NWS website changes
 //
-$Version = 'advforecast2.php (multi) - V3.04 - 03-Jul-2012';
+$Version = 'advforecast2.php (multi) - V3.08 - 22-Nov-2012';
 //
 //import NOAA Forecast info
 //data ends up in four different arrays:
@@ -37,7 +41,7 @@ $Version = 'advforecast2.php (multi) - V3.04 - 03-Jul-2012';
 //$forecasttitles[x]  x = 0 thru 12   This is the title word for the text forecast time period
 //$forecasttext[x]  x = 0 thru 12  This is the detail text for the text forecast time period
 //
-//$forecastupdate  This is the time of last update
+//$forecastupdated  This is the time of last update
 //$forecastcity    This is the city name for the forecast
 //$forecastoffice  This is the NWS Office providing the forecast
 //$forecastwarnings This is the text/links to NWS Warnings, Watches, Advisories, Outlooks, Special Statements
@@ -72,33 +76,26 @@ $Version = 'advforecast2.php (multi) - V3.04 - 03-Jul-2012';
 
 // V3.00 -- this following array can be used for multiple forecasts in standalone mode
 //  for template use, add a $SITE['NWSforecasts'] entry in Settings.php to have these entries.
- 
+//  to activate the definitions below, replace the /* with //* to uncomment the array definition 
 /*
 $NWSforecasts = array(
+ // the entries below are for testing use.. replace them with your own entries if using the script
+ // outside the AJAX/PHP templates.
  // ZONE|Location|point-forecast-URL  (separated by | characters
-"CAZ513|Saratoga|http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2",
-"ALZ064|Gulf Shores|http://forecast.weather.gov/MapClick.php?CityName=Gulf+Shores&state=AL&site=MOB&textField1=30.27&textField2=-87.7015&e=0&TextType=2",
-'INZ005|Elkhart|http://forecast.weather.gov/MapClick.php?site=mtr&smap=1&textField1=41.6868&textField2=-85.9688&TextType=2',
- 'INZ003|LaPorte County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.6154423246811&lon=-86.72607421875&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'INZ004|St Joe County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.69855129353962&lon=-86.27975463867188&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'INZ006|LaGrange County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.64007838467894&lon=-85.418701171875&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'INZ007|Steuben County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.644183479397455&lon=-84.9957275390625&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'INZ008|Noble County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.52297326747377&lon=-85.3472900390625&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'INZ009|DeKalb County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.49623534616764&lon=-85.00259399414062&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'INZ012|Starke County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.209655278807034&lon=-86.80023193359375&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'INZ014|Marshall County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.352072144512924&lon=-86.26382449641824&site=iwx&smap=1&unit=0&lg=en&FcstType=text&TextType=2',
- 'INZ016|Kosciusko County Indiana|http://forecast.weather.gov/MapClick.php?lat=41.352072144512924&lon=-86.26382449641824&site=iwx&smap=1&unit=0&lg=en&FcstType=text&TextType=2',
- 'MIZ077|Berrien County Michigan|http://forecast.weather.gov/MapClick.php?lat=41.951319946796964&lon=-86.517333984375&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'MIZ078|Cass County Michigan|http://forecast.weather.gov/MapClick.php?lat=41.811243575929346&lon=-86.19735717773438&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'MIZ079|St Joe County Michigan|http://forecast.weather.gov/MapClick.php?lat=41.80203073088394&lon=-85.62881469726562&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2',
- 'MIZ080|Branch County Michigan|http://forecast.weather.gov/MapClick.php?lat=41.87365126992505&lon=-84.98199462890625&site=iwx&smap=1&marine=1&unit=0&lg=en&TextType=2'
+"CAZ513|Saratoga, CA (WRH)|http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2",
+"PAZ061|Omaha, NE (CRH)|http://forecast.weather.gov/MapClick.php?CityName=Allentown&state=PA&site=MTR&textField1=40.5535&textField2=-75.6032&e=1&TextType=2",
+"ALZ064|Gulf Shores, AL (SRH)|http://forecast.weather.gov/MapClick.php?CityName=Gulf+Shores&state=AL&site=MOB&textField1=30.27&textField2=-87.7015&e=0&TextType=2",
+'MDZ022|Salisbury, MD (ERH)|http://forecast.weather.gov/MapClick.php?lat=38.36818&lon=-75.59761047363281&unit=0&lg=english&FcstType=text&TextType=2',
+'AKZ101|Anchorage, AK (ARH)|http://forecast.weather.gov/MapClick.php?lat=61.21806&lon=-149.90027780000003&unit=0&lg=english&FcstType=text&TextType=2',
+'HIZ005|Honolulu, HI (HRH)|http://forecast.weather.gov/MapClick.php?lat=21.30694&lon=-157.85833330000003&unit=0&lg=english&FcstType=text&TextType=2',
 ); 
 //*/
 
 //
  $NOAAZone = 'CAZ513';  // change this line to your NOAA warning zone.
 // set $fileName to the URL for the point-printable forecast for your area
- $fileName = "http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2";//
+ $fileName = "http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2";
+//
 $iconDir = './forecast/images/';
 $iconType = '.jpg';        // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
 $cacheFileDir = './';      // default cache file directory
@@ -196,7 +193,7 @@ if ($Force > 1) {$forceBackup = true; }
 $cacheName = $cacheFileDir."forecast-".$NOAAZone."-$haveZone.txt"; 
 
 // dont change the next line....
-$backupfileName = "http://forecast.weather.gov/MapClick.php?zoneid=$NOAAZone";
+$backupfileName = "http://forecast.weather.gov/MapClick.php?zoneid=$NOAAZone&TextType=2";
 
 $Status = "<!-- $Version -->\n<!-- NWS URL: $fileName -->\n<!-- zone=$NOAAZone -->\n";
 
@@ -236,9 +233,13 @@ $usingFile = "";
 
 if ($Force==1) {
       $html = fetchUrlWithoutHanging($fileName,$cacheName);
-      if (preg_match('/Temporary|Location:|defaulting to/Uis',$html)) {
+	  $fSize = strlen($html);
+      $Status .= "<!-- loading $fileName - $fSize bytes -->\n";
+      if (preg_match('/Temporary|Location:|defaulting to|window\.location\.href\=/Uis',$html)) {
          $usingFile = "(Zone forecast)";
          $html = fetchUrlWithoutHanging($backupfileName,$cacheName);
+ 	     $fSize = strlen($html);
+         $Status .= "<!-- loading $backupfileName - $fSize bytes -->\n";
       }
       $fp = fopen($cacheName, "w");
       if ($fp) {
@@ -251,6 +252,8 @@ if ($Force==1) {
 
 if ($Force==2) {
       $html = fetchUrlWithoutHanging($backupfileName,$cacheName);
+	  $fSize = strlen($html);
+      $Status .= "<!-- loading $backupfileName - $fSize bytes -->\n";
       $fp = fopen($cacheName, "w");
       if ($fp) {
         $write = fputs($fp, $html);
@@ -265,17 +268,24 @@ if ($Force==2) {
 // 1800 = 60s x 30m so it retreives every 30 minutes.
 
 if (file_exists($cacheName) and filemtime($cacheName) + 600 > time()) {  // 1800
-      $Status .= "<!-- loading $cacheName -->\n";
       $html = implode('', file($cacheName));
-      if (preg_match('/Temporary|Location:|defaulting to/is',$html)) {
+	  $fSize = strlen($html);
+      $Status .= "<!-- loading $cacheName - $fSize bytes -->\n";
+      if (preg_match('/Temporary|Location:|defaulting to|window\.location\.href\=/Uis',$html)) {
          $usingFile = "(Zone forecast)";
          $html = fetchUrlWithoutHanging($backupfileName,$cacheName);
+		 $fSize = strlen($html);
+		 $Status .= "<!-- loading $backupfileName - $fSize bytes -->\n";
       }
     } else {
       $html = fetchUrlWithoutHanging($fileName,$cacheName);
-      if (preg_match('/Temporary|Location:|defaulting to/Uis',$html)) {
+	  $fSize = strlen($html);
+      $Status .= "<!-- loading $fileName - $fSize bytes -->\n";
+      if (preg_match('/Temporary|Location:|defaulting to|window\.location\.href\=/Uis',$html)) {
          $usingFile = "(Zone forecast)";
          $html = fetchUrlWithoutHanging($backupfileName,$cacheName);
+		  $fSize = strlen($html);
+		  $Status .= "<!-- loading $backupfileName - $fSize bytes -->\n";
       }
       $fp = fopen($cacheName, "w");
       if ($fp) {
@@ -308,24 +318,26 @@ if ($isZone) { // using the zone forecast
 //           $Status .= "<!-- betweenspan \n" . print_r($betweenspan,true) . "-->\n";
 //        $forecastop = $betweenspan[1];
 $startgrab = strpos($html, '<a name="contents">');
-if(preg_match('|class=\'blue|i',$html) ) {
-  $start = strpos($html, '3 Day History:',$startgrab);
-} else {
-  $start = strpos($html, '<br><b>',$startgrab);
-}
+if ($startgrab == false) {$startgrab = strpos($html,'<td colspan="2" valign="top" align="left">'); }
+//if(preg_match('|class=\'blue|i',$html) ) {
+//  $start = strpos($html, '3 Day History:',$startgrab);
+//} else {
+  $start = $startgrab;
+//}
 $finish = strpos($html, '<td valign="top" align="center" width="50%">',$start);
+if($finish == false) {$finish = strpos($html,"</td>",$start); }
 $length = $finish-$start;
 $forecastop = substr($html, $start, $length);
 // print "<!-- startgrab=$startgrab start=$start finish=$finish length=$length -->\n";
 // print "<!-- \n".$forecastop."\n-->\n";
 
-	  preg_match_all('|<a href="(.*)"><span class="(.*)">(.*)</span></a>|Uis',$html,$warns);
-//	  print "<!-- forecastwarnings \n".print_r($warns,true)." -->\n";
+	  preg_match_all('|<a href="([^"]+)"><span class="([^"]+)">(.*)</span></a>|Uis',$html,$warns);
+//	  print "<!-- warns \n".print_r($warns,true)." -->\n";
 
 //     slice off the text forecast from the Zone forecast
         preg_match_all("|<b>(.*): </b>(.*)<br>\s*<br>|Uis", $forecastop, $headers);
         $forecaststuff = $headers[1];
-           $Status .= "<!-- headers \n" . print_r($headers,true) . "-->\n";
+           $Status .= "<!-- text zone forecast \n" . print_r($headers,true) . "-->\n";
 
 //     Breakup multi-day forecasts if needed
         $i = 0;
@@ -399,8 +411,8 @@ $forecastop = substr($html, $start, $length);
                 for ($i=0;$i<count($forecasticons);$i++) {
                    $forecasticons[$i] = preg_replace('|/images/wtf/small|Uis',
                    '/forecast/images',$forecasticons[$i]);
-//                   $forecasticons[$i] = preg_replace('|/images/wtf|Uis',
-//                   '/forecast/images',$forecasticons[$i]);
+                   $forecasticons[$i] = preg_replace('|/images/wtf|Uis',
+                   '/forecast/images',$forecasticons[$i]);
 //                    $forecasticons[$i] = preg_replace('|"images/|Uis',
 //                   '"/forecast/images/',$forecasticons[$i]);
                   $forecasticons[$i] = preg_replace('|/forecast/images/|Uis',
@@ -419,8 +431,8 @@ $forecastop = substr($html, $start, $length);
            if(isset($matches[2][0]) and preg_match('|<img .*>|i',$matches[2][0])) {
                      $t = $matches[2][0];
 //<img src="/images/wtf/small/bkn.png" width="55" height="58" alt="Becoming Sunny" title="Becoming Sunny" >
-                         $t = preg_replace('|<img src="([^"]+)" .* title="([^"]+)" >|i',
-                          "<img src=\"\\1\" style=\"border: none;\" alt=\"\\3\" title=\"\\3\" />",$t);
+                         $t = preg_replace('|<img src="([^"]+)".*alt="([^"]+)">|i',
+                          "<img src=\"\\1\" style=\"border: none;\" alt=\"\\2\" title=\"\\2\" />",$t);
                          $matches[2][0] = $t;
                    }
                    if (! $isZone) {
@@ -450,17 +462,27 @@ $forecastop = substr($html, $start, $length);
 
       // Grab the Last Update date and time.
       preg_match('|<b>Last Update:</b></a>(.*?)<br></td>|', $html, $betweenspan);
+	  if(!isset($betweenspan[1])) { 
+	  // <b>Last Update: </b></a>150 AM PST FRI NOV 23 2012</td>
+	    preg_match('|<b>Last Update: </b></a>(.*?)</td>|', $html, $betweenspan);		
+	  }
       $forecastupdated  = $betweenspan[1];
       # mchallis added security feature
       $forecastupdated = strip_tags($forecastupdated);
 // saratoga-weather.org mod:
           // Grab the NWS Forecast for (city name)
           preg_match('|class="white1">\s*(.*)<a href|',$html,$betweenspan);
+		  if(!isset($betweenspan[1])) {
+            preg_match('|<b>NWS Forecast for: (.*)</b></font>|',$html,$betweenspan);
+		  }
           $forecastcity  = $betweenspan[1];
           # mchallis added security feature
           $forecastcity = strip_tags($forecastcity, '<b><br><img><span>');
           // Grab the Issued by office
           preg_match('|<a href=http[^>]+>(.*)</a><br><b>Zone Forecast:|is',$html,$betweenspan);
+		  if(!isset($betweenspan[1])) {
+		    preg_match('|</font><br>Issued by: (.*)<br><a |is',$html,$betweenspan);
+		  }
           $forecastoffice  = trim($betweenspan[1]);
           $forecastoffice = preg_replace('|<br>|s','',$forecastoffice);
 
@@ -639,7 +661,8 @@ function split_fcst($fcst) {
 // function make_icon: parse text and find suitable icon from zone forecast text for period
 
 function make_icon($day,$textforecast) {
-  global $Conditions,$Status,$iconDir,$iconType;
+  global $Conditions,$Status,$iconType;
+  $iconDir = '/forecast/images/'; // will be substituted correctly by main script
   if (preg_match('| |i',$day) ) {
     $icon = "<strong>" . preg_replace('| |','<br/>',$day,1) . '</strong><br/>';
   } else {

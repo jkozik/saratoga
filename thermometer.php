@@ -1,4 +1,19 @@
 <?php
+if (isset($_REQUEST['sce']) && strtolower($_REQUEST['sce']) == 'view' ) {
+   //--self downloader --
+   $filenameReal = __FILE__;
+   $download_size = filesize($filenameReal);
+   header('Pragma: public');
+   header('Cache-Control: private');
+   header('Cache-Control: no-cache, must-revalidate');
+   header("Content-type: text/plain");
+   header("Accept-Ranges: bytes");
+   header("Content-Length: $download_size");
+   header('Connection: close');
+   
+   readfile($filenameReal);
+   exit;
+}
 // Thermometer image script
 // Ken True - webmaster@Saratoga-weather.org
 // error_reporting(E_ALL); // uncomment to run testing
@@ -13,6 +28,7 @@
 // Version 1.08 - 29-Jul-2011 - added support for Meteohub clientraw.txt
 // Version 1.09 - 14-Jan-2012 - added support for WeatherSnoop via WSNtags/WSN-defs
 // Version 1.10 - 24-Mar-2012 - added support for WeatherCat via WCTtags/WCT-defs or WCT_realtime.txt
+// Version 1.11 - 03-Jul-2012 - added support for WxSolution, wview and Cumulus via CUtags.php if no realtime file
 //
 // script available at http://saratoga-weather.org/scripts.php
 //  
@@ -79,6 +95,8 @@ if (isset($SITE['wflashdir']) ) {$wflashDir = $SITE['wflashdir']; }
 if (isset($SITE['realtimefile']) ) {$realtimefile = $SITE['realtimefile']; }
 if (isset($SITE['WLrealtime']) ) {$WLrealtime = $SITE['WLrealtime']; }
 if (isset($SITE['WCTrealtime']) ) {$WCTrealtime = $SITE['WCTrealtime']; }
+if (isset($SITE['WXSrealtime']) ) {$WXSrealtime = $SITE['WXSrealtime']; }
+if (isset($SITE['WVrealtime']) ) {$WVrealtime = $SITE['WVrealtime']; }
 if (isset($SITE['WXsoftware']) ) {$wxSoftware = $SITE['WXsoftware']; }
 
 $CSSstyle = '';
@@ -95,21 +113,6 @@ if (preg_match('|black|i',$CSSstyle) ) {
 // end of overrides from Settings.php
 
 // -------------------begin code ------------------------------------------
-if (isset($_REQUEST['sce']) && strtolower($_REQUEST['sce']) == 'view' ) {
-   //--self downloader --
-   $filenameReal = __FILE__;
-   $download_size = filesize($filenameReal);
-   header('Pragma: public');
-   header('Cache-Control: private');
-   header('Cache-Control: no-cache, must-revalidate');
-   header("Content-type: text/plain");
-   header("Accept-Ranges: bytes");
-   header("Content-Length: $download_size");
-   header('Connection: close');
-   
-   readfile($filenameReal);
-   exit;
-}
 
 if( ! function_exists("gd_info")){
   die("Sorry.. this script requires the GD library in PHP to function.");
@@ -123,6 +126,8 @@ if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'wl') { $wxSoftwar
 if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'mh') { $wxSoftware = 'MH'; } // testing
 if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'wsn') { $wxSoftware = 'WSN'; } // testing
 if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'wct') { $wxSoftware = 'WCT'; } // testing
+if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'wxs') { $wxSoftware = 'WXS'; } // testing
+if (isset($_REQUEST['wx']) and strtolower($_REQUEST['wx']) == 'wv')  { $wxSoftware = 'WV';  } // testing
 
 if (isset($_REQUEST['uom']) and strtolower($_REQUEST['uom']) == 'c') { $UOM = 'C'; }
 if (isset($_REQUEST['uom']) and strtolower($_REQUEST['uom']) == 'f') { $UOM = 'F'; }
@@ -161,7 +166,34 @@ if ($wxSoftware == 'VWS') { // Get the VWS Weather Flash data files
 }
 
 if ($wxSoftware == 'CU') { // Get the Cumulus realtime.txt file
-  
+      if(!isset($SITE['realtimefile']) and 
+	      isset($SITE['WXtags']) and file_exists($SITE['WXtags']) ) { // get from CUtags.php
+	     global $WX;
+		 include_once($SITE['WXtags']);
+	     $inUOM = 'F';
+		 $curtemp = 70;
+		 $mintemp = 60;
+		 $maxtemp = 80;
+		 if(isset($WX['temp']))   {$curtemp = preg_replace('|,|','.',$WX['temp']); }
+		 if(isset($WX['tempTL'])) {$mintemp = preg_replace('|,|','.',$WX['tempTL']); }
+		 if(isset($WX['tempTH'])) {$maxtemp = preg_replace('|,|','.',$WX['tempTH']); }
+		 
+		 if(isset($WX['tempunit']) and preg_match("|C|i",$WX['tempunit'])) {
+		    $inUOM = 'C';
+		 } else {
+			$inUOM = 'F';
+		 }
+		if ($inUOM == 'F' and $UOM == 'C') {
+		  $curtemp = FtoC($curtemp,1);
+		  $mintemp = FtoC($mintemp,1);
+		  $maxtemp = FtoC($maxtemp,1);
+		} elseif ($inUOM == 'C' and $UOM == 'F') {
+		  $curtemp = CtoF($curtemp,1);
+		  $mintemp = CtoF($mintemp,1);
+		  $maxtemp = CtoF($maxtemp,1);
+		}
+
+	  } else { // get from realtime file
       $dataraw = file_get_contents($realtimefile);
 
       // clean up any blank lines
@@ -183,6 +215,7 @@ if ($wxSoftware == 'CU') { // Get the Cumulus realtime.txt file
 		$maxtemp = $data[26];
 		$UOM = $inUOM;
 	  }
+    } // end use realtime
 }
 
 if ($wxSoftware == 'WL') { // Process WeatherLink
@@ -308,6 +341,134 @@ if ($wxSoftware == 'WCT') { // Process WeatherCat
   } // end get from WCT_realtime.txt
 
 } // end WeatherCat processing
+
+if ($wxSoftware == 'WXS') { // Process WXSolution
+  if(!isset($WXSrealtime)) { // get from WXStags.php
+
+	   if (file_exists($SITE['WXtags'])) {
+		   global $WX;
+		   include_once($SITE['WXtags']);
+	   }
+	   $inUOM = 'F';
+	   $curtemp = 70;
+	   $mintemp = 60;
+	   $maxtemp = 80;
+	   
+	   if(preg_match("|C|i",$WX['UT'])) {
+		  $inUOM = 'C';
+	   } else {
+		  $inUOM = 'F';
+	   }
+	  if ($inUOM == 'F' and $UOM == 'C') {
+		$curtemp = FtoC($WX['TC'],1);
+		$mintemp = FtoC($WX['DAY_TL'],1);
+		$maxtemp = FtoC($WX['DAY_TH'],1);
+	  } elseif ($inUOM == 'C' and $UOM == 'F') {
+		$curtemp = CtoF($WX['TC'],1);
+		$mintemp = CtoF($WX['DAY_TL'],1);
+		$maxtemp = CtoF($WX['DAY_TH'],1);
+	  } elseif (isset($WX['TC'])) {
+		$curtemp = $WX['TC'];
+		$mintemp = $WX['DAY_TL'];
+		$maxtemp = $WX['DAY_TH'];
+		$UOM = $inUOM;
+	  }
+  } else { // get from WXS_realtime.txt
+	 $dataraw = file_get_contents($WCTrealtime);
+	
+	 // clean up any blank lines
+	 $dataraw = trim($dataraw);
+	 $dataraw = preg_replace("/[\r\n]+/",'',$dataraw);
+	 $data = explode("|", $dataraw);
+	 if(preg_match("/C/i",$data[14])) {
+		 $inUOM = 'C';
+	 } else {
+		 $inUOM = 'F';
+	 }
+	 if ($inUOM == 'F' and $UOM == 'C') {
+			$curtemp = FtoC($data[2],1);
+			$mintemp = FtoC($data[28],1);
+			$maxtemp = FtoC($data[26],1);
+	 } elseif ($inUOM == 'C' and $UOM == 'F') {
+			$curtemp = CtoF($data[2],1);
+			$mintemp = CtoF($data[28],1);
+			$maxtemp = CtoF($data[26],1);
+	 } else {
+			$curtemp = $data[2];
+			$mintemp = $data[28];
+			$maxtemp = $data[26];
+			$UOM = $inUOM;
+	 }
+  
+  
+  
+  } // end get from WXS_realtime.txt
+
+} // end WXSolution processing
+
+if ($wxSoftware == 'WV') { // Process wview
+  if(!isset($WVrealtime)) { // get from WVtags.php
+
+	   if (file_exists($SITE['WXtags'])) {
+		   global $WX;
+		   include_once($SITE['WXtags']);
+	   }
+	   $inUOM = 'F';
+	   $curtemp = 70;
+	   $mintemp = 60;
+	   $maxtemp = 80;
+	   
+	   if(preg_match("|C|i",$WX['tempUnit'])) {
+		  $inUOM = 'C';
+	   } else {
+		  $inUOM = 'F';
+	   }
+	  if ($inUOM == 'F' and $UOM == 'C') {
+		$curtemp = FtoC($WX['outsideTemp'],1);
+		$mintemp = FtoC($WX['lowOutsideTemp'],1);
+		$maxtemp = FtoC($WX['hiOutsideTemp'],1);
+	  } elseif ($inUOM == 'C' and $UOM == 'F') {
+		$curtemp = CtoF($WX['outsideTemp'],1);
+		$mintemp = CtoF($WX['lowOutsideTemp'],1);
+		$maxtemp = CtoF($WX['hiOutsideTemp'],1);
+	  } elseif (isset($WX['outsideTemp'])) {
+		$curtemp = $WX['outsideTemp'];
+		$mintemp = $WX['lowOutsideTemp'];
+		$maxtemp = $WX['hiOutsideTemp'];
+		$UOM = $inUOM;
+	  }
+  } else { // get from WV_realtime.txt
+	 $dataraw = file_get_contents($WVrealtime);
+	
+	 // clean up any blank lines
+	 $dataraw = trim($dataraw);
+	 $dataraw = preg_replace("/[\r\n]+/",'',$dataraw);
+	 $data = explode("|", $dataraw);
+	 if(preg_match("/C/i",$data[14])) {
+		 $inUOM = 'C';
+	 } else {
+		 $inUOM = 'F';
+	 }
+	 if ($inUOM == 'F' and $UOM == 'C') {
+			$curtemp = FtoC($data[2],1);
+			$mintemp = FtoC($data[28],1);
+			$maxtemp = FtoC($data[26],1);
+	 } elseif ($inUOM == 'C' and $UOM == 'F') {
+			$curtemp = CtoF($data[2],1);
+			$mintemp = CtoF($data[28],1);
+			$maxtemp = CtoF($data[26],1);
+	 } else {
+			$curtemp = $data[2];
+			$mintemp = $data[28];
+			$maxtemp = $data[26];
+			$UOM = $inUOM;
+	 }
+  
+  
+  
+  } // end get from WV_realtime.txt
+
+} // end wview processing
 
 
 if ($wxSoftware == 'WSN') { // Process WeatherSnoop (tags files only)
@@ -486,7 +647,7 @@ function genThermometer( $current,$min,$max ) {
 
  // put legend on top with UOM
  
-    $cnt = '°' . $UOM;
+    $cnt = chr(176) . $UOM; // chr(176) = degree sign in ISO-8859-1
     imagestring( $image, $font+2, ($width/2)-((strlen($cnt)/2)*ImageFontWidth($font+2)),
        (10-(ImageFontHeight($font+2) / 2)),
        $cnt, $tx);

@@ -1,6 +1,6 @@
 <?php
 ############################################################################
-# A Project of TNET Services, Inc. and Saratoga-Weather.org (WD-World-ML template set)
+# A Project of TNET Services, Inc. and Saratoga-Weather.org (Base-USA template set)
 ############################################################################
 #
 #	Project:	Sample Included Website Design
@@ -29,6 +29,7 @@
 ############################################################################
 #	This document uses Tab 4 Settings
 ############################################################################
+//Version 1.01 - 28-Jul-2012 - added support for nws-alerts scripts
 require_once("Settings.php");
 require_once("common.php");
 ############################################################################
@@ -63,6 +64,7 @@ $html = '
           <li><a href="wxastronomy.php" title="Sun and Moon Data">Astronomy</a></li>
           <li><a href="wxlinks.php" title="Useful Links">Links</a></li>
           <li><a href="wxabout.php" title="About This Site">About Us</a></li>
+          <li><a href="wxstatus.php" title="Station Status">Status</a></li>
         </ul>
 '; // end of links set for site. Don't change this line in any way
  if (isset($SITE['flyoutmenu']) and $SITE['flyoutmenu']) {
@@ -91,16 +93,34 @@ $html = '
 <!-- external links -->
 <p class="sideBarTitle"><?php langtrans('External Links'); ?></p>
 <ul>
-   <li><a href="http://www.wunderground.com/" title="Weather Underground">Weather Underground</a></li>
+   <li><a href="http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KILNAPER7" title="Weather Underground">Weather Underground</a></li>
    <li><a href="http://www.wxforum.net/" title="WXForum">WXforum.net</a></li>
-   <li><a href="http://napervilleweather.com/" title="NapervilleWeather.com">NapervilleWeather.com</a></li>
+   <li><a href="http://napervilleweather.com/" title="NapervilleWeather.com">Naperville<br>Weather.com</a></li>
 </ul>
+<div style="display:block; width: 114px; margin-left: 10px; margin-bottom: 8px;">
 <a href="MWWN.php">
-<img src="MWWN-mesomap/MWWN_roundsmall.png" 
-alt="Midwestern Weather Network" 
-title="Midwestern Weather Network" 
+<img  src="MWWN-mesomap/MWWN_roundsmall.png"
+alt="Midwestern Weather Network"
+title="Midwestern Weather Network"
 width="90" height="90" />
 </a>
+</div>
+<?php if(
+      isset($SITE['NWSalertsSidebar']) and $SITE['NWSalertsSidebar'] and
+      isset($SITE['NWSalertsCodes']) and count($SITE['NWSalertsCodes']) > 0) { ?>
+<!-- nws-alerts icons -->
+<p class="sideBarTitle" style="text-align:center"><?php langtrans('Alerts'); ?></p>
+<?php
+include_once("nws-alerts-config.php"); // include the config file
+include($cacheFileDir.$iconFileName); // include the big icon file
+// construct menu bar icons
+$bigIcos = '<div style="text-align:center">'."\n";
+foreach($bigIcons as $bigI) {
+$bigIcos .= $bigI;
+}
+$bigIcos .= " <br />\n</div>\n<!-- end nws-alerts icons -->\n";
+echo $bigIcos; ?>
+<?php } // end of NWS alerts sidebar ?>
 <!-- end external links -->
 <?php if($SITE['allowThemeSwitch']) { // insert code for theme switcher ?>
   <!-- begin Color Theme Switcher Plugin http://www.642weather.com/weather/scripts.php -->

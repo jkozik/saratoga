@@ -7,8 +7,10 @@
 //  Version 1.03 - 07-Apr-2008 - fixed $SITE['showradarstatus'] actions for true=show, false=suppress
 //  Version 1.04 - 04-Feb-2009 - fixed for NWS site format change
 //  Version 1.05 - 03-Jul-2009 - added support for PHP5 timezone setting
-//
-    $Version = "radar-status.php V1.05 03-Jul-2009";
+//  Version 1.06 - 26-Jan-2011 - added support for $cacheFileDir global cache directory
+//  Version 1.07 - 31-Aug-2012 - removed excess \n characters in messages and handling for chunked response
+//  Version 1.08 - 22-Jan-2013 - fixed deprecated function errata
+    $Version = "radar-status.php V1.08 22-Jan-2013";
 //  error_reporting(E_ALL);  // uncomment to turn on full error reporting
 // script available at http://saratoga-weather.org/scripts.php
 //  
@@ -38,16 +40,17 @@
 //  change myRadar to your local NEXRAD radar site ID.
 //    other settings are optional
 // 
-  $myRadar = 'LOT';   // San Francisco
+  $myRadar = 'LOT';   // old San Francisco
 //
   $noMsgIfActive = true; // set to true to suppress message when radar is active
 //
-  $ourTZ   = 'CST6CDT'; // timezone
+  $ourTZ   = 'America/Chicago'; // timezone
   $timeFormat = 'D, d-M-Y g:ia T';
 //
 // boxStyle is used for <div> surrounding the output of the script .. change styling to suit.
   $boxStyle = 'style="border: dashed 1px black; background-color:#FFFFCC; margin: 5px; padding: 0 5px;"';  
 //
+  $cacheFileDir = './';   // default cache file directory
   $cacheName = "radar-status.txt";  // used to store the file so we don't have to
 //                          fetch it each time
   $refetchSeconds = 60;     // refetch every nnnn seconds
@@ -64,6 +67,7 @@ if (isset($SITE['GR3radar'])) 	{$myRadar = $SITE['GR3radar'];}
 if (isset($SITE['tz'])) 		{$ourTZ = $SITE['tz'];}
 if (isset($SITE['timeFormat'])) {$timeFormat = $SITE['timeFormat'];}
 if (isset($SITE['showradarstatus'])) {$noMsgIfActive = ! $SITE['showradarstatus'];}
+if (isset($SITE['cacheFileDir']))     {$cacheFileDir = $SITE['cacheFileDir']; }
 // end of overrides from Settings.php if available
 
 // ------ start of code -------
@@ -104,7 +108,6 @@ if (isset($_REQUEST['nexrad']) ) { // for testing
 
   $myRadar = substr(strtoupper($_REQUEST['nexrad']),0,4);
 }
-$myRadar = 'KLOT';
 
 if (isset($_REQUEST['cache'])) {$refetchSeconds = 1; }
 
@@ -132,6 +135,7 @@ echo "<!-- $Version -->\n";
 
 // refresh cached copy of page if needed
 // fetch/cache code by Tom at carterlake.org
+$cacheName = $cacheFileDir . $cacheName;
 
 if (file_exists($cacheName) and filemtime($cacheName) + $refetchSeconds > time()) {
       print "<!-- using Cached version of $cacheName -->\n";
@@ -157,6 +161,22 @@ if (file_exists($cacheName) and filemtime($cacheName) + $refetchSeconds > time()
 	date_default_timezone_set("$ourTZ");
 #	$Status .= "<!-- using date_default_timezone_set(\"$ourTZ\") -->\n";
    }
+
+if(preg_match('|Transfer-Encoding:\s+chunked|i',$html)) {
+	print "<!-- chunked response, un-chunking -->\n";
+    $data = substr($html, (strpos($html, "\r\n\r\n")+4));
+	print "<!-- in=".strlen($data);
+    $data = unchunkRS($data);
+	print " bytes, unchunked=".strlen($data)." bytes -->\n";
+	$html = $data;
+//	$tfile = preg_replace('|\.txt$|','-unchunk.txt',$cacheName);
+//	$fp = fopen($tfile,'w');
+//	if ($fp) {
+//		$write = fputs($fp,$data);
+//		fclose($fp);
+//		print "<!-- debug cache written to $tfile -->\n";
+//	}
+}
 
   // extract the updated date/time
 //  print "<pre>\n";
@@ -251,7 +271,7 @@ INTERUPTIONS. TROUBLE-SHOOTING PROCEDURES ARE CURRENTLY UNDERWAY TO
 DETERMINE THE PROBLEM AND RESTORE NORMAL OPERATIONS.
 */
    $msgline = explode("\n",$msg);  // get 'em separated into individual lines.
-   $t = split(' ',trim($msgline[0]));
+   $t = explode(' ',trim($msgline[0]));
    $thisRadar = $t[1];
    $thisTD = $t[2];
    if (substr($thisRadar,1,3) != substr($msgline[1],3,3)) { // sometimes one reports for another
@@ -286,6 +306,7 @@ DETERMINE THE PROBLEM AND RESTORE NORMAL OPERATIONS.
    $thisMsg = '';
    for ($i=$istart;$i<count($msgline);$i++) { $thisMsg .= $msgline[$i] . "\n"; };
    
+   $thisMsg = preg_replace("|\n|is",'',$thisMsg);
    $radarMsgs[$thisRadar][$thisDate] = $thisMsg; // save away for later lookup
  
  
@@ -409,6 +430,22 @@ if (! $includeMode ) {
    return($xml);
 
    }    // end function
+
+// unchunk a chunked HTTP response
+   
+   function unchunkRS($data) {
+    $fp = 0;
+    $outData = "";
+    while ($fp < strlen($data)) {
+        $rawnum = substr($data, $fp, strpos(substr($data, $fp), "\r\n") + 2);
+        $num = hexdec(trim($rawnum));
+        $fp += strlen($rawnum);
+        $chunk = substr($data, $fp, $num);
+        $outData .= $chunk;
+        $fp += strlen($chunk);
+    }
+    return $outData;
+}
    
 // --------------end of functions ---------------------------------------
 

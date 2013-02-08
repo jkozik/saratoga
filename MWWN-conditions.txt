@@ -1,0 +1,78 @@
+Canada: Ontario	Wawa	80|6,79,E,3,0.00,30.27,Steady,night_clear.gif,Clear,1,3,1360287119,0.075
+Illinois	Alma	33|48,91,WNW,13,0.10,29.88,Steady,night_cloudy.gif,Metar KSLO: Overcast,45,,1360287038,0.125
+Illinois	Batavia	116|33,90,N,0,0.60,29.90,Steady,night_snow.gif,light snow mist,30,,1360287086,0.236
+Illinois	Bloomington	120|36,90,NNW,0,0.01,29.00,Steady,night_partly_cloudy.gif,Partly Cloudy,33,2,1360287102,0.065
+Illinois	Bourbonnais	110|35,95,WNW,7,0.35,29.88,Steady,night_cloudy.gif,Overcast,34,7,1360287117,0.223
+Illinois	Centralia	69|48,83,WNW,0,0.11,29.89,Steady,night_light_rain.gif,Metar KENL: light Rain,43,,1360286633,0.264
+Illinois	Chicago	119|34,96,ESE,0,0.68,29.85,Steady,night_partly_cloudy.gif,Partly Cloudy,33,0,1360287120,0.337
+Illinois	Danville	20|42,91,WNW,9,0.13,29.82,Steady,night_rain.gif,Rain,40,4,1360287052,0.212
+Illinois	Joliet	62|34,91,N,0,0.55,30.17,Steady,night_snow.gif,Metar KJOT: light Snow,32,,1360286935,0.085
+Illinois	Joliet-2	95|34,97,NW,0,0.69,29.91,Steady,night_clear.gif,Clear,33,0,1360287111,0.238
+Illinois	Morris	29|33,97,NW,3,0.69,29.89,Steady,night_clear.gif,Clear,33,4,1360287117,0.187
+Illinois	Morrison	122|33,98,W,0,0.50,29.26,Rising Rapidly,night_clear.gif,Clear,32,2,1360287123,0.180
+Illinois	Mt Prospect	87|31,93,N,6,0.23,29.87,Steady,night_snow.gif,Snow,29,6,1360287121,0.080
+Illinois	Mulkeytown	82|51,86,NW,0,0.10,29.86,Rising Slowly,night_light_rain.gif,Metar KMDH: light Rain +Mist,47,,1360286899,0.040
+Illinois	Naperville	117|33,98,N,0,0.68,29.92,Steady,night_snow.gif,light snow mist,32,4,1360287241,0.691
+Illinois	Peotone	75|35,97,NW,0,0.51,29.90,Steady,night_light_rain.gif,Metar KIKK: Drizzle,34,,1360287074,0.181
+Illinois	Stronghurst	37|36,94,NW,10,0.68,30.01,Rising Slowly,night_clear.gif,Clear,35,15,1360287115,0.756
+Illinois	Woodridge	89|33,90,NNE,0,0.61,29.38,Steady,night_clear.gif,Clear,30,0,1360287181,0.352
+Indiana	Muncie	40|47,66,SSE,4,0.00,24.25,Steady,night_clear.gif,Metar KMIE: Clear,36,,1360287042,0.123
+Indiana	Newburgh	18|60,65,SW,4,0.00,29.82,Steady,night_cloudy.gif,Overcast,48,4,1360287075,0.190
+Iowa	Carter Lake	22|31,74,NNW,5,0.00,30.21,Rising Slowly,night_cloudy.gif,Overcast,24,4,1360287099,0.153
+Iowa	Davenport	113|34,84,NW,3,0.58,29.92,Rising Slowly,night_clear.gif,Clear,29,7,1360285627,0.144
+Iowa	Des Moines	17|31,90,NNW,7,0.28,30.19,Rising Slowly,night_clear.gif,Clear,28,5,1360287001,0.186
+Iowa	Madrid	114|29,90,NW,8,0.11,30.17,Rising Slowly,mist.gif,Mist,27,8,1360287111,0.096
+Iowa	Olin	19|33,97,NNW,13,0.46,29.98,Rising Slowly,night_partly_cloudy.gif,Partly Cloudy,33,17,1360287090,0.292
+Iowa	Otley	35|29,91,WSW,0,0.03,29.45,Steady,mist.gif,Metar KPEA: Mist,26,,1360287069,0.245
+Iowa	Van Horne	78|31,94,NNW,17,0.34,30.06,Rising Rapidly,mist.gif,Metar KVTI: Mist,30,,1360286871,0.213
+Iowa	Vinton	79|32,92,NW,7,0.15,30.05,Rising Rapidly,mist.gif,Metar KVTI: Mist,30,,1360287080,0.284
+Iowa	Waterloo	68|30,94,NNW,6,0.14,30.10,Rising,mist.gif,Metar KALO: Mist,28,,1360286940,0.131
+Kansas	Lenexa	65|38,83,NNW,5,0.91,30.03,Rising Slowly,night_clear.gif,Clear,33,7,1360287126,0.150
+Kansas	McLouth	57|34,81,NNW,13,0.16,30.05,Rising Slowly,night_partly_cloudy.gif,Partly Cloudy,29,17,1360287126,0.246
+Kansas	Overland Park	52|38,83,W,2,0.97,30.11,Steady,haze.gif,Metar KOJC: Haze,33,6,1360287115,0.119
+Kansas	Wichita	100|47,54,NNW,4,0.15,30.09,Steady,night_clear.gif,Clear,31,4,1360287130,0.311
+Kentucky	Cave City	31|51,70,S,5,0.00,29.91,Steady,night_partly_cloudy.gif,Partly Cloudy,41,3,1360287089,0.216
+Kentucky	Crab Orchard	92|51,59,S,1,0.00,29.21,Steady,night_clear.gif,Metar KDVK: Clear,37,3,1360287103,0.139
+Kentucky	Rineyville	115|51,58,SSE,3,0.00,29.88,Steady,night_clear.gif,Clear,37,4,1360287124,0.033
+Kentucky	Shepherdsville	112|53,54,S,5,0.00,29.86,Steady,night_clear.gif,Clear,37,5,1360287125,0.555
+Michigan	Big Bay	34|21,75,NNW,44,0.00,30.18,Steady,windy.gif,Windy,14,47,1360286779,0.204
+Michigan	Burton	32|31,66,E,1,0.00,29.92,Steady,night_cloudy.gif,Metar KFNT: Overcast,21,,1360286414,0.095
+Michigan	East Tawas	48|0,0,,0,0.00,0.00,--,day_snow.gif,Metar KOSC: Snow,0,,1360287133,0.231
+Michigan	Hersey	121|26,91,NE,3,0.00,29.97,Falling Slowly,night_snow.gif,Metar KRQB: Snow,24,7,1360286916,0.003
+Michigan	Ironton	81|21,91,NE,11,0.00,30.08,Steady,night_snow.gif,Metar KCVX: light Snow,19,,1360287084,0.076
+Michigan	Marne	97|31,92,E,4,0.07,29.90,Steady,night_cloudy.gif,Overcast,29,7,1360287128,0.257
+Michigan	Sand Point	90|29,89,E,9,0.04,30.03,Falling Slowly,night_clear.gif,Clear,26,5,1360287132,0.160
+Michigan	Walker	12|33,57,ENE,3,0.01,29.89,Steady,night_clear.gif,Clear,19,3,1360287118,0.007
+Minnesota	Bemidji	41|8,74,E,0,0.11,30.22,Steady,night_partly_cloudy.gif,Partly Cloudy,1,0,1360287132,0.398
+Minnesota	Burnsville	63|26,76,NW,2,0.00,30.42,Steady,night_cloudy.gif,Overcast,20,0,1360287129,0.280
+Minnesota	Hanska	104|26,89,NNW,10,0.00,30.26,Steady,night_cloudy.gif,Overcast,24,10,1360287063,0.175
+Minnesota	Lakeville	98|26,74,NE,5,0.00,30.16,Rising Slowly,night_clear.gif,Clear,19,4,1360287133,0.419
+Minnesota	Madelia	99|27,88,NNW,2,0.00,30.25,Steady,night_cloudy.gif,Overcast,24,14,1360286881,0.175
+Minnesota	N Moorhead	60|16,81,N,0,0.00,30.29,Rising,night_cloudy.gif,Metar KFAR: Overcast,11,,1360284827,0.190
+Minnesota	Robbinsdale	94|27,81,N,3,0.00,30.24,Rising Rapidly,night_cloudy.gif,Metar KMIC: Overcast,22,,1360286910,0.071
+Missouri	Foristell	101|44,92,NNW,6,0.18,29.98,Rising Slowly,night_clear.gif,Clear,41,4,1360287115,0.006
+Missouri	Fulton	61|46,84,NW,6,0.30,29.99,Rising Slowly,night_clear.gif,Clear,42,4,1360287116,0.314
+Missouri	Jackson	84|54,85,NW,0,0.16,29.44,Steady,night_partly_cloudy.gif,Partly Cloudy,50,0,1360287130,0.148
+Missouri	OFallon	39|45,93,NW,6,0.18,29.98,Rising Rapidly,mist.gif,Metar KSTL: Mist,43,12,1360286546,0.147
+Missouri	Trimble	54|35,84,N,8,0.08,30.10,Rising,night_cloudy.gif,Metar KMCI: Overcast,31,18,1360287010,0.121
+Nebraska	Friend	23|29,85,N,4,0.00,30.21,Rising Slowly,night_clear.gif,Clear,26,4,1360287116,0.134
+Nebraska	Lincoln	105|30,82,N,4,0.00,30.26,Rising Slowly,night_cloudy.gif,Overcast,26,5,1360287120,0.266
+Ohio	Avon	108|33,75,ESE,2,0.00,29.99,Falling Slowly,night_cloudy.gif,Metar KCLE: Mostly Cloudy,26,4,1360286951,1.267
+Ohio	Cleveland	74|41,66,SSE,3,0.02,29.98,Falling Slowly,night_clear.gif,Clear,30,3,1360287141,0.185
+Ohio	Columbus	96|41,68,SSE,0,0.00,30.02,Steady,night_partly_cloudy.gif,Partly Cloudy,31,0,1360285090,0.045
+Ohio	Groveport	44|41,66,E,0,0.00,29.90,Falling Slowly,night_partly_cloudy.gif,Partly Cloudy,30,0,1360287139,0.134
+Ohio	Hamilton	70|48,67,SE,3,0.00,29.89,Falling,night_clear.gif,Metar KHAO: Clear,38,,1360287048,0.147
+Ohio	Lancaster	14|42,64,E,0,0.00,29.96,Steady,night_clear.gif,Metar KLHQ: Clear,30,,1360287058,0.167
+Ohio	New Philadelphia	107|38,71,E,0,0.11,30.04,Steady,night_clear.gif,Metar KPHD: Clear,30,2,1360287138,0.202
+Ohio	Sylvania	67|30,86,E,3,0.02,29.92,Falling,night_cloudy.gif,Metar KTOL: Mostly Cloudy,27,,1360287039,0.255
+Wisconsin	Athelstane	25|21,87,ENE,0,0.00,30.10,Rising,night_cloudy.gif,Metar KIMT: Overcast,18,,1360286508,0.403
+Wisconsin	De Pere	26|20,100,NNE,10,0.00,30.10,Rising Slowly,night_snow.gif,Snow,20,12,1360287133,0.266
+Wisconsin	DeSoto	21|29,85,SSW,0,0.03,30.06,Rising Slowly,night_partly_cloudy.gif,Partly Cloudy,25,0,1360287086,0.181
+Wisconsin	Dodgeville	86|28,96,NNW,4,0.00,30.16,Rising Slowly,night_snow.gif,Snow,26,4,1360287146,1.080
+Wisconsin	Greendale	109|32,97,N,0,0.02,29.97,Rising Slowly,night_snow.gif,Metar KMKE: Snow +Fog,31,,1360286930,0.072
+Wisconsin	Kenosha	88|32,98,SSE,0,0.00,29.91,Steady,night_cloudy.gif,Overcast,32,0,1360287140,0.186
+Wisconsin	Mauston	15|26,95,NNE,0,0.00,30.09,Rising Slowly,night_clear.gif,Clear,25,0,1360287096,0.355
+Wisconsin	Sun Prairie	71|27,95,N,5,0.00,30.03,Rising Slowly,night_clear.gif,Clear,26,3,1360287147,0.406
+Wisconsin	Waupaca	58|23,94,NNE,5,0.00,30.09,Rising,night_snow.gif,Light Snow,22,8,1360287338,0.028
+Wisconsin	Winter	111|24,89,ENE,1,0.00,30.25,Steady,night_cloudy.gif,Overcast,21,0,1360287129,0.197
+

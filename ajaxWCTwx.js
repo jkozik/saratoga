@@ -45,6 +45,7 @@
 // --- Version 3.02 - 21-Sep-2011 -- added choices for feelslike temp high (heat-index, humidex, apparenttemp)
 // --- Version 3.03 - 22-Jan-2012 -- added fix for dd.mm.yyyy date format
 // --- Version 3.04 - 24-Mar-2012 -- adapted Cumulus ajaxCUwx.js for WeatherCat use of WCT_realtime.txt
+// --- Version 3.05 - 03-Aug-2012 -- fixed NaN display for feelslike temperature
 //
 // for updates to this script, see http://saratoga-weather.org/wxtemplates/
 // announcements of new versions will be on wxforum.net and Twitter @saratogaWXPHP
@@ -712,6 +713,7 @@ function ajaxLoader(url) {
 		switch (useFeelslike) {
 		  case 0: 
 			  HCraw = realtime[41]; //use HeatIndex
+			  break;
 		  case 1: 
 			  HCraw = realtime[42]; //use Humidex
 			  break;

@@ -29,8 +29,19 @@
 ############################################################################
 #	This document uses Tab 4 Settings
 ############################################################################
+//Version 1.01 - 28-Jul-2012 - integrated support for nws-alerts scripts
 require_once("Settings.php");
 require_once("common.php");
+
+// add support for noCron=true fetch of nws-alerts to get current alerts
+    if(isset($SITE['NWSalertsCodes']) and count($SITE['NWSalertsCodes']) > 0) {
+		include_once("nws-alerts-config.php"); // load the configuration for nws-alerts
+		if(isset($noCron) and $noCron) {
+			print "<!-- nws-alerts noCron=true .. running nws-alerts.php inline -->\n";
+			include_once("nws-alerts.php");
+		}
+	}
+
 ############################################################################
 if (isset($SITE['uomTemp']) ) {
   $tuom = $SITE['uomTemp'];

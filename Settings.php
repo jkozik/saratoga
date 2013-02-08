@@ -1,6 +1,6 @@
 <?php
 ############################################################################
-# A Project of TNET Services, Inc. and Saratoga-Weather.org (USA template set)
+# A Project of TNET Services, Inc. and Saratoga-Weather.org (Base-USA template set)
 ############################################################################
 #
 #	Project:	Sample Included Website Design
@@ -27,7 +27,7 @@
 ############################################################################
 #	This document uses Tab 4 Settings
 ############################################################################
-// Version 1.01 - 01-Oct-2011 - added support for animated condition/forecast icons
+//Version 1.01 - 28-Jul-2012 - added support for nws-alerts scripts
 $SITE 			= array();
 
 ############################################################################
@@ -110,16 +110,16 @@ $SITE['WUbirthday']     = '01-01-2005'; //Stations first day of operation format
 # Sitewide configuration - Station location, identity and date/time info
 ############################################################################
 
-$SITE['organ']			= 'NapervilleWeather.net';
-$SITE['copyr']			= '&copy; ' . gmdate("Y",time()) . ', Napervilleweather.com';
+$SITE['organ']                  = 'NapervilleWeather.net';
+$SITE['copyr']                  = '&copy; ' . gmdate("Y",time()) . ', Napervilleweather.com';
 $SITE['location']       = 'Naperville, IL, USA';
-$SITE['email']			= 'mailto:jackkozik at email.com';
+$SITE['email']                  = 'mailto:jackkozik at email.com';
 # Station location: latitude, longitude, cityname
-$SITE['latitude']		= '41.7900009';     //North=positive, South=negative decimal degrees
-$SITE['longitude']		= '-88.1200027';    //East=positive, West=negative decimal degrees
-$SITE['cityname']		= 'Naperville';
+$SITE['latitude']               = '41.7900009';     //North=positive, South=negative decimal degrees
+$SITE['longitude']              = '-88.1200027';    //East=positive, West=negative decimal degrees
+$SITE['cityname']               = 'Naperville';
 
-$SITE['tz'] 			= 'America/Chicago'; //NOTE: this *MUST* be set correctly to
+$SITE['tz']                     = 'America/Chicago'; //NOTE: this *MUST* be set correctly to
 // translate UTC times to your LOCAL time for the displays.
 //  http://us.php.net/manual/en/timezones.php  has the list of timezone names
 //  pick the one that is closest to your location and put in $SITE['tz'] like:
@@ -167,16 +167,15 @@ $SITE['UVscript']		= 'get-UV-forecast-inc.php'; // worldwide forecast script for
 //	comment out above line to exclude UV forecast from dashboard, gizmo and wxuvforecast.php page
 //
 // if you have WXSIM installed set $SITE['WXSIM'] = true; otherwise set it to false
-$SITE['WXSIM']			= true;  // Set to false if you have not installed WXSIM
+$SITE['WXSIM']			= false;  // Set to false if you have not installed WXSIM
 $SITE['WXSIMscript'] 	= 'plaintext-parser.php'; // script for decoding plaintext.txt into icons
 $SITE['defaultlang']	= 'en';   // 'en' for English (WXSIM plaintext-parser.php)
 
 # fcsturlNWS is the point-printable forecast URL from http://www.weather.gov/ (used by advforecast2.php)
-#$SITE['fcsturlNWS']		= 'http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=41.7900009&textField2=-88.1200027&e=1&TextType=2';
+//$SITE['fcsturlNWS']		= 'http://forecast.weather.gov/MapClick.php?CityName=Saratoga&state=CA&site=MTR&textField1=37.2639&textField2=-122.022&e=1&TextType=2';
 $SITE['fcsturlNWS']             = 'http://forecast.weather.gov/MapClick.php?CityName=Naperville&state=IL&site=LOT&textField1=41.7626&textField2=-88.1543&e=0&TextType=2';
 $SITE['fcsticonsdir'] = './forecast/images/'; // NOAA-style icons for NWS, WU, WXSIM forecast scripts
 $SITE['fcsticonstype']= '.gif'; // default type='.jpg' -- use '.gif' for animated icons from http://www.meteotreviglio.com/
-// 
 // in the following section, enable settings for ONE primary forecast organization
 // pick which script AND org are to be used for your forecast here: (last uncommented pair will
 // be the ones used on the wxforecast.php page and in your dashboard and sidebar
@@ -197,9 +196,28 @@ $SITE['NWSforecasts']   = array( // for the advforecast2.php V3.xx version scrip
 // $SITE['fcstorg']		= 'WXSIM';    // set to 'WXSIM' for WXSIM forecast
 
 // NOAA warning zone
-$SITE['noaazone'] 		= 'ILZ013'; // used for NOAA advisories and advforecast2.php forecasts
+$SITE['noaazone'] 		= 'ILZ013'; // used for NOAA advisories and advforecast2.php zone forecasts
 $SITE['hurlURL']		= "wxadvisory.php"; // page to launch for details on NOAA advisories
 // 
+
+// NWS Alerts package configuration (for Curly's nws-alerts scripts)
+// "Location|ZoneCode|CountyCode[|CountyCode]..."
+// Note: if more than 4 zone/county codes are used, a message will appear if you are NOT using
+//    cron to provide updates.
+// Note: additional/optional nws-alerts configuration is in nws-alerts-config.php file
+$SITE['NWSalertsCodes'] = array(
+  "Naperville|ILZ013|ILC043"
+//"Santa Clara Valley|CAZ513|CAC085",
+//  "Santa Cruz Mtns|CAZ512|CAC081|CAC085|CAC087",
+//"Santa Cruz|CAZ529|CAC087",
+//  "Monterey|CAZ530|CAC053",
+//  "South/East Bay|CAZ508|CAC081",
+//  "San Mateo Coast|CAZ509|CAC081",
+//  "San Francisco|CAZ006|CAC075"
+);
+$SITE['NWSalertsSidebar'] = true; // =true to insert in menubar, =false no insert to menubar
+// 
+
 
 // Radar settings
 $SITE['noaaradar']		= 'LOT';   		// LAST 3 characters of NOAA Radar Site ID

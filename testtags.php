@@ -9,8 +9,8 @@
 **
 */
 
-$maxtempyest = 63.1; /* max temp today */
+$maxtempyest = 32.4; /* max temp today */
 
-$mintempovernight = 46.0; /* min temp today */
+$mintempovernight = 22.9; /* min temp today */
 
 ?>

@@ -1,14 +1,16 @@
 HTTP/1.1 200 OK
 Server: Apache
-ETag: "1508c45-781c-4bb0be319dd00"
-Last-Modified: Mon, 12 Mar 2012 13:40:36 GMT
+Last-Modified: Wed, 23 Jan 2013 22:10:36 GMT
+ETag: "1508c45-b4e9-4d3fbf6b2af00"
 Content-Type: text/html; charset=UTF-8
-Cache-Control: max-age=134
-Expires: Mon, 12 Mar 2012 13:47:48 GMT
-Date: Mon, 12 Mar 2012 13:45:34 GMT
-Content-Length: 30748
+Cache-Control: max-age=1
+Expires: Wed, 23 Jan 2013 22:17:20 GMT
+Date: Wed, 23 Jan 2013 22:17:19 GMT
+Transfer-Encoding:  chunked
 Connection: close
+Connection: Transfer-Encoding
 
+00004000
  
 <!doctype html public "-//w3c//dtd html 4.0 transitional//en">
 <html>
@@ -21,7 +23,7 @@ Connection: close
 <link rel="STYLESHEET" type="text/css" href="mon.css">
 	 </head>
 	 <body>
-	 <font face="Arial,Helvetica" size=+2><b>NWS Level III Radar Site Status as of Mon Mar 12 13:39:59 UTC 2012</b></font><br>
+	 <font face="Arial,Helvetica" size=+2><b>NWS Level III Radar Site Status as of Wed Jan 23 22:09:59 UTC 2013</b></font><br>
 <p><b><font face="Arial,Helvetica">Radar Sites - Last receipt of data</font></b>
 <table BORDER=0 CELLSPACING=4 >
 <tr>
@@ -29,697 +31,1192 @@ Connection: close
 <tr>
 <td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink><b>RPG:</b></td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KABR</a></b><br>13:38:25</td>
+KABR</a></b><br>22:06:21</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KABX</a></b><br>13:36:12</td>
+KABX</a></b><br>22:01:00</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KAKQ</a></b><br>13:32:41</td>
+KAKQ</a></b><br>22:05:11</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KAMA</a></b><br>13:35:51</td>
+KAMA</a></b><br>22:07:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KAMX</a></b><br>13:37:22</td>
+KAMX</a></b><br>22:09:11</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KAPX</a></b><br>13:38:55</td>
+KAPX</a></b><br>22:07:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KARX</a></b><br>13:37:42</td>
+KARX</a></b><br>22:03:01</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KATX</a></b><br>13:39:45</td>
+KATX</a></b><br>22:06:00</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBBX</a></b><br>22:06:10</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBGM</a></b><br>22:09:11</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBHX</a></b><br>22:05:40</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBIS</a></b><br>22:08:20</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBLX</a></b><br>22:08:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBMX</a></b><br>22:06:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBOX</a></b><br>22:03:20</td>
+</tr><tr>
+<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBRO</a></b><br>22:04:40</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBUF</a></b><br>22:08:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KBYX</a></b><br>22:07:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KCAE</a></b><br>22:04:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KCBW</a></b><br>22:01:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KCBX</a></b><br>22:08:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KCCX</a></b><br>22:08:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KCLE</a></b><br>22:05:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KCLX</a></b><br>22:01:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KCRP</a></b><br>22:03:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KCXX</a></b><br>22:04:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KCYS</a></b><br>22:06:00</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDAX</a></b><br>22:06:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDDC</a></b><br>22:03:11</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDFX</a></b><br>22:04:11</td>
+</tr><tr>
+<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDGX</a></b><br>22:06:00</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDIX</a></b><br>22:01:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDLH</a></b><br>22:05:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDMX</a></b><br>22:06:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDOX</a></b><br>22:00:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDTX</a></b><br>22:01:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDVN</a></b><br>22:08:20</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KDYX</a></b><br>22:08:20</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KEAX</a></b><br>22:01:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KEMX</a></b><br>22:08:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KENX</a></b><br>22:05:40</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KEOX</a></b><br>22:06:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KEPZ</a></b><br>22:05:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KESX</a></b><br>22:08:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KEVX</a></b><br>22:06:41</td>
+</tr><tr>
+<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KEWX</a></b><br>22:08:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KEYX</a></b><br>22:05:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KFCX</a></b><br>22:05:11</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KFDR</a></b><br>22:09:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KFDX</a></b><br>22:00:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KFFC</a></b><br>22:08:20</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KFSD</a></b><br>22:03:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KFSX</a></b><br>22:03:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KFTG</a></b><br>22:03:01</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KFWS</a></b><br>22:06:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KGGW</a></b><br>22:09:01</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KGJX</a></b><br>22:08:11</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KGLD</a></b><br>22:00:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KGRB</a></b><br>22:01:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KGRK</a></b><br>22:05:51</td>
+</tr><tr>
+<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KGRR</a></b><br>22:02:01</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KGSP</a></b><br>22:08:01</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KGWX</a></b><br>22:05:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KGYX</a></b><br>22:07:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KHDX</a></b><br>22:03:20</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KHGX</a></b><br>22:06:10</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KHNX</a></b><br>22:07:21</td>
 <td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
-KBBX</a></b><br>16:01:09</td> <!--:No Data:-->
+KHPX</a></b><br>15:32:13</td> <!--:No Data:-->
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KBGM</a></b><br>13:35:41</td>
+KHTX</a></b><br>22:00:31</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KBHX</a></b><br>13:34:01</td>
+KICT</a></b><br>22:01:00</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KBIS</a></b><br>13:35:01</td>
+KICX</a></b><br>22:01:11</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KBLX</a></b><br>13:39:14</td>
+KILN</a></b><br>22:09:01</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KBMX</a></b><br>13:39:24</td>
+KILX</a></b><br>22:05:40</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KBOX</a></b><br>13:37:02</td>
+KIND</a></b><br>22:02:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KINX</a></b><br>22:02:51</td>
 </tr><tr>
 <td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KBRO</a></b><br>13:32:21</td>
+KIWA</a></b><br>22:08:31</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KBUF</a></b><br>13:37:02</td>
+KIWX</a></b><br>22:05:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KBYX</a></b><br>13:36:12</td>
+KJAX</a></b><br>22:08:01</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KCAE</a></b><br>13:33:41</td>
+KJGX</a></b><br>22:01:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KCBW</a></b><br>13:38:55</td>
+KJKL</a></b><br>22:02:22</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KCBX</a></b><br>13:31:31</td>
+KLBB</a></b><br>22:09:01</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KCCX</a></b><br>13:38:05</td>
+KLCH</a></b><br>22:01:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KCLE</a></b><br>13:37:42</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KCLX</a></b><br>13:37:02</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KCRP</a></b><br>13:36:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KCXX</a></b><br>13:33:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KCYS</a></b><br>13:34:51</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDAX</a></b><br>13:36:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDDC</a></b><br>13:39:24</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDFX</a></b><br>13:32:41</td>
-</tr><tr>
-<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDGX</a></b><br>13:37:22</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDIX</a></b><br>13:36:52</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDLH</a></b><br>13:39:45</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDMX</a></b><br>13:35:41</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDOX</a></b><br>13:31:11</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDTX</a></b><br>13:36:52</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDVN</a></b><br>13:38:15</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KDYX</a></b><br>13:30:41</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KEAX</a></b><br>13:30:41</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KEMX</a></b><br>13:31:41</td>
+KLGX</a></b><br>22:07:31</td>
 <td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
-KENX</a></b><br>12:58:25</td> <!--:No Data:-->
+KLIX</a></b><br>14:06:05</td> <!--:No Data:-->
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KEOX</a></b><br>13:35:41</td>
+KLNX</a></b><br>22:02:10</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KEPZ</a></b><br>13:35:21</td>
+KLOT</a></b><br>22:05:30</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KESX</a></b><br>13:36:52</td>
+KLRX</a></b><br>22:07:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KEVX</a></b><br>13:35:41</td>
+KLSX</a></b><br>22:06:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KLTX</a></b><br>22:01:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KLVX</a></b><br>22:04:21</td>
 </tr><tr>
 <td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KEWX</a></b><br>13:29:50</td>
+KLWX</a></b><br>22:01:00</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KEYX</a></b><br>13:32:11</td>
+KLZK</a></b><br>22:05:21</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KFCX</a></b><br>13:32:21</td>
+KMAF</a></b><br>22:01:11</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KFDR</a></b><br>13:38:25</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KFDX</a></b><br>13:37:02</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KFFC</a></b><br>13:31:41</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KFSD</a></b><br>13:36:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KFSX</a></b><br>13:37:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KFTG</a></b><br>13:32:50</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KFWS</a></b><br>13:39:14</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KGGW</a></b><br>13:35:11</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KGJX</a></b><br>13:36:52</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KGLD</a></b><br>13:38:35</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KGRB</a></b><br>13:35:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KGRK</a></b><br>13:33:11</td>
-</tr><tr>
-<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KGRR</a></b><br>13:35:21</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KGSP</a></b><br>13:34:11</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KGWX</a></b><br>13:39:45</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KGYX</a></b><br>13:33:41</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KHDX</a></b><br>13:39:35</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KHGX</a></b><br>13:36:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KHNX</a></b><br>13:31:11</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KHPX</a></b><br>13:34:40</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KHTX</a></b><br>13:38:05</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KICT</a></b><br>13:39:14</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KICX</a></b><br>13:39:35</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KILN</a></b><br>13:38:25</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KILX</a></b><br>13:37:52</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KIND</a></b><br>13:38:35</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KINX</a></b><br>13:30:21</td>
-</tr><tr>
-<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KIWA</a></b><br>13:32:31</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KIWX</a></b><br>13:38:05</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KJAX</a></b><br>13:30:50</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KJGX</a></b><br>13:33:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KJKL</a></b><br>13:37:02</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLBB</a></b><br>13:34:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLCH</a></b><br>13:35:21</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLGX</a></b><br>13:37:02</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLIX</a></b><br>13:36:22</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLNX</a></b><br>13:31:31</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLOT</a></b><br>13:37:22</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLRX</a></b><br>13:32:50</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLSX</a></b><br>13:34:20</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLTX</a></b><br>13:37:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLVX</a></b><br>13:34:20</td>
-</tr><tr>
-<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLWX</a></b><br>13:32:21</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KLZK</a></b><br>13:38:05</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMAF</a></b><br>13:38:35</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMAX</a></b><br>13:33:21</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMBX</a></b><br>13:38:25</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMHX</a></b><br>13:39:24</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMKX</a></b><br>13:39:24</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMLB</a></b><br>13:39:05</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMOB</a></b><br>13:35:41</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMPX</a></b><br>13:37:32</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMQT</a></b><br>13:35:30</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMRX</a></b><br>13:38:44</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMSX</a></b><br>13:37:52</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMTX</a></b><br>13:35:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMUX</a></b><br>13:34:40</td>
-</tr><tr>
-<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMVX</a></b><br>13:35:30</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KMXX</a></b><br>13:38:55</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KNKX</a></b><br>13:30:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KNQA</a></b><br>13:34:51</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KOAX</a></b><br>13:33:41</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KOHX</a></b><br>13:39:05</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KOKX</a></b><br>13:38:05</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KOTX</a></b><br>13:33:41</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KPAH</a></b><br>13:36:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KPBZ</a></b><br>13:36:32</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KPDT</a></b><br>13:37:02</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KPOE</a></b><br>13:38:44</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KPUX</a></b><br>13:33:31</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KRAX</a></b><br>13:38:55</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KRGX</a></b><br>13:32:01</td>
-</tr><tr>
-<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KRIW</a></b><br>13:33:41</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KRLX</a></b><br>13:36:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KRTX</a></b><br>13:36:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KSFX</a></b><br>13:37:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KSGF</a></b><br>13:33:11</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KSHV</a></b><br>13:39:35</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KSJT</a></b><br>13:32:21</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KSOX</a></b><br>13:37:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KSRX</a></b><br>13:38:25</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KTBW</a></b><br>13:34:20</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KTFX</a></b><br>13:30:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KTLH</a></b><br>13:34:31</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KTLX</a></b><br>13:34:20</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KTWX</a></b><br>13:38:25</td>
+KMAX</a></b><br>22:04:21</td>
 <td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
-KTYX</a></b><br>13:01:58</td> <!--:No Data:-->
+KMBX</a></b><br>22:40:19</td> <!--:No Data:-->
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KMHX</a></b><br>22:03:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KMKX</a></b><br>22:05:00</td>
+<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
+KMLB</a></b><br>13:24:38</td> <!--:No Data:-->
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KMOB</a></b><br>22:02:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KMPX</a></b><br>22:00:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KMQT</a></b><br>22:02:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KMRX</a></b><br>22:08:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KMSX</a></b><br>22:08:01</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KMTX</a></b><br>22:04:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KMUX</a></b><br>22:08:51</td>
 </tr><tr>
 <td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KUDX</a></b><br>13:33:41</td>
+KMVX</a></b><br>22:06:31</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KUEX</a></b><br>13:32:01</td>
+KMXX</a></b><br>22:05:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KVAX</a></b><br>13:39:14</td>
+KNKX</a></b><br>22:00:31</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KVBX</a></b><br>13:37:12</td>
-<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
-KVNX</a></b><br>12:10:38</td> <!--:No Data:-->
+KNQA</a></b><br>22:08:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KVTX</a></b><br>13:30:11</td>
+KOAX</a></b><br>22:03:41</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KVWX</a></b><br>13:35:21</td>
+KOHX</a></b><br>22:09:31</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-KYUX</a></b><br>13:32:21</td>
+KOKX</a></b><br>22:06:31</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PABC</a></b><br>13:31:21</td>
+KOTX</a></b><br>22:06:41</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PACG</a></b><br>13:36:32</td>
-<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
-PAEC</a></b><br>08:06:09</td> <!--:No Data:-->
+KPAH</a></b><br>22:03:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PAHG</a></b><br>13:35:30</td>
+KPBZ</a></b><br>22:07:41</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PAIH</a></b><br>13:31:41</td>
+KPDT</a></b><br>22:04:40</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PAKC</a></b><br>13:33:21</td>
+KPOE</a></b><br>22:09:20</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PAPD</a></b><br>13:34:01</td>
+KPUX</a></b><br>22:04:11</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KRAX</a></b><br>22:05:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KRGX</a></b><br>22:04:01</td>
 </tr><tr>
 <td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PGUA</a></b><br>13:35:30</td>
+KRIW</a></b><br>22:03:20</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PHKI</a></b><br>13:38:55</td>
+KRLX</a></b><br>22:07:21</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PHKM</a></b><br>13:36:22</td>
+KRTX</a></b><br>22:07:10</td>
+<td ALIGN=CENTER BGCOLOR="#FFFF00" class = " black"  id= blacklink><b>
+KSFX</a></b><br>21:58:01</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PHMO</a></b><br>13:39:45</td>
+KSGF</a></b><br>22:04:11</td>
+<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
+KSHV</a></b><br>14:34:50</td> <!--:No Data:-->
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-PHWA</a></b><br>13:37:32</td>
+KSJT</a></b><br>22:03:20</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TJUA</a></b><br>13:37:02</td>
+KSOX</a></b><br>22:04:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KSRX</a></b><br>22:04:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KTBW</a></b><br>22:04:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KTFX</a></b><br>22:03:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KTLH</a></b><br>22:05:30</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KTLX</a></b><br>22:06:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KTWX</a></b><br>22:01:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KTYX</a></b><br>22:07:51</td>
+</tr><tr>
+<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KUDX</a></b><br>22:01:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KUEX</a></b><br>22:05:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KVAX</a></b><br>22:02:22</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KVBX</a></b><br>22:06:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KVNX</a></b><br>22:03:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KVTX</a></b><br>22:07:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KVWX</a></b><br>22:00:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+KYUX</a></b><br>22:04:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+PABC</a></b><br>22:04:01</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+PACG</a></b><br>22:07:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blackli
+00004000
+nk><b>
+PAEC</a></b><br>22:07:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+PAHG</a></b><br>22:09:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+PAIH</a></b><br>22:06:31</td>
+<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
+PAKC</a></b><br>19:52:56</td> <!--:No Data:-->
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+PAPD</a></b><br>22:05:11</td>
+</tr><tr>
+<td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
+<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
+PGUA</a></b><br>21:57:31</td> <!--:No Data:-->
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+PHKI</a></b><br>22:09:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+PHKM</a></b><br>22:04:31</td>
+<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
+PHMO</a></b><br>18:40:34</td> <!--:No Data:-->
+<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
+PHWA</a></b><br>19:54:16</td> <!--:No Data:-->
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TJUA</a></b><br>22:06:00</td>
 </tr><tr>
 <td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink><b>SPG:</b></td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TADW</a></b><br>13:37:12</td>
+TADW</a></b><br>22:04:11</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TATL</a></b><br>13:38:05</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TBNA</a></b><br>13:34:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TBOS</a></b><br>13:37:22</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TBWI</a></b><br>13:37:02</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TCLT</a></b><br>13:36:22</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TCMH</a></b><br>13:38:55</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TCVG</a></b><br>13:39:05</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TDAL</a></b><br>13:38:44</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TDAY</a></b><br>13:34:11</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TDCA</a></b><br>13:34:31</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TDEN</a></b><br>13:38:44</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TDFW</a></b><br>13:34:31</td>
+TATL</a></b><br>22:06:41</td>
 <td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
-TDTW</a></b><br>16:12:40</td> <!--:No Data:-->
+TBNA</a></b><br>13:46:47</td> <!--:No Data:-->
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TEWR</a></b><br>13:36:12</td>
+TBOS</a></b><br>22:04:11</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TBWI</a></b><br>22:05:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TCLT</a></b><br>22:05:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TCMH</a></b><br>22:04:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TCVG</a></b><br>22:06:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TDAL</a></b><br>22:04:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TDAY</a></b><br>22:05:40</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TDCA</a></b><br>22:06:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TDEN</a></b><br>22:04:01</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TDFW</a></b><br>22:08:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TDTW</a></b><br>22:09:11</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TEWR</a></b><br>22:06:41</td>
 </tr><tr>
 <td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TFLL</a></b><br>13:36:22</td>
+TFLL</a></b><br>22:04:01</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-THOU</a></b><br>13:34:01</td>
+THOU</a></b><br>22:03:51</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TIAD</a></b><br>13:35:30</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TIAH</a></b><br>13:37:12</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TICH</a></b><br>13:37:32</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TIDS</a></b><br>13:34:51</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TJFK</a></b><br>13:35:21</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TLAS</a></b><br>13:36:32</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TLVE</a></b><br>13:37:32</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TMCI</a></b><br>13:35:11</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TMCO</a></b><br>13:36:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TMDW</a></b><br>13:34:01</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TMEM</a></b><br>13:35:21</td>
+TIAD</a></b><br>22:05:21</td>
 <td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
-TMIA</a></b><br>11:44:47</td> <!--:No Data:-->
+TIAH</a></b><br>17:57:04</td> <!--:No Data:-->
+<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
+TICH</a></b><br>00:13:00</td> <!--:No Data:-->
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TMKE</a></b><br>13:38:05</td>
+TIDS</a></b><br>22:04:11</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TJFK</a></b><br>22:05:21</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TLAS</a></b><br>22:08:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TLVE</a></b><br>22:06:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TMCI</a></b><br>22:06:10</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TMCO</a></b><br>22:08:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TMDW</a></b><br>22:07:10</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TMEM</a></b><br>22:07:31</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TMIA</a></b><br>22:05:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TMKE</a></b><br>22:09:01</td>
 </tr><tr>
 <td ALIGN=CENTER BGCOLOR="#FFFFFF" class = " black"  id= blacklink></td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TMSP</a></b><br>13:38:05</td>
+TMSP</a></b><br>22:09:01</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TMSY</a></b><br>13:39:35</td>
+TMSY</a></b><br>22:07:01</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TOKC</a></b><br>13:38:35</td>
+TOKC</a></b><br>22:04:40</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TORD</a></b><br>13:38:35</td>
+TORD</a></b><br>22:06:21</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TPBI</a></b><br>13:37:22</td>
+TPBI</a></b><br>22:09:11</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TPHL</a></b><br>13:37:32</td>
+TPHL</a></b><br>22:05:21</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TPHX</a></b><br>13:35:51</td>
+TPHX</a></b><br>22:09:41</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TPIT</a></b><br>13:36:32</td>
+TPIT</a></b><br>22:09:51</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TRDU</a></b><br>22:08:41</td>
+<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
+TSDF</a></b><br>22:06:00</td>
 <td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
-TRDU</a></b><br>13:55:08</td> <!--:No Data:-->
+TSJU</a></b><br>01:50:49</td> <!--:No Data:-->
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TSDF</a></b><br>13:34:20</td>
-<td ALIGN=CENTER BGCOLOR="#FF0000" class = "  white "  id= whitelink><b>
-TSJU</a></b><br>02:03:15</td> <!--:No Data:-->
+TSLC</a></b><br>22:06:00</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TSLC</a></b><br>13:37:12</td>
+TSTL</a></b><br>22:09:31</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TSTL</a></b><br>13:35:41</td>
+TTPA</a></b><br>22:04:21</td>
 <td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TTPA</a></b><br>13:39:45</td>
-<td ALIGN=CENTER BGCOLOR="#33FF33" class = " black"  id= blacklink><b>
-TTUL</a></b><br>13:36:22</td>
+TTUL</a></b><br>22:05:40</td>
 </tr>
 </tr>
 </table>
-<font face="Arial,Helvetica">192 sites up (95.5%) of 201 radar sites monitored</font>
+<font face="Arial,Helvetica">187 sites up (93%) of 201 radar sites monitored</font>
 <p><b><font face="Arial,Helvetica">Site Free Text Messages</font></b>
 <br>Free Text Messages received within the previous 24 hours.</font>
 
 <pre>
 
-NOUS63 KLSX 121324
-FTMLSX
-WSR-88D OUTAGE NOTIFICATION
-NATIONAL WEATHER SERVICE ST LOUIS MO
-823 AM CDT MON MAR 12 2012
-KLSX WSR-88D RADAR WILL BE DOWN FOR SEVERAL HOURS FOR ROUTINE
-MAINTENANCE. WE APOLOGIZE FOR THE INCOVENIENCE.
-ALTERNATE NEARBY RADARS INCLUDE:
-KEAX...KDMX...KDVN...ILX...KVWX...KPAH...AND KSGF.
-NOUS66 KSTO 111553
-FTMDAX
-Message Date:  Mar 11 2012 15:53:10
-KDAX RADAR MAINTENANCE WAS COMPLETED AT 1533Z 3/11/12.
-NOUS66 KSTO 111553
-FTMDAX
-Message Date:  Mar 11 2012 15:53:10
-KDAX RADAR MAINTENANCE WAS COMPLETED AT 1533Z 3/11/12.
-NOUS66 KSTO 111311
-FTMDAX
-Message Date:  Mar 11 2012 13:11:55
-KDAX RADAR WILL BE DOWN TODAY, 11 MAR 2012, DUE TO MAINTENANCE, FOR A BRIEF PERI
-OD LESS THAN 1 HOUR STARTING APPX 1400Z. THANKS FOR YOUR PATIENCE AND COOPERATIO
-N.
-NOUS66 KSTO 111311
-FTMDAX
-Message Date:  Mar 11 2012 13:11:55
-KDAX RADAR WILL BE DOWN TODAY, 11 MAR 2012, DUE TO MAINTENANCE, FOR A BRIEF PERI
-OD LESS THAN 1 HOUR STARTING APPX 1400Z. THANKS FOR YOUR PATIENCE AND COOPERATIO
-N.
-NOUS62 KJAX 120938
+NOUS63 KLOT 221225
+FTMORD
+THE FAA TERMINAL DOPPLER RADAR FOR CHICAGO OHARE INTERNATIONAL
+AIRPORT (TORD) WILL BE DOWN FOR MAINTENANCE THIS MORNING. ESTIMATED
+RETURN TO SERVICE IS UNKNOWN AT THIS TIME.
+NOUS63 KLOT 222152
+FTMORD
+THE FAA TERMINAL DOPPLER RADAR FOR CHICAGO OHARE INTERNATIONAL
+AIRPORT (TORD) IS BACK IN SERVICE. THE RADAR WILL BE DOWN ON
+WEDNESDAY JANUARY 23RD AT 400 PM THROUGH 800 PM.
+NOUS63 KLOT 232110
+FTMORD
+THE FAA TERMINAL DOPPLER RADAR FOR CHICAGO OHARE INTERNATIONAL
+AIRPORT (TORD) WILL BE DOWN FOR SERVICE WEDNESDAY JANUARY 23RD AT
+400 PM THROUGH 800 PM.
+NOUS63 KLOT 232109
+FTMORD
+THE FAA TERMINAL DOPPLER RADAR FOR CHICAGO OHARE INTERNATIONAL
+AIRPORT (TORD) WILL BE DOWN ON FOR SERVICE WEDNESDAY JANUARY 23RD AT
+400 PM THROUGH 800 PM.
+NOUS63 KLOT 222142
+FTMORD
+THE FAA TERMINAL DOPPLER RADAR FOR CHICAGO OHARE INTERNATIONAL
+AIRPORT (TORD) WILL BE DOWN FOR MAINTENANCE FROM 400 PM THROUGH 800
+NOUS64 KJAN 232106
+FTMDGX
+Message Date:  Jan 23 2013 21:06:50
+KDGX Dual-Pol upgrade is complete, the system is now operational.
+NOUS62 KRAH 222156
+FTMRAX
+Message Date:  Jan 22 2013 21:56:19
+KRAX WSR-88D Z/R RELATIONSHIP CHANGED TO EAST-COOL STRAIFORM...Z=130R(2.0)
+DETECTED
+NOUS61 KCTP 231348
+FTMLWX
+Message Date:  Jan 23 2013 13:48:18
+LWX RADAR WILL BE DOWN FOR ABOUT 1 HOUR FOR SPG SOFTWARE UPDATE 4.2. TECHS:MJB/J
+V
+NOUS61 KLWX 231348
+FTMLWX
+Message Date:  Jan 23 2013 13:48:18
+LWX RADAR WILL BE DOWN FOR ABOUT 1 HOUR FOR SPG SOFTWARE UPDATE 4.2. TECHS:MJB/J
+V
+NOUS62 KGSP 231933
+FTMCLT
+Message Date:  Jan 23 2013 19:33:03
+TCLT TDWR is back in service.
+tation detected since 1/21/2013 14:54 Z.
+NOUS62 KGSP 231933
+FTMCLT
+Message Date:  Jan 23 2013 19:33:04
+TCLT TDWR is back in service.
+tation detected since 1/21/2013 14:54 Z.
+NOUS60 PHFO 231801
+FTMHWA
+Message Date:  Jan 23 2013 18:01:11
+HWC DOWN FOR MAINTENANCE FM 23/1800;USTC TO 24/0100UTC.  HFO
+NOUS60 PHFO 231805
+FTMHWA
+MESSAGE DATE:  JAN 23 2013 18:01:11
+HWC DOWN FOR MAINTENANCE FM 23/1800UTC TO 24/0100UTC.  HFO
+NOUS62 KJAX 221234
 FTMVAX
-Message Date:  Mar 12 2012 09:38:22
-KVAX 88D RADAR WILL BE DOWN FOR MAINTENANCE TODAY UNTIL AROUND 0800 EDT.*****
-NOUS62 KJAX 121018
+Message Date:  Jan 22 2013 12:34:59
+KVAX RADAR IS OPERATIONAL AND SENDING PRODUCTS.*****
+DETECTED
+NOUS62 KJAX 231110
 FTMVAX
-Message Date:  Mar 12 2012 10:18:35
-KVAX 88D RADAR IS BACK UP AND OPERATIONAL.*****
-NOUS63 KEAX 120309
+Message Date:  Jan 23 2013 11:10:25
+KVAX RADAR IS OPERATIONAL AGAIN.
+NOUS62 KJAX 230840
+FTMVAX
+Message Date:  Jan 23 2013 08:40:41
+KVAX RADAR WILL BE DOWN UNTIL APPROXIMATELY 12Z THIS MORNING.  &&&&&
+NOUS62 KJAX 221036
+FTMVAX
+Message Date:  Jan 22 2013 10:36:02
+KVAX RADAR WILL BE DOWN FOR ROUTINE MAINTENANCE UNTIL APPROXIMATELY 12Z.
+NOUS63 KEAX 221834
 FTMEAX
-WSR-88D OUTAGE NOTIFICATION
-NATIONAL WEATHER SERVICE KANSAS CITY/PLEASANT HILL MO
-1007 PM CDT SUN MAR 11 2012
-THE KANSAS CITY/PLEASANT HILL MO WSR-88D (KEAX) IS
-EXPERIENCING PROBLEMS WITH THE RDA.  IT IS NOT KNOWN HOW LONG THE
-RADAR WILL BE DOWN FOR REPAIRS. WE WILL ADVISE WHEN NEW INFORMATION
-IS AVAILABLE.
-WE APOLOGIZE FOR ANY INCONVENIENCE THIS OUTAGE MAY CAUSE OUR
-CUSTOMERS.
-ADJACENT/BACK-UP WSR-88D RADARS:
-KDMX - DES MOINES, IA
-KTWX - TOPEKA, KS
-KLSX - ST LOUIS, MO
-KOAX - OMAHA, NE
-KSGF - SPRINGFIELD, MO
-KICT - WICHITA, KS
-NOUS63 KEAX 121257
+Message Date:  Jan 22 2013 18:34:06
+Pleasant Hill weather radar will be down for scheduled maintenance for approxima
+tely two hours beginning 1945z
+NOUS63 KEAX 221834
 FTMEAX
-Message Date:  Mar 12 2012 12:57:36
-THE PLEASANT HILL WSR-88D (KEAX) RADAR HAS RETURNED TO OPERATIONAL STATUS. WE AP
-POLOGIZE FOR ANY INCONVENIENCE THIS OUTAGE MAY HAVE CAUSED.  BACKUP RADARS INCLU
-DE: KTWX - TOPEKA, KS KSGF - SPRINGFIELD, MO KDMX - DES MOINES, IA
-NOUS63 KEAX 121257
-FTMEAX
-Message Date:  Mar 12 2012 12:57:36
-THE PLEASANT HILL WSR-88D (KEAX) RADAR HAS RETURNED TO OPERATIONAL STATUS. WE AP
-POLOGIZE FOR ANY INCONVENIENCE THIS OUTAGE MAY HAVE CAUSED.  BACKUP RADARS INCLU
-DE: KTWX - TOPEKA, KS KSGF - SPRINGFIELD, MO KDMX - DES MOINES, IA
-NOUS63 KOAX 110231
+Message Date:  Jan 22 2013 18:34:06
+Pleasant Hill weather radar will be down for scheduled maintenance for approxima
+tely two hours beginning 1945z
+NOUS64 KTSA 231658
+FTMSRX
+Message Date:  Jan 23 2013 16:58:02
+THE WSR-88D RADAR NEAR FORT SMITH ARKANSAS HAS BEEN RETURNED TO SERVICE.
+NOUS64 KLZK 231658
+FTMSRX
+Message Date:  Jan 23 2013 16:58:02
+THE WSR-88D RADAR NEAR FORT SMITH ARKANSAS HAS BEEN RETURNED TO SERVICE.
+NOUS64 KLZK 231525
+FTMSRX
+Message Date:  Jan 23 2013 15:25:37
+THE WSR-88D RADAR NEAR FORT SMITH ARKANSAS WILL BE DOWN FOR ROUTINE MAINTANENCE
+UNTIL AROUND NOON LOCAL TIME.
+NOUS64 KTSA 231525
+FTMSRX
+Message Date:  Jan 23 2013 15:25:37
+THE WSR-88D RADAR NEAR FORT SMITH ARKANSAS WILL BE DOWN FOR ROUTINE MAINTANENCE
+UNTIL AROUND NOON LOCAL TIME.
+NOUS63 KOAX 221822
 FTMOAX
-Message Date:  Mar 11 2012 04:02:54
-KOAX RADAR IS OUT OF SERVICE UNTIL FURTHER NOTICE DUE TO TECHNICAL PROBLEMS. TEC
-HS HAVE BEEN NOTIFIED. AREA RADARS INCLUDE KFSD...KLNX...KUEX...KTOP...KEAX.
-NOUS63 KGRR 101813
-FTMGRR
-Message Date:  Mar 10 2012 18:13:05
-THE Z/R RELATIONSHIP FOR KGRR HAS BEEN CHANGED TO THE SUMMERTIME CONVECTION VALU
-ES OF 300/1.4.
-NOUS61 KALY 121258
-FTMENX
-Message Date:  Mar 12 2012 12:58:14
-KENX RADAR WILL BE DOWN FOR MAINTENTANCE INTO MID AFTERNOON. IAA
-NOUS63 KDLH 111636
-FTMDLH
-Message Date:  Mar 11 2012 16:36:32
-3/11/2012 1635: KDLH RADAR IS NOW USING MARSHALL PALMER Z-R RELATIONSHIP.
-DETECTED
-NOUS61 KILN 111904
-FTMILN
-Message Date:  Mar 11 2012 19:04:01
-KILN HAS BEEN SWITCHED TO THE DEFAULT/DEEP CONVECTION Z-R RELATIONSHIP.
-DETECTED
-NOUS61 KILN 111904
-FTMILN
-Message Date:  Mar 11 2012 19:04:01
-KILN HAS BEEN SWITCHED TO THE DEFAULT/DEEP CONVECTION Z-R RELATIONSHIP.
-tation detected since 3/10/2012 15:43 Z.
-NOUS64 KLIX 120558
+Message Date:  Jan 22 2013 18:25:15
+KOAX 88D WILL BE DOWN FOR MAINTENANCE THIS AFTERNOON AND IS EXPECTED TO BE BACK
+IN SERVICE AROUND 4 PM.
+NOUS63 KOAX 221826
+FTMOAX
+MESSAGE DATE:  1225 PM CST TUE JAN 22 2013
+THE KOAX WSR 88D RADAR WILL BE DOWN UNTIL AROUND 4 PM CST...22Z...
+TODAY FOR ROUTINE MAINTENANCE.
+ADJACENT RADARS INCLUDE AT KUEX...KLNX...KFSD...KDMX...KEAX...KTWX.
+NOUS63 KOAX 222132
+FTMOAX
+MESSAGE DATE:  330 PM CST TUE JAN 22 2013
+THE KOAX WSR 88D RADAR IS BACK IN OPERATION.
+IF NEEDED...ADJACENT RADARS INCLUDE AT
+KUEX...KLNX...KFSD...KDMX...KEAX...KTWX.
+NOUS63 KOAX 231413
+FTMOAX
+Message Date:  Jan 23 2013 14:16:24
+KOAX WILL BE OUT OF SERVICE UNTIL 1800Z
+NOUS63 KOAX 231624
+FTMOAX
+MESSAGE DATE:  1020 AM CST WED JAN 23 2013
+THE KOAX WSR 88D RADAR WILL BE MOSTLY OFF-LINE UNTIL 4 PM/22Z FOR
+MAINTENANCE.
+ADJACENT RADARS INCLUDE KUEX...KLNX...KFSD...KDMX...KEAX...KTWX.
+NOUS65 KBYZ 221946
+FTMBLX
+Message Date:  Jan 22 2013 19:57:29
+THE BILLINGS WSR-88D WILL BE DOWN FOR PREVENTATIVE MAINTENANCE UNTIL ABOUT 2 PM
+MST.   ARTHUR
+NOUS65 KBYZ 222108
+FTMBLX
+Message Date:  Jan 22 2013 21:12:34
+TO USERS OF BILLINGS WSR-88D DATA: THE RADAR IS NOW BACK IN SERVICE. THANKS. ART
+HUR
+NOUS63 KBIS 232055
+FTMMBX
+Message Date:  Jan 23 2013 20:55:14
+UPDATE...THE MINOT DOPPLER RADAR...KMBX...REMAINS OUT OF SERVICE. A POWER AMP UN
+IT HAS BEEN ORDERED AND IT IS UNKNOWN AT THIS TIME WHEN IT WILL ARRIVE. ONCE THE
+PART IS ACQUIRED...IT WILL TAKE APPROXIMATELY ONE HOUR TO INSTALL. KS
+NOUS62 KFFC 231222
+FTMATL
+Message Date:  Jan 23 2013 12:22:15
+THE ATL TDWR WILL BE DOWN FOR MAINT. FROM 13 TO 19Z.
+NOUS62 KFFC 231859
+FTMATL
+Message Date:  Jan 23 2013 18:59:34
+01/23/2013 @ 157 PM EST - ATLANTA RADAR (TDWR) BACK IN SERVICE. (NM)
+NOUS62 KFFC 231859
+FTMATL
+Message Date:  Jan 23 2013 18:59:16
+01/23/2013 @ 157 PM EST - ATLANTA RADAR (TDWR) BACK IN SERVICE. (NM)
+NOUS62 KFFC 231859
+FTMATL
+Message Date:  Jan 23 2013 18:59:34
+01/23/2013 @ 157 PM EST - ATLANTA RADAR (TDWR) BACK IN SERVICE. (NM)
+NOUS62 KFFC 231859
+FTMATL
+Message Date:  Jan 23 2013 18:59:33
+01/23/2013 @ 157 PM EST - ATLANTA RADAR (TDWR) BACK IN SERVICE. (NM)
+NOUS62 KFFC 231859
+FTMATL
+Message Date:  Jan 23 2013 18:59:12
+01/23/2013 @ 157 PM EST - ATLANTA RADAR (TDWR) BACK IN SERVICE. (NM)
+NOUS65 KBOU 231623
+FTMFTG
+Message Date:  Jan 23 2013 16:26:57
+KFTG WSR-88D RDA WILL BE DOWN FOR MAINTENANCE FROM 231630Z UNTIL 232100Z.   ADJA
+CENT WSR-88D RADARS: KCYS...KGLD...KPUX...KGJX
+NOUS64 KLUB 232012
+FTMLBB
+Message Date:  Jan 23 2013 20:12:41
+THE LBB WSR-88D IS OUT OF SERVICE FOR MAINTENANCE UNTIL 21Z
+NOUS64 KLUB 232047
+FTMLBB
+Message Date:  Jan 23 2013 20:47:10
+WSR-88D KLBB HAS RETURNED TO SERVICE AT 2045Z.
+NOUS64 KBMX 231444
+FTMGWX
+Message Date:  Jan 23 2013 14:44:32
+RADAR KGWX WILL BE DOWN FOR ROUTINE MAINTENANCE UNTIL 21Z. WFO JACKSON
+NOUS64 KMEG 231444
+FTMGWX
+Message Date:  Jan 23 2013 14:44:32
+RADAR KGWX WILL BE DOWN FOR ROUTINE MAINTENANCE UNTIL 21Z. WFO JACKSON
+NOUS64 KJAN 231444
+FTMGWX
+Message Date:  Jan 23 2013 14:44:32
+RADAR KGWX WILL BE DOWN FOR ROUTINE MAINTENANCE UNTIL 21Z. WFO JACKSON
+NOUS64 KBMX 231508
+FTMGWX
+Message Date:  Jan 23 2013 15:08:14
+RADAR KGWX IS FULLY OPERATIONAL. WFO JACKSON
+NOUS64 KJAN 231508
+FTMGWX
+Message Date:  Jan 23 2013 15:08:14
+RADAR KGWX IS FULLY OPERATIONAL. WFO JACKSON
+NOUS64 KMEG 231508
+FTMGWX
+Message Date:  Jan 23 2013 15:08:14
+RADAR KGWX IS FULLY OPERATIONAL. WFO JACKSON
+NOUS64 KLCH 221841
+FTMLCH
+Message Date:  Jan 22 2013 18:41:51
+WORK WILL CONTNUE ON THE RADAR UNTIL 23Z.
+NOUS64 KLCH 221448
+FTMLCH
+Message Date:  Jan 22 2013 14:48:50
+WFO LCH WILL BE DOWN FOR SOME MAINT TILL 1800Z
+NOUS61 KAKQ 221851
+FTMAKQ
+Message Date:  Jan 22 2013 18:51:31
+KAKQ RADAR IS BACK IN SERVICE.
+NOUS61 KAKQ 221525
+FTMAKQ
+Message Date:  Jan 22 2013 15:25:02
+THE AKQ RADAR WILL BE DOWN FROM 1530Z-1800Z FOR MAINTENANCE.
+tation detected since RPG startup.
+NOUS61 KAKQ 231453
+FTMAKQ
+Message Date:  Jan 23 2013 14:53:54
+KAKQ WILL BE DOWN FOR MAINTENANCE FROM 1500Z - 1630Z.
+NOUS61 KAKQ 231607
+FTMAKQ
+Message Date:  Jan 23 2013 16:07:09
+KAKQ RADAR IS BACK IN SERVICE.
+NOUS66 KMFR 221710
+FTMMAX
+Message Date:  Jan 22 2013 17:10:48
+The Mt. Ashland KMAX WSR-88D will be down from 10:00 AM until 2:00 PM for mainte
+nance.
+NOUS64 KSJT 231657
+FTMSJT
+Message Date:  Jan 23 2013 16:57:44
+THE SJT RADAR WILL BE DOWN UNTIL APPROX. 1800Z FOR ROUTINE MAINTENANCE.
+NOUS64 KSHV 221421
+FTMSHV
+Message Date:  Jan 22 2013 14:21:33
+KSHV 88D RADAR WILL BE DOWN BEGINNING THIS MORNING JAN. 22ND THROUGH JAN. 28 FOR
+DUAL POLARIZATION UPGRADE.
+NOUS63 KBIS 221703
+FTMBIS
+Message Date:  Jan 22 2013 17:03:04
+THE BISMARCK DOPPLER RADAR...KBIS...IS BACK IN OPERATIONAL STATUS. LTH
+NOUS63 KBIS 221606
+FTMBIS
+Message Date:  Jan 22 2013 16:06:53
+THE BISMARCK DOPPLER RADAR...KBIS...WILL BE DOWN FOR ROUTINE MAINTENANCE UNTIL E
+ARLY TUESDAY AFTERNOON.
+NOUS65 KVEF 221900
+FTMESX
+Message Date:  Jan 22 2013 19:00:39
+THE KESX RADAR WILL BE DOWN FOR MAINTENANCE FOR ABOUT 2 HOURS STARTING AT 1900Z
+TODAY.
+NOUS65 KVEF 231110
+FTMESX
+Message Date:  Jan 23 2013 11:10:36
+KESX HAS EXPERIENCED A WIDEBAND LINE COMMUNICATIONS FAILURE. A RETURN TO SERVICE
+TIME IS UNKNOWN.
+NOUS64 KLIX 232030
 FTMLIX
-Message Date:  Mar 12 2012 05:58:13
-KLIX HAS SWITCHED TO VCP212.
-NOUS64 KLIX 120558
+Message Date:  Jan 23 2013 20:30:22
+WS88D WILL BE DOWN FROM 2027Z UNTIL 2230 FOR RADAR DOME INSPECTION.MWH
+NOUS64 KLIX 231258
 FTMLIX
-Message Date:  Mar 12 2012 05:58:13
-KLIX HAS SWITCHED TO VCP212.
-NOUS61 KBTV 121305
-FTMTYX
-Message Date:  Mar 12 2012 13:05:32
-TYX WILL BE DOWN FOR MAINTENANCE MOST OF THE MORNING.
-NOUS61 KBTV 121302
-FTMTYX
-MESSAGE DATE:  MAR 12 2012 13:02:05
-TYX WILL BE DOWN FOR MAINTENANCE MOST OF THE MORNING.
-NOUS61 KBUF 121305
-FTMTYX
-Message Date:  Mar 12 2012 13:05:32
-TYX WILL BE DOWN FOR MAINTENANCE MOST OF THE MORNING.
-NOUS62 KRAH 102043
-FTMRDU
-Message Date:  Mar 10 2012 20:43:04
-KRDU has experienced a comms failure. We are working to resolve the issue with t
-elco.
-NOUS69 PAFG 110159
-FTMAEC
-WSR-88D FREE TEXT MESSAGE
-NATIONAL WEATHER SERVICE FAIRBANKS AK
-459 PM AKST SAT MAR 10 2012
-PAEC (NOME) RADAR OUTAGE SINCE 10/0804 UTC. RETURN TO SERVICE
-TIME IS NOT KNOWN.
-NOUS69 PAFG 110451
-FTMAEC
-WSR-88D FREE TEXT MESSAGE
-NATIONAL WEATHER SERVICE FAIRBANKS AK
-751 PM AKST SAT MAR 10 2012
-PAEC (NOME) RADAR OUTAGE SINCE 10/0804 UTC. RETURN TO SERVICE TIME
-IS ESTIMATED TO BE TUESDAY MARCH 13 2012.
-NOUS63 KJKL 102350
-FTMJKL
-Message Date:  Mar 10 2012 23:50:55
-JKL RADAR ZR RELATIONSHIP HAS BEEN CHANGED TO WARM SEASON DEEP CONVECTION.
-NOUS64 KEWX 121326
-FTMEWX
-Message Date:  Mar 12 2012 13:26:26
-KEWX RADAR WILL BE DOWN FROM 1330Z TIL 2030Z FOR PMIs AND MAINTENANCE.  ET
-NOUS62 TJSJ 120305
-FTMSJU
-Message Date:  Mar 12 2012 03:05:01
-THE DATA FEED FROM THE FAA SAN JUAN (TSJU) TERMINAL DOPPLER WEATHER RADAR (TDWR)
-TO THE NATIONAL WEATHER SERVICE FORECAST OFFICE IN SAN JUAN HAS BEEN TEMPORARIL
-Y INTERRUPTED. FAA/AOCC HAS BEEN NOTIFIED FOR MAINTENANCE.
-NOUS64 KMAF 102211
-FTMMAF
-Message Date:  Mar 10 2012 22:11:55
-WSR-88D is down for maintenance until approx. 0005Z 11 Mar
-NOUS64 KMAF 102252
-FTMMAF
-Message Date:  Mar 10 2012 22:52:03
-WSR-88D is operational
-NOUS64 KMAF 102252
-FTMMAF
-Message Date:  Mar 10 2012 22:52:00
-WSR-88D is operational
-NOUS61 KOKX 111558
-FTMJFK
-RADAR FREE TEXT MESSAGE
-NATIONAL WEATHER SERVICE NEW YORK NY
-1158 AM EDT SUN MAR 11 2012
-THE JFK TERMINAL DOPPLER WEATHER RADAR /TJFK/ DATA IS NOW AVAILABLE.
-NOUS61 KPBZ 111405
-FTMPIT
-MESSAGE DATE:  MAR 11 2012 14:00:00
-TPIT WILL BE OUT OF SERVICE FOR SCHEDULED MAINTENANCE FROM 1400 GMT
-UNTIL 1530 GMT TODAY.
-NOUS61 KPBZ 111442
-FTMPIT
-MESSAGE DATE:  MAR 11 2012 14:40:00
-TPIT HAS BEEN RETURNED TO SERVICE AS OF 1440 GMT TODAY. THANK YOU
-FOR YOUR PATIENCE.
-NOUS62 KMFL 101734
-FTMMIA
-Message Date:  Mar 10 2012 17:34:10
-3/10/12 1734Z: THE TERMINAL DOPPLER WEATHER RADAR AT MIAMI INTERNATIONAL AIRPORT
-IS OUT OF SERVICE UNTIL FURTHER NOTICE.
-NOUS63 KGLD 111905
-FTMGLD
-Message Date:  Mar 11 2012 19:05:28
-KGLD will be offline for maintenance until 2005Z.
-NOUS63 KGLD 111932
-FTMGLD
-Message Date:  Mar 11 2012 19:32:00
-KGLD back online 1932Z.
+Message Date:  Jan 23 2013 12:58:21
+KLIX RADAR WILL BE DOWN FOR SCHEDULED MAINTENANCE UNTIL APPROX 2100Z
+NOUS64 KLIX 222100
+FTMLIX
+Message Date:  Jan 22 2013 21:00:42
+KLIX RADAR IS OPERATIONAL
+NOUS64 KLIX 232030
+FTMLIX
+Message Date:  Jan 23 2013 20:30:22
+WS88D WILL BE DOWN FROM 2027Z UNTIL 2230 FOR RADAR DOME INSPECTION.MWH
+NOUS64 KLIX 222101
+FTMLIX
+Message Date:  Jan 22 2013 21:01:46
+KLIX RADAR IS SCHEDULED TO BE DOWN FOR MAINTENANCE ON 23 JAN 13 FROM 1300-2100Z
+NOUS64 KLIX 222101
+FTMLIX
+Message Date:  Jan 22 2013 21:01:46
+KLIX RADAR IS SCHEDULED TO BE DOWN FOR MAINTENANCE ON 23 JAN 13 FROM 1300-2100Z
+NOUS64 KLIX 221308
+FTMLIX
+Message Date:  Jan 22 2013 13:08:11
+KLIX WILL BE DOWN FOR MAINTENANCE UNTIL APPROX 2100Z
+NOUS64 KLIX 231258
+FTMLIX
+Message Date:  Jan 23 2013 12:58:21
+KLIX RADAR WILL BE DOWN FOR SCHEDULED MAINTENANCE UNTIL APPROX 2100Z
+NOUS64 KLIX 222100
+FTMLIX
+Message Date:  Jan 22 2013 21:00:42
+KLIX RADAR IS OPERATIONAL
+NOUS64 KLIX 221308
+FTMLIX
+Message Date:  Jan 22 2013 13:08:11
+KLIX WILL BE DOWN FOR MAINTENANCE UNTIL APPROX 2100Z
+tation detected since 1/20/2013 23:47 Z.
+NOUS64 KLIX 222225
+FTMMSY
+MESSAGE DATE: JAN 22 2013 22:25:00
+TMSY RADAR IS BACK IN OPERATION.
+NOUS64 KLIX 221500
+FTMMSY
+MESSAGE DATE: JAN 22 2013 15:00:00
+TMSY RADAR WILL BE DOWN FOR MAINTENANCE FR
+00001A41
+OM 16Z TO 23Z TODAY.
+NOUS61 KBGM 221236 CCA
+FTMBGM
+WSR-88D NOTIFICATION MESSAGE
+NATIONAL WEATHER SERVICE BINGHAMTON NY
+735 AM EDT TUE JAN 22 2013
+1/22/2013 1235 UTC
+ADJACENT WFO'S...BUF...ALY...CTP...PHI...OKX...VUY.
+THE KBGM RADAR IS DOWN DUE TO WIDEBAND FAILURE. ELECTRONIC
+TECHNICIANS HAVE BEEN MADE AWARE OF THE PROBLEM. IT IS UNKNOWN AT
+THIS TIME WHEN NORMAL OPERATIONS WILL RESUME.
+NOUS61 KBGM 222105 CCA
+FTMBGM
+WSR-88D NOTIFICATION MESSAGE
+NATIONAL WEATHER SERVICE BINGHAMTON NY
+405 PM EDT TUE JAN 22 2013
+1/22/2013 2105 UTC
+ADJACENT WFO'S...BUF...ALY...CTP...PHI...OKX...VUY.
+THE WIDEBAND FOR THE KBGM RADAR HAS BEEN UP AND STABLE SINCE ABOUT
+1230 PM.  AT THIS POINT, NO FURTHER PROBLEMS ARE EXPECTED HOWEVER
+ELECTRONIC TECHINICIANS WILL BE MONITORING THE SITUATION THROUGH
+TONIGHT.
+NOUS66 KMTR 231853
+FTMMUX
+Message Date:  Jan 23 2013 18:53:17
+KMUX radar wideband problems. Radar offline. Telco notified. Troubleshooting in
+progress.
+NOUS63 KABR 231336
+FTMABR
+Message Date:  Jan 23 2013 13:36:49
+ABR RADAR WILL BE DOWN FOR MAINTENANCE TODAY    TAL
+NOUS63 KABR 232009
+FTMABR
+Message Date:  Jan 23 2013 20:09:36
+ABR RADAR IS BACK IN SERVICE AT 10:09Z
+NOUS64 KFWD 230631
+FTMDAL
+MESSAGE DATE:  JAN 23 2013 06:30:42
+THE COMMUNICATIONS ISSUES WITH THE TERMINAL DOPPLER WEATHER RADAR
+FOR DALLAS LOVE FIELD WERE RESOLVED YESTERDAY. NORMAL TRANSMISSIONS
+OF DATA THROUGH NATIONAL WEATHER SERVICE CIRCUITS ARE OCCURRING.
+NOUS64 KFWD 230630
+FTMDAL
+MESSAGE DATE:  JAN 23 2013 06:30:42
+THE COMMUNICATIONS ISSUES WITH THE TERMINAL DOPPLER WEATHER RADAR
+FOR DALLAS LOVE FIELD WERE RESOLVED YESTERDAY. NORMAL TRANMISSIONS OF
+DATA THROUGH NATIONAL WEATHER SERVICE CIRCUITS ARE OCCURRING.
+NOUS64 KMRX 231818
+FTMMRX
+Message Date:  Jan 23 2013 18:18:36
+KMRX Radar will be down till 2000Z for routine maintenance. BET
+tation detected since 1/23/2013 13:00 Z.
+NOUS65 KSLC 231732
+FTMGJX
+Message Date:  Jan 23 2013 17:32:45
+KGJX TRANSMITTER WILL DOWN FOR MAINTENANCE PERIODICALLY UNTIL APPROXIMATELY 2200
+UTC TODAY...23 JANUARY. ADJACENT RADARS INCLUDE KRIW, KMTX, KFTG, KICX, KPUX, K
+FSX AND KABX.
+NOUS65 KGJT 231732
+FTMGJX
+Message Date:  Jan 23 2013 17:32:45
+KGJX TRANSMITTER WILL DOWN FOR MAINTENANCE PERIODICALLY UNTIL APPROXIMATELY 2200
+UTC TODAY...23 JANUARY. ADJACENT RADARS INCLUDE KRIW, KMTX, KFTG, KICX, KPUX, K
+FSX AND KABX.
+NOUS65 KGJT 232139
+FTMGJX
+Message Date:  Jan 23 2013 21:39:10
+KGJX TRANSMITTER MAINTENANCE IS COMPLETE.
+NOUS65 KSLC 232139
+FTMGJX
+Message Date:  Jan 23 2013 21:39:10
+KGJX TRANSMITTER MAINTENANCE IS COMPLETE.
+NOUS64 KHGX 230228 CCB
+FTMHGX
+MESSAGE DATE:  JAN 23 2013 02:27
+THE KHGX-88D WILL BE OUT OF SERVICE UNTIL FURTHER NOTICE.
+NOUS60 PHFO 231802
+FTMHMO
+Message Date:  Jan 23 2013 18:02:40
+HMO DOWN FOR MAINTENANCE FM 23/1800UTC TO 24/0200UTC.  HFO
+NOUS60 PHFO 231806
+FTMHMO
+MESSAGE DATE:  JAN 23 2013 18:02:40
+HMO DOWN FOR MAINTENANCE FM 23/1800UTC TO 24/0200UTC.  HFO
+NOUS65 KPSR 221527
+FTMYUX
+Message Date:  Jan 22 2013 15:27:19
+THE RADAR WIL BE DOWN FOR MAINT. 01/22/13 AT APPROX. 1545 FOR 30 MIN.
+NOUS62 KILM 231453
+FTMLTX
+Message Date:  Jan 23 2013 14:53:57
+THE KLTX RADAR WILL BE DOWN FOR MAINTENANCE FOR 30 MINUTES.
+NOUS62 KILM 231539
+FTMLTX
+MESSAGE DATE:  JAN 23 2013 15:39:00
+THE KLTX RADAR IS RETURNED TO SERVICE.
+NOUS62 KMLB 231226
+FTMMLB
+MESSAGE DATE:  WED JAN 23 2013 7:25 AM EST
+THE KMLB WSR-88D REMAINS OUT OF SERVICE THROUGH ABOUT THE END OF
+JANUARY IN ORDER TO RAISE THE TOWER HEIGHT BY 33 FEET. THE
+ADDITIONAL HEIGHT WILL PREVENT A BLOCKAGE OF THE BEAM'S LOW-LEVEL
+SCANS TO THE SOUTH-SOUTHEAST, WHICH IS THE PRIMARY DIRECTION FOR
+MOST APPROACHING HURRICANES.  ONCE RAISED, THE RADAR WILL CONTINUE
+TO PROVIDE 360-DEGREE MONITORING OF HAZARDOUS WEATHER CONDITIONS.
+BACKUP RADARS INCLUDE KJAX, KTBW, KAMX, TMCO AND TPBI. FOR MORE
+INFORMATION, PLEASE CALL NWS MELBOURNE AT 321-255-0212.
+NOUS63 KTOP 231454
+FTMTWX
+Message Date:  Jan 23 2013 14:54:03
+KTWX IN TOPEKA, KANSAS WILL BE DOWN FOR ROUTINE MAINTENANCE ON JANUARY 23 UNTIL
+APPROXIMATELY 4 PM. IF RADAR IS NEEDED, USE KUEX (HASTINGS, NEBRASKA), KEAX (PLE
+ASANT HILL, MISSOURI), OR KICT (WICHITA, KANSAS).
+NOUS63 KTOP 231920
+FTMTWX
+Message Date:  Jan 23 2013 19:20:53
+ROUTINE MAINTENANCE ON KTWX IS COMPLETE AND THE RADAR IS BACK TO NORMAL FUNCTION
+.
+NOUS66 KLOX 221716
+FTMVTX
+Message Date:  Jan 22 2013 17:16:41
+kvtx maint - rts 2200z
+NOUS61 KGYX 231225
+FTMGYX
+Message Date:  Jan 23 2013 12:25:54
+KGYX Radar data will be unavailable today 1/23/13 from approximately 1230z until
+possibly 2200z for maintenance.
+NOUS61 KGYX 222008
+FTMGYX
+Message Date:  Jan 22 2013 20:08:24
+KGYX Radar data will be unavailable tomorrow, 01/23/13, from approximately 1200z
+until possibly 2200z, for maintenance.
+NOUS63 KLSX 222207
+FTMSTL
+TDWR OUTAGE NOTIFICATION
+NATIONAL WEATHER SERVICE ST LOUIS MO
+410 PM CST TUE JAN 22 2013
+THE ST. LOUIS TERMINAL DOPPLER WEATHER RADAR (TSTL) HAS BEEN
+RETURNED TO SERVICE.
+TRUETT
+NOUS63 KLSX 221419
+FTMSTL
+TDWR OUTAGE NOTIFICATION
+NATIONAL WEATHER SERVICE ST LOUIS MO
+817 AM CST TUE JAN 22 2013
+THE ST. LOUIS TERMINAL DOPPLER WEATHER RADAR (TSTL) IS EXPERIENCING
+TECHNICAL DIFFICULTIES THAT IS MAKING DATA UNAVAILABLE.  TECHNICIANS
+ARE ON SITE.
+NOUS62 KCHS 221407
+FTMCLX
+Message Date:  Jan 22 2013 14:07:33
+KCLX RADAR WILL BE DOWN FOR A SOFTWARE UPGRADE UNTIL ROUGHLY 17Z.
+NOUS62 KCHS 222143
+FTMCLX
+Message Date:  Jan 22 2013 21:43:53
+KCLX RADAR IS BACK IN FULL OPERATION.
+NOUS60 PHFO 231904
+FTMHKM
+MESSAGE DATE:  JAN 23 2013 19:02:22
+UPP DOWN FOR MAINTENANCE FM 23/1930UTC TO 24/0000UTC.  HFO
+NOUS60 PHFO 231903
+FTMHKM
+MESSAGE DATE:  JAN 23 2013 19:02:22
+UPP DOWN FOR MAINTENANCE FM 23/1930UTC TO 24/0000UTC.  HFO
+NOUS60 PHFO 231902
+FTMHKM
+Message Date:  Jan 23 2013 19:02:22
+UPP DOWN FOR MAINTENANCE FM 23/1930UTC TO 24/0000UTC.  HFO
+NOUS66 KPDT 230035
+FTMPDT
+Message Date:  Jan 23 2013 00:35:05
+KPDT radar maint completed. LCH
 DETECTED
-NOUS68 PACR 111241
-FTMABC
-MESSAGE DATE: MAR 11 2012 1240 UTC
-THE BETHEL NEXRAD RADAR IS OUT OF SERVICE UNTIL FURTHER NOTICE.
-THANK YOU FOR YOUR PATIENCE.
-NOUS68 PACR 120629
-FTMABC
-MESSAGE DATE: MAR 12 0630 UTC
-THE BETHEL NEXRAD RADAR IS BACK IN SERVICE. THANK YOU FOR YOUR
-PATIENCE.
-NOUS61 KBTV 121302
-FTMCXX
-Message Date:  Mar 12 2012 13:02:57
-The KCXX radar will be down for approximately 6 hours for maintenance. Expected
-time of Return to Service is 1900 UTC.
-NOUS64 KSJT 102155
-FTMDYX
-Message Date:  Mar 10 2012 21:55:03
-KDYX RADAR IS DOWN UNTIL FURTHER NOTICE.
-NOUS64 KSJT 110045
-FTMDYX
-Message Date:  Mar 11 2012 00:45:10
-THE KDYX WSR-88D IS OPERATIONAL.
-NOUS64 KFWD 102155
-FTMDYX
-Message Date:  Mar 10 2012 21:55:03
-KDYX RADAR IS DOWN UNTIL FURTHER NOTICE.
-NOUS64 KFWD 110045
-FTMDYX
-Message Date:  Mar 11 2012 00:45:10
-THE KDYX WSR-88D IS OPERATIONAL.
-NOUS63 KDTX 110118
+NOUS66 KPDT 222222
+FTMPDT
+Message Date:  Jan 22 2013 22:22:38
+KPDT radar will be down for about an hour for maint. LCH
+tation detected since 1/22/2013 20:41 Z.
+NOUS62 KFFC 221540
+FTMFFC
+Message Date:  Jan 22 2013 15:40:52
+KFFC HAS RETURNED TO NORMAL SERVICE.
+DETECTED
+NOUS62 KFFC 221351
+FTMFFC
+Message Date:  Jan 22 2013 13:51:27
+KFFC WILL BE DOWN FOR MAIN UNTIL 1600 UTC.
+NOUS62 KFFC 221351
+FTMFFC
+Message Date:  Jan 22 2013 13:51:27
+KFFC WILL BE DOWN FOR MAIN UNTIL 1600 UTC.
+NOUS62 KFFC 221540
+FTMFFC
+Message Date:  Jan 22 2013 15:40:52
+KFFC HAS RETURNED TO NORMAL SERVICE.
+tation detected since 1/18/2013 13:25 Z.
+NOUS65 KREV 231606
+FTMRGX
+Message Date:  Jan 23 2013 16:06:03
+KRGX WSR-88D WILL BE DOWN FOR MAINTENANCE UNTIL APPROXIMATELY 23/22 UTC.
+NOUS65 KREV 232119
+FTMRGX
+Message Date:  Jan 23 2013 21:19:47
+KRGX WSR-88D HAS RETURNED TO NORMAL OPERATIONS.
+DETECTED
+NOU
+00001A7C
+S68 PACR 231737
+FTMAKC
+MESSAGE DATE: JAN 23 2013 1737 UTC
+THE KING SALMON RADAR (PAKC) WILL BE DOWN FOR SCHEDULED MAINTENANCE
+TODAY FROM 1800-2330 UTC. THANK YOU FOR YOUR PATIENCE.
+NOUS61 KRLX 212109
+FTMRLX
+Message Date:  Jan 21 2013 21:09:38
+KRLX WSR 88D IS BACK IN SERVICE.
+NOUS61 KRLX 212010
+FTMRLX
+Message Date:  Jan 21 2013 20:10:59
+KRLX WSR 88D IS OFFLINE. ET BEING CALLED.
+DETECTED
+NOUS64 KOUN 221330
+FTMFDR
+Message Date:  Jan 22 2013 13:36:12
+KFDR WILL BE DOWN FOR MAINTENACE UNTIL APPROXIMATELY 17Z. MAD/OUN 1335Z 1/22/13
+NOUS64 KOUN 221551
+FTMFDR
+Message Date:  Jan 22 2013 15:56:39
+KFDR IS BACK UP AND RUNNING. MAD/OUN 1556Z 1/22/13
+NOUS65 KABQ 231525
+FTMFDX
+Message Date:  Jan 23 2013 15:25:42
+KFDX WILL BE DOWN FOR MAINTENANCE BETWEEN APPROXIMATELY 16Z AND 20Z. WFO ABQ/JLP
+1525Z 1/23/2013
+NOUS65 KABQ 232001
+FTMFDX
+Message Date:  Jan 23 2013 20:01:56
+KFDX RADAR IS BACK UP AND OPERATIONAL.
+tation detected since 1/23/2013 04:32 Z.
+NOUS64 KFWD 222201
+FTMFWS
+Message Date:  Jan 22 2013 22:01:06
+KFWS DOPPLER RADAR IN SOUTH FORT WORTH WILL REMAIN DOWN FOR ROUTINE MAINTENANCE
+THROUGH 6 PM CST 1/22/13 (00Z 1/23/13).
+NOUS64 KFWD 222201
+FTMFWS
+Message Date:  Jan 22 2013 22:01:06
+KFWS DOPPLER RADAR IN SOUTH FORT WORTH WILL REMAIN DOWN FOR ROUTINE MAINTENANCE
+THROUGH 6 PM CST 1/22/13 (00Z 1/23/13).
+NOUS64 KFWD 222258
+FTMFWS
+Message Date:  Jan 22 2013 22:58:40
+THE FORT WORTH SPINKS (KFWS) RADAR HAS BEEN RETURNED TO SERVICE. MB
+NOUS64 KFWD 221615
+FTMFWS
+Message Date:  Jan 22 2013 16:15:50
+KFWS DOPPLER RADAR WILL IN SOUTH FORT WORTH WILL BE DOWN FOR ROUTINE MAINTENANCE
+THROUGH 3 PM CST (2100 UTC) 1/22/13.
+NOUS64 KFWD 221615
+FTMFWS
+Message Date:  Jan 22 2013 16:15:50
+KFWS DOPPLER RADAR WILL IN SOUTH FORT WORTH WILL BE DOWN FOR ROUTINE MAINTENANCE
+THROUGH 3 PM CST (2100 UTC) 1/22/13.
+NOUS64 KFWD 222258
+FTMFWS
+Message Date:  Jan 22 2013 22:58:40
+THE FORT WORTH SPINKS (KFWS) RADAR HAS BEEN RETURNED TO SERVICE. MB
+NOUS65 KPUB 222208
+FTMPUX
+Message Date:  Jan 22 2013 22:08:26
+KPUX WSR-88D WILL BE DOWN FOR ROUTINE MAINTENANCE ON JANUARY 23RD FROM 0800 TO 1
+300 MST.   ADJACENT RADARS...KFTG...KGLD...KDDC...KAMA...KABX...KGJX.
+NOUS65 KPUB 232007
+FTMPUX
+Message Date:  Jan 23 2013 20:07:10
+KPUX RADAR HAS RETURNED TO SERVICE.
+NOUS65 KPUB 222206
+FTMPUX
+Message Date:  Jan 22 2013 22:06:54
+KPUX WSR-88D WILL BE DOWN FOR ROUTINE MAINTENANCE JANUARY 23RD BETWEEN 0800 - 13
+00.  ADJACENT RADARS...KFTG...KGLD...KDDC...KAMA...KABX...KGJX.
+NOUS63 KDTX 231620
 FTMDTW
 TERMINAL DOPPLER RADAR STATUS NOTIFICATION
 NATIONAL WEATHER SERVICE DETROIT/PONTIAC MI
-815 PM EST SAT MAR 11 2012
+1120 AM EST WED JAN 23 2013
 DATA COMMUNICATIONS FROM THE TDTW TERMINAL DOPPLER RADAR AT DETROIT
-METRO AIRPORT WILL BE DOWN UNTIL FURTHER NOTICE.
-NOUS63 KICT 121218
+METRO AIRPORT HAVE BEEN RESTORED.
+NOUS63 KDTX 231250
+FTMDTW
+TERMINAL DOPPLER RADAR STATUS NOTIFICATION
+NATIONAL WEATHER SERVICE DETROIT/PONTIAC MI
+750 AM EST WED JAN 23 2013
+DATA COMMUNICATIONS FROM THE TDTW TERMINAL DOPPLER RADAR AT DETROIT
+METRO AIRPORT WILL BE DOWN FROM 9AM THIS MORNING UNTIL 2PM THIS AFTERNOON
+FOR SCHEDULED MAINTENANCE.
+NOUS62 KGSP 221507
+FTMGSP
+Message Date:  Jan 22 2013 15:07:34
+THE KGSP WEATHER RADAR WILL BE DOWN TODAY (1/22/13) FROM 1515Z TO 1800Z FOR MAIN
+TENANCE.  LEE
+NOUS62 KGSP 221636
+FTMGSP
+Message Date:  Jan 22 2013 16:36:12
+THE KGSP WEATHER RADAR IS BACK IN SERVICE.  LEE
+tation detected since 1/20/2013 23:47 Z.
+NOUS64 KHGX 230134
+FTMHOU
+MESSAGE DATE:  JAN 23 2013 0134Z
+THE HOU TDWR RADAR WILL BE OUT OF SERVICE BETWEEN 23/0430Z AND
+23/0930Z.
+MOCC/HGX
+NOUS64 KHGX 232018
+FTMHOU
+MESSAGE DATE:  JAN 23 2013 2017Z
+THE THOU TDWR DATA WILL BE DOWN BETWEEN 2017Z AND 2200Z FOR A
+SOFTWARE UPDATE OF THE SPG.
+NOUS64 KHGX 232147
+FTMHOU
+MESSAGE DATE:  JAN 23 2013 2145Z
+THE THOU TDWR SPG HAS BEEN UPDATED AND HAS RETURNED TO SERVICE.
+NOUS64 KOUN 221342
 FTMVNX
-Message Date:  Mar 12 2012 12:18:13
-the kvnx wsr-88d will be down for maintenance until about 1630z today. dw wfo/ou
-n 1315z 12 Mar 2912
-NOUS64 KOUN 121218
+Message Date:  Jan 22 2013 13:47:04
+KVNX WILL BE DOWN FOR MAINTENANCE FOR APPROXIMATELY 2 HOURS. MAD/OUN 1346Z 1/22/
+13
+NOUS64 KOUN 221527
 FTMVNX
-Message Date:  Mar 12 2012 12:18:13
-the kvnx wsr-88d will be down for maintenance until about 1630z today. dw wfo/ou
-n 1315z 12 Mar 2912
-NOUS63 KUNR 101508
+Message Date:  Jan 22 2013 15:30:40
+KVNX IS BACK UP AND RUNNING. MAD/OUN 1530Z 1/22/13
+NOUS63 KICT 221347
+FTMVNX
+Message Date:  Jan 22 2013 13:47:04
+KVNX WILL BE DOWN FOR MAINTENANCE FOR APPROXIMATELY 2 HOURS. MAD/OUN 1346Z 1/22/
+13
+NOUS63 KICT 221530
+FTMVNX
+Message Date:  Jan 22 2013 15:30:40
+KVNX IS BACK UP AND RUNNING. MAD/OUN 1530Z 1/22/13
+NOUS62 KMLB 221515
+FTMMCO
+MESSAGE DATE:  TUE JAN 22 2013 1015 AM EST
+THE TMCO TDWR RADAR WILL BE OUT OF SERVICE TODAY FROM 18Z THROUGH
+20Z FOR AN INSPECTION.
+CARTWRIGHT
+NOUS62 KMLB 221912
+FTMMCO
+MESSAGE DATE:  TUE JAN 22 2013 212 PM EST
+THE TMCO TDWR RADAR HAS RETURNED TO SERVICE.
+CARTWRIGHT
+NOUS65 KMSO 221757
+FTMMSX
+Message Date:  Jan 22 2013 17:57:28
+KMSX IS DOWN FOR MAINTENANCE UNTIL 20Z.
+tation detected since 1/21/2013 18:13 Z.
+NOUS64 KMEG 221655
+FTMMEM
+MESSAGE DATE:  JAN 22 2012 16:55:01
+MEMPHIS TDWR IS OUT OF SERVICE UNTIL FURTHER NOTICE.
+NOUS63 KUNR 221826
 FTMUDX
-MESSAGE DATE:  MAR 10 2012 15:07:00
-THE KUDX RADAR IS UNAVAILABLE DUE TO COMMUNICATIONS LINE PROBLEMS.
-ESTIMATED RESTORATION IS 10 MARCH 2012 AT 19Z.
-NOUS63 KUNR 101543
+Message Date:  Jan 22 2013 18:26:49
+The KUDX radar will be down for maintenance today 22 Jan 2013 from 1900z to 2100
+z.
+NOUS63 KUNR 231521
 FTMUDX
-Message Date:  Mar 10 2012 15:43:23
-THE KUDX RADAR IS UNAVAILABLE DUE TO COMMUNICATIONS LINE PROBLLEMS. ESTIMATED RE
-STORATION IS 10 MARCH 2012 AT 19Z.
-NOUS63 KUNR 101714
-FTMUDX
-Message Date:  Mar 10 2012 17:14:04
-THE KUDX RADAR IS BACK ON LINE
+Message Date:  Jan 23 2013 15:21:02
+The KUDX radar will be down for maintenance today 23 Jan 2013 fron 1600z to 1800
+z.
+NOUS64 KHGX 232020
+FTMIAH
+MESSAGE DATE:  JAN 23 2013 2019Z
+THE TIAH TDWR DATA WILL BE DOWN BETWEEN 2017Z AND 2200Z FOR A
+SOFTWARE UPDATE OF THE SPG. THIS WILL BE TRANSPARENT AS NO DATA IS
+BEING RECEIVED FROM THE TDWR SITE. THERE IS NO ETA AS TO WHEN IAH
+WILL RETURN TO SERVICE.
+MOCC/HGX
+NOUS64 KHGX 232144
+FTMIAH
+MESSAGE DATE:  JAN 23 2013 2143Z
+THE TIAH TDWR SPG HAS BEEN UPDATED BUT NO DATA IS BEING RECEIVED
+FROM THE TDWR.
+THERE IS NO ETA AS TO WHEN TIAH DATA WILL BE AVAILABLE.
+NOUS62 KTAE 221402
+FTMEVX
+Message Date:  Jan 22 2013 14:02:32
+EGLIN RADAR WILL BE DOWN FOR MAINTENANCE UNTIL FURTHER NOTICE.
+NOUS64 KMOB 221707
+FTMEVX
+Message Date:  Jan 22 2013 17:07:16
+KEVX RADAR IS BACK ONLINE.
+NOUS64 KMOB 221402
+FTMEVX
+Message Date:  Jan 22 2013 14:02:32
+EGLIN RADAR WILL BE DOWN FOR MAINTENANCE UNTIL FURTHER NOTICE.
+old: 'Time Without Precipitation for Resetting Storm Totals'
+NOUS62 KTAE 221707
+FTMEVX
+Message Date:  Jan 22 2013 17:07:16
+KEVX RADAR IS BACK ONLINE.
+tation detected since 1/21/2013 14:34 Z.
+NOUS61 KILN 221810
+FTMCMH
+Message Date:  Jan 22 2013 18:10:20
+The Columbus TDWR terminal doppler radar TCMH has been returned to service.
+NOUS61 KILN 220019
+FTMCMH
+Message Date:  Jan 22 2013 00:19:49
+TCMH OUT FOR MAINT 22/1400-1800Z
+NOUS61 KBOX 221213
+FTMBOS
+THE TBOS TDWR WILL BE OUT OF SERVICE FOR MAINTENANCE FROM
+221300Z UNTIL 250100Z.
+NOUS63 KDMX 231503
+FTMDMX
+Message Date:  Jan 23 2013 15:03:00
+KDMX WSR-88D RADAR BE UNAVAILABLE FOR SCHEDULED MAINTENANCE UNTIL 2100Z  ADJACEN
+T RADARS: KOAX KFSD KMPX KARX KDVN KEAX
+NOUS63 KPAH 221355
+FTMHPX
+Message Date:  Jan 22 2013 13:55:48
+the dual-pol upgrade to the KHPX radar will begin this morning. radar will be ou
+t of service for the 
+0000002C
+next several days.
 
 </pre>
 </body>
 </html>
+
+
+00000000
 

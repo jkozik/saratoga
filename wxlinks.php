@@ -68,6 +68,9 @@ include("menubar.php");
           <li>	<a href="http://www.awekas.at/en/index.php"
 			title="AWEKAS Signup">
 			AWEKAS Signup Page</a></li>
+          <li>	<a href="http://tradewindsheating.com/info/tropical-air-winds-and-rain-all-about-hurricanes"
+			title="All About Hurricanes">
+			All About Hurricanes by Trade Winds Heating (thanks Elmgrove CC)</a></li>
         </ul>
 
 	<h3><?php langtrans('Weather Education'); ?></h3> 
@@ -132,6 +135,7 @@ include("menubar.php");
 		   <li> <a href="http://www.642weather.com/weather/scripts.php">Long Beach Weather Scripts</a></li>
 		   <li> <a href="http://saratoga-weather.org/scripts.php">Saratoga-Weather.org Scripts</a></li>
 		   <li> <a href="http://www.tnetweather.com/scripts.php">TNETWeather.com Scripts</a></li>
+                   <li> <a href="http://napervilleweather.net/NWS-alerts_read_me.html">NWS Alerts</a></li>
 		 </ul>
 
 </div><!-- end main-copy -->

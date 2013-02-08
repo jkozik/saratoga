@@ -257,4 +257,17 @@ title="Naperville Weather">
 </a>
  - add sticker reference to about page
 
+Refresh to the latest version of the saratoga weather scripts  1/31/13
+- I haven't touched the contents of the website in 6 months.
+- I went to http://saratoga-weather.org/wxtemplates/updates.php
+- I checked for updates since April 2012
+- It very nicely packaged 56 updates, including images, php files
+- Jammed into one line:
+advforecast2.php ajax-dashboard.php ajax-images ajaxWCTwx.js alert-images cache check-fetch-times.php common.php flyout-menu.xml get-metar-conditions-inc.php get-nnvl-iod.php GR3-radar-inc.php header.php include-NOAA-reports.php menubar.php nws-alertmap.js nws-alerts-config.php nws-alerts-details-inc.php nws-alerts.php NWS-alerts_read_me.html nws-alerts-summary-inc.php nws-rssfeed.xml nws-shapefile.txt plaintext-parser.php quake-json.js quake-json.php radar-status.php README-20130123-134621.txt README-Base-USA-changes-2012-07-28.txt Settings.php thermometer.php WU-radar-inc.php wxadvisory.php wxgraphs.php wxindex.php wxnws-details.php wxquake.php 
+- As near as I can tell, the biggest updates are 
+-- nws alters ported from http://ww.weather.ricksturf.com (thanks Curly!)
+-- an updated wxquakes set of scripts
+-- and lots of bug fixes and performance improvements.  Since some of the scripts do screen scraping from other sites, the WX content is a moving target and the scripts here need tweaking.  All normal stuff
+- All of this worked very smoothly for me, but it did take over a day.
+- I recommend you install these files, one at a time.  If you are replacing an existing one, do a diff before copying in the new one.  
 

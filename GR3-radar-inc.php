@@ -5,6 +5,7 @@
 // Version 1.01 - 15-Mar-2008 - added logic to find web document root on IIS servers
 // Version 1.02 - 21-Jul-2008 - added script to allow XHTML validation for output
 // Version 1.03 - 23-Dec-2008 - added support for Digital Total Rainfall display
+// Version 1.04 - 04-Jun-2012 - added support for Dual Polarization NEXRAD products
 //
 // the script does NOT generate a complete HTML page and is intended for use
 // ONLY by being included in an existing webpage on your site by:
@@ -41,7 +42,7 @@ if (isset($_REQUEST['sce']) && strtolower($_REQUEST['sce']) == 'view' ) {
    exit;
 }
 ?>
-<!-- GR3-radar-inc.php - Version 1.01 - 13-May-2008 - http://saratoga-weather.org/scripts.php -->
+<!-- GR3-radar-inc.php - Version 1.04 - 04-Jun-2012 - http://saratoga-weather.org/scripts.php -->
 <?php
 //------------------------------------------------
 // overrides from Settings.php if available
@@ -158,20 +159,24 @@ ChangeImage(true);
 <?php
 // list of all GRLevel3 radar types that may be produced
 $RadarTypes = array(
-			    'br1' => 'Base Reflectivity 1',
-			    'br2' => 'Base Reflectivity 2',
-			    'br3' => 'Base Reflectivity 3',
-			    'br4' => 'Base Reflectivity 4',
+				'br1' => 'Base Reflectivity 0.5&deg;',
+				'br2' => 'Base Reflectivity 0.9&deg;',
+				'br3' => 'Base Reflectivity 1.5&deg;',
+				'br4' => 'Base Reflectivity 1.8&deg;',
+				'br5' => 'Base Reflectivity 2.5&deg;',
+				'br6' => 'Base Reflectivity 3.5&deg;',
 			    'br248' => 'Base Reflectivity 248nm',
-				'bv1' => 'Base Velocity 1',
-				'bv2' => 'Base Velocity 2',
-				'bv3' => 'Base Velocity 3',
-				'bv4' => 'Base Velocity 4',
+				'bv1' => 'Base Velocity 0.5&deg;',
+				'bv2' => 'Base Velocity 0.9&deg;',
+				'bv3' => 'Base Velocity 1.5&deg;',
+				'bv4' => 'Base Velocity 1.8&deg;',
+				'bv5' => 'Base Velocity 2.5&deg;',
+				'bv6' => 'Base Velocity 3.5&deg;',
 				'bv32' => 'Base Velocity 32nm',
-			    'srv1' => 'Storm Relative Velocity 1',
-			    'srv2' => 'Storm Relative Velocity 2',
-			    'srv3' => 'Storm Relative Velocity 3',
-			    'srv4' => 'Storm Relative Velocity 4',
+				'srv1' => 'Storm Relative Velocity 0.5&deg;',
+				'srv2' => 'Storm Relative Velocity 1.5&deg;',
+				'srv3' => 'Storm Relative Velocity 2.5&deg;',
+				'srv4' => 'Storm Relative Velocity 3.5&deg;',
 			    'sw' => 'Spectrum Width',
 			    'sw32' => 'Spectrum Width 32nm',
 			    'cr' => 'Composite Reflectivity',
@@ -182,6 +187,35 @@ $RadarTypes = array(
 			    'thr' => 'Three Hour Rain',
 			    'str' => 'Storm Rain',
 				'dsp'  => 'Digital Total Rainfall',
+				'zdr1' => 'DP Digital Differential Reflectivity 0.5&deg;',
+				'zdr2' => 'DP Digital Differential Reflectivity 0.9&deg;',
+				'zdr3' => 'DP Digital Differential Reflectivity 1.5&deg;',
+				'zdr4' => 'DP Digital Differential Reflectivity 1.8&deg;',
+				'zdr5' => 'DP Digital Differential Reflectivity 2.5&deg;',
+				'zdr6' => 'DP Digital Differential Reflectivity 3.5&deg;',
+				'cc1' => 'DP Correlation Coefficient 0.5&deg;',
+				'cc2' => 'DP Correlation Coefficient 0.9&deg;',
+				'cc3' => 'DP Correlation Coefficient 1.5&deg;',
+				'cc4' => 'DP Correlation Coefficient 1.8&deg;',
+				'cc5' => 'DP Correlation Coefficient 2.5&deg;',
+				'cc6' => 'DP Correlation Coefficient 3.5&deg;',
+				'kdp1' => 'Specific Differential Phase 0.5&deg;',
+				'kdp2' => 'Specific Differential Phase 0.9&deg;',
+				'kdp3' => 'Specific Differential Phase 1.5&deg;',
+				'kdp4' => 'Specific Differential Phase 1.8&deg;',
+				'kdp5' => 'Specific Differential Phase 2.5&deg;',
+				'kdp6' => 'Specific Differential Phase 3.5&deg;',
+				'hca1' => 'Hydrometeor Class 0.5&deg;',
+				'hca2' => 'Hydrometeor Class 0.9&deg;',
+				'hca3' => 'Hydrometeor Class 1.5&deg;',
+				'hca4' => 'Hydrometeor Class 1.8&deg;',
+				'hca5' => 'Hydrometeor Class 2.5&deg;',
+				'hca6' => 'Hydrometeor Class 3.5&deg;',
+				'hhc' => 'DP Digital Hybrid Hydrometeor Class', 
+				'dod' => 'DP Digital One Hour Difference', 
+				'dsd' => 'DP Digital Storm Total Rainfall', 
+				'tvs' => 'Tornado Vortex Signature', 
+				'ssi' => 'Storm Structure Information', 
 
 );
 $AvailTypes = array();
@@ -202,6 +236,7 @@ else {
 }
 $path = realpath($WEBROOT . $GR3DIR . '/' ) . '/';
 print "// webroot = '$WEBROOT' \n";
+print "// gr3dir = '$GR3DIR'\n";
 print "// path = '$path' \n";
 $RadarMsg = array();
 

@@ -1,0 +1,39 @@
+HTTP/1.0 200 OK
+Server: Apache/2.2.15 (Red Hat)
+Content-Type: text/html; charset=UTF-8
+Cache-Control: max-age=186
+Expires: Fri, 08 Feb 2013 13:01:08 GMT
+Date: Fri, 08 Feb 2013 12:58:02 GMT
+Content-Length: 5264
+Connection: close
+
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head>
+<title>7-Day Forecast for Latitude 37.27&deg;N and Longitude 122.02&deg;W (Elev. 397 ft) (Text-Only)</title><link rel="STYLESHEET" type="text/css" href="fonts/main.css"></head><body leftmargin="0" topmargin="0" rightmargin="0" marginwidth="0" marginheight="0" bgcolor="#FFFFFF" text="#000000"><br><table width="670" border="0" align="center" cellpadding="0" cellspacing="0"><tr valign ="top"><td width="80%" valign="top" align="left"><font size="3"><b>NWS Forecast for: Saratoga CA</b></font><br>Issued by: National Weather Service San Francisco Bay Area/Monterey, CA<br><a href="http://www.weather.gov/glossary/index.php?word=Last+update"><b>Last Update: </b></a>2:56 am PST Feb 8, 2013</td><td width="20%" valign="top" align="right"><a href=javascript:window.print()><img src="/images/wtf/12.gif" border=0 height=35 width=30 alt=Print></a></td></tr>
+<tr><td colspan="2" valign="top" align="center"><hr><br></td></tr>
+</table><table width="670" border="0" align="center" cellpadding="0" cellspacing="0"><tr valign ="top"><td colspan="2" valign="top" align="left"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0"><tr valign ="top" align="center"><td width="11%"  ><b>Today<br></b><br><img src="/images/wtf/small/shra40.png" width="55" height="58" alt="Scattered Showers. Chance for Measurable Precipitation 40%" title="Scattered Showers. Chance for Measurable Precipitation 40%" ><br>Scattered<br>Showers<br>Hi <font color="#FF0000">55 &deg;F</font></td><td width="11%"  ><b>Tonight<br></b><br><img src="/images/wtf/small/nfew.png" width="55" height="58" alt="Patchy Frost" title="Patchy Frost" ><br>Patchy<br>Frost<br>Lo <font color="#0033CC">35 &deg;F</font></td><td width="11%"  ><b>Saturday<br></b><br><img src="/images/wtf/small/few.png" width="55" height="58" alt="Morning Frost" title="Morning Frost" ><br>Morning<br>Frost<br>Hi <font color="#FF0000">57 &deg;F</font></td><td width="11%"  ><b>Saturday<br>Night</b><br><img src="/images/wtf/small/nfew.png" width="55" height="58" alt="Patchy Frost" title="Patchy Frost" ><br>Patchy<br>Frost<br>Lo <font color="#0033CC">36 &deg;F</font></td><td width="11%"  ><b>Sunday<br></b><br><img src="/images/wtf/small/few.png" width="55" height="58" alt="Morning Frost" title="Morning Frost" ><br>Morning<br>Frost<br>Hi <font color="#FF0000">59 &deg;F</font></td><td width="11%"  ><b>Sunday<br>Night</b><br><img src="/images/wtf/small/nfew.png" width="55" height="58" alt="Mostly Clear" title="Mostly Clear" ><br>Mostly<br>Clear<br>Lo <font color="#0033CC">36 &deg;F</font></td><td width="11%"  ><b>Monday<br></b><br><img src="/images/wtf/small/few.png" width="55" height="58" alt="Sunny" title="Sunny" ><br>Sunny<br><br>Hi <font color="#FF0000">60 &deg;F</font></td><td width="11%"  ><b>Monday<br>Night</b><br><img src="/images/wtf/small/nfew.png" width="55" height="58" alt="Mostly Clear" title="Mostly Clear" ><br>Mostly<br>Clear<br>Lo <font color="#0033CC">36 &deg;F</font></td><td width="11%"  ><b>Tuesday<br></b><br><img src="/images/wtf/small/few.png" width="55" height="58" alt="Sunny" title="Sunny" ><br>Sunny<br><br>Hi <font color="#FF0000">61 &deg;F</font></td></tr></table></td></tr><tr valign ="top"><td colspan="2" valign="top" align="left"><br><div align="left"><a href="showsigwx.php?warnzone=CAZ513&warncounty=CAC085&firewxzone=CAZ513&local_place1=Saratoga+CA&product1=Hazardous+Weather+Outlook"><span class="warn">Hazardous Weather Outlook</span></a><br></div><br><b>Today: </b>Scattered showers before 1pm.  Partly sunny, with a high near 55. Light west wind becoming north northwest 8 to 13 mph in the morning.  Chance of precipitation is 40%.<br>
+<br>
+<b>Tonight: </b>Patchy frost after 4am.  Otherwise, mostly clear, with a low around 35. West northwest wind 9 to 11 mph. <br>
+<br>
+<b>Saturday: </b>Patchy frost before 10am.  Otherwise, sunny, with a high near 57. North northwest wind 7 to 10 mph. <br>
+<br>
+<b>Saturday Night: </b>Patchy frost after 4am.  Otherwise, mostly clear, with a low around 36. North wind 5 to 9 mph becoming calm  in the evening. <br>
+<br>
+<b>Sunday: </b>Patchy frost before 10am.  Otherwise, sunny, with a high near 59. Light and variable wind. <br>
+<br>
+<b>Sunday Night: </b>Mostly clear, with a low around 36.<br>
+<br>
+<b>Monday: </b>Sunny, with a high near 60.<br>
+<br>
+<b>Monday Night: </b>Mostly clear, with a low around 36.<br>
+<br>
+<b>Tuesday: </b>Sunny, with a high near 61.<br>
+<br>
+<b>Tuesday Night: </b>Mostly clear, with a low around 37.<br>
+<br>
+<b>Wednesday: </b>Sunny, with a high near 62.<br>
+<br>
+<b>Wednesday Night: </b>Mostly clear, with a low around 38.<br>
+<br>
+<b>Thursday: </b>Sunny, with a high near 63.<br>
+<br>
+<hr><br></td></tr><tr><td colspan="2" align="left"><b>Point Forecast:</b> Saratoga CA<a href="http://forecast.weather.gov/zipcity.php?inputstring=Saratoga,CA&e=1"><b>Similar City Names</b></a><br>&nbsp;37.27&deg;N 122.02&deg;W (Elev. 397 ft)<br></td></tr><tr><td colspan="2" align="left"><br>Visit your local NWS office at: <a href="http://www.wrh.noaa.gov/mtr">http://www.wrh.noaa.gov/mtr</a></td></tr></table></div><script language='javascript'>window.load = load_google_map(37.26390, -122.02200, , , , , , , , ,11);</script>

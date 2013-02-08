@@ -1,0 +1,64 @@
+   62  git status
+   63  git add README MWWN-mesomap/ MWWN.php wxabout.php flyout-menu.xml menubar.php 
+   64  git status
+   65  git add VWS_stickertags.htm
+   66  git status
+   67  histor grep git
+   68  history grep git
+   69  history | grep git
+   70  git commit -m "added Midwestern Weather Network"
+   71  git push -u origin master
+  117  git add README wxnoaarecords.css wxnoaarecords.php wxnoaarecords-include.php
+  120  git add flyout-menu.xml
+  126  git add README
+  127  history | grep git
+  128  git commit -m "added Wildwood Weather.
+  129  git commit -m "added Wildwood Weather's Daily Record report"
+  130  git push -u origin master
+  140  git add README MWWN-mesomap.php
+  141  git add  MWWN-mesomap/MWWN-mesomap.php
+  142  history | grep git 
+  143  git commit -m "fixed images in Midwestern Weather Network"
+  144  git push -u origin master
+  206  git status
+  216  git add flyout-menu.xml  wxdegree*.php wxrain*.php wxreport*.php wxreports.css wxtemp*.php wxwind*.php README
+  217  git status
+  220  git status
+  221  history | git
+  222  history | grep git
+  223  git commit -m "added Wildwood Weather's Detailed and Summary Reports"
+  224  git push -u origin master
+  286  git add README wxnoaarain.php wxnoaatemps.php wxnoaawind.php wxnoaacsvdata
+  287  git add README wxnoaarain.php wxnoaatemps.php wxnoaawind.php wxnoaacsvdata.php
+  289  git add jpgraph/
+  290  git status
+  291  git add wxnoaagraphs.php flyout-menu.xml
+  292  history | grep git
+  293  git commit -m "added Wildwood Weather's jpgraph-based rain, wind, temp noaa reports"
+  294  history | grep git
+  295  git push -u origin master
+  391  git add README wxnoaacsvdata.php
+  392  history | grep git
+  393  git commit -m "fixed wxnoaagraphs.php. Graphes were blank."
+  394  git push -u origin master
+  405  git status
+  406  git add advforecast2.php README
+  407  history | grep git
+  408  git commit -m "fixed forecast.  NWS website format changed"
+  409  git push -u origin master
+  515  history | grep git
+  518  git add README wxgraphic wxabout*
+  519  git status
+  520  git add VWS_graphictags.htm
+  521  history | grep git
+  522  git commit -m "added wxgraphic Weather Graphic from http://weather.anolecomputer.com/"
+  523  git push -u origin master
+  572  git remote status
+  573  git remote
+  577  git remote
+  578  git remote status
+  606  cd .git
+  961  git status
+ 1017  git status
+ 1018  git status > x.tmp
+ 1020  history | grep git > y.tmp

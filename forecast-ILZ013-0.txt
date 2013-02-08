@@ -1,0 +1,41 @@
+HTTP/1.0 200 OK
+Server: Apache/2.2.15 (Red Hat)
+Content-Type: text/html; charset=UTF-8
+Cache-Control: max-age=830
+Expires: Tue, 03 Jul 2012 13:10:26 GMT
+Date: Tue, 03 Jul 2012 12:56:36 GMT
+Content-Length: 5664
+Connection: close
+
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head>
+<title>7-Day Forecast for Latitude 41.77&deg;N and Longitude 88.15&deg;W (Text-Only)</title><link rel="STYLESHEET" type="text/css" href="fonts/main.css"></head><body leftmargin="0" topmargin="0" rightmargin="0" marginwidth="0" marginheight="0" bgcolor="#FFFFFF" text="#000000"><br><table width="670" border="0" align="center" cellpadding="0" cellspacing="0"><tr valign ="top"><td width="80%" valign="top" align="left"><font size="3"><b>NWS Forecast for: Naperville IL</b></font><br>Issued by: National Weather Service Chicago, IL<br><a href="http://www.weather.gov/glossary/index.php?word=Last+update"><b>Last Update: </b></a>5:54 am CDT Jul 3, 2012</td><td width="20%" valign="top" align="right"><a href=javascript:window.print()><img src="/images/wtf/12.gif" border=0 height=35 width=30 alt=Print></a></td></tr>
+<tr><td colspan="2" valign="top" align="center"><hr><br></td></tr>
+</table><table width="670" border="0" align="center" cellpadding="0" cellspacing="0"><tr valign ="top"><td colspan="2" valign="top" align="left"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0"><tr valign ="top" align="center"><td width="11%"  ><b>Today<br></b><br><img src="/images/wtf/small/hot.png" width="55" height="58" alt="Hot" title="Hot" ><br>Hot<br><br>Hi <font color="#FF0000">98 &deg;F</font></td><td width="11%"  ><b>Tonight<br></b><br><img src="/images/wtf/small/nsct.png" width="55" height="58" alt="Partly Cloudy" title="Partly Cloudy" ><br>Partly<br>Cloudy<br>Lo <font color="#0033CC">74 &deg;F</font></td><td width="11%"  ><b>Independence<br>Day</b><br><img src="/images/wtf/small/hi_tsra20.png" width="55" height="58" alt="Slight Chc Thunderstorms. Chance for Measurable Precipitation 20%" title="Slight Chc Thunderstorms. Chance for Measurable Precipitation 20%" ><br>Slight Chc<br>Thunderstorms<br>Hi <font color="#FF0000">99 &deg;F</font></td><td width="11%"  ><b>Wednesday<br>Night</b><br><img src="/images/wtf/small/hi_ntsra20.png" width="55" height="58" alt="Slight Chc Thunderstorms. Chance for Measurable Precipitation 20%" title="Slight Chc Thunderstorms. Chance for Measurable Precipitation 20%" ><br>Slight Chc<br>Thunderstorms<br>Lo <font color="#0033CC">75 &deg;F</font></td><td width="11%"  ><b>Thursday<br></b><br><img src="/images/wtf/small/hot.png" width="55" height="58" alt="Hot" title="Hot" ><br>Hot<br><br>Hi <font color="#FF0000">98 &deg;F</font></td><td width="11%"  ><b>Thursday<br>Night</b><br><img src="/images/wtf/small/nsct.png" width="55" height="58" alt="Partly Cloudy" title="Partly Cloudy" ><br>Partly<br>Cloudy<br>Lo <font color="#0033CC">78 &deg;F</font></td><td width="11%"  ><b>Friday<br></b><br><img src="/images/wtf/small/hot.png" width="55" height="58" alt="Hot" title="Hot" ><br>Hot<br><br>Hi <font color="#FF0000">99 &deg;F</font></td><td width="11%"  ><b>Friday<br>Night</b><br><img src="/images/wtf/small/hi_ntsra.png" width="55" height="58" alt="Slight Chc Thunderstorms" title="Slight Chc Thunderstorms" ><br>Slight Chc<br>Thunderstorms<br>Lo <font color="#0033CC">76 &deg;F</font></td><td width="11%"  ><b>Saturday<br></b><br><img src="/images/wtf/small/hi_tsra.png" width="55" height="58" alt="Slight Chc Thunderstorms" title="Slight Chc Thunderstorms" ><br>Slight Chc<br>Thunderstorms<br>Hi <font color="#FF0000">90 &deg;F</font></td></tr></table></td></tr><tr valign ="top"><td colspan="2" valign="top" align="left"><br><div align="left"><a href="showsigwx.php?warnzone=ILZ013&warncounty=ILC043&firewxzone=ILZ013&local_place1=Naperville+IL&product1=Heat+Advisory"><span class="warn">Heat Advisory</span></a><br><a href="showsigwx.php?warnzone=ILZ013&warncounty=ILC043&firewxzone=ILZ013&local_place1=Naperville+IL&product1=Hazardous+Weather+Outlook"><span class="warn">Hazardous Weather Outlook</span></a><br></div><br><b>Today: </b>Mostly sunny and hot, with a high near 98. Southwest wind 5 to 15 mph, with gusts as high as 20 mph. <br>
+<br>
+<b>Tonight: </b>Partly cloudy, with a low around 74. Southwest wind 5 to 10 mph, with gusts as high as 15 mph. <br>
+<br>
+<b>Independence Day: </b>A slight chance of thunderstorms after 4pm.  Mostly sunny and hot, with a high near 99. West southwest wind 5 to 10 mph.  Chance of precipitation is 20%.<br>
+<br>
+<b>Wednesday Night: </b>A 20 percent chance of showers and thunderstorms.  Partly cloudy, with a low around 75. North northwest wind around 5 mph becoming calm  in the evening. <br>
+<br>
+<b>Thursday: </b>Mostly sunny and hot, with a high near 98. Calm wind becoming southwest around 5 mph. <br>
+<br>
+<b>Thursday Night: </b>Partly cloudy, with a low around 78.<br>
+<br>
+<b>Friday: </b>Mostly sunny and hot, with a high near 99.<br>
+<br>
+<b>Friday Night: </b>A slight chance of showers and thunderstorms.  Partly cloudy, with a low around 76.<br>
+<br>
+<b>Saturday: </b>A slight chance of showers and thunderstorms.  Mostly sunny, with a high near 90.<br>
+<br>
+<b>Saturday Night: </b>Partly cloudy, with a low around 70.<br>
+<br>
+<b>Sunday: </b>A slight chance of showers and thunderstorms.  Mostly sunny, with a high near 86.<br>
+<br>
+<b>Sunday Night: </b>A slight chance of showers and thunderstorms.  Mostly cloudy, with a low around 68.<br>
+<br>
+<b>Monday: </b>A chance of showers and thunderstorms.  Partly sunny, with a high near 86.<br>
+<br>
+<hr><br></td></tr><tr><td colspan="2" align="left"><b>Point Forecast:</b> Naperville IL<br>&nbsp;41.77&deg;N 88.15&deg;W<br></td></tr><tr><td colspan="2" align="left"><br>Visit your local NWS office at: <a href="http://www.crh.noaa.gov/lot">http://www.crh.noaa.gov/lot</a></td></tr></table></div>
+</body>
+</html>

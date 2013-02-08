@@ -561,7 +561,7 @@ if (file_exists($Cache)){
                    convert_download($Graphic);
            }
         }
-        if ($download_setting ==3 || $_GET['reload'] == 1) {
+        if ($download_setting ==3 || isset($_GET['reload']) && $_GET['reload'] == 1) {
            # download new image every hit
            if($islocal)  copy_file($Imagefilename, $Graphic);
            if(!$islocal) {
@@ -603,7 +603,7 @@ if($no_output == 1) {
 }else{
       if (file_exists($Cache)) {
         # now send image to browser
-        if($_GET['reload'] == 1) {
+        if(isset($_GET['reload']) && $_GET['reload'] == 1) {
               header('Last-modified: ' . gmdate("D, d M Y H:i:s"). ' GMT');
         }elseif(!$islocal) {
               header('Last-modified: ' . $Headers['last-modified']);
@@ -650,7 +650,7 @@ function cache_download($Graphic) {
       !preg_match('/(jpg|gif|png)$/i', $new_ext) and errorIMG('007');
       copy($Graphic, $Cache);
       # update file last modified if it is a local image and we are forcing reload
-      if($islocal and $_GET['reload'] == 1) touch($Graphic) or errorIMG('011');
+      if($islocal and (isset($_GET['reload']) && $_GET['reload'] == 1)) touch($Graphic) or errorIMG('011');
       if ($chmod) chmod($Cache, 0644) or errorIMG('012');
       # archive?
       if($archive) {
