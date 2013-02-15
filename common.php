@@ -34,7 +34,9 @@ global $forwardTrans,$reverseTrans,$missingTrans;
 ############################################################################
 # Version 1.04 - 29-Nov-2011 - improved language translations for conditions
 # Version 1.05 - 01-Dec-2012 - minor fix to cGetSeasonInfo
-$CMNVersion = 'common.php - Version 1.05 - 01-Dec-2012';
+# Version 1.06 - 05-Feb-2013 - added UTF-8 conversion features for ISO-8859-n language files
+# Version 1.07 - 09-Feb-2013 - added tman1991 cGetMoonInfo() mods for cell.php add-on
+$CMNVersion = 'common.php - Version 1.07 - 09-Feb-2013';
 # Common Functions
 ############################################################################
 
@@ -347,6 +349,59 @@ function load_langtrans () {
 } // end load_langtrans function
 #####################################################################
 
+#####################################################################
+# convert language translation to UTF-8
+
+function set_langtrans_UTF8 () {
+  global $LANGLOOKUP, $LANGSUBS, $SITE, $forwardTrans, $reverseTrans;
+  if($SITE['charset'] == 'UTF-8') {
+	  if (isset($_REQUEST['debug']) ) { echo "<!-- set_langtrans_UTF8 no conversion performed -- already in UTF-8 -->\n"; }
+	  $SITE['origCharset'] = $SITE['charset'];
+	  return; // nothing to do
+  }
+  $Debug = '';
+  // convert the existing $LANGLOOKUP array to UTF-8
+  $sceCharset = $SITE['charset'];
+  $SITE['convertJS'] = true;  // indicate that the language-LL.js is to be converted too
+  
+  foreach ($LANGLOOKUP as $english => $trans) {
+	  $LANGLOOKUP[$english] = iconv($sceCharset,'UTF-8//TRANSLIT',$trans);
+  }
+  $Debug .= "<!-- set_langtrans_UTF8 - converted '$sceCharset' to 'UTF-8' for ".count($LANGLOOKUP). " langtrans entries -->\n";
+  // now convert the other likely used items created by load_langtrans
+       $langEntries = array(
+	   'langMonths',
+	   'langDays',
+	   'langUVWords',
+	   'langBaroTrend',
+	   'langBeaufort',
+	   'langHeatWords',
+	   'langWindDir'
+	 );
+
+  foreach ($langEntries as $idx => $key) {
+	  
+	  if(isset($SITE[$key])) {
+		  foreach ($SITE[$key] as $n => $val) {
+			  $SITE[$key][$n] = iconv($sceCharset,'UTF-8//TRANSLIT',$val);
+		  }
+		  $Debug .= "<!-- set_langtrans_UTF8 - converted ".count($SITE[$key])." SITE $key for UTF-8 -->\n";
+	  }
+  }
+  if(count($forwardTrans)>0) {
+	foreach ($forwardTrans as $english => $trans) {
+		$forwardTrans[$english] = iconv($sceCharset,'UTF-8//TRANSLIT',$trans);
+	}
+	$Debug .= "<!-- set_langtrans_UTF8 - converted forwardTrans to 'UTF-8' for ".count($forwardTrans). " langtrans entries -->\n";
+  }
+    
+  $SITE['origCharset'] = $sceCharset; // remember the original character set
+  $SITE['charset'] = 'UTF-8'; // change our default character set
+  if (isset($_REQUEST['debug']) ) { echo $Debug; }
+	
+}  // end set_langtrans_UTF8 function
+#####################################################################
+
 function print_language_selects() {
 	global $SITE;
 	if(isset($SITE['languageSelectDropdown']) and $SITE['languageSelectDropdown'] ) {
@@ -409,7 +464,7 @@ function print_language_selects_dropdown() {
  $arr = $SITE['installedLanguages'];
  if (is_array($arr)){
     $string = '
-<form method="get" name="lang_select" action="" style="padding: 0px; margin: 0px">
+<form method="get" name="lang_select" action="#" style="padding: 0px; margin: 0px">
 ';
     # text links use bracket for indicator, image links print lang code
     if($SITE['useLanguageFlags'] == true) {
@@ -431,7 +486,7 @@ $flag = '';
 
 	  if($_REQUEST['lang'] == $k) {
 	    $selected = ' selected="selected"';
-        $flag = '<img src="'. $SITE['imagesDir'] . 'flag-'. $k .'.gif" alt="'. $v .'" title="'. $v .'" border="0" />';
+        $flag = '<img src="'. $SITE['imagesDir'] . 'flag-'. $k .'.gif" alt="'. $v .'" title="'. $v .'" style="border: 0" />';
 	  } else {
 	    $selected = '';
 	  }
@@ -639,6 +694,17 @@ $Q3Moons = array( // unixtime values in UTC/GMT
    $info->FM2   = $fullMoons[$mi];
    $info->FM2GMT   = gmdate('D, d-M-Y H:i T',$fullMoons[$mi]);
    $info->FM2WD   = gmdate('H:i T d F Y',$fullMoons[$mi]);
+
+#  tman1991 mods for cell.php add-on 
+   $moonD = array($NM       , $Q1            , $Q2        , $Q3           , $Q4       , $Q1Moons[$mi]  , $fullMoons[$mi], $Q3Moons[$mi] );
+   $moonP = array("New Moon", "First Quarter", "Full Moon", "Last Quarter", "New Moon", "First Quarter", "Full Moon"    , "Last Quarter");
+   $moonI = array("NM"      , "Q1"           , "FM"       , "Q3"          , "NM"      , "Q1"           , "FM"           , "Q3"          );
+   foreach($moonD as $key=>$mdate) {
+      if ($mdate>$date) {
+         $info->moons[] = array ($moonP[$key], $mdate, $moonI[$key], date("r",$mdate));
+	  }
+   }
+#  end tman1991 mods for cell.php add-on 
 
 return $info;
 }

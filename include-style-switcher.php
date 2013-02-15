@@ -10,6 +10,7 @@ Download: http://www.642weather.com/weather/scripts/css-theme-switcher.zip
 Version: 1.17  19-Dec-2008
 - adjustment to cookie path setting
 Version 1.18 - 10-Feb-2011 - fix duplicate id= in wide/narrow selection HTML
+Version 1.19 - 05-Feb-2013 = fix HTML5 validation issues
 
 see changelog.txt for all change history
 
@@ -142,7 +143,7 @@ if (isset($_SESSION['CSSwidescreen']) && $_SESSION['CSSwidescreen'] == 1) {
 }
 $string .= '<p class="sideBarTitle" style="margin-left: -5px;">'. langtransstr('Style Options') .'</p>';
 $string .= '
-<form method="post" name="style_select" action="">
+<form method="post" name="style_select" action="#">
 <p>';
 
 if ($settings_mode != 3) {  // style settings allowed

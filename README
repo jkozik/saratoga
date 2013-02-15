@@ -271,3 +271,11 @@ advforecast2.php ajax-dashboard.php ajax-images ajaxWCTwx.js alert-images cache 
 - All of this worked very smoothly for me, but it did take over a day.
 - I recommend you install these files, one at a time.  If you are replacing an existing one, do a diff before copying in the new one.  
 
+Apply a small update from saratoga weather scripts 1/15/13
+- downloaded latest zip file: 20130214-082844PST-updates-Base-USA-VWS-plugin
+- updated following files:
+ common.php  flyout-menu.php  footer.php  include-style-switcher.php  top.php  wxssgauges.php
+- looks like the updates set the stage for installing the new SteelSeries Guages
+- after everything was applied, the gauges page was empty, so I read the contents of the wxssgauges.php file
+- I am submitting this update and starting another one from sandysoft
+

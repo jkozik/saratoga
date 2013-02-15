@@ -13,8 +13,9 @@
 // Version 1.05 - 19-Jan-2011 - added wx="..." conditionals for universal templates
 // Version 1.06 - 05-Feb-2011 - fixed IE8+ display of $FlyoutMenuText
 // Version 1.07 - 04-Mar-2011 - fixed errata casting Strict: messages
+// Version 1.08 - 05-Feb-2013 - fixed HTML5 validation with literal quote in translation
 //
-$Version = 'flyout-menu.php (ML) Version 1.07 - 04-Mar-2011';
+$Version = 'flyout-menu.php (ML) Version 1.08 - 05-Feb-2013';
 //
 // ---------- settings ------------------------------
 $MENUdef = './flyout-menu.xml'; // (relative) file location of XML menu definition file
@@ -160,8 +161,8 @@ for ($i=1;$i<count($MENU);$i++) { // loop over all menu items -1
 	  $wxonlyPrefix = "<!-- not used with $WXsoftware ";
 	  $wxonlySuffix = " -->";
   }
-  if ($doTrans and $title <> '') { $title = langtransstr($title); }
-  $caption = $doTrans?langtransstr($MENU[$i]['caption']):$MENU[$i]['caption'];
+  if ($doTrans and $title <> '') { $title = preg_replace('|"|','&quot;',langtransstr($title)); }
+  $caption = $doTrans?preg_replace('|"|','&quot;',langtransstr($MENU[$i]['caption'])):$MENU[$i]['caption'];
 //  $caption = htmlspecialchars($caption);
 
   if ($target <> '') {

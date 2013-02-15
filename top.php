@@ -32,14 +32,32 @@
 require_once("Settings.php");
 require_once("common.php");
 global	$TITLE;
-//Version top.php - V3.01 - 03-Mar-2011 - added Content-Type header for charset switching
-//Version top.php - V3.02 - 23-Jul-2011 - added WXtags upload copy capability
+//Version  V3.01 - 03-Mar-2011 - added Content-Type header for charset switching
+//Version  V3.02 - 23-Jul-2011 - added WXtags upload copy capability
+//Version  V3.03 - 17-Nov-2011 - added support for right-to-left presentation format
+//Version  V3.04 - 05-Feb-2013 - added support for HTML5+UTF8
 ############################################################################
+if(isset($useUTF8) and function_exists('set_langtrans_UTF8') ) {
+	set_langtrans_UTF8(); // convert langrans items to UTF-8
+}
 header("Content-Type: text/html; charset=".strtoupper($SITE['charset']));
+if(isset($useHTML5) and $useHTML5) {
+  print "<!DOCTYPE html>\n";
+  print "<html";
+  if (isset($SITE['ISOLang'][$SITE['lang']])) { // 
+	$olang = $SITE['ISOLang'][$SITE['lang']];
+	echo " lang=\"$olang\""; 
+  }
+  print ">\n";
+} else {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <?php 
+} // end HTML5 v.s. XHTML 1.0 Transitional header
+?>
+<?php
  if(isset($SITE['WXtags']) and $SITE['WXtags'] <> '') {
 	// see if upload copy should be done
 	$siteUploadFile = preg_replace('|\.php$|','-new.php',$SITE['WXtags']);
@@ -60,12 +78,8 @@ header("Content-Type: text/html; charset=".strtoupper($SITE['charset']));
 	}
 	include_once($SITE['WXtags']);
  }
+ $doIconvUTF8 = ($SITE['charset'] == 'UTF-8' and $SITE['origCharset'] <> 'UTF-8')?true:false;
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml"<?php 
-if (false and isset($SITE['ISOLang'][$SITE['lang']])) { // disabled.. seems to be a problem with it
-  $lang = $SITE['ISOLang'][$SITE['lang']];
-  echo " lang=\"$lang\" xml:lang=\"$lang\""; 
-}?>>
   <head>
 <?php if(isset($SITE['ajaxScript'])) { ?>
     <!-- ##### start AJAX mods ##### -->
@@ -78,25 +92,44 @@ if (false and isset($SITE['ISOLang'][$SITE['lang']])) { // disabled.. seems to b
     <script type="text/javascript"> showUV = false; </script>
 <?php   }  // end of turn gizmo uv display off ?>
 <?php } // end of showGizmo ?>
-<?php if (file_exists("language-". $SITE['lang'] . ".js") ) { ?>
+<?php if (file_exists("language-". $SITE['lang'] . ".js") and (!$doIconvUTF8) ) { ?>
     <script type="text/javascript" src="language-<?php echo $SITE['lang']; ?>.js"></script>
 	<!-- language for AJAX script included -->
-<?php } ?>
-
+<?php }
+  if(isset($useUTF8) and $useUTF8 and file_exists("language-". $SITE['lang'] . ".js") and $doIconvUTF8) {
+	$tjsfile = file("language-". $SITE['lang'] . ".js");
+	$sceCharset = $SITE['origCharset']; // set in common.php when useUTF8 invoked
+	print "    <script type=\"text/javascript\">\n// <![CDATA[ /* converted to UTF-8 from $sceCharset */\n";
+	foreach ($tjsfile as $n => $line) {
+		print iconv($sceCharset,'UTF-8//TRANSLIT',$line);
+	}
+	print "// converted ".count($tjsfile)." lines of language-".$SITE['lang'].".js from $sceCharset to UTF-8 inline -->\n// ]]\n    </script>\n"; 
+  }
+?>
     <meta name="description" content="Personal weather station." />
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo strtoupper($SITE['charset']); ?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo $SITE['CSSscreen']; ?>" media="screen" title="screen" />
     <link rel="stylesheet" type="text/css" href="<?php echo $SITE['CSSprint']; ?>" media="print" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<?php 
+if(isset($useHTML5) and $useHTML5) { // no pragma/cache-control for us
+
+} else { ?>
 	<meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Cache-Control" content="no-cache" />
-<?php
+<?php } // end HTML5 check 
 
-if( isset ($TITLE) ) {
-	echo "    <title>" . $TITLE . "</title>\n";
+if(isset($SITE['showTitleTemp']) and $SITE['showTitleTemp'] and isset($temperature)) {
+  $dispTUOM = $temperature . '&deg;'.strtoupper(preg_replace('|[^CF]+|i','',$uomtemp)). ' - ';
 } else {
-	echo "    <title>" . langtransstr($SITE['organ']) . "</title>\n";
+  $dispTUOM = '';
 }
+if( isset ($TITLE) ) {
+	echo "    <title>$dispTUOM" . $TITLE . "</title>\n";
+} else {
+	echo "    <title>$dispTUOM" . langtransstr($SITE['organ']) . "</title>\n";
+}
+
 if (isset($SITE['flyoutmenu']) and $SITE['flyoutmenu'] or
 	isset($_REQUEST['menu']) and strtolower($_REQUEST['menu']) == 'test' ) {
   $SITE['flyoutmenu'] = true;
@@ -106,7 +139,15 @@ if (isset($SITE['flyoutmenu']) and $SITE['flyoutmenu'] or
   include_once('flyout-menu.php');
   print $FlyoutCSS;
 }
+// Right-to-left language CSS mod
+if(isset($SITE['CSS-RTL']) and file_exists($SITE['CSS-RTL']) and isset($SITE['RTL-LANG']) and 
+   (strpos($SITE['RTL-LANG'],$SITE['lang']) !== false) ) { // use the override CSS
+   print "<!-- lang='".$SITE['lang']."' using RTL CSS Override -->\n"; 
+  // print "<style type=\"text/css\">\n";
+  // readfile($SITE['CSS-RTL']);
+  // print "</style>\n";
+  print "<link rel=\"stylesheet\" type=\"text/css\" href=\"".$SITE['CSS-RTL']."\"/>\n";
+} // end Right-to-left CSS override 
 ?>
-<script>var _gaq=[['_setAccount','UA-29575111-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 <!-- World-ML template from http://saratoga-weather.org/wxtemplates/ -->
 <!-- end of top -->
