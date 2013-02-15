@@ -35,6 +35,7 @@
 <menu>
 	<item caption="Home" link="index.php" title="Home Page"/>
 	<item wxonly="VWS" caption="Mesonet" title="Local Weather Exchange Stations" link="wxmesonet.php"/>
+	<item wxonly="VWS" caption="Gauges" title="Realtime Weather Gauges and Graphes" link="wxssgauges.php"/>
 	<item wxonly="VWS" caption="Midwestern Weather Network" title="Midwestern Weather Network" link="MWWN.php"/>
 	<item caption="Radar">
 	    <item caption="Local Radar" link="wxradar.php" title="Radar"/>

@@ -279,3 +279,33 @@ Apply a small update from saratoga weather scripts 1/15/13
 - after everything was applied, the gauges page was empty, so I read the contents of the wxssgauges.php file
 - I am submitting this update and starting another one from sandysoft
 
+Sandysoft Gauges 2/15/13
+- wget http://wiki.sandaysoft.com/files/Steelseries/gauges-ss-v2-2-0.zip
+- unzip gauges-ss-v2-2-0.zip -d gauges-ss-v2-2-0
+- create ./ssg directory and copy the following files and directories:
+css
+images
+scripts
+gauges-ss-basic.htm  
+gauges-ss-basic-inc.php  
+steelseriesVWSjson.php
+- configure
+scripts/gauges.js
+weatherProgram    : 2,       
+imgPathURL        : '/vwsimages/',
+realTimeURL_VWS    : 'ssg/steelseriesVWSjson.php',
+steelseriesVWSjson.php:
+$wflashDir = '../../WxFlash/Data/';
+$ourTZ = "America/Chicago";
+gauges-ss-basic-inc.php  comment out the following lines
+<!--
+  <script src="<?php echo $ssgDir; ?>scripts/windrose.js"></script>
+  <script src="<?php echo $ssgDir; ?>scripts/RGraph.common.core.min.js"></script>
+  <script src="<?php echo $ssgDir; ?>scripts/RGraph.rose.min.js"></script>
+-->
+
+
+- update menu sidebar flyout-menu.xml
+<item wxonly="VWS" caption="Gauges" title="Realtime Weather Gauges and Graphes" link="wxssgauges.php"/>
+-Note: the prior saratoga weather script update assumed that the gauges files were put in /ssg and it supplied the wxssgauges.php file.  Very helpful, and best to do gauges in the order I followed.
+
