@@ -27,15 +27,17 @@
 # 2010-08-21 1.1 Changed Position of Legend and added bargraph option
 # 2010-12-14 1.11 Added function to display error message if jpgraph files not found
 ############################################################################ 
+include_once("Settings.php");
+include_once("common.php");
 #################   User Settings   ###############################
-# $loc = "./";            # Set to location of dailynoaareport*.htm files
-$loc = "./noaa/";            # Set to location of dailynoaareport*.htm files
+# $loc = "./";            # Set to location of NOAA report files
+$loc = "./noaa/";            # Set to location of NOAA report files
 $jploc = "./jpgraph/" ; # Set to location of jpgraph files
-$first_year_of_data = "2010";  # First year of dailynoaareport data that is available
+$first_year_of_data = "2010";  # First year of NOAA data that is available
 $heading_name = 'Naperville Rainfall since March '.$first_year_of_data;  # Text to be displayed above graph
 $rain_unit = 'inches' ;  # Set to inches, mm, etc - Only used on heading 
 $graph_interval = 2;  # 1 = daily, 2 = monthly
-$graph_type = 2; # 1 = line graph, 2 = bar graph -- NOTE: Bar Graph is only vaid when using monthly interval
+$graph_type = 2; # 1 = line graph, 2 = bar graph -- NOTE: Bar Graph is only valid when using monthly interval
 $show_values = true; # Set to true to display the value on the chart. - Only used with monthly graph interval
 $show_record_rain = true;
 $show_average_rain = true;

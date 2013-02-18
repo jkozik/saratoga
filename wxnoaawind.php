@@ -27,11 +27,12 @@
 # 2010-08-21 1.01 Changed Position of Legend
 # 2010-12-14 1.11 Added function to display error message if jpgraph files not found
 ############################################################################ 
+include_once("Settings.php");
+include_once("common.php");
 #################   User Settings   ###############################
-#$loc = "./";            # Set to location of dailynoaareport*.htm files
-$loc = "./noaa/";            # Set to location of dailynoaareport*.htm files
+$loc = "./noaa/";            # Set to location of NOAA report files
 $jploc = "./jpgraph/" ; # Set to location of jpgraph files
-$first_year_of_data = "2010";  # First year of dailynoaareport data that is available
+$first_year_of_data = "2010";  # First year of NOAA data that is available
 $heading_name = 'Naperville Wind Speeds since March '.$first_year_of_data;  # Text to be displayed above graph
 $wind_unit = 'MPH' ;  # Set to MPH, KMH, etc 
 $graph_interval = 2;  # 1 = daily, 2 = monthly

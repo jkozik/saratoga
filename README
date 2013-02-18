@@ -309,3 +309,42 @@ gauges-ss-basic-inc.php  comment out the following lines
 <item wxonly="VWS" caption="Gauges" title="Realtime Weather Gauges and Graphes" link="wxssgauges.php"/>
 -Note: the prior saratoga weather script update assumed that the gauges files were put in /ssg and it supplied the wxssgauges.php file.  Very helpful, and best to do gauges in the order I followed.
 
+WildWood Weather Report Scripts
+- scripts web page: http://weather.wildwoodnaturist.com/downloadsCVW.php
+- wget http://weather.wildwoodnaturist.com/ccount/click.php?id=18
+- update scripts for wxnoaarecords.php
+wxnoaarecords.css  No Change
+wxnoaarecords-include.php  Replace old file with new
+wxnoaarecords.php Hand edit, small changes.  Keep settings unchanged
+- update scripts for wxtempdetail.php
+- wget http://weather.wildwoodnaturist.com/ccount/click.php?id=21
+for wxwinddetail.php, wxwindrundetail.php, wxwindseason.php, wxwindsummary.php
+$start_year = "2010";
+wxreport-settings.php
+$first_year_of_noaadata = "2010";
+- copy everything but the readme file to root directory
+wxdegreedetail.php wxdegreeseason.php wxdegreesummary.php wxraindetail.php wxrainseason.php wxrainsummary.php wxreportinclude.php wxreport-include-V2lang.php wxreports.css wxreport-settings.php wxreportsmmyyyy.csv wxtempdetail.php wxtempseason.php wxtempsummary.php wxwinddetail.php wxwindrundetail.php wxwindrunseason.php wxwindrunsummary.php wxwindseason.php wxwindsummary.php
+- Verify http://napervilleweather.net/wxtempdetail.php?r=wxtempdetail.php
+
+- update wxnoaagraphs.php
+- wget http://weather.wildwoodnaturist.com/ccount/click.php?id=24
+wxnoaacsvdata.php
+    //$wxsoftware = $SITE['WXsoftware'];
+    $wxsoftware = 'VWS';
+
+wxnoaarain.php
+# $loc = "./";            # Set to location of NOAA report files
+$loc = "./noaa/";            # Set to location of NOAA report files
+$first_year_of_data = "2010";  # First year of dailynoaareport data that is available
+$heading_name = 'Naperville Rainfall since March '.$first_year_of_data;  # Text to be displayed above graph
+wxnoaatemps.php
+$loc = "./noaa/";            # Set to location of NOAA report files
+$first_year_of_data = "2010";  # First year of dailynoaareport data that is available
+$heading_name = 'Naperville Temperatures since March '.$first_year_of_data;  # Text to be displayed above graph
+wxnoaawind.php
+$loc = "./noaa/";            # Set to location of NOAA report files
+$first_year_of_data = "2010";  # First year of dailynoaareport data that is available
+$heading_name = 'Naperville Wind Speeds since March '.$first_year_of_data;  # Text to be displayed above graph
+- verify http://napervilleweather.net/wxnoaagraphs.php
+- git add wxnoaacsvdata.php wxnoaarain.php wxnoaatemps.php wxnoaawind.php
+

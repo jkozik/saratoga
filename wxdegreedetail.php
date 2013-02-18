@@ -22,6 +22,7 @@
 # 2010-11-27 3.0 Initial release
 # 2010-11-39 3.01 Changed colspan setting for IE problem
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -52,6 +53,8 @@ $css_file = "wxreports.css" ;  # name of css file
 $loc = $path_dailynoaa;            # Location of climatedataout*.html  
 $first_year_of_data = $first_year_of_noaadata;
 $uomTemp = $SITE['uomTemp'];
+$temptype = array("C","F") ;
+$temptype = $temptype[$SITE['uomTemp'] == "&deg;F"];
 $base_temp_heating = $base_temp_heating[$temptype == "C"];
 $base_temp_cooling = $base_temp_cooling[$temptype == "C"];
 $incrementvalues = array($increment_size);
@@ -247,9 +250,9 @@ $filename = get_noaa_filename($year,$m,$SITE['WXsoftware'],$current_month);
             if ($current_month AND $show_today AND date("j")==1){
                 $hraw[$m][0][0][6] = $hddday; 
                 $craw[$m][0][0][7] = $cddday;                                 
-            } elseif (file_exists($loc . $filename) ) {
-                $hraw[$m][0] = getnoaafile($loc . $filename);
-                $craw[$m][0] = getnoaafile($loc . $filename);                            
+            } else {
+                $hraw[$m][0] = getnoaafile($loc . $filename,$year,$m);
+                $craw[$m][0] = getnoaafile($loc . $filename,$year,$m);                            
             }
                 if ($current_month AND $show_today){ 
                     $hraw[$m][0][date("j")-1][6] = $hddday;                                                        

@@ -25,6 +25,7 @@
 #   History
 # 2011-11-9 3.5 Initial Release 
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -38,7 +39,7 @@ $TITLE = $SITE['organ'] . " - ".langtransstr("Wind Season Summary");
 # Settings Unique to this script
 ############################################################################
 $SITE['viewscr'] = 'sce';  // Password for View Source Function 
-$start_year = "2002"; // Set to first year of wind data you have
+$start_year = "2010"; // Set to first year of wind data you have
 $wind_unit = "mph";      # Set to mph, kmh, kts, or m/s
 $css_file = "wxreports.css" ;  # name of css file 
 $round = false;                # Set to true if you want windspeeds rounded to nearest integer  
@@ -203,8 +204,8 @@ else
             if ($current_month AND $show_today AND date("j")==1){
                 $gustdata[$y][1][$mx][1][0] = strip_units($maxgst);
                 $winddata[$y][1][$mx][1][0] = strip_units($avgspeedsincereset);                                   
-            } elseif (file_exists($loc . $filename) ) {
-                $rawdata = getnoaafile($loc . $filename);
+            } else {
+                $rawdata = getnoaafile($loc . $filename,$yx,$m);
                  for ($i = 0 ; $i < 31 ; $i++ )  { 
                  $gustdata[$y][1][$mx][1][$i] = $rawdata[$i][10];
                  $winddata[$y][1][$mx][1][$i] = $rawdata[$i][9];                                  

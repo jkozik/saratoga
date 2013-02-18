@@ -41,6 +41,8 @@
 # 2010-09-07 2.0 Added option to include today's data from tags in testtags file
 # 2010-11-27 3.0 Added additional options for increment quantity and size
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-06-06 3.7 A day 1 workaround for rain data missing from NOAA report 
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -68,7 +70,6 @@ $round = false;                # Set to true if you want rainfall rounded to nea
 ############################################################################
 # End of user settings
 ############################################################################
-$SITE['copy'] = "Script Developed by www.TNETWeather.com. Modified by Murry Conarroe of <a href='http://weather.wildwoodnaturist.com/'>Wildwood Weather</a>";
 $loc = $path_dailynoaa;            # Location of dailynoaareports
 $first_year_of_data = $first_year_of_noaadata;
 $rain_units = trim($SITE['uomRain']);  
@@ -210,6 +211,7 @@ foreach($years_available as $value) {
 <?php                
  
 @include("wxreportinclude.php");
+$SITE['copy'] = "Script Developed by www.TNETWeather.com. Modified by Murry Conarroe of <a href='http://weather.wildwoodnaturist.com/'>Wildwood Weather</a>";
 ?>
            </div>
  
@@ -228,7 +230,7 @@ foreach($years_available as $value) {
 
 function get_rain_detail ($year, $loc, $range, $season_start, $rain_units) {
     global $SITE, $rainvalues, $rainformat, $colors;
-    global $show_today, $dayrn, $date, $time, $timeofnextupdate, $mnthname; 
+    global $show_today, $dayrn, $date, $time, $timeofnextupdate, $mnthname, $yesterdayrain; 
         
     // Raw Data Definitions
     $rawlb = array("day" => 0, "mean" => 1, "high" => 2 , "htime" => 3,
@@ -255,15 +257,18 @@ function get_rain_detail ($year, $loc, $range, $season_start, $rain_units) {
             
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$m][0][0][8] = strip_units($dayrn);                                 
-            } elseif (file_exists($loc . $filename) ) {
-                $raw[$m][0] = getnoaafile($loc . $filename);            
+            } else {
+                $raw[$m][0] = getnoaafile($loc . $filename,$year,$m);            
             }
                 if ($current_month AND $show_today){ 
-                    $raw[$m][0][date("j")-1][8] = strip_units($dayrn);                                                        
+                    $raw[$m][0][date("j")-1][8] = strip_units($dayrn);              
+            }
+            if ($current_month AND (date("j")==2) AND ('WD' == $SITE['WXsoftware'])){  // Fix for WD rain on first day of month not listed in NOAA report until the 3rd day of the month.
+                if ((strip_units($yesterdayrain))>0){
+                    $raw[$m][0][date("j")-2][8] = strip_units($yesterdayrain);    
+                }
                 
-            } 
-                
-             
+            }  
         }
     } else {
         
@@ -285,12 +290,17 @@ function get_rain_detail ($year, $loc, $range, $season_start, $rain_units) {
             $filename = get_noaa_filename(($year-1),$m,$SITE['WXsoftware'],$current_month);
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$cnt][0][0][8] = strip_units($dayrn);                  
-            }elseif (file_exists($loc . $filename) ) {
-                $raw[$cnt][0] = getnoaafile($loc . $filename);
+            }else {
+                $raw[$cnt][0] = getnoaafile($loc . $filename,($year-1),$m);
              if ($current_month AND $show_today){ 
                     $raw[$cnt][0][date("j")-1][8] = strip_units($dayrn);                        
-                    
                 }
+             if ($current_month AND (date("j")==2) AND ('WD' == $SITE['WXsoftware'])){  // Fix for WD rain on first day of month not listed in NOAA report until the 3rd day of the month.
+                if ((strip_units($yesterdayrain))>0){
+                    $raw[$cnt][0][date("j")-2][8] = strip_units($yesterdayrain);    
+                }
+                
+            }                 
             }
             $cnt ++;
         }
@@ -312,8 +322,8 @@ function get_rain_detail ($year, $loc, $range, $season_start, $rain_units) {
            $filename = get_noaa_filename($year,$m,$SITE['WXsoftware'],$current_month);
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$cnt][0][0][8] = strip_units($dayrn);                  
-            }elseif (file_exists($loc . $filename) ) {
-                $raw[$cnt][0] = getnoaafile($loc . $filename);
+            }else {
+                $raw[$cnt][0] = getnoaafile($loc . $filename,$year,$m);
              if ($current_month AND $show_today){ 
                     $raw[$cnt][0][date("j")-1][8] = strip_units($dayrn);                        
                     

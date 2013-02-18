@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 0); 
+error_reporting(E_ALL & ~E_NOTICE);
 if(isset($SITE['langMonths'])) { 
     $months = $SITE['langMonths'];
 } elseif (isset($SITE['monthNames']))  {
@@ -64,18 +66,21 @@ $rain_to_date = $snow_to_date = array();
                       $filename1 = "climatedataout" . ( $m + 1 ) . $yx . ".html";            
                       }
               }
-                  if (file_exists($loc . $filename)){
-                      $temp = getnoaafile($loc . $filename);
+            $override_filename = "wxreports" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . $yx . ".csv";
+            if ((file_exists($loc . $filename)) OR (file_exists($loc.$override_filename))) {               
+                      $temp = getnoaafile($loc . $filename,$yx,$m);
                       for ($i = 0; $i <$days_in_month[$m]; $i ++){ 
                       $rain = $temp[$i][8]; 
                       $rain_to_date[$y][$m] = $rain_to_date[$y][$m] + $rain ;
                       }
                       $rain_to_date[$y][$m] = $rain_to_date[$y][$m] + $rain_to_date[$y][$m-1];
                   }
-                  if (file_exists($loc1 . $filename1)){
-                      $temp = getclimatefile($loc1 . $filename1);   
-                      $snow_to_date[$y][$m] = array_sum($temp) ;
-                      $snow_to_date[$y][$m] = $snow_to_date[$y][$m] + $snow_to_date[$y][$m-1];
+                  if ((file_exists($loc1 . $filename1)) OR (file_exists($loc.$override_filename))) {
+                      $temp = getclimatefile($loc1 . $filename1,'Snow Fall',$yx,$m);
+                      if (is_array($temp)){   
+                        $snow_to_date[$y][$m] = array_sum($temp) ;
+                        $snow_to_date[$y][$m] = $snow_to_date[$y][$m] + $snow_to_date[$y][$m-1];
+                        }
                       }                      
                       
                     }   
@@ -134,19 +139,19 @@ $rain_to_date = $snow_to_date = array();
                 $ytdsnowdata[$y][$m][0] = $snow_today + $ytdsnow_yesterday;
                               
                                                                                 
-            } elseif ((file_exists($loc . $filename)) OR (file_exists($loc1 . $filename1)))  {
-                if (file_exists($loc . $filename)){
-                $data[$y] = getnoaafile($loc . $filename);
-                }
+            } else { //}if ((file_exists($loc . $filename)) OR (file_exists($loc1 . $filename1)))  {
+//                if (file_exists($loc . $filename)){
+                $data[$y] = getnoaafile($loc . $filename,$yx,$m);
+//                }
                 if ($show_snow_records){
-                    if (file_exists($loc1 . $filename1)){
-                    $snowdata[$y][1][$m][1] = getclimatefile($loc1 . $filename1);
-                    }
+//                    if (file_exists($loc1 . $filename1)){
+                    $snowdata[$y][1][$m][1] = getclimatefile($loc1 . $filename1,'Snow Fall',$yx,$m);
+//                    }
                 }
                 if ($show_baro_records){
-                    if (file_exists($loc1 . $filename1)){
-                    $barodata[$y][1][$m][1] = getbarometerdata($loc1 . $filename1);
-                    }
+//                    if (file_exists($loc1 . $filename1)){
+                    $barodata[$y][1][$m][1] = getclimatefile($loc1 . $filename1,'Avg Sea Level',$yx,$m);         
+//                    }
                 }                
             
             if ($current_month AND $show_today){ 
@@ -158,9 +163,13 @@ $rain_to_date = $snow_to_date = array();
                 $data[$y][date("j")-1][9] = strip_units($avgspeedsincereset);
                 $data[$y][date("j")-1][10] = strip_units($maxgst);
                 $snowdata[$y][1][$m][1][date("j")-1] = $snow_today;   
-                $barodata[$y][1][$m][1][date("j")-1] = strip_units($baro_today);                                                                       
-                    
-                }
+                $barodata[$y][1][$m][1][date("j")-1] = strip_units($baro_today);                            
+            }
+            if ($current_month AND (date("j")==2) AND ('WD' == $wxsoftware)){  // Fix for WD rain on first day of month not listed in NOAA report until the 3rd day of the month.
+                if ((strip_units($yesterdayrain))>0){
+                    $data[$y][date("j")-2][8] = strip_units($yesterdayrain);    
+                }              
+            }
                
                 
             // Check if leap year
@@ -556,7 +565,7 @@ if ((' INHG' == strtoupper($uomBaro))  OR ('INHG' == strtoupper($uomBaro))){
             else {
                 $record_year = $year - (($currentmonth == $selectedmonth) AND ($day <= ($line[0]-$show_today)));
                 if ($record_year == intval($line[12])){  // If record was set this year, highlight cell
-                $class = $rechighclass; //'"hightempnewrecord"';
+                $class = $reclowclass; //'"hightempnewrecord"';
             }   else {
                 $class = $lowclass ; //'"hightemp"';
             }
@@ -595,7 +604,7 @@ if ((' INHG' == strtoupper($uomBaro))  OR ('INHG' == strtoupper($uomBaro))){
             else {
                 $record_year = $year - (($currentmonth == $selectedmonth) AND ($day <= ($line[0]-$show_today)));
                 if ($record_year == intval($line[14])) {  // If record was set this year, highlight cell
-                $class = $reclowclass; //'"lowtempnewrecord"';
+                $class = $rechighclass; //'"lowtempnewrecord"';
             }   else {
                 $class = $highclass; //'"lowtemp"';
             }
@@ -721,7 +730,7 @@ if ((' INHG' == strtoupper($uomBaro))  OR ('INHG' == strtoupper($uomBaro))){
 
 ###############   Record MTD Snow   ###################  
             
-            if ($line[21] == ''){                                          
+            if ($line[19] == ''){      //21                                    
                 echo '<td class="nodata"> --- </td>';   // No Data
             }
             else {            
@@ -738,7 +747,7 @@ if ((' INHG' == strtoupper($uomBaro))  OR ('INHG' == strtoupper($uomBaro))){
 
 ###############   Record YTD Snow   ###################  
             
-            if ($line[23] == ''){
+            if ($line[19] == ''){   //23
                 echo '<td class="nodata"> --- </td>';   // No Data
             }
             else {            
@@ -862,13 +871,13 @@ if ((' INHG' == strtoupper($uomBaro))  OR ('INHG' == strtoupper($uomBaro))){
     echo '<td class="rainttl">' . sprintf("%01.1f", $snowrecords[0]). '<br />(' . $snowrecords[1] . ')</td>';
     }
     
-    if ($mtdsnowrecords[0]==-10){
+    if ($snowrecords[0]==-10){
         echo '<td class="nodata"> --- </td>';   // No Data 
     } else {                
     echo '<td class="rainttl">' . sprintf("%01.1f", $mtdsnowrecords[0]) . '<br />(' . $mtdsnowrecords[1] . ')</td>';
     }
     
-    if ($ytdsnowrecords[0]==-10){
+    if ($snowrecords[0]==-10){
         echo '<td class="nodata"> --- </td>';   // No Data 
     } else {     
     echo '<td class="rainttl">' . sprintf("%01.1f", $ytdsnowrecords[0]) . '<br />(' . $ytdsnowrecords[1] . ')</td>';
@@ -876,7 +885,7 @@ if ((' INHG' == strtoupper($uomBaro))  OR ('INHG' == strtoupper($uomBaro))){
     }
     
     if ($show_baro_records){
-    if ($hibarorecords[0]==-10){
+    if ($hibarorecords[0]==-100){
         echo '<td class="nodata"> --- </td>';   // No Data 
     } else {     
     echo '<td class="rainttl">' . sprintf($barorounding, $hibarorecords[0]) . ' (' . $hibarorecords[1] . ')<br />';
@@ -889,13 +898,12 @@ if ((' INHG' == strtoupper($uomBaro))  OR ('INHG' == strtoupper($uomBaro))){
 }
 
 #################################################################
-function getnoaafile ($filename) {
-    global $SITE;               
-    
+function getnoaafile ($filename,$year,$m) {
+    global $SITE;                               
     $rawdata = array();
-    
+    if (file_exists($filename)) {    
     $fd = @fopen($filename,'r');
-    
+    $i = 0;
     $startdt = 0;
     if ( $fd ) {
     
@@ -903,12 +911,14 @@ function getnoaafile ($filename) {
         
             // Get one line of data
             $gotdat = trim ( fgets($fd,8192) );
-            
+            $i++ ;
             if ($startdt == 1 ) {
                 if ( strpos ($gotdat, "--------------" ) !== FALSE ){
+                    if ($i != ($first_dash_line+1)){
                     $startdt = 2;
+                    } 
                 } else {
-                    $gotdat = str_replace(",",".",$gotdat);                     
+                    $gotdat = str_replace(",",".",$gotdat); 
                     $foundline = preg_split("/[\n\r\t ]+/", $gotdat );                    
                     $rawdata[intval ($foundline[0]) -1 ] = $foundline;
                 }
@@ -917,21 +927,173 @@ function getnoaafile ($filename) {
             if ($startdt == 0 ) {
                 if ( strpos ($gotdat, "--------------" ) !== FALSE ){
                     $startdt = 1;
+                    $first_dash_line = $i;
                 } 
             }
         }
         // Close the file we are done getting data
         fclose($fd);
-    }   
+    }
+    }
+    $rawdata = check_for_overrides($year,$m,$rawdata,'noaa','');
+    return($rawdata);
+}      
+          
+ function check_for_overrides($year,$m,$rawdata,$type,$target){
+
+        $override_filename = "wxreports" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . $year . ".csv";
+        if (file_exists($override_filename)){
+        $override_data = getoverrides($override_filename);
+        if ($type == 'noaa'){
+            $rawdata = fixnoaareport ($rawdata,$override_data);
+        } else {
+            $rawdata = fixclimatereport ($rawdata,$override_data,$target);
+        }
+        }
+                        
     return($rawdata);
 }
 
+function getoverrides ($filename) {
+    global $SITE;                 
+    $cooked = array();
+    
+    if (($fp = fopen($filename, "r")) !== FALSE) {
+        # Set the parent multidimensional array key to 0.
+        $nn = 0;
+        while (($data = fgetcsv($fp, 2500, ",")) !== FALSE) {
+            # Count the total keys in the row.
+            $c = count($data);
+            # Populate the multidimensional array.
+            for ($x=0;$x<$c;$x++)
+            {
+               if ($nn>0) {
+                    $data[$x]  = preg_replace('/\s+/', '',$data[$x]);   // remove any whitespace  
+                }
+                
+                $cooked[$nn][$x] = $data[$x];
+            }
+            $nn++;
+        }
+
+        fclose($fp);
+    }
+    return($cooked);
+} 
+
+function fixnoaareport ($rawdata,$override_data) {
+    $header = $override_data[0];
+    $mean_temp_ix = array_search('Mean Temp',$header);
+    $max_temp_ix = array_search('Max Temp',$header);
+    $min_temp_ix = array_search('Min Temp',$header);
+    $rain_ix = array_search('Rain',$header);
+    $avg_wind_ix = array_search('Avg Wind',$header);
+    $max_wind_ix = array_search('Max Wind',$header);
+    $hdd_ix = array_search('HDD',$header);
+    $cdd_ix = array_search('CDD',$header);
+    $noaa_mean_temp_ix = 1;
+    $noaa_max_temp_ix = 2;
+    $noaa_min_temp_ix = 4;
+    $noaa_rain_ix = 8;
+    $noaa_avg_wind_ix = 9;
+    $noaa_max_wind_ix = 10;
+    $noaa_hdd_ix = 6;
+    $noaa_cdd_ix = 7;
+    
+   $rows = count($rawdata,0);
+   $days_raw = array();
+    
+   for ($i=0 ; $i < $rows ; $i++){
+       $days_raw[$i]= $rawdata[$i][0];
+       $days_raw_ix[$i]= $i;
+   }
+ 
+   $rows = count($override_data,0);
+      
+   for ($i=1 ; $i < $rows ; $i++){
+       $days_over[$i-1]= ($override_data[$i][0]);
+   }   
+   
+   for ($i=1 ; $i < 32; $i++){
+       if (in_array($i,$days_raw)){
+           $fixed_data[$i-1] = $rawdata[$i-1];
+       }
+       if (in_array($i,$days_over)){
+           $override_ix = 1 + array_search($i,$days_over);
+           if ($override_data[$override_ix][$max_temp_ix] != ''){
+               if (strtolower($override_data[$override_ix][$max_temp_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_max_temp_ix] = '';
+               } else {
+                   $fixed_data[$i-1][$noaa_max_temp_ix] = $override_data[$override_ix][$max_temp_ix];                       }
+           }
+           if ($override_data[$override_ix][$mean_temp_ix] != ''){
+                if (strtolower($override_data[$override_ix][$mean_temp_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_mean_temp_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_mean_temp_ix] = $override_data[$override_ix][$mean_temp_ix];  
+                   }             
+           }
+           if ($override_data[$override_ix][$min_temp_ix] != ''){
+               if (strtolower($override_data[$override_ix][$min_temp_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_min_temp_ix] = '';
+                   } else {
+                $fixed_data[$i-1][$noaa_min_temp_ix] = $override_data[$override_ix][$min_temp_ix];
+                   }               
+           }
+           if ($override_data[$override_ix][$rain_ix] != ''){
+               if (strtolower($override_data[$override_ix][$rain_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_rain_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_rain_ix] = $override_data[$override_ix][$rain_ix];
+                   }               
+           }
+           if ($override_data[$override_ix][$avg_wind_ix] != ''){
+                if (strtolower($override_data[$override_ix][$avg_wind_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_avg_wind_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_avg_wind_ix] = $override_data[$override_ix][$avg_wind_ix];  
+                   }             
+           }
+           if ($override_data[$override_ix][$max_wind_ix] != ''){
+               if (strtolower($override_data[$override_ix][$max_wind_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_max_wind_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_max_wind_ix] = $override_data[$override_ix][$max_wind_ix];
+                   }               
+           }
+           if ($override_data[$override_ix][$hdd_ix] != ''){
+               if (strtolower($override_data[$override_ix][$hdd_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_hdd_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_hdd_ix] = $override_data[$override_ix][$hdd_ix]; 
+                   }              
+           }
+           if ($override_data[$override_ix][$cdd_ix] != ''){
+               if (strtolower($override_data[$override_ix][$cdd_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_cdd_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_cdd_ix] = $override_data[$override_ix][$cdd_ix]; 
+                   }              
+           }
+           
+           
+       } 
+   }        
+    
+    
+    return($fixed_data);
+}
+
 ####################################################################
-function getclimatefile ($filename) {
-    global $SITE;               
-    
+  function getclimatefile ($filename,$target,$year,$m) {
+    global $SITE;
+    if ($target == 'Avg Sea Level'){
+    $target1 = '<!-- '.$target.'-->';     
+    } else {
+    $target1 = '<!-- '.$target.' -->';              
+    }
     $rawdata = array();
-    
+    if (file_exists($filename)) {    
     $fd = @fopen($filename,'r');
     
     $startdt = 0;
@@ -947,6 +1109,7 @@ function getclimatefile ($filename) {
                     $gotdatx = str_replace("<br />","",$gotdatx);
                     $foundline = preg_split("/[\n\r\t ]+/", $gotdatx );                                   
                     fclose($fd);
+                    $foundline = check_for_overrides($year,$m,$foundline,'climate',$target);
                     return($foundline);
                 } else {
                     $gotdatx = $gotdatx . $gotdat;
@@ -956,15 +1119,53 @@ function getclimatefile ($filename) {
             }
         
             if ($startdt == 0 ) {
-                if ( strpos ($gotdat, "<!-- Snow Fall -->" ) !== FALSE ){  // Found Snow line
+                if ( strpos ($gotdat, $target1) !== FALSE ){  // Found data line
                     $startdt = 1;
                 } 
             }
         }
         // Close the file we are done getting data
         fclose($fd);
-    }   
+    }
+    }
+    $rawdata = check_for_overrides($year,$m,$rawdata,'climate',$target);    
     return($rawdata);
+}
+
+function fixclimatereport ($rawdata,$override_data,$target) {
+    $header = $override_data[0];
+    switch ($target) {
+    case 'Snow Fall':
+        $target = 'Snow';
+        break;
+    case 'Avg Sea Level':
+        $target = 'Avg Pressure';
+        break;
+    }
+  
+   
+    $override_column = array_search($target,$header);
+   
+   $rows = count($override_data,0);
+      
+   for ($i=1 ; $i < $rows ; $i++){
+       $days_over[$i-1]= ($override_data[$i][0]);
+   }   
+   
+   for ($i=1 ; $i < 32; $i++){
+       if (in_array($i,$days_over)){
+           $override_ix = 1 + array_search($i,$days_over);
+           if ($override_data[$override_ix][$override_column] != ''){
+               if (strtolower($override_data[$override_ix][$override_column]) == 'd'){
+                   $rawdata[$i-1] = '';
+                   } else {
+                   $rawdata[$i-1] = $override_data[$override_ix][$override_column];               
+           }
+           }
+           
+           
+       } 
+   }           
 }
 
 ####################################################################
@@ -1046,9 +1247,6 @@ global $path_dailynoaa;
 $NOAAdir = $path_dailynoaa;
 $LastMonthFile = $path_dailynoaa.'NOAAPRMO.TXT';
 $now_hour = $now['hours'];
-$zzz = "$path_dailynoaa/NOAA$prior_year-$prior_month.TXT" ;
-$xxx = file_exists("$path_dailynoaa/NOAA$prior_year-$prior_month.TXT");
-$yyy = file_exists($LastMonthFile);
 
   if(! file_exists("$path_dailynoaa/NOAA$prior_year-$prior_month.TXT") and
        file_exists($LastMonthFile) and 
@@ -1061,9 +1259,9 @@ $yyy = file_exists($LastMonthFile);
        }
        }
                  if ($current_month){ 
-                     $filename = "NOAAMO.txt";
+                     $filename = "NOAAMO.TXT";
                  } else {                  
-                     $filename = "NOAA" . $year . "-" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . ".txt";
+                     $filename = "NOAA" . $year . "-" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . ".TXT";
                  }
               }
               if($wxsoftware == 'VWS') {

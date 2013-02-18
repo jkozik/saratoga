@@ -33,6 +33,8 @@
 # 2011-01-09 3.1 Added minmax table
 # 2011-02-11 3.13 Fix for mouseover displaying wrong month if using seasonal year.
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-06-06 3.7 A day 1 workaround for rain data missing from NOAA report
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -174,7 +176,7 @@ echo $SITE['copy'];
 ############################################################################
 
 function get_rain_detail ($first_year_of_data,$year,$years,$loc, $season_start, $range, $round) {
-    global $SITE, $rainvalues, $raintype, $table_order, $show_today, $dayrn, $colors, $mnthname;     
+    global $SITE, $rainvalues, $raintype, $table_order, $show_today, $dayrn, $colors, $mnthname, $yesterdayrain;     
 if ($round == true) 
     $places = "%01.0f";  
 elseif($raintype == " in")
@@ -197,24 +199,27 @@ else
              if ((($yx == $first_year_of_data) AND ($m >= $start_month-1)) OR ($yx > $first_year_of_data)) {                           
             // Check for current year and current month         
             
-           if ($yx == date("Y") && $m == ( date("n") - 1) &&((date("j") != 1 ) OR $show_today)){
-//                $filename = "dailynoaareport.htm";                               
+           if ($yx == date("Y") && $m == ( date("n") - 1) &&((date("j") != 1 ) OR $show_today)){                              
                 $current_month = 1; 
             } else { 
-//                $filename = "dailynoaareport" . ( $m + 1 ) . $yx . ".htm";
                 $current_month = 0;                                              
             }         
 
             $filename = get_noaa_filename($yx,$m,$SITE['WXsoftware'],$current_month);           
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$y][1][$mx][1][0][8] = strip_units($dayrn);                                  
-            } elseif (file_exists($loc . $filename) ) {
-                $raw[$y][1][$mx][1] = getnoaafile($loc . $filename);
+            } else {
+                $raw[$y][1][$mx][1] = getnoaafile($loc . $filename,$yx,$m);
             }
             if ($current_month AND $show_today){ 
-                $raw[$y][1][$mx][1][date("j")-1][8] = strip_units($dayrn);                                                        
-                    
-                }                             
+                $raw[$y][1][$mx][1][date("j")-1][8] = strip_units($dayrn);                    
+                }
+            if ($current_month AND (date("j")==2) AND ('WD' == $SITE['WXsoftware'])){  // Fix for WD rain on first day of month not listed in NOAA report until the 3rd day of the month.
+                if ((strip_units($yesterdayrain))>0){
+                    $raw[$y][1][$mx][1][date("j")-2][8] = strip_units($yesterdayrain);    
+                }
+                
+            }                                             
              }
                                 
         }                            

@@ -25,6 +25,7 @@
 #   History
 # 2011-11-9 3.5 Initial Release
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -195,8 +196,8 @@ $filename = get_noaa_filename($yx,$m,$SITE['WXsoftware'],$current_month);
          
             if ($current_month AND $show_today AND date("j")==1){              
                 $raw[$y][1][$mx][1][0][9] = $windruntoday/$wind_conversion;                 
-            } elseif (file_exists($loc . $filename) ) {
-                $raw[$y][1][$mx][1] = getnoaafile($loc . $filename);
+            } else {
+                $raw[$y][1][$mx][1] = getnoaafile($loc . $filename,$yx,$m);
             }
             if ($current_month AND $show_today){                                
                 $raw[$y][1][$mx][1][date("j")-1][9] = $windruntoday/$wind_conversion;                      

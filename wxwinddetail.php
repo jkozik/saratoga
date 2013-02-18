@@ -34,6 +34,7 @@
 # 2010-11-27 3.0 Update to use common files between all summary and detail files
 # 2011-05-09 3.15 Added option to round windspeed to nearest integer
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -46,7 +47,7 @@ $TITLE = $SITE['organ'] . " - ".langtransstr("Wind Reports");
 ############################################################################
 # Settings Unique to this script
 ############################################################################
-$start_year = "2002"; // Set to first year of wind data you have
+$start_year = "2010"; // Set to first year of wind data you have
 $SITE['viewscr'] = 'sce';  // Password for View Source Function 
 $wind_unit = "mph";      # Set to mph, kmh, kts, or m/s
 $css_file = "wxreports.css" ;  # name of css file  
@@ -268,8 +269,8 @@ else
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$m][0][0][9] = strip_units($avgspeedsincereset);                
                 $raw[$m][0][0][10] = strip_units($maxgst);                 
-            } elseif (file_exists($loc . $filename) ) {
-                $raw[$m][0] = getnoaafile($loc . $filename);
+            } else {
+                $raw[$m][0] = getnoaafile($loc . $filename,$year,$m);
             }
                 if ($current_month AND $show_today){ 
                     $raw[$m][0][date("j")-1][9] = strip_units($avgspeedsincereset);                                 
@@ -300,8 +301,8 @@ else
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$cnt][0][0][9] = strip_units($avgspeedsincereset);                
                 $raw[$cnt][0][0][10] = strip_units($maxgst);                  
-            }elseif (file_exists($loc . $filename) ) {
-                $raw[$cnt][0] = getnoaafile($loc . $filename);
+            }else {
+                $raw[$cnt][0] = getnoaafile($loc . $filename,($year-1),$m);
              if ($current_month AND $show_today){ 
                     $raw[$cnt][0][date("j")-1][9] = strip_units($avgspeedsincereset);                                 
                     $raw[$cnt][0][date("j")-1][10] = strip_units($maxgst);                      
@@ -329,8 +330,8 @@ else
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$cnt][0][0][9] = strip_units($avgspeedsincereset);                
                 $raw[$cnt][0][0][10] = strip_units($maxtst);                 
-            }elseif (file_exists($loc . $filename) ) {
-                $raw[$cnt][0] = getnoaafile($loc . $filename);
+            }else {
+                $raw[$cnt][0] = getnoaafile($loc . $filename,$year,$m);
              if ($current_month AND $show_today){ 
                     $raw[$cnt][0][date("j")-1][9] = strip_units($avgspeedsincereset);                                 
                     $raw[$cnt][0][date("j")-1][10] = strip_units($maxgst);                      
@@ -511,61 +512,6 @@ echo "</tr>\n";
   echo '</tr>';   
 }
 
-# GETNOAAFILE function
-# Developed by TNETWeather.com
-#
-# Returns an array of the contents of the specified filename
-# Array contains days from 1 - 31 (or less if the month has less) and
-# the values:
-# Day
-# Mean wind
-# High wind
-# Time of High wind
-# Low wind
-# Time of Low wind
-# Hot Degree Day
-# Cold Degree Day
-# Rain
-# Avg Wind Speed
-# High Wind
-# Time High Wind
-# Dom Wind Direction
-############################################################################
-function getnoaafile ($filename) {
-    global $SITE;               
-    
-    $rawdata = array();
-    
-    $fd = @fopen($filename,'r');
-    
-    $startdt = 0;
-    if ( $fd ) {
-    
-        while ( !feof($fd) ) { 
-        
-            // Get one line of data
-            $gotdat = trim ( fgets($fd,8192) );
-            
-            if ($startdt == 1 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
-                    $startdt = 2;
-                } else {
-                    $foundline = preg_split("/[\n\r\t ]+/", $gotdat );                    
-                    $rawdata[intval ($foundline[0]) -1 ] = $foundline;
-                }
-            }
-        
-            if ($startdt == 0 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
-                    $startdt = 1;
-                } 
-            }
-        }
-        // Close the file we are done getting data
-        fclose($fd);
-    }   
-    return($rawdata);
-}
 //Calculate colors depending on value
 
 function ValueColor($value,$values) {

@@ -25,6 +25,8 @@
 #   History
 # 2011-11-9 3.5 Initial Release
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-06-06 3.7 A day 1 workaround for rain data missing from NOAA report
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -152,7 +154,7 @@ get_rain_detail($first_year_of_data,$year,$years,$loc, $season_start, $range, $r
 ############################################################################
 
 function get_rain_detail ($first_year_of_data,$year,$years,$loc, $season_start, $range, $round) {
-    global $SITE, $rainvalues, $raintype, $table_order, $show_today, $dayrn, $colors, $mnthname, $seasonnames, $hemi;     
+    global $SITE, $rainvalues, $raintype, $table_order, $show_today, $dayrn, $colors, $mnthname, $seasonnames, $hemi, $yesterdayrain;     
 if ($round == true) 
     $places = "%01.0f";  
 elseif($raintype == " in")
@@ -184,13 +186,17 @@ else
             
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$y][1][$mx][1][0][8] = strip_units($dayrn);                                  
-            } elseif (file_exists($loc . $filename) ) {
-                $raw[$y][1][$mx][1] = getnoaafile($loc . $filename);
+            } else {
+                $raw[$y][1][$mx][1] = getnoaafile($loc . $filename,$yx,$m);
             }
             if ($current_month AND $show_today){ 
-                $raw[$y][1][$mx][1][date("j")-1][8] = strip_units($dayrn);                                                        
-                    
-                }                             
+                $raw[$y][1][$mx][1][date("j")-1][8] = strip_units($dayrn);                           
+                }
+            if ($current_month AND (date("j")==2) AND ('WD' == $SITE['WXsoftware'])){  // Fix for WD rain on first day of month not listed in NOAA report until the 3rd day of the month.
+                if ((strip_units($yesterdayrain))>0){
+                    $raw[$y][1][$mx][1][date("j")-2][8] = strip_units($yesterdayrain);    
+                }              
+            }                               
              }
                                 
         }                            

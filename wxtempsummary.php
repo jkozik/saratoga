@@ -30,6 +30,7 @@
 # 2010-11-01 2.1 Fix for first day of month when $show_today is true.
 # 2010-11-27 3.0 Added additional options for increment quantity and size
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -53,7 +54,7 @@ $increments = 11;  # if set higher than 11, you will need to edit the css file t
                    # and one after the last increment  
 $set_values_manually = false; # Set to true if you want to set your own non-linear values
 $manual_values = array(.25, .5, 1, 2, 3,6,12,18,24,36,60,75); # Only used if $set_values_manually is true. 
-$round = true;                # Set to true if you want temperatures rounded to nearest integer  
+$round = false;                # Set to true if you want temperatures rounded to nearest integer  
 $css_file = "wxreports.css" ;  # name of css file 
 ############################################################################################################# 
 #############################################################################################################  
@@ -193,8 +194,8 @@ if ($round == true) {
                 $raw[$y][1][$m][1][0][1] = strip_units($avtempsincemidnight);                
                 $raw[$y][1][$m][1][0][2] = strip_units($maxtemp);
                 $raw[$y][1][$m][1][0][4] = strip_units($mintemp);                  
-            } elseif (file_exists($loc . $filename) ) {
-                $raw[$y][1][$m][1] = getnoaafile($loc . $filename);
+            } else {
+                $raw[$y][1][$m][1] = getnoaafile($loc . $filename,$yx,$m);
             }
             if ($current_month AND $show_today){ 
                 $raw[$y][1][$m][1][date("j")-1][1] = strip_units($avtempsincemidnight);                                 
@@ -635,41 +636,6 @@ $colorband_cols = ceil(($colors+1)/$colorband_rows);
 
 ##################################
 
-function getnoaafile ($filename) {
-    global $SITE;               
-    
-    $rawdata = array();
-    
-    $fd = @fopen($filename,'r');
-    
-    $startdt = 0;
-    if ( $fd ) {
-    
-        while ( !feof($fd) ) { 
-        
-            // Get one line of data
-            $gotdat = trim ( fgets($fd,8192) );
-            
-            if ($startdt == 1 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
-                    $startdt = 2;
-                } else {
-                    $foundline = preg_split("/[\n\r\t ]+/", $gotdat );                    
-                    $rawdata[intval ($foundline[0]) -1 ] = $foundline;
-                }
-            }
-        
-            if ($startdt == 0 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
-                    $startdt = 1;
-                } 
-            }
-        }
-        // Close the file we are done getting data
-        fclose($fd);
-    }   
-    return($rawdata);
-}
 //Calculate colors depending on value
 
 function ValueColor($value) {

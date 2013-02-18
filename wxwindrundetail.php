@@ -20,6 +20,7 @@
 # History
 # 2011-05-17 3.16 Initial Release 
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -32,6 +33,7 @@ $TITLE = $SITE['organ'] . " - ".langtransstr("Wind Run");
 ############################################################################
 # Settings Unique to this script
 ############################################################################
+$start_year = "2010"; // Set to first year of wind data you have
 $SITE['viewscr'] = 'sce';  // Password for View Source Function
 $avg_wind_unit = 1; # 1 = mph, 2 = kmh, 3 = knots, 4 = m/s  Set to the units used in your NOAA monthly file 
 $wind_run_unit = 1; # 1 = miles, 2 = kilometers  Set to the units you want displayed in the report
@@ -49,6 +51,7 @@ $css_file = "wxreports.css" ;  # name of css file
 ############################################################################
 $loc = $path_dailynoaa;            # Location of NOAA monthly reports
 $first_year_of_data = $first_year_of_noaadata;
+$first_year_of_data = max($first_year_of_data,$start_year);
 $increment = $increment_size;
 $incrementvalues = array($increment);
 
@@ -234,11 +237,13 @@ function get_detail ($year, $loc, $range, $season_start) {
 $filename = get_noaa_filename($year,$m,$SITE['WXsoftware'],$current_month);             
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$m][0][0][9] = $windruntoday;                                 
-            } elseif (file_exists($loc . $filename) ) {
-                $raw[$m][0] = getnoaafile($loc . $filename);                
+            } else {
+                $raw[$m][0] = getnoaafile($loc . $filename,$year,$m);                
                 // convert avg wind to windrun
                 for ($wr = 0; $wr < 31 ; $wr ++){
-                    $raw[$m][0][$wr][9] = $raw[$m][0][$wr][9] * $wind_conversion;
+                    if (!(($raw[$m][0][$wr][9] == '---') OR ($raw[$m][0][$wr][9] == ''))){
+                    $raw[$m][0][$wr][9] = strval($raw[$m][0][$wr][9] * $wind_conversion);
+                    }
                 }            
             }
                 if ($current_month AND $show_today){ 
@@ -269,8 +274,8 @@ $filename = get_noaa_filename($year,$m,$SITE['WXsoftware'],$current_month);
 $filename = get_noaa_filename(($year - 1),$m,$SITE['WXsoftware'],$current_month); 
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$cnt][0][0][9] = $windruntoday;                  
-            }elseif (file_exists($loc . $filename) ) {
-                $raw[$cnt][0] = getnoaafile($loc . $filename);
+            }else {
+                $raw[$cnt][0] = getnoaafile($loc . $filename,($year-1),$m);
              if ($current_month AND $show_today){ 
                     $raw[$cnt][0][date("j")-1][9] = $windruntoday;                        
                     
@@ -296,8 +301,8 @@ $filename = get_noaa_filename(($year - 1),$m,$SITE['WXsoftware'],$current_month)
 $filename = get_noaa_filename($year,$m,$SITE['WXsoftware'],$current_month); 
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$cnt][0][0][9] = $windruntoday;                  
-            }elseif (file_exists($loc . $filename) ) {
-                $raw[$cnt][0] = getnoaafile($loc . $filename);
+            }else {
+                $raw[$cnt][0] = getnoaafile($loc . $filename,$year,$m);
              if ($current_month AND $show_today){ 
                     $raw[$cnt][0][date("j")-1][9] = $windruntoday;                        
                     
@@ -373,7 +378,7 @@ $filename = get_noaa_filename($year,$m,$SITE['WXsoftware'],$current_month);
              }
            
 
-            	if (($put >= "0") AND ($put != "---")){
+            	if (($put >= 0) AND ($put != "---")){
                 echo '<td class=" ' . ValueColor($put).'"' . '>' . $put .' </td>';
             } else {
                echo '<td class="reportday">' . $put . '</td>';

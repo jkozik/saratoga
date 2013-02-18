@@ -1,4 +1,6 @@
 <?php
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
+# 2012-09-26 3.8 Correct problem with dailynoaareport overrides shifting data by one day
 ini_set('display_errors', 0); 
 error_reporting(E_ALL & ~E_NOTICE);
 //error_reporting(E_ALL );
@@ -27,6 +29,7 @@ $uv_button = langtransstr("UV");         # Text to show on uv buttons
 $dewpoint_button = langtransstr("Dew Point");         # Text to show on dewpoint buttons
 $wetbulb_button = langtransstr("Wet Bulb");         # Text to show on wetbulb buttons
 $soiltemp_button = langtransstr("Soil Temp");         # Text to show on soil temp buttons
+$et_button = langtransstr("ET");         # Text to show on evapotranspiration buttons
 
 $mnthname = array((langtransstr('January')),(langtransstr('February')),(langtransstr('March')),(langtransstr('April')),(langtransstr('May')),(langtransstr('June')),(langtransstr('July')),(langtransstr('August')),(langtransstr('September')),(langtransstr('October')),(langtransstr('November')),(langtransstr('December')),(langtransstr('yearly')));
 //$seasonnames = array('Winter','Spring','Summer','Fall');
@@ -35,11 +38,12 @@ $SITE['copy'] = '<p style="font-size: 9px;" align="right">'.langtransstr("Script
 $incomplete = '<span style="font-size: 12px;">'. langtransstr('* denotes incomplete data for the month/year.').'</span>';
 $wxsoftware = strtoupper($SITE['WXsoftware']) ; // Set in settings-weather.php in V3
 if ($wxsoftware == ''){
-    $wxsoftware = 'WD';    
+    $SITE['WXsoftware'] = $wxsoftware = 'WD';    
 }
 if ($wxsoftware != 'WD'){
     $show_snow_links = $show_snowdepth_links = $show_sunhours_links = $show_solar_links = $show_baro_links = false;
     $show_solarkwh_links = $show_uv_links = $show_dewpoint_links = $show_wetbulb_links = $show_soiltemp_links = false;
+    $show_et_links = false;
 }
 if ($show_detail_links) {
 if ($show_temp_links) {$show_temp_detail_link = true;}  
@@ -57,6 +61,7 @@ if ($show_uv_links) {$show_uv_detail_link = true;}
 if ($show_dewpoint_links) {$show_dewpoint_detail_link = true;} 
 if ($show_wetbulb_links) {$show_wetbulb_detail_link = true;} 
 if ($show_soiltemp_links) {$show_soiltemp_detail_link = true;} 
+if ($show_et_links) {$show_et_detail_link = true;}
 }   
 
 if ($show_summary_links) {
@@ -75,6 +80,7 @@ if ($show_uv_links) {$show_uv_summary_link = true;}
 if ($show_dewpoint_links) {$show_dewpoint_summary_link = true;} 
 if ($show_wetbulb_links) {$show_wetbulb_summary_link = true;} 
 if ($show_soiltemp_links) {$show_soiltemp_summary_link = true;} 
+if ($show_et_links) {$show_et_summary_link = true;}
 }  
 
 if ($show_season_links) {
@@ -92,22 +98,23 @@ if ($show_solarkwh_links) {$show_solarkwh_season_link = true;}
 if ($show_uv_links) {$show_uv_season_link = true;} 
 if ($show_dewpoint_links) {$show_dewpoint_season_link = true;} 
 if ($show_wetbulb_links) {$show_wetbulb_season_link = true;} 
-if ($show_soiltemp_links) {$show_soiltemp_season_link = true;} 
+if ($show_soiltemp_links) {$show_soiltemp_season_link = true;}
+if ($show_et_links) {$show_et_season_link = true;} 
 }     
 if ($show_no_links != true){
-$detail_links = array($show_temp_detail_link,$show_rain_detail_link,$show_wind_detail_link,$show_windrun_detail_link,$show_snow_detail_link,$show_snowdepth_detail_link,$show_baro_detail_link,$show_degree_detail_link,$show_sunhours_detail_link,$show_solar_detail_link,$show_solarkwh_detail_link,$show_uv_detail_link,$show_dewpoint_detail_link,$show_wetbulb_detail_link,$show_soiltemp_detail_link);
+$detail_links = array($show_temp_detail_link,$show_rain_detail_link,$show_wind_detail_link,$show_windrun_detail_link,$show_snow_detail_link,$show_snowdepth_detail_link,$show_baro_detail_link,$show_degree_detail_link,$show_sunhours_detail_link,$show_solar_detail_link,$show_solarkwh_detail_link,$show_uv_detail_link,$show_dewpoint_detail_link,$show_wetbulb_detail_link,$show_soiltemp_detail_link,$show_et_detail_link);
 
-$summary_links = array($show_temp_summary_link,$show_rain_summary_link,$show_wind_summary_link,$show_windrun_summary_link,$show_snow_summary_link,$show_snowdepth_summary_link,$show_baro_summary_link,$show_degree_summary_link,$show_sunhours_summary_link,$show_solar_summary_link,$show_solarkwh_summary_link,$show_uv_summary_link,$show_dewpoint_summary_link,$show_wetbulb_summary_link,$show_soiltemp_summary_link);
+$summary_links = array($show_temp_summary_link,$show_rain_summary_link,$show_wind_summary_link,$show_windrun_summary_link,$show_snow_summary_link,$show_snowdepth_summary_link,$show_baro_summary_link,$show_degree_summary_link,$show_sunhours_summary_link,$show_solar_summary_link,$show_solarkwh_summary_link,$show_uv_summary_link,$show_dewpoint_summary_link,$show_wetbulb_summary_link,$show_soiltemp_summary_link,$show_et_summary_link);
 
-$season_links = array($show_temp_season_link,$show_rain_season_link,$show_wind_season_link,$show_windrun_season_link,$show_snow_season_link,$show_snowdepth_season_link,$show_baro_season_link,$show_degree_season_link,$show_sunhours_season_link,$show_solar_season_link,$show_solarkwh_season_link,$show_uv_season_link,$show_dewpoint_season_link,$show_wetbulb_season_link,$show_soiltemp_season_link);
+$season_links = array($show_temp_season_link,$show_rain_season_link,$show_wind_season_link,$show_windrun_season_link,$show_snow_season_link,$show_snowdepth_season_link,$show_baro_season_link,$show_degree_season_link,$show_sunhours_season_link,$show_solar_season_link,$show_solarkwh_season_link,$show_uv_season_link,$show_dewpoint_season_link,$show_wetbulb_season_link,$show_soiltemp_season_link,$show_et_season_link);
 
-$detail_files = array($tempdetailfile_name,$raindetailfile_name,$winddetailfile_name,$windrundetailfile_name,$snowdetailfile_name,$snowdepthdetailfile_name,$barodetailfile_name,$degreedetailfile_name,$sunhoursdetailfile_name,$solardetailfile_name,$solarkwhdetailfile_name,$uvdetailfile_name,$dewpointdetailfile_name,$wetbulbdetailfile_name,$soiltempdetailfile_name);
+$detail_files = array($tempdetailfile_name,$raindetailfile_name,$winddetailfile_name,$windrundetailfile_name,$snowdetailfile_name,$snowdepthdetailfile_name,$barodetailfile_name,$degreedetailfile_name,$sunhoursdetailfile_name,$solardetailfile_name,$solarkwhdetailfile_name,$uvdetailfile_name,$dewpointdetailfile_name,$wetbulbdetailfile_name,$soiltempdetailfile_name,$etdetailfile_name);
 
-$summary_files = array($tempsummaryfile_name,$rainsummaryfile_name,$windsummaryfile_name,$windrunsummaryfile_name,$snowsummaryfile_name,$snowdepthsummaryfile_name,$barosummaryfile_name,$degreesummaryfile_name,$sunhourssummaryfile_name,$solarsummaryfile_name,$solarkwhsummaryfile_name,$uvsummaryfile_name,$dewpointsummaryfile_name,$wetbulbsummaryfile_name,$soiltempsummaryfile_name);
+$summary_files = array($tempsummaryfile_name,$rainsummaryfile_name,$windsummaryfile_name,$windrunsummaryfile_name,$snowsummaryfile_name,$snowdepthsummaryfile_name,$barosummaryfile_name,$degreesummaryfile_name,$sunhourssummaryfile_name,$solarsummaryfile_name,$solarkwhsummaryfile_name,$uvsummaryfile_name,$dewpointsummaryfile_name,$wetbulbsummaryfile_name,$soiltempsummaryfile_name,$etsummaryfile_name);
 
-$season_files = array($tempseasonfile_name,$rainseasonfile_name,$windseasonfile_name,$windrunseasonfile_name,$snowseasonfile_name,$snowdepthseasonfile_name,$baroseasonfile_name,$degreeseasonfile_name,$sunhoursseasonfile_name,$solarseasonfile_name,$solarkwhseasonfile_name,$uvseasonfile_name,$dewpointseasonfile_name,$wetbulbseasonfile_name,$soiltempseasonfile_name);
+$season_files = array($tempseasonfile_name,$rainseasonfile_name,$windseasonfile_name,$windrunseasonfile_name,$snowseasonfile_name,$snowdepthseasonfile_name,$baroseasonfile_name,$degreeseasonfile_name,$sunhoursseasonfile_name,$solarseasonfile_name,$solarkwhseasonfile_name,$uvseasonfile_name,$dewpointseasonfile_name,$wetbulbseasonfile_name,$soiltempseasonfile_name,$etseasonfile_name);
 
-$button_names = array($temp_button,$rain_button,$wind_button,$windrun_button,$snow_button,$snowdepth_button,$baro_button,$degree_button,$sunhours_button,$solar_button,$solarkwh_button,$uv_button,$dewpoint_button,$wetbulb_button,$soiltemp_button);
+$button_names = array($temp_button,$rain_button,$wind_button,$windrun_button,$snow_button,$snowdepth_button,$baro_button,$degree_button,$sunhours_button,$solar_button,$solarkwh_button,$uv_button,$dewpoint_button,$wetbulb_button,$soiltemp_button,$et_button);
 
 $detail = preg_match("#".$self."#i",implode(",", $detail_files));
 $summary = preg_match("#".$self."#i",implode(",", $summary_files));
@@ -295,7 +302,7 @@ function get_noaa_filename ($year, $m, $wxsoftware, $current_month){
               } 
               if($wxsoftware == 'WL') {
                   $now = getdate();
-// print "<!-- now \n" . print_r($now,true) . " -->\n";
+print "<!-- now \n" . print_r($now,true) . " -->\n";
 $now_month = sprintf("%02d",$now['mon']);
 $now_year = $now['year'];
 $prior_month = $now['mon'] - 1;
@@ -322,9 +329,9 @@ $yyy = file_exists($LastMonthFile);
        }
        }
                  if ($current_month){ 
-                     $filename = "NOAAMO.txt";
+                     $filename = "NOAAMO.TXT";
                  } else {                  
-                     $filename = "NOAA" . $year . "-" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . ".txt";
+                     $filename = "NOAA" . $year . "-" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . ".TXT";
                  }
               }
               if($wxsoftware == 'VWS') {
@@ -361,11 +368,205 @@ if(!function_exists('getnoaafile')) {
 # Dom Wind Direction
 ############################################################################
 
-function getnoaafile ($filename) {
-    global $SITE;               
-    
+function getnoaafile ($filename,$year,$m) {
+    global $SITE;                               
     $rawdata = array();
+    if (file_exists($filename)) {    
+    $fd = @fopen($filename,'r');
+    $i = 0;
+    $startdt = 0;
+    if ( $fd ) {
     
+        while ( !feof($fd) ) { 
+        
+            // Get one line of data
+            $gotdat = trim ( fgets($fd,8192) );
+            $i++ ;
+            if ($startdt == 1 ) {
+                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
+                    if ($i != ($first_dash_line+1)){
+                    $startdt = 2;
+                    } 
+                } else {
+                    $gotdat = str_replace(",",".",$gotdat); 
+                    $foundline = preg_split("/[\n\r\t ]+/", $gotdat );                    
+                    $rawdata[intval ($foundline[0]) -1 ] = $foundline;
+                }
+            }
+        
+            if ($startdt == 0 ) {
+                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
+                    $startdt = 1;
+                    $first_dash_line = $i;
+                } 
+            }
+        }
+        // Close the file we are done getting data
+        fclose($fd);
+    }
+    }
+    $rawdata = check_for_overrides($year,$m,$rawdata,'noaa','');
+    return($rawdata);
+}
+}      
+          
+ function check_for_overrides($year,$m,$rawdata,$type,$target){
+
+        $override_filename = "wxreports" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . $year . ".csv";
+        if (file_exists($override_filename)){
+        $override_data = getoverrides($override_filename);
+        if ($type == 'noaa'){
+            $rawdata = fixnoaareport ($rawdata,$override_data);
+        } else {
+            $rawdata = fixclimatereport ($rawdata,$override_data,$target);
+        }
+        }
+                        
+    return($rawdata);
+}
+
+function getoverrides ($filename) {
+    global $SITE;                 
+    $cooked = array();
+    
+    if (($fp = fopen($filename, "r")) !== FALSE) {
+        # Set the parent multidimensional array key to 0.
+        $nn = 0;
+        while (($data = fgetcsv($fp, 2500, ",")) !== FALSE) {
+            # Count the total keys in the row.
+            $c = count($data);
+            # Populate the multidimensional array.
+            for ($x=0;$x<$c;$x++)
+            {
+                if ($nn>0) {
+                    $data[$x]  = preg_replace('/\s+/', '',$data[$x]);   // remove any whitespace  
+                } 
+              $cooked[$nn][$x]  =  $data[$x];        
+            }
+            $nn++;
+        }
+
+        fclose($fp);
+    }
+    return($cooked);
+} 
+
+function fixnoaareport ($rawdata,$override_data) {
+    $header = $override_data[0];
+    $mean_temp_ix = array_search('Mean Temp',$header);
+    $max_temp_ix = array_search('Max Temp',$header);
+    $min_temp_ix = array_search('Min Temp',$header);
+    $rain_ix = array_search('Rain',$header);
+    $avg_wind_ix = array_search('Avg Wind',$header);
+    $max_wind_ix = array_search('Max Wind',$header);
+    $hdd_ix = array_search('HDD',$header);
+    $cdd_ix = array_search('CDD',$header);
+    $day_ix = array_search('Day',$header);
+    $noaa_mean_temp_ix = 1;
+    $noaa_max_temp_ix = 2;
+    $noaa_min_temp_ix = 4;
+    $noaa_rain_ix = 8;
+    $noaa_avg_wind_ix = 9;
+    $noaa_max_wind_ix = 10;
+    $noaa_hdd_ix = 6;
+    $noaa_cdd_ix = 7;
+    
+   $rows = count($rawdata,0);
+   $days_raw = array();
+    
+   for ($i=0 ; $i < 31 ; $i++){
+       $days_raw[$i]= $rawdata[$i][0];
+       $days_raw_ix[$i]= $i;
+   }
+ 
+   $rows = count($override_data,0);
+      
+   for ($i=1 ; $i < $rows ; $i++){
+       $days_over[$i-1]= ($override_data[$i][0]);
+   }   
+   
+   for ($i=1 ; $i < 32; $i++){
+       if (in_array($i,$days_raw)){
+           $fixed_data[$i-1] = $rawdata[$i-1];
+       } else {
+            $fixed_data[$i-1][$day_ix] = $i;  // add day as there may be no data listed in the noaa report for that day
+       }
+       if (in_array($i,$days_over)){
+           $override_ix = 1 + array_search($i,$days_over);
+           if ($override_data[$override_ix][$max_temp_ix] != ''){
+               if (strtolower($override_data[$override_ix][$max_temp_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_max_temp_ix] = '';
+               } else {
+                   $fixed_data[$i-1][$noaa_max_temp_ix] = $override_data[$override_ix][$max_temp_ix];                       }
+           }
+           if ($override_data[$override_ix][$mean_temp_ix] != ''){
+                if (strtolower($override_data[$override_ix][$mean_temp_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_mean_temp_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_mean_temp_ix] = $override_data[$override_ix][$mean_temp_ix];  
+                   }             
+           }
+           if ($override_data[$override_ix][$min_temp_ix] != ''){
+               if (strtolower($override_data[$override_ix][$min_temp_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_min_temp_ix] = '';
+                   } else {
+                $fixed_data[$i-1][$noaa_min_temp_ix] = $override_data[$override_ix][$min_temp_ix];
+                   }               
+           }
+           if ($override_data[$override_ix][$rain_ix] != ''){
+               if (strtolower($override_data[$override_ix][$rain_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_rain_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_rain_ix] = $override_data[$override_ix][$rain_ix];
+                   }               
+           }
+           if ($override_data[$override_ix][$avg_wind_ix] != ''){
+                if (strtolower($override_data[$override_ix][$avg_wind_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_avg_wind_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_avg_wind_ix] = $override_data[$override_ix][$avg_wind_ix];  
+                   }             
+           }
+           if ($override_data[$override_ix][$max_wind_ix] != ''){
+               if (strtolower($override_data[$override_ix][$max_wind_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_max_wind_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_max_wind_ix] = $override_data[$override_ix][$max_wind_ix];
+                   }               
+           }
+           if ($override_data[$override_ix][$hdd_ix] != ''){
+               if (strtolower($override_data[$override_ix][$hdd_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_hdd_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_hdd_ix] = $override_data[$override_ix][$hdd_ix]; 
+                   }              
+           }
+           if ($override_data[$override_ix][$cdd_ix] != ''){
+               if (strtolower($override_data[$override_ix][$cdd_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_cdd_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_cdd_ix] = $override_data[$override_ix][$cdd_ix]; 
+                   }              
+           }
+           
+           
+       } 
+   }        
+    
+    
+    return($fixed_data);
+}
+
+if(!function_exists('getclimatefile')) {
+  function getclimatefile ($filename,$target,$year,$m) {
+    global $SITE;
+    if ($target == 'Avg Sea Level'){
+    $target1 = '<!-- '.$target.'-->';     
+    } else {
+    $target1 = '<!-- '.$target.' -->';              
+    }
+    $rawdata = array();
+    if (file_exists($filename)) {    
     $fd = @fopen($filename,'r');
     
     $startdt = 0;
@@ -377,26 +578,80 @@ function getnoaafile ($filename) {
             $gotdat = trim ( fgets($fd,8192) );
             
             if ($startdt == 1 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
-                    $startdt = 2;
+                if ( strpos ($gotdat, "</td>" ) !== FALSE ){  // End of Snow data
+                    $gotdatx = str_replace("<br />","",$gotdatx);
+                    $foundline = preg_split("/[\n\r\t ]+/", $gotdatx );                                   
+                    fclose($fd);
+                    $foundline = check_for_overrides($year,$m,$foundline,'climate',$target);
+                    return($foundline);
                 } else {
-                    $gotdat = str_replace(",",".",$gotdat); 
-                    $foundline = preg_split("/[\n\r\t ]+/", $gotdat );                    
-                    $rawdata[intval ($foundline[0]) -1 ] = $foundline;
+                    $gotdatx = $gotdatx . $gotdat;
+                    $foundline = preg_split("/[\n\r\t ]+/", $gotdatx );                    
+
                 }
             }
         
             if ($startdt == 0 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
+                if ( strpos ($gotdat, $target1) !== FALSE ){  // Found data line
                     $startdt = 1;
                 } 
             }
         }
         // Close the file we are done getting data
         fclose($fd);
-    }   
+    }
+    }
+    $rawdata = check_for_overrides($year,$m,$rawdata,'climate',$target);    
     return($rawdata);
 }
 }
 
+function fixclimatereport ($rawdata,$override_data,$target) {
+    $header = $override_data[0];
+    switch ($target) {
+    case 'Snow Fall':
+        $target = 'Snow';
+        break;
+    case 'Avg Sea Level':
+        $target = 'Avg Pressure';
+        break;
+    case 'Solar':
+        $target = 'Max Solar w/m';
+        break;
+    case 'UV':
+        $target = 'Max UV';
+        break;
+    case 'Evapotranspiration':
+        $target = 'ET';
+        break;
+    case 'Avg Dew pt':
+        $target = 'Avg Dew Point';
+        break;                        
+}
+  
+   
+    $override_column = array_search($target,$header);
+   
+   $rows = count($override_data,0);
+      
+   for ($i=1 ; $i < $rows ; $i++){
+       $days_over[$i-1]= ($override_data[$i][0]);
+   }   
+   
+   for ($i=1 ; $i < 32; $i++){
+       if (in_array($i,$days_over)){
+           $override_ix = 1 + array_search($i,$days_over);
+           if ($override_data[$override_ix][$override_column] != ''){
+               if (strtolower($override_data[$override_ix][$override_column]) == 'd'){
+                   $rawdata[$i-1] = '';
+                   } else {
+                   $rawdata[$i-1] = $override_data[$override_ix][$override_column];               
+           }
+           }
+           
+           
+       } 
+   }           
+    return($rawdata);
+}
 ?>

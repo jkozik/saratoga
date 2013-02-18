@@ -25,6 +25,7 @@
 #   History
 # 2011-11-9 3.5 Initial Release
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -192,8 +193,8 @@ else
                 $maxdata[$y][1][$mx][1][0] = strip_units($maxtemp);
                 $mindata[$y][1][$mx][1][0] = strip_units($mintemp);
                 $meandata[$y][1][$mx][1][0] = strip_units($avtempsincemidnight);                                   
-            } elseif (file_exists($loc . $filename) ) {
-                $rawdata = getnoaafile($loc . $filename);
+            } else {
+                $rawdata = getnoaafile($loc . $filename, $yx,$m);
                  for ($i = 0 ; $i < 31 ; $i++ )  { 
                  $maxdata[$y][1][$mx][1][$i] = $rawdata[$i][2];
                  $mindata[$y][1][$mx][1][$i] = $rawdata[$i][4];
@@ -769,41 +770,6 @@ $colorband_cols = ceil(($colors+1)/$colorband_rows);
 
 ##################################
 
-function getnoaafile ($filename) {
-    global $SITE;               
-    
-    $rawdata = array();
-    
-    $fd = @fopen($filename,'r');
-    
-    $startdt = 0;
-    if ( $fd ) {
-    
-        while ( !feof($fd) ) { 
-        
-            // Get one line of data
-            $gotdat = trim ( fgets($fd,8192) );
-            
-            if ($startdt == 1 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
-                    $startdt = 2;
-                } else {
-                    $foundline = preg_split("/[\n\r\t ]+/", $gotdat );                    
-                    $rawdata[intval ($foundline[0]) -1 ] = $foundline;
-                }
-            }
-        
-            if ($startdt == 0 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
-                    $startdt = 1;
-                } 
-            }
-        }
-        // Close the file we are done getting data
-        fclose($fd);
-    }   
-    return($rawdata);
-}
 //Calculate colors depending on value
 
 function ValueColor($value) {

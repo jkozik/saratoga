@@ -28,6 +28,8 @@
 # 2010-08-21 1.2 Fix when lowest temp below zero and no data for every day of the year (including leap day)
 # 2010-12-14 1.21 Added function to display error message if jpgraph files not found
 ############################################################################ 
+include_once("Settings.php");
+include_once("common.php");
 #################   User Settings   ###############################
 $loc = "./noaa/";            # Set to location of dailynoaareport*.htm files
 $jploc = "./jpgraph/" ; # Set to location of jpgraph files

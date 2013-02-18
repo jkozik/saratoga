@@ -32,6 +32,7 @@
 # 2010-11-27 3.0 Update to use common files between all summary and detail files
 # 2011-05-09 3.15 Added option to round windspeed to nearest integer
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -45,7 +46,7 @@ $TITLE = $SITE['organ'] . " - ".langtransstr("Wind Summary");
 # Settings Unique to this script
 ############################################################################
 $SITE['viewscr'] = 'sce';  // Password for View Source Function 
-$start_year = "2002"; // Set to first year of wind data you have
+$start_year = "2010"; // Set to first year of wind data you have
 $wind_unit = "mph";      # Set to mph, kmh, kts, or m/s
 $css_file = "wxreports.css" ;  # name of css file 
 $round = false;                # Set to true if you want windspeeds rounded to nearest integer  
@@ -191,8 +192,8 @@ else
             if ($current_month AND $show_today AND date("j")==1){              
                 $raw[$y][1][$m][1][0][9] = strip_units($avgspeedsincereset);
                 $raw[$y][1][$m][1][0][10] = strip_units($maxgst);                  
-            } elseif (file_exists($loc . $filename) ) {
-                $raw[$y][1][$m][1] = getnoaafile($loc . $filename);
+            } else {
+                $raw[$y][1][$m][1] = getnoaafile($loc . $filename,$yx,$m);
             }
             if ($current_month AND $show_today){                                
                 $raw[$y][1][$m][1][date("j")-1][9] = strip_units($avgspeedsincereset);

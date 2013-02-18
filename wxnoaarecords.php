@@ -35,6 +35,8 @@
 # 2011-03-01 2.72 Fix for year-to-date on first day of month is $show_today is true.
 # 2011-12-27 3.0 Added support for multilingual and Cumulus, Weatherlink, & VWS
 # 2012-03-06 3.1 Leap year fix for rain/snow year-to-date totals
+# 2012-06-06 3.3 A day 1 workaround for rain data missing from NOAA report
+# 2012-08-26 3.4 Added check for manually provided NOAA data in csv file format
 ############################################################################ 
 require_once("Settings.php");
 @include_once("common.php");

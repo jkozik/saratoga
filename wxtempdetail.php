@@ -45,6 +45,7 @@
 # 2010-11-39 3.01 Changed colspan setting for IE problem
 # 2011-03-09 3.14 Removed leading zero from single digit temps
 # 2011-12-27 3.6 Added support for Multilingual and Cumulus, Weatherlink, VWS
+# 2012-08-26 3.8 Added check for manually provided NOAA data in csv file format
 ############################################################################
 require_once("Settings.php");
 @include_once("common.php");
@@ -271,13 +272,16 @@ else
             
             $filename = get_noaa_filename($year,$m,$SITE['WXsoftware'],$current_month);
             
+            
             if ($current_month AND $show_today AND date("j")==1){
                 $raw[$m][0][0][1] = strip_units($avtempsincemidnight);                
                 $raw[$m][0][0][2] = strip_units($maxtemp);
                 $raw[$m][0][0][4] = strip_units($mintemp);                  
-            } elseif (file_exists($loc . $filename) ) {
-                $raw[$m][0] = getnoaafile($loc . $filename);
+            } else {
+                $raw[$m][0] = getnoaafile($loc . $filename,$year,$m);
             }
+
+
                 if ($current_month AND $show_today){ 
                     $raw[$m][0][date("j")-1][1] = strip_units($avtempsincemidnight);                                 
                     $raw[$m][0][date("j")-1][2] = strip_units($maxtemp);
@@ -308,8 +312,8 @@ else
                 $raw[$cnt][0][0][1] = strip_units($avtempsincemidnight);                
                 $raw[$cnt][0][0][2] = strip_units($maxtemp);
                 $raw[$cnt][0][0][4] = strip_units($mintemp);                  
-            }elseif (file_exists($loc . $filename) ) {
-                $raw[$cnt][0] = getnoaafile($loc . $filename);
+            }else {
+                $raw[$cnt][0] = getnoaafile($loc . $filename,($year-1),($m+1));
              if ($current_month AND $show_today){ 
                     $raw[$cnt][0][date("j")-1][1] = strip_units($avtempsincemidnight);                                 
                     $raw[$cnt][0][date("j")-1][2] = strip_units($maxtemp);
@@ -339,8 +343,8 @@ else
                 $raw[$cnt][0][0][1] = strip_units($avtempsincemidnight);                
                 $raw[$cnt][0][0][2] = strip_units($maxtemp);
                 $raw[$cnt][0][0][4] = strip_units($mintemp);                  
-            }elseif (file_exists($loc . $filename) ) {
-                $raw[$cnt][0] = getnoaafile($loc . $filename);
+            }else {
+                $raw[$cnt][0] = getnoaafile($loc . $filename,$year,$m);
              if ($current_month AND $show_today){ 
                     $raw[$cnt][0][date("j")-1][1] = strip_units($avtempsincemidnight);                                 
                     $raw[$cnt][0][date("j")-1][2] = strip_units($maxtemp);
@@ -587,64 +591,6 @@ $colorband_cols = ceil(($colors+1)/$colorband_rows);
     echo '</tr></table>';
     echo '<div class="dev">' . $SITE['copy'] . '</div>';   
      
-}
-
-# GETNOAAFILE function
-# Developed by TNETWeather.com
-#
-# Returns an array of the contents of the specified filename
-# Array contains days from 1 - 31 (or less if the month has less) and
-# the values:
-# Day
-# Mean Temp
-# High Temp
-# Time of High Temp
-# Low Temp
-# Time of Low Temp
-# Hot Degree Day
-# Cold Degree Day
-# Rain
-# Avg Wind Speed
-# High Wind
-# Time High Wind
-# Dom Wind Direction
-############################################################################
-
-function getnoaafile ($filename) {
-    global $SITE;               
-    
-    $rawdata = array();
-    
-    $fd = @fopen($filename,'r');
-    
-    $startdt = 0;
-    if ( $fd ) {
-    
-        while ( !feof($fd) ) { 
-        
-            // Get one line of data
-            $gotdat = trim ( fgets($fd,8192) );
-            
-            if ($startdt == 1 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
-                    $startdt = 2;
-                } else {
-                    $gotdat = str_replace(",",".",$gotdat); 
-                    $foundline = preg_split("/[\n\r\t ]+/", $gotdat );                    
-                    $rawdata[intval ($foundline[0]) -1 ] = $foundline;
-                }
-            }
-        
-            if ($startdt == 0 ) {
-                if ( strpos ($gotdat, "--------------" ) !== FALSE ){
-                    $startdt = 1;
-                } 
-            }
-        }
-        // Close the file we are done getting data
-        fclose($fd);
-    }   
-    return($rawdata);
 }
 
 //Calculate colors depending on value

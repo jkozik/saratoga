@@ -24,6 +24,7 @@
 # 2010-08-21 1.0 Inital Release
 # 2011-01-19 1.3 Fix for uses that have less than one year of data
 # 2011-12-27 1.4 Added support for Cumulus, Weatherlink, VWS generated NOAA reports
+# 2012-08-26 1.6 Added check for manually provided NOAA data in csv file format
 ############################################################################ 
 
 error_reporting(E_ALL & ~E_NOTICE);
@@ -84,11 +85,12 @@ $files_found = 0;
             }
             $filename = get_noaa_filename ($yx, $m, $current_month);            
             
-            if (file_exists($loc . $filename) ) { 
-                $data[$y] = getnoaafile($loc . $filename);
-                $files_found ++;
-                                                    
-            }             
+            $override_filename = "wxreports" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . $yx . ".csv";
+            if ((file_exists($loc . $filename)) OR (file_exists($loc.$override_filename))) { 
+                $data[$y] = getnoaafile($loc . $filename,$yx,$m);
+                $files_found ++;                                                    
+            }           
+                      
         }
         // All data for this month for all years has been collected. Now find the records
           $recordhighs = $recordlows = $recordrain = $recordwind = array();
@@ -106,7 +108,7 @@ $files_found = 0;
            $mean = $data[$y][$i][1];
            $rain = $data[$y][$i][8];
            $avgwind = $data[$y][$i][9];
-           $maxwind = $data[$y][$i][10];                           
+           $maxwind = $data[$y][$i][10];                                     
                        
            if ($high != '' AND $high != 'X' AND $high != '-----'){
                $avg_high[$day-1] = $avg_high[$day-1] + $high;
@@ -167,6 +169,8 @@ $files_found = 0;
                 $yeardata[1][$yd]=$recordlows[$i];
                 $yeardata[5][$yd]=$recordrain[$i];
                 $yeardata[7][$yd]=$recordwind[$i];                                
+                $yeardata[19][$yd]=$recordhighs_years[$i];
+                $yeardata[20][$yd]=$recordlows_years[$i];                                               
 
                 if ($highs_count[$i] == '') {
                     $yeardata[2][$yd]='';
@@ -301,7 +305,7 @@ if ($do_cache == true) {
 
 $fp = fopen($cache_location.$noaa_file_name, 'w');
 
-for ($i = 0; $i <19; $i++){
+for ($i = 0; $i <21; $i++){
     $line=implode(',',$yeardata[$i]);  
     fputcsv($fp, explode(',', $line));
 }
@@ -367,9 +371,9 @@ $now_hour = $now['hours'];
        }
        }
                  if ($current_month){ 
-                     $filename = "NOAAMO.txt";
+                     $filename = "NOAAMO.TXT";
                  } else {                  
-                     $filename = "NOAA" . $year . "-" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . ".txt";
+                     $filename = "NOAA" . $year . "-" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . ".TXT";
                  }
               }
               if($wxsoftware == 'VWS') {
@@ -385,13 +389,12 @@ $now_hour = $now['hours'];
               return ($filename);
 }
 #################################################################
-function getnoaafile ($filename) {
-    global $SITE;               
-    
+function getnoaafile ($filename,$year,$m) {
+    global $SITE;                               
     $rawdata = array();
-    
+    if (file_exists($filename)) {    
     $fd = @fopen($filename,'r');
-    
+    $i = 0;
     $startdt = 0;
     if ( $fd ) {
     
@@ -399,11 +402,14 @@ function getnoaafile ($filename) {
         
             // Get one line of data
             $gotdat = trim ( fgets($fd,8192) );
-            
+            $i++ ;
             if ($startdt == 1 ) {
                 if ( strpos ($gotdat, "--------------" ) !== FALSE ){
+                    if ($i != ($first_dash_line+1)){
                     $startdt = 2;
+                    } 
                 } else {
+                    $gotdat = str_replace(",",".",$gotdat); 
                     $foundline = preg_split("/[\n\r\t ]+/", $gotdat );                    
                     $rawdata[intval ($foundline[0]) -1 ] = $foundline;
                 }
@@ -412,13 +418,157 @@ function getnoaafile ($filename) {
             if ($startdt == 0 ) {
                 if ( strpos ($gotdat, "--------------" ) !== FALSE ){
                     $startdt = 1;
+                    $first_dash_line = $i;
                 } 
             }
         }
         // Close the file we are done getting data
         fclose($fd);
-    }   
+    }
+    }
+    $rawdata = check_for_overrides($year,$m,$rawdata);
     return($rawdata);
+}     
+          
+ function check_for_overrides($year,$m,$rawdata){
+
+        $override_filename = "wxreports" . str_pad(($m + 1), 2, "0", STR_PAD_LEFT) . $year . ".csv";
+        if (file_exists($override_filename)){
+        $override_data = getoverrides($override_filename);
+        $rawdata = fixnoaareport ($rawdata,$override_data);
+        }
+                        
+    return($rawdata);
+}
+
+function getoverrides ($filename) {
+    global $SITE;                 
+    $cooked = array();
+    
+    if (($fp = fopen($filename, "r")) !== FALSE) {
+        # Set the parent multidimensional array key to 0.
+        $nn = 0;
+        while (($data = fgetcsv($fp, 2500, ",")) !== FALSE) {
+            # Count the total keys in the row.
+            $c = count($data);
+            # Populate the multidimensional array.
+            for ($x=0;$x<$c;$x++)
+            {
+                if ($nn>0) {
+                    $data[$x]  = preg_replace('/\s+/', '',$data[$x]);   // remove any whitespace  
+                }
+                
+                $cooked[$nn][$x] = $data[$x];
+            }
+            $nn++;
+        }
+
+        fclose($fp);
+    }
+    return($cooked);
+} 
+
+function fixnoaareport ($rawdata,$override_data) {
+    $header = $override_data[0];
+    $mean_temp_ix = array_search('Mean Temp',$header);
+    $max_temp_ix = array_search('Max Temp',$header);
+    $min_temp_ix = array_search('Min Temp',$header);
+    $rain_ix = array_search('Rain',$header);
+    $avg_wind_ix = array_search('Avg Wind',$header);
+    $max_wind_ix = array_search('Max Wind',$header);
+    $hdd_ix = array_search('HDD',$header);
+    $cdd_ix = array_search('CDD',$header);
+    $noaa_mean_temp_ix = 1;
+    $noaa_max_temp_ix = 2;
+    $noaa_min_temp_ix = 4;
+    $noaa_rain_ix = 8;
+    $noaa_avg_wind_ix = 9;
+    $noaa_max_wind_ix = 10;
+    $noaa_hdd_ix = 6;
+    $noaa_cdd_ix = 7;
+    
+   $rows = count($rawdata,0);
+   $days_raw = array();
+   
+   for ($i=0 ; $i < $rows ; $i++){
+       $days_raw[$i]= $rawdata[$i][0];
+       $days_raw_ix[$i]= $i;
+   }
+ 
+   $rows = count($override_data,0);
+      
+   for ($i=1 ; $i < $rows ; $i++){
+       $days_over[$i-1]= ($override_data[$i][0]);
+   }   
+   
+   for ($i=1 ; $i < 32; $i++){
+       if (in_array($i,$days_raw)){
+           $fixed_data[$i-1] = $rawdata[$i-1];
+       }
+       if (in_array($i,$days_over)){
+           $override_ix = 1 + array_search($i,$days_over);
+           if ($override_data[$override_ix][$max_temp_ix] != ''){
+               if (strtolower($override_data[$override_ix][$max_temp_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_max_temp_ix] = '';
+               } else {
+                   $fixed_data[$i-1][$noaa_max_temp_ix] = $override_data[$override_ix][$max_temp_ix];                       }
+           }
+           if ($override_data[$override_ix][$mean_temp_ix] != ''){
+                if (strtolower($override_data[$override_ix][$mean_temp_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_mean_temp_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_mean_temp_ix] = $override_data[$override_ix][$mean_temp_ix];  
+                   }             
+           }
+           if ($override_data[$override_ix][$min_temp_ix] != ''){
+               if (strtolower($override_data[$override_ix][$min_temp_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_min_temp_ix] = '';
+                   } else {
+                $fixed_data[$i-1][$noaa_min_temp_ix] = $override_data[$override_ix][$min_temp_ix];
+                   }               
+           }
+           if ($override_data[$override_ix][$rain_ix] != ''){
+               if (strtolower($override_data[$override_ix][$rain_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_rain_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_rain_ix] = $override_data[$override_ix][$rain_ix];
+                   }               
+           }
+           if ($override_data[$override_ix][$avg_wind_ix] != ''){
+                if (strtolower($override_data[$override_ix][$avg_wind_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_avg_wind_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_avg_wind_ix] = $override_data[$override_ix][$avg_wind_ix];  
+                   }             
+           }
+           if ($override_data[$override_ix][$max_wind_ix] != ''){
+               if (strtolower($override_data[$override_ix][$max_wind_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_max_wind_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_max_wind_ix] = $override_data[$override_ix][$max_wind_ix];
+                   }               
+           }
+           if ($override_data[$override_ix][$hdd_ix] != ''){
+               if (strtolower($override_data[$override_ix][$hdd_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_hdd_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_hdd_ix] = $override_data[$override_ix][$hdd_ix]; 
+                   }              
+           }
+           if ($override_data[$override_ix][$cdd_ix] != ''){
+               if (strtolower($override_data[$override_ix][$cdd_ix]) == 'd'){
+                   $fixed_data[$i-1][$noaa_cdd_ix] = '';
+                   } else {
+               $fixed_data[$i-1][$noaa_cdd_ix] = $override_data[$override_ix][$cdd_ix]; 
+                   }              
+           }
+           
+           
+       } 
+   }        
+    
+    
+    return($fixed_data);
 }
 
 
