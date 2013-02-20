@@ -45,7 +45,7 @@
 #  $setDistanceDisplay = 'km (mi)';
 #  $setDistanceDisplay = 'km';
 
-  $setDistanceRadius  = 200;  // same units as first unit in $setDistanceDisplay
+  $setDistanceRadius  = 2500;  // same units as first unit in $setDistanceDisplay
 # NOTE: quakes of magnitude 1.0+ are available for USA locations only.
 #  non-USA location earthquakes of magnitude 4.0+ are the only ones available from the USGS
   $setMinMagnitude = '2.0';  // minimum Richter Magnitude to display

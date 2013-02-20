@@ -67,7 +67,7 @@
   $myLong = -122.02274323;   //East=positive, West=negative decimal degrees
 // The above settings are for saratoga-weather.org location
 //
-  $ourTZ = "America/Los_Angeles";  //NOTE: this *MUST* be set correctly to
+  $ourTZ = "America/Chicago";  //NOTE: this *MUST* be set correctly to
 // translate UTC times to your LOCAL time for the displays.
 //  http://saratoga-weather.org/timezone.txt  has the list of timezone names
 //  pick the one that is closest to your location and put in $ourTZ

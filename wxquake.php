@@ -101,13 +101,13 @@ include("menubar.php");
 #  $setDistanceDisplay = 'km (mi)';
 #  $setDistanceDisplay = 'km';
 
-  $setDistanceRadius  = 200;  // same units as first unit in $setDistanceDisplay
+  $setDistanceRadius  = 2500;  // same units as first unit in $setDistanceDisplay
 # NOTE: quakes of magnitude 1.0+ are available for USA locations only.
 #    non-USA location earthquakes of magnitude 4.0+ are the only ones available from the USGS
-  $setMinMagnitude = '2.0';  // minimum Richter Magnitude to display
+  $setMinMagnitude = '2.75';  // minimum Richter Magnitude to display
   $setHighMagnitude = '4.0';  // highlight this Magnitude and greater
   
-  $setMapZoomDefault = 7;    // default zoom for Google Map 1=world to 13=street
+  $setMapZoomDefault = 3;    // default zoom for Google Map 1=world to 13=street
 # script will use your $SITE[] values for latitude, longitude, timezone and time display format
 
   $setDoLinkTarget = 1;   // =1 to have links open in new page, =0 for XHTML 1.0-Strict
