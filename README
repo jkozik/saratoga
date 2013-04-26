@@ -348,3 +348,18 @@ $heading_name = 'Naperville Wind Speeds since March '.$first_year_of_data;  # Te
 - verify http://napervilleweather.net/wxnoaagraphs.php
 - git add wxnoaacsvdata.php wxnoaarain.php wxnoaatemps.php wxnoaawind.php
 
+4/26/13 Updated River Scripts from East Masonville Weather
+- http://eastmasonvilleweather.com/downloads.php
+- Key configs stored in River/river-config.php file
+$RiverGauge = array(
+    "AFBI2" => "Fox River at Algonquin Tailwater",
+    "MNGI2" => "Fox River at Mongomery",
+    "NDRI2" => "Du Page River near Naperville",
+    "BOLI2" => "East Branch Du Page River at Bollingbrook",
+    "DSPI2" => "Des Plaines River near Des Plaines",
+    "RVRI2" => "Des Plaines River at Riverside"
+);
+- Replaced all files in the wxriver.zip download, like for like.  no new files.
+- updated menu (River was shown OOS)
+
+

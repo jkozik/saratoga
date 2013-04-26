@@ -8,7 +8,7 @@
 #   Purpose:    Show the details of the selected gauge
 #   Authors:    Dennis Clapperton <webmaster@eastmasonvilleweather.com>
 #               East Masonville Weather
-#	Version:	2.15
+#	Version:	3.00F
 ############################################################################
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -33,6 +33,7 @@ $TITLE= $SITE['organ'] . " - Local River/Lake Heights";
 $showGizmo = false;  // set to false to exclude the gizmo
 include("top.php");
 ############################################################################
+// error_reporting(E_ALL);
 ?>
 </head>
 <body>
@@ -45,7 +46,7 @@ include("menubar.php");
 include("./River/river-config.php");
 ############################################################################
 
-	$riverid=$_GET[id];  // Get River ID from address bar 
+	$riverid=$_GET['id'];  // Get River ID from address bar 
         if(!isset($RiverGauge[$riverid])) { // Check if gauge is in list Thanks to Ken True
             echo "<p>id='$riverid' is not defined.</p>\n";
             return;
@@ -62,7 +63,16 @@ include("./River/river-config.php");
 	$action = (string)$xmlData->sigstages->action;
 	$flood = (string)$xmlData->sigstages->flood;
 	$moderate = (string)$xmlData->sigstages->moderate;
-	$major = (string)$xmlData->sigstages->major;	
+	$major = (string)$xmlData->sigstages->major;
+	$recordstage = (string)$xmlData->sigstages->record;
+	$action2 = $xmlData->sigstages->action;
+	$flood2 = $xmlData->sigstages->flood;
+	$moderate2 = $xmlData->sigstages->moderate;
+	$major2 = $xmlData->sigstages->major;
+	$recordstage2 = $xmlData->sigstages->record;
+	$recordstageunits = (string)$xmlData->sigstages->record["units"];
+	
+// Get Flows	
 	$faction = (string)$xmlData->sigflows>action;
 	$fflood = (string)$xmlData->sigflows->flood;
 	$fmoderate = (string)$xmlData->sigflows->moderate;
@@ -71,60 +81,69 @@ include("./River/river-config.php");
 	$fflood2 = $xmlData->sigflows->flood;
 	$fmoderate2 = $xmlData->sigflows->moderate;
 	$fmajor2 = $xmlData->sigflows->major;
-	$action2 = $xmlData->sigstages->action;
-	$flood2 = $xmlData->sigstages->flood;
-	$moderate2 = $xmlData->sigstages->moderate;
-	$major2 = $xmlData->sigstages->major;
-	$recordstage = (string)$xmlData->sigstages->record;
-	$recordstage2 = $xmlData->sigstages->record;
-	$recordstageunits = (string)$xmlData->sigstages->record["units"];
 	$recordflow = (string)$xmlData->sigflows->record;
 	$recordflowunits = (string)$xmlData->sigflows->record["units"];
+	
+//Lets determine if flow or stage is primary and which is secondary
+
+	$Name = (string)$xmlData->observed->datum[0]->primary->attributes()->name;
+	if($Name=="Stage"){
+		$stage = "primary";
+		$flow = "secondary";
+	}else{
+		$stage = "secondary";
+		$flow = "primary";	
+	}	
+	
 // Get Last Reading
 	$ObsTime = (string)$xmlData->observed->datum[0]->valid;
-	$ObsStage = (string)$xmlData->observed->datum[0]->primary;
-	$ObsStageUnits = (string)$xmlData->observed->datum[0]->primary["units"];
-	$ObsFlow = (string)$xmlData->observed->datum[0]->secondary;
-	$ObsFlowUnits = (string)$xmlData->observed->datum[0]->secondary["units"];
+	$ObsStage = (string)$xmlData->observed->datum[0]->$stage;
+	$ObsStageUnits = (string)$xmlData->observed->datum[0]->$stage->attributes()->units;
+	$ObsFlow = (string)$xmlData->observed->datum[0]->$flow;
+	$ObsFlowUnits = (string)$xmlData->observed->datum[0]->$flow->attributes()->units;
 	$data12 = strtotime($ObsTime) + (24 * 60 * 60);
 	$lastobs = strtotime($ObsTime);
+	
 // Get Forecast
-	$ForeStage[$i] = (string)$xmlData->forecast->datum[$i]->primary;
-	$ForeStageUnits = (string)$xmlData->forecast->datum[0]->primary["units"];
-	$ForeFlow[$i] = (string)$xmlData->forecast->datum[$i]->secondary;
-	$ForeFlowUnits = (string)$xmlData->forecast->datum[0]->secondary["units"];
+	$ForeTime = (string)$xmlData->forecast->datum[0]->valid;
+	if($ForeTime!=""){
+		$j=0;
+		while(strtotime($ForeTime)<time()){
+			$j++;
+			$ForeTime = (string)$xmlData->forecast->datum[$j]->valid;
+		}
+		$ForeStageUnits = (string)$xmlData->forecast->datum[0]->$stage->attributes()->units;
+		$ForeFlowUnits = (string)$xmlData->forecast->datum[0]->$flow->attributes()->units;
+	}
+
  ?>
  <div id="main-copy">
   
 	<h1><?php echo ucwords(strtolower($rivername)); ?></h1>
-    <?php if($dropdown){ ?>
-    <form action="<?php echo $detailspage ?>" method="get">
-    	  <div align="right">
-    	    <select name="id">
-    	      <option>Choose a River</option>
-    	      
-    	      <?php
-				foreach ($RiverGauge as $ids => $name)
-				{				
-				echo "<option value='$ids'>$name</option>";	
-				}
-		?>
-  	      </select>
-    	    <input type="submit" value="GO"/>
-  	    </div>
-    </form>
-    <?php } ?>
+    <?php 
+	if($dropdown){ 
+    	echo "<form action='$detailspage' method='get'>
+    	  		<div align='right'>
+    	    		<select name='id'>
+    	      			<option>Choose a River</option>";
+						foreach ($RiverGauge as $ids => $name){				
+							echo "<option value='$ids'>$name</option>";	
+						}
+  	      		echo "</select>
+    	    		<input type='submit' value='GO'/>
+  	   			</div>
+    		</form>";
+    } ?>
     <p align="right"><a href="<?php echo $riverpage ?>">Back to River Summary</a></p>
-   <div align="center"> 
+    <div align="center"> 
            <?php if($hydrographtop){ ?> 
    			<p>
 				<img src="http://water.weather.gov/resources/hydrographs/<?php echo strtolower($riverid); ?>_<?php if($displayscale==1){ echo "record"; }else{ echo "hg"; } ?>.png" alt="Hydrograph" />
 			</p> 
 		<?php
-		}else{
-			echo "";
-		} ?> 
-   <?php if($action2!= "" or $flood2!= "" or $moderate2!= "" or $major2 != ""){ ?>
+		}  
+		
+		 if($action2!= "" or $flood2!= "" or $moderate2!= "" or $major2 != ""){ ?>
      <table width="90%" cellpadding="0" cellspacing="1" border="0">
       <tr align="center">
         <td colspan="6" class="table-top">Stage Color Key</td>
@@ -163,51 +182,7 @@ include("./River/river-config.php");
 Latest Observation:
 <?php echo date('l F jS, Y h:i A T',$lastobs); ?><br/>
 River Status:
-<?php 
-if($data12<time()){
-		echo "Old Data";
-	}else{
-if($action2 != "" or $flood2 != "" or $moderate2 != "" or $major2 != ""){
-	if(number_format($ObsStage,2)<number_format($action,2) and $action!="") {
-		echo "Normal";
-	}elseif(number_format($ObsStage,2)<number_format($flood,2) and $flood!="" and $action =="") {
-		echo "Normal";
-	}elseif(number_format($ObsStage,2)>=number_format($recordstage,2) and $recordstage!="") {
-		echo "Record Flooding";
-	}elseif(number_format($ObsStage,2)>=number_format($major,2) and $major!="") {
-		echo "Major Flooding";
-	}elseif(number_format($ObsStage,2)>=number_format($moderate,2) and $moderate!="") {
-		echo "Moderate Flooding";
-	}elseif(number_format($ObsStage,2)>=number_format($flood,2) and $flood!="") {
-		echo "Minor Flooding";
-	}elseif(number_format($ObsStage,2)>=number_format($action,2) and $action!="") {
-		echo "Near Flood Stage";
-	}else{
-		echo "Not Defined";
-		}
-}elseif($faction2!= "" or $fflood2!= "" or $fmoderate2!= "" or $fmajor2 != ""){
-		if(number_format($ObsFlow,2)<number_format($faction,2) and $faction!="") {
-			echo "Normal";
-		}elseif(number_format($ObsFlow,2)<number_format($fflood,2) and $fflood!="" and $faction =="") {
-			echo "Normal";
-		}elseif(number_format($ObsFlow,2)>=number_format($frecordflow,2) and $frecordflow!="") {
-			echo "Record Flooding";
-		}elseif(number_format($ObsFlow,2)>=number_format($fmajor,2) and $fmajor!="") {
-			echo "Major Flooding";
-		}elseif(number_format($ObsFlow,2)>=number_format($fmoderate,2) and $fmoderate!="") {
-			echo "Moderate Flooding";
-		}elseif(number_format($ObsFlow,2)>=number_format($fflood,2) and $fflood!="") {
-			echo "Minor Flooding";
-		}elseif(number_format($ObsFlow,2)>=number_format($faction,2) and $faction!="") {
-			echo "Near Flood Stage";
-		}else{
-			echo "Not Defined";	
-	}
-	}else{
-		echo "Not Defined";
-	}
-	}
-	?></p>
+<?php status($ObsStage, $data12, $action, $flood, $moderate, $major, $recordstage, $faction, $fflood, $fmoderate, $fmajor, $frecordflow); 	?></p>
     <table width="45%" cellpadding="0" cellspacing="1" border="0">
       <tr class="table-top">
         <td>&nbsp;</td>
@@ -220,17 +195,17 @@ if($action2 != "" or $flood2 != "" or $moderate2 != "" or $major2 != ""){
 		 bgcolor="#A4A4A4">
 <?php	}else{
 		
-	if(number_format($ObsStage,2)<number_format($action,2) and $action!="") { ?>
+	if(number_format((double)$ObsStage,2)<number_format((double)$action,2) and $action!="") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format($ObsStage,2)<number_format($flood,2) and $flood!="" and $action=="") { ?>
+<?php	}elseif(number_format((double)$ObsStage,2)<number_format((double)$flood,2) and $flood!="" and $action=="") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format($ObsStage,2)>=number_format($major,2) and $major!="") { ?>
+<?php	}elseif(number_format((double)$ObsStage,2)>=number_format((double)$major,2) and $major!="") { ?>
 		bgcolor="#DF01D7">
-<?php	}elseif(number_format($ObsStage,2)>=number_format($moderate,2) and $moderate!="") { ?>
+<?php	}elseif(number_format((double)$ObsStage,2)>=number_format((double)$moderate,2) and $moderate!="") { ?>
 		bgcolor="#FF0000">
-<?php	}elseif(number_format($ObsStage,2)>=number_format($flood,2) and $flood!="") { ?>
+<?php	}elseif(number_format((double)$ObsStage,2)>=number_format((double)$flood,2) and $flood!="") { ?>
 		bgcolor="#FE9A2E">
-<?php	}elseif(number_format($ObsStage,2)>=number_format($action,2) and $action!="") { ?>
+<?php	}elseif(number_format((double)$ObsStage,2)>=number_format((double)$action,2) and $action!="") { ?>
 		bgcolor="#F7FE2E">
 <?php   }else{ ?>
 		>
@@ -245,18 +220,20 @@ if($action2 != "" or $flood2 != "" or $moderate2 != "" or $major2 != ""){
 		if($data12<time()){ ?>
 		 bgcolor="#A4A4A4">
 <?php	}else{
-		
-	if(number_format($ObsFlow,2)<number_format($faction,2) and $faction!="") { ?>
+
+	if($ObsFlow<0) { ?>
+		>
+<?php	}elseif(number_format((double)$ObsFlow,2)<number_format((double)$faction,2) and $faction!="") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format($ObsFlow,2)<number_format($fflood,2) and $fflood!="" and $faction=="") { ?>
+<?php	}elseif(number_format((double)$ObsFlow,2)<number_format($fflood,2) and $fflood!="" and $faction=="") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format($ObsFlow,2)>=number_format($fmajor,2) and $fmajor!="") { ?>
+<?php	}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fmajor,2) and $fmajor!="") { ?>
 		bgcolor="#DF01D7">
-<?php	}elseif(number_format($ObsFlow,2)>=number_format($fmoderate,2) and $moderate!="") { ?>
+<?php	}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fmoderate,2) and $moderate!="") { ?>
 		bgcolor="#FF0000">
-<?php	}elseif(number_format($ObsFlow,2)>=number_format($fflood,2) and $fflood!="") { ?>
+<?php	}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fflood,2) and $fflood!="") { ?>
 		bgcolor="#FE9A2E">
-<?php	}elseif(number_format($ObsFlow,2)>=number_format($faction,2) and $faction!="") { ?>
+<?php	}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$faction,2) and $faction!="") { ?>
 		bgcolor="#F7FE2E">
 <?php   }else{ ?>
 		>
@@ -275,17 +252,17 @@ if($action2 != "" or $flood2 != "" or $moderate2 != "" or $major2 != ""){
       <tr align="center" class="column-dark">
         <td>Record</td>
         <td <?php 
-	if(number_format($recordstage,2)<number_format($action,2) and $action!="") { ?>
+	if(number_format((double)$recordstage,2)<number_format((double)$action,2) and $action!="") { ?>
 		bgcolor="#04B404">
-<?php 	}elseif(number_format($recordstage,2)<number_format($flood,2) and $flood!="") { ?>
+<?php 	}elseif(number_format((double)$recordstage,2)<number_format((double)$flood,2) and $flood!="") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format($recordstage,2)>=number_format($major,2) and $major!="") { ?>
+<?php	}elseif(number_format((double)$recordstage,2)>=number_format((double)$major,2) and $major!="") { ?>
 		bgcolor="#DF01D7">
-<?php	}elseif(number_format($recordstage,2)>=number_format($moderate,2) and $moderate!="") { ?>
+<?php	}elseif(number_format((double)$recordstage,2)>=number_format((double)$moderate,2) and $moderate!="") { ?>
 		bgcolor="#FF0000">
-<?php	}elseif(number_format($recordstage,2)>=number_format($flood,2) and $flood!="") { ?>
+<?php	}elseif(number_format((double)$recordstage,2)>=number_format((double)$flood,2) and $flood!="") { ?>
 		bgcolor="#FE9A2E">
-<?php	}elseif(number_format($recordstage,2)>=number_format($action,2) and $action!="") { ?>
+<?php	}elseif(number_format((double)$recordstage,2)>=number_format((double)$action,2) and $action!="") { ?>
 		bgcolor="#F7FE2E">
 <?php  }else{ ?>
 		>
@@ -297,17 +274,17 @@ if($action2 != "" or $flood2 != "" or $moderate2 != "" or $major2 != ""){
 	}elseif($fflood2 and $fmajor2 and $fmoderate2 =="" ){
 	echo ">";
 	}else{	
-	if(number_format($recordflow,2)<number_format($faction,2) and $faction!="") { ?>
+	if(number_format((double)$recordflow,2)<number_format((double)$faction,2) and $faction!="") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format($recordflow,2)<number_format($fflood,2) and $fflood!="") { ?>
+<?php	}elseif(number_format((double)$recordflow,2)<number_format((double)$fflood,2) and $fflood!="") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format($recordflow,2)>=number_format($fmajor,2) and $fmajor!="") { ?>
+<?php	}elseif(number_format((double)$recordflow,2)>=number_format((double)$fmajor,2) and $fmajor!="") { ?>
 		bgcolor="#DF01D7">
-<?php	}elseif(number_format($recordflow,2)>=number_format($fmoderate,2) and $moderate!="") { ?>
+<?php	}elseif(number_format((double)$recordflow,2)>=number_format((double)$fmoderate,2) and $moderate!="") { ?>
 		bgcolor="#FF0000">
-<?php	}elseif(number_format($recordflow,2)>=number_format($fflood,2) and $fflood!="") { ?>
+<?php	}elseif(number_format((double)$recordflow,2)>=number_format((double)$fflood,2) and $fflood!="") { ?>
 		bgcolor="#FE9A2E">
-<?php	}elseif(number_format($recordflow,2)>=number_format($faction,2) and $faction!="") { ?>
+<?php	}elseif(number_format((double)$recordflow,2)>=number_format((double)$faction,2) and $faction!="") { ?>
 		bgcolor="#F7FE2E">
 <?php   }else{ ?>
 		>
@@ -333,51 +310,50 @@ if($action2 != "" or $flood2 != "" or $moderate2 != "" or $major2 != ""){
         <td>Stage (<?php echo $ForeStageUnits; ?>)</td>
         <td>Flow (<?php echo $ForeFlowUnits; ?>)</td>
       </tr>
-      <?php $i=0; 
-	  while($i<7){ ?>
+      <?php $i=$j; 
+	  while($i<$j+7){ ?>
       <tr <?php if ($i%2==0){
 echo 'class="column-light"';
 } else {
 echo 'class="column-dark"';
 }?>>
-        <td <?php 
-	if($fflood2 and $fmajor2 and $fmoderate2 !=""){
-	if(number_format((string)$xmlData->forecast->datum[$i]->secondary,2)<number_format($faction,2) and $faction!="") { ?>
-		bgcolor="#F7FE2E">
-<?php 	}elseif(number_format((string)$xmlData->forecast->datum[$i]->secondary,2)<number_format($fflood,2) and $fflood!="" and $faction == "") { ?>
-		bgcolor="#04B404">
-<?php	}elseif(number_format((string)$xmlData->forecast->datum[$i]->secondary,2)>=number_format($fmajor,2) and $fmajor!="") { ?>
-		bgcolor="#DF01D7">
-<?php	}elseif(number_format((string)$xmlData->forecast->datum[$i]->secondary,2)>=number_format($fmoderate,2) and $fmoderate!="") { ?>
-		bgcolor="#FF0000">
-<?php	}elseif(number_format((string)$xmlData->forecast->datum[$i]->secondary,2)>=number_format($fflood,2) and $fflood!="") { ?>
-		bgcolor="#FE9A2E">
-<?php	}elseif(number_format((string)$xmlData->forecast->datum[$i]->secondary,2)>=number_format($faction,2) and $faction!="") { ?>
-		bgcolor="#F7FE2E">
-<?php  }else{ ?>
-		>
-<?php	}
-	}else{		
+        <td <?php 	
+	if($flood2 and $major2 and $moderate2 !=""){
 		if(number_format((string)$xmlData->forecast->datum[$i]->primary,2)<number_format($action,2) and $action!="") { ?>
 		bgcolor="#04B404">
-<?php 	}elseif(number_format((string)$xmlData->forecast->datum[$i]->primary,2)<number_format($flood,2) and $flood!="" and $action == "") { ?>
+<?php 	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->primary,2)<number_format((double)$flood,2) and $flood!="" and $action == "") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format((string)$xmlData->forecast->datum[$i]->primary,2)>=number_format($major,2) and $major!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->primary,2)>=number_format((double)$major,2) and $major!="") { ?>
 		bgcolor="#DF01D7">
-<?php	}elseif(number_format((string)$xmlData->forecast->datum[$i]->primary,2)>=number_format($moderate,2) and $moderate!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->primary,2)>=number_format((double)$moderate,2) and $moderate!="") { ?>
 		bgcolor="#FF0000">
-<?php	}elseif(number_format((string)$xmlData->forecast->datum[$i]->primary,2)>=number_format($flood,2) and $flood!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->primary,2)>=number_format((double)$flood,2) and $flood!="") { ?>
 		bgcolor="#FE9A2E">
-<?php	}elseif(number_format((string)$xmlData->forecast->datum[$i]->primary,2)>=number_format($action,2) and $action!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->primary,2)>=number_format((double)$action,2) and $action!="") { ?>
 		bgcolor="#F7FE2E">
-<?php  }else{ ?>
-		>
-<?php	} }
+<?php 	}
+	}else{	
+		if($fflood2 and $fmajor2 and $fmoderate2 !=""){
+			if(number_format((double)(string)$xmlData->forecast->datum[$i]->secondary,2)<number_format($faction,2) and $faction!="") { ?>
+			bgcolor="#04B404">
+	<?php 	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->secondary,2)<number_format((double)$fflood,2) and $fflood!="" and $faction == "") { ?>
+			bgcolor="#04B404">
+	<?php	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->secondary,2)>=number_format((double)$fmajor,2) and $fmajor!="") { ?>
+			bgcolor="#DF01D7">
+	<?php	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->secondary,2)>=number_format((double)$fmoderate,2) and $fmoderate!="") { ?>
+			bgcolor="#FF0000">
+	<?php	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->secondary,2)>=number_format((double)$fflood,2) and $fflood!="") { ?>
+			bgcolor="#FE9A2E">
+	<?php	}elseif(number_format((double)(string)$xmlData->forecast->datum[$i]->secondary,2)>=number_format((double)$faction,2) and $faction!="") { ?>
+			bgcolor="#F7FE2E">
+	<?php 	}
+		}else{ echo ">"; }
+	}
 	?>&nbsp;</td>
         <td align="left"><?php echo date('l m/d/Y h:i A',strtotime((string)$xmlData->forecast->datum[$i]->valid)); ?></td>
-        <td align="left"><?php echo number_format((string)$xmlData->forecast->datum[$i]->primary,2); ?></td>
+        <td align="left"><?php echo number_format((double)(string)$xmlData->forecast->datum[$i]->primary,2); ?></td>
         <td align="left"><?php if((string)$xmlData->forecast->datum[$i]->secondary>0){
-		echo number_format((string)$xmlData->forecast->datum[$i]->secondary,2);
+		echo number_format((double)(string)$xmlData->forecast->datum[$i]->secondary,2);
 		}else{
 			echo "N/A";
 		}?></td>
@@ -393,8 +369,8 @@ echo 'class="column-dark"';
       <tr class="table-top">
         <td width="20">&nbsp;</td>
         <td>Date (<?php echo date('T',strtotime((string)$xmlData->observed->datum[0]->valid)); ?>)</td>
-        <td>Stage (<?php echo (string)$xmlData->observed->datum[0]->primary["units"]; ?>)</td>
-        <td>Flow (<?php echo (string)$xmlData->observed->datum[0]->secondary["units"]; ?>)</td>
+        <td>Stage (<?php echo $ObsStageUnits; ?>)</td>
+        <td>Flow (<?php echo $ObsFlowUnits; ?>)</td>
       </tr>
       <?php $i=0; 
 	  while($i<$recordstoshow){ ?>
@@ -408,32 +384,32 @@ echo 'class="column-dark"';
 		bgcolor="#A4A4A4">	
 <?php }else{
 		
-		if(number_format((string)$xmlData->observed->datum[$i]->primary,2)<number_format($action,2) and $action!="") { ?>
+		if(number_format((double)(string)$xmlData->observed->datum[$i]->primary,2)<number_format((double)$action,2) and $action!="") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->primary,2)<number_format($flood,2) and $flood!="" and $action == "") { ?>
-		bgcolor="#04B404">
-<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->primary,2)>=number_format($major,2) and $major!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->observed->datum[$i]->primary,2)<number_format((double)$flood,2) and $flood!="" and $action == "") { ?>
+		bgcolor="#04B4(double)04">
+<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->primary,2)>=number_format((double)$major,2) and $major!="") { ?>
 		bgcolor="#DF01D7">
-<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->primary,2)>=number_format($moderate,2) and $moderate!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->observed->datum[$i]->primary,2)>=number_format((double)$moderate,2) and $moderate!="") { ?>
 		bgcolor="#FF0000">
-<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->primary,2)>=number_format($flood,2) and $flood!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->observed->datum[$i]->primary,2)>=number_format((double)$flood,2) and $flood!="") { ?>
 		bgcolor="#FE9A2E">
-<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->primary,2)>=number_format($action,2) and $action!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->observed->datum[$i]->primary,2)>=number_format((double)$action,2) and $action!="") { ?>
 		bgcolor="#F7FE2E">
 <?php  }else{ 
 
 		if($fflood2 and $fmajor2 and $fmoderate2 !=""){
-		if(number_format((string)$xmlData->observed->datum[$i]->secondary,2)<number_format($faction,2) and $faction!="") { ?>
+		if(number_format((double)(string)$xmlData->observed->datum[$i]->secondary,2)<number_format($faction,2) and $faction!="") { ?>
 		bgcolor="#04B404">
-<?php 	}elseif(number_format((string)$xmlData->observed->datum[$i]->secondary,2)<number_format($fflood,2) and $fflood!="" and $faction == "") { ?>
+<?php 	}elseif(number_format((double)(string)$xmlData->observed->datum[$i]->secondary,2)<number_format((double)$fflood,2) and $fflood!="" and $faction == "") { ?>
 		bgcolor="#04B404">
-<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->secondary,2)>=number_format($fmajor,2) and $fmajor!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->observed->datum[$i]->secondary,2)>=number_format((double)$fmajor,2) and $fmajor!="") { ?>
 		bgcolor="#DF01D7">
-<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->secondary,2)>=number_format($fmoderate,2) and $fmoderate!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->observed->datum[$i]->secondary,2)>=number_format((double)$fmoderate,2) and $fmoderate!="") { ?>
 		bgcolor="#FF0000">
-<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->secondary,2)>=number_format($fflood,2) and $fflood!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->observed->datum[$i]->secondary,2)>=number_format((double)$fflood,2) and $fflood!="") { ?>
 		bgcolor="#FE9A2E">
-<?php	}elseif(number_format((string)$xmlData->observed->datum[$i]->secondary,2)>=number_format($faction,2) and $faction!="") { ?>
+<?php	}elseif(number_format((double)(string)$xmlData->observed->datum[$i]->secondary,2)>=number_format((double)$faction,2) and $faction!="") { ?>
 		bgcolor="#F7FE2E">
 <?php  }else{ ?>
 		>
@@ -442,9 +418,9 @@ echo 'class="column-dark"';
 }
 	}?></td>
         <td align="left"><?php echo date('l m/d/Y h:i A',strtotime((string)$xmlData->observed->datum[$i]->valid)); ?></td>
-        <td align="left"><?php echo number_format((string)$xmlData->observed->datum[$i]->primary,2); ?></td>
+        <td align="left"><?php echo number_format((double)(string)$xmlData->observed->datum[$i]->primary,2); ?></td>
         <td align="left"><?php if((string)$xmlData->observed->datum[$i]->secondary>0){
-		echo number_format((string)$xmlData->observed->datum[$i]->secondary,2);
+		echo number_format((double)(string)$xmlData->observed->datum[$i]->secondary,2);
 		}else{
 			echo "N/A";
 		}?></td>
@@ -464,6 +440,56 @@ Script Courtesy of Dennis at <a href="http://eastmasonvilleweather.com">East Mas
   </p>
 </div><!-- end main-copy -->
 <?php
+############################################################################
+#FUNCTIONS
+############################################################################
+function status($ObsStage, $data12, $action, $flood, $moderate, $major, $recordstage, $faction, $fflood, $fmoderate, $fmajor, $frecordflow){
+	if($data12<time()){
+		echo "Old Data";
+	}else{
+		if($action != "" or $flood != "" or $moderate != "" or $major != ""){
+			if(number_format((double)$ObsStage,2)<number_format((double)$action,2) and $action!="") {
+				echo "Normal";
+			}elseif(number_format((double)$ObsStage,2)<number_format((double)$flood,2) and $flood!="" and $action =="") {
+				echo "Normal";
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$recordstage,2) and $recordstage!="") {
+				echo "Record Flooding";
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$major,2) and $major!="") {
+				echo "Major Flooding";
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$moderate,2) and $moderate!="") {
+				echo "Moderate Flooding";
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$flood,2) and $flood!="") {
+				echo "Minor Flooding";
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$action,2) and $action!="") {
+				echo "Near Flood Stage";
+			}else{
+				echo "Not Defined";
+			}
+		}elseif($faction!= "" or $fflood!= "" or $fmoderate!= "" or $fmajor != ""){
+			if(number_format((double)$ObsFlow,2)<number_format((double)$faction,2) and $faction!="") {
+				echo "Normal";
+			}elseif(number_format((double)$ObsFlow,2)<number_format((double)$fflood,2) and $fflood!="" and $faction =="") {
+				echo "Normal";
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$frecordflow,2) and $frecordflow!="") {
+				echo "Record Flooding";
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fmajor,2) and $fmajor!="") {
+				echo "Major Flooding";
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fmoderate,2) and $fmoderate!="") {
+				echo "Moderate Flooding";
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fflood,2) and $fflood!="") {
+				echo "Minor Flooding";
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$faction,2) and $faction!="") {
+				echo "Near Flood Stage";
+			}else{
+				echo "Not Defined";	
+			}	
+		}else{
+			echo "Not Defined";	
+		}
+	}
+}
+
+
 ############################################################################
 include("footer.php");
 ############################################################################

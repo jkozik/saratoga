@@ -8,13 +8,15 @@
 #   Purpose:    Gets data from AHPS
 #   Authors:    Dennis Clapperton <webmaster@eastmasonvilleweather.com>
 #               East Masonville Weather
-#   Version:	2.15
+#   Version:	3.00F
 ############################################################################
 
 include("river-config.php");
 
 foreach($RiverGauge as $riverid => $rivername){
-/*
+//	echo "$riverid\n"; //Use for debugging
+	
+
 $ch = curl_init("http://water.weather.gov/ahps2/hydrograph_to_xml.php?gage=$riverid&output=xml");
 $fp = fopen("river-$riverid.txt", "w");
 
@@ -25,7 +27,7 @@ curl_exec($ch);
 curl_close($ch);
 fclose($fp);
 }
-*/
+/*
 // 	if the curl does not work
 	$html = implode(" ", file("http://water.weather.gov/ahps2/hydrograph_to_xml.php?gage=$riverid&output=xml")); 
 	$fp = fopen("river-$riverid.txt", "w");
@@ -34,9 +36,15 @@ fclose($fp);
 	fclose($fp);
 	} 
 }
+*/
+
+
+
 
 // Thanks to Jim for this great addition
 // get the image map and write to file
+/*////////////////////////////////////////////////
+
 $BasePage = str_replace("all_layer_merge.php","index.php",$currentstage);  // use the image url to find the main page
 $html = implode(" ", file($BasePage)); 
 preg_match_all('|<area(.*)>|Uis', $html, $matches);                        // get each of the "area" lines 
@@ -47,7 +55,9 @@ for ($i=1;$i<count($matches[1]);$i++) {                                     // s
 	if (substr($matches[1][$i],0,1) <> '"') {                                                        // this added 12-31-10 for the quote sign that went missing
 		$matches[1][$i] = '"' . substr($matches[1][$i],1,strlen($matches[1][$i]));                   // put the quote symbol back in there
 	}                                                                                                // end of 12-31-10 change here
-*/		
+*/	
+
+/*///////////////////////////////////////	
 	$matches[1][$i] = '"' . substr($matches[1][$i],1,strlen($matches[1][$i]));                       // added 9/26/11 to put quotes around the url
 	$matches[1][$i] = str_replace(' tabindex=','" tabindex=',$matches[1][$i]);                       // end of the 9/26/11 change	
 	preg_match_all('|"(.*)"|Uis', $matches[1][$i], $parts);                // divide into each of the elements
@@ -71,4 +81,5 @@ for ($i=1;$i<count($matches[1]);$i++) {                                     // s
 }
 $write = fputs($fp, '</map>' . "\r");
 fclose($fp);
+*/
 ?>

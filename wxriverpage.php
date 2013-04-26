@@ -8,7 +8,7 @@
 #   Purpose:    Show the overview of all gauges
 #   Authors:    Dennis Clapperton <webmaster@eastmasonvilleweather.com>
 #               East Masonville Weather
-#	Version:	2.15
+#   Version:	3.00F
 ############################################################################
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -34,6 +34,13 @@ $showGizmo = false;  // set to false to exclude the gizmo
 include("top.php");
 ############################################################################
 ?>
+<style type="text/css">
+.greencircle{width:7px;height:7px;border-radius:10px;background:#04B404}
+.yellowcircle{width:7px;height:7px;border-radius:10px;background:#F7FE2E}
+.orangecircle{width:7px;height:7px;border-radius:10px;background:#FE9A2E}
+.redcircle{width:7px;height:7px;border-radius:10px;background:#FF0000}
+.purplecircle{width:7px;height:7px;border-radius:10px;background:#DF01D7}
+</style>
 </head>
 <body>
 <?php
@@ -47,18 +54,9 @@ include("./River/river-config.php");
 ?>
 
 <div id="main-copy">
-  
 	<h1>River Heights</h1>
 		<div align="center">
-        <?php if($rivermaptop){ // See where you want the river map ?> 
-        	<p><img src="<?php echo $currentstage ?>" alt="Current River Heights" usemap="#rivermap"/>
-				</p> 
-       <?php include("./River/river-map.txt"); // added the image map previously downloaded.
-		}else{
-			echo "";
-		} ?>
-         
-			<br />
+		<br />
     <table width="85%" cellpadding="0" cellspacing="1" border="0">
       <tr align="center">
         <th colspan="6" scope="col" class="table-top">Stage Color Key</th>
@@ -73,17 +71,34 @@ include("./River/river-config.php");
       </tr>
     </table>
     <br />
-  <table width="99%" cellpadding="0" cellspacing="1" border="0">
-  <tr class="table-top">
-    <th colspan="2" scope="col" align="center">Location</th>
-    <th scope="col" align="center">Height</th>
-    <th scope="col" align="center">Status</th>
-  </tr>
 <?php
+echo "<table width='99%' cellpadding='0' cellspacing='1' border='0'>
+  		<tr class='table-top'>
+    		<th colspan='2' scope='col' align='center'>Location</th>
+    		<th align='center' scope='col'>Height</th>";
+if($trend==1){
+    echo 	"<th align='center' scope='col'>Trend</th>";
+} 
+
+if($forecasttrend==1||$forecastcolor==1){ 
+	$colspan =2;
+	if($forecasttrend!=1||$forecastcolor!=1){ 
+		$colspan =1;
+	}
+	echo 	"<th scope='col' align='center' colspan= $colspan >Forecast</th>";
+}
+    echo 	"<th align='center' scope='col'>Status</th>
+  		</tr>";	
+
 foreach($RiverGauge as $riverid => $rivername){
 	$xmlFileData = "./River/river-$riverid.txt";
 
 	$xmlData["$riverid"] = simplexml_load_file($xmlFileData);
+	
+	if($xmlData["$riverid"] ===  FALSE){
+   		continue;
+	}
+	
  // Get Stage Levels
 	$action = (string)$xmlData["$riverid"]->sigstages->action;
 	$flood = (string)$xmlData["$riverid"]->sigstages->flood;
@@ -96,98 +111,222 @@ foreach($RiverGauge as $riverid => $rivername){
 	$fmoderate = (string)$xmlData["$riverid"]->sigflows->moderate;
 	$fmajor = (string)$xmlData["$riverid"]->sigflows->major;
 	$frecord = (string)$xmlData["$riverid"]->sigflows->record;
+	
+//Lets determine if flow or stage is primary and which is secondary
+
+	$Name = (string)$xmlData["$riverid"]->observed->datum[0]->primary->attributes()->name;
+	if($Name=="Stage"){
+		$stage = "primary";
+		$flow = "secondary";
+	}else{
+		$stage = "secondary";
+		$flow = "primary";	
+	}
+
 // Get Last Reading
 	$ObsTime = (string)$xmlData["$riverid"]->observed->datum[0]->valid;
-	$ObsStage = (string)$xmlData["$riverid"]->observed->datum[0]->primary;
-	$ObsFlow = (string)$xmlData["$riverid"]->observed->datum[0]->secondary;
+	$ObsStage = (string)$xmlData["$riverid"]->observed->datum[0]->$stage;
+	$ObsFlow = (string)$xmlData["$riverid"]->observed->datum[0]->$flow;
 	$data12 = strtotime($ObsTime) + (24 * 60 * 60);
- ?>
-  <tr <?php if ($i%2==0){
-echo 'class="column-dark"';
+	
+// Get Previous Reading	
+if($trend==1){
+	$ObsStageold = (string)$xmlData["$riverid"]->observed->datum[1]->$stage;
+	$ObsFlowold = (string)$xmlData["$riverid"]->observed->datum[1]->$flow;
+}
+
+if($forecasttrend==1||$forecastcolor==1){
+	// Get Next forecasted point
+	if($forecasttrend==1){
+		$ForeTime = (string)$xmlData["$riverid"]->forecast->datum[0]->valid;
+		if($ForeTime!=""){
+			$j=0;
+			while(strtotime($ForeTime)<time()){
+				$j++;
+				$ForeTime = (string)$xmlData["$riverid"]->forecast->datum[$j]->valid;
+			}
+			$ForeStage = (string)$xmlData["$riverid"]->forecast->datum[$j]->$stage;
+			$ForeFlow = (string)$xmlData["$riverid"]->forecast->datum[$j]->$flow;
+		}
+	}
+	// Get Highest Forecasted Point
+	if($forecastcolor==1){
+		$y=0;
+		$coloricon=array();
+		$coloriconflow=array();
+		while($y<7){
+			$coloricon[]=(string)$xmlData["$riverid"]->forecast->datum[$y]->$stage;
+			$coloriconflow[]=(string)$xmlData["$riverid"]->forecast->datum[$y]->$flow;
+			$y++;
+		}
+		$maxforecast = max($coloricon);
+		$maxforecastflow = max($coloriconflow);
+	}
+}
+
+		
+// Give our rows some color
+if ($i%2==0){
+	$color= 'class="column-dark"';
 } else {
-echo 'class="column-light"';
-}?>>
-	<?php 	if($data12<time()){
-				echo "<td width='20' bgcolor='#A4A4A4'></td>";
+	$color= 'class="column-light"';
+}
+
+	echo	"<tr $color >";
+				color($ObsStage, $data12, $action, $flood, $moderate, $major, $ObsFlow, $faction, $fflood, $fmoderate, $fmajor);
+    echo		"<td align='left'><a href='$detailspage?id=$riverid'>$rivername ($riverid)</a></td>
+    			<td align='center'>". number_format($ObsStage,2) ."ft </td>";
+			
+if($trend==1){
+    echo 		"<td align='center'>";
+	if($data12<time()){
+		echo 		"&nbsp;";
+	}else{
+		gen_difference( $ObsStageold, $ObsStage ); 
+	}
+	echo 		"</td>";
+} 
+
+if($forecasttrend==1||$forecastcolor==1){ 
+	if($forecasttrend==1){
+		echo 	"<td width='5%' align='center'>";
+		if($data12<time()){
+			echo "&nbsp;";
+		}else{
+			if($ForeTime!=""){
+				gen_difference( $ObsStage, $ForeStage ); 
 			}else{
-				if($action != "" or $flood != "" or $moderate != "" or $major != ""){
-					if(number_format($ObsStage,2)<number_format($action,2) and $action!="") {
-						echo "<td width='20' bgcolor='#04B404'></td>";
-					}elseif(number_format($ObsStage,2)<number_format($flood,2) and $flood!="" and $action == "") {
-						echo "<td width='20' bgcolor='#04B404'></td>";
-					}elseif(number_format($ObsStage,2)>=number_format($record,2) and $record!="") {
-						echo "<td width='20' bgcolor='#DF01D7'></td>";
-					}elseif(number_format($ObsStage,2)>=number_format($major,2) and $major!="") {
-						echo "<td width='20' bgcolor='#DF01D7'></td>";
-					}elseif(number_format($ObsStage,2)>=number_format($moderate,2) and $moderate!="") {
-						echo "<td width='20' bgcolor='#FF0000'></td>";
-					}elseif(number_format($ObsStage,2)>=number_format($flood,2) and $flood!="") {
-						echo "<td width='20' bgcolor='#FE9A2E'></td>";
-					}elseif(number_format($ObsStage,2)>=number_format($action,2) and $action!="") {
-						echo "<td width='20' bgcolor='#F7FE2E'></td>";
-	 				}else{ 
-						echo "<td width='20'></td>";
-					}
-				}elseif($faction!= "" or $fflood!= "" or $fmoderate!= "" or $fmajor != ""){
-					if(number_format($ObsFlow,2)<number_format($faction,2) and $faction!="") {
-						echo "<td width='20' bgcolor='#04B404'></td>";
-					}elseif(number_format($ObsFlow,2)<number_format($fflood,2) and $fflood!="" and $faction == "") {
-						echo "<td width='20' bgcolor='#04B404'></td>";
-					}elseif(number_format($ObsFlow,2)>=number_format($frecord,2) and $frecord!="") {
-						echo "<td width='20' bgcolor='#DF01D7'></td>";
-					}elseif(number_format($ObsFlow,2)>=number_format($fmajor,2) and $fmajor!="") {
-						echo "<td width='20' bgcolor='#DF01D7'></td>";
-					}elseif(number_format($ObsFlow,2)>=number_format($fmoderate,2) and $moderate!="") {
-						echo "<td width='20' bgcolor='#FF0000'></td>";
-					}elseif(number_format($ObsFlow,2)>=number_format($fflood,2) and $fflood!="") {
-						echo "<td width='20' bgcolor='#FE9A2E'></td>";
-					}elseif(number_format($ObsFlow,2)>=number_format($faction,2) and $faction!="") {
-						echo "<td width='20' bgcolor='#F7FE2E'></td>";
-	  				}else{
-						echo "<td width='20'></td>";
-					}
+				echo "&nbsp;"; 
+			}
+		}
+		echo	 "</td>"; 
+	}
+	if($forecastcolor==1){
+		echo 	"<td width='5%' align='center'>";
+		 maxforecast($maxforecast, $maxforecastflow, $data12, $action, $flood, $moderate, $major, $faction, $fflood, $fmoderate, $fmajor);
+		 echo 	"</td>";
+	} 
+
+}
+
+    echo 		"<td align='center'>";
+			status($ObsStage, $data12, $action, $flood, $moderate, $major, $recordstage, $faction, $fflood, $fmoderate, $fmajor, $frecordflow); 
+		echo	"</td>
+  			</tr>";
+$i++;
+}
+?>
+</table>			  
+</div>
+  <p style="font-size: 9px;" align="right">Data Courtesy of the <a href="http://water.weather.gov/ahps/">Advanced Hydrologic Prediction Service</a>
+  <br/>
+Script Courtesy of Dennis at <a href="http://eastmasonvilleweather.com">East Masonville Weather</a>
+  </p>
+</div><!-- end main-copy -->
+
+<?php
+############################################################################
+#Functions
+############################################################################
+
+function gen_difference( $current, $compared ) {
+	$diff=$current-$compared;
+	if($diff>0){
+		$image = "<img src=\"/ajax-images/falling.gif\" alt=\"\" title=\"\" width=\"7\" height=\"8\" style=\"border: 0; margin: 1px 3px;\" />";
+	}elseif($diff<0){
+		$image = "<img src=\"/ajax-images/rising.gif\" alt=\"\" title=\"\" width=\"7\" height=\"8\" style=\"border: 0; margin: 1px 3px;\" />";
+	}elseif($diff==0){
+		$image = "<img src=\"/ajax-images/steady.gif\" alt=\"\" title=\"\" width=\"7\" height=\"8\" style=\"border: 0; margin: 1px 3px;\" />";
+	}
+	echo $image;
+}
+
+function maxforecast($maxforecast, $maxforecastflow, $data12, $action, $flood, $moderate, $major, $faction, $fflood, $fmoderate, $fmajor){
+	if($maxforecast!=''){
+		if($data12<time()){
+			echo "&nbsp;";
+		}else{
+			if($action != "" or $flood != "" or $moderate != "" or $major != ""){
+				if(number_format((double)$maxforecast,2)<number_format((double)$action,2) and $action!="") {
+					echo "<div title='Highest forecasted stage: Normal' class='greencircle'></div>";
+				}elseif(number_format((double)$maxforecast,2)<number_format((double)$flood,2) and $flood!="" and $action =="") {
+					echo "<div title='Highest forecasted stage: Normal' class='greencircle'></div>";
+				}elseif(number_format((double)$maxforecast,2)>=number_format((double)$recordstage,2) and $recordstage!="") {
+					echo "<div title='Highest forecasted stage: Record Flooding' class='purplecircle'></div>";
+				}elseif(number_format((double)$maxforecast,2)>=number_format((double)$major,2) and $major!="") {
+					echo "<div title='Highest forecasted stage: Major Flooding' class='purplecircle'></div>";
+				}elseif(number_format((double)$maxforecast,2)>=number_format((double)$moderate,2) and $moderate!="") {
+					echo "<div title='Highest forecasted stage: Moderate Flooding' class='redcircle'></div>";
+				}elseif(number_format((double)$maxforecast,2)>=number_format((double)$flood,2) and $flood!="") {
+					echo "<div title='Highest forecasted stage: Minor Flooding' class='orangecircle'></div>";
+				}elseif(number_format((double)$maxforecast,2)>=number_format((double)$action,2) and $action!="") {
+					echo "<div title='Highest forecasted stage: Near Flood Stage' class='yellowcircle'></div>";
 				}else{
-					echo "<td width='20'></td>";
+					echo "&nbsp;";
 				}
-			 } ?>
-    <td align="left"><a href="<?php echo $detailspage ?>?id=<?php echo $riverid; ?>"><?php echo $rivername; ?> (<?php echo $riverid; ?>)</a></td>
-    <td align="center"><?php echo number_format($ObsStage,2); ?> ft</td>
-    <td align="center"><?php 
+			}elseif($faction!= "" or $fflood!= "" or $fmoderate!= "" or $fmajor != ""){
+				if(number_format((double)$ObsFlow,2)<number_format((double)$faction,2) and $faction!="") {
+					echo "<div title='Highest forecasted flow: Normal' class='greencircle'></div>";
+				}elseif(number_format((double)$maxforecastflow,2)<number_format((double)$fflood,2) and $fflood!="" and $faction =="") {
+					echo "<div title='Highest forecasted flow: Normal' class='greencircle'></div>";
+				}elseif(number_format((double)$maxforecastflow,2)>=number_format((double)$frecordflow,2) and $frecordflow!="") {
+					echo "<div title='Highest forecasted flow: Record Flooding' class='purplecircle'></div>";
+				}elseif(number_format((double)$maxforecastflow,2)>=number_format((double)$fmajor,2) and $fmajor!="") {
+					echo "<div title='Highest forecasted flow: Major Flooding' class='purplecircle'></div>";
+				}elseif(number_format((double)$maxforecastflow,2)>=number_format((double)$fmoderate,2) and $fmoderate!="") {
+					echo "<div title='Highest forecasted flow: Moderate Flooding' class='redcircle'></div>";
+				}elseif(number_format((double)$maxforecastflow,2)>=number_format((double)$fflood,2) and $fflood!="") {
+					echo "<div title='Highest forecasted flow: Minor Flooding' class='orangecircle'></div>";
+				}elseif(number_format((double)$maxforecastflow,2)>=number_format((double)$faction,2) and $faction!="") {
+					echo "<div title='Highest forecasted flow: Near Flood Stage' class='yellowcircle'></div>";
+				}else{
+					echo "&nbsp;";	
+				}	
+			}else{
+				echo "&nbsp;";	
+			}
+		}
+	}else{
+		echo "&nbsp;";
+	}
+}
+
+function status($ObsStage, $data12, $action, $flood, $moderate, $major, $recordstage, $faction, $fflood, $fmoderate, $fmajor, $frecordflow){
 	if($data12<time()){
 		echo "Old Data";
 	}else{
 		if($action != "" or $flood != "" or $moderate != "" or $major != ""){
-			if(number_format($ObsStage,2)<number_format($action,2) and $action!="") {
+			if(number_format((double)$ObsStage,2)<number_format((double)$action,2) and $action!="") {
 				echo "Normal";
-			}elseif(number_format($ObsStage,2)<number_format($flood,2) and $flood!="" and $action =="") {
+			}elseif(number_format((double)$ObsStage,2)<number_format((double)$flood,2) and $flood!="" and $action =="") {
 				echo "Normal";
-			}elseif(number_format($ObsStage,2)>=number_format($recordstage,2) and $recordstage!="") {
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$recordstage,2) and $recordstage!="") {
 				echo "Record Flooding";
-			}elseif(number_format($ObsStage,2)>=number_format($major,2) and $major!="") {
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$major,2) and $major!="") {
 				echo "Major Flooding";
-			}elseif(number_format($ObsStage,2)>=number_format($moderate,2) and $moderate!="") {
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$moderate,2) and $moderate!="") {
 				echo "Moderate Flooding";
-			}elseif(number_format($ObsStage,2)>=number_format($flood,2) and $flood!="") {
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$flood,2) and $flood!="") {
 				echo "Minor Flooding";
-			}elseif(number_format($ObsStage,2)>=number_format($action,2) and $action!="") {
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$action,2) and $action!="") {
 				echo "Near Flood Stage";
 			}else{
 				echo "Not Defined";
 			}
 		}elseif($faction!= "" or $fflood!= "" or $fmoderate!= "" or $fmajor != ""){
-			if(number_format($ObsFlow,2)<number_format($faction,2) and $faction!="") {
+			if(number_format((double)$ObsFlow,2)<number_format((double)$faction,2) and $faction!="") {
 				echo "Normal";
-			}elseif(number_format($ObsFlow,2)<number_format($fflood,2) and $fflood!="" and $faction =="") {
+			}elseif(number_format((double)$ObsFlow,2)<number_format((double)$fflood,2) and $fflood!="" and $faction =="") {
 				echo "Normal";
-			}elseif(number_format($ObsFlow,2)>=number_format($frecordflow,2) and $frecordflow!="") {
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$frecordflow,2) and $frecordflow!="") {
 				echo "Record Flooding";
-			}elseif(number_format($ObsFlow,2)>=number_format($fmajor,2) and $fmajor!="") {
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fmajor,2) and $fmajor!="") {
 				echo "Major Flooding";
-			}elseif(number_format($ObsFlow,2)>=number_format($fmoderate,2) and $fmoderate!="") {
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fmoderate,2) and $fmoderate!="") {
 				echo "Moderate Flooding";
-			}elseif(number_format($ObsFlow,2)>=number_format($fflood,2) and $fflood!="") {
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fflood,2) and $fflood!="") {
 				echo "Minor Flooding";
-			}elseif(number_format($ObsFlow,2)>=number_format($faction,2) and $faction!="") {
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$faction,2) and $faction!="") {
 				echo "Near Flood Stage";
 			}else{
 				echo "Not Defined";	
@@ -196,29 +335,51 @@ echo 'class="column-light"';
 			echo "Not Defined";	
 		}
 	}
-	?>
-	</td>
-  </tr>
-  <?php $i++;
-} ?>
-</table>
-        <?php if($rivermaptop == false){ ?> 
-        	<p><img src="<?php echo $currentstage ?>" alt="Current River Heights" usemap="#rivermap"/>
-				</p> 
-       <?php include("./River/river-map.txt"); // added the image map previously downloaded.
-		}else{
-			echo "";
-		} ?>
-</div>
-  <p style="font-size: 9px;" align="right">Data Courtesy of the <a href="http://water.weather.gov/ahps/">Advanced Hydrologic Prediction Service</a>
-  <br/>
-Script Courtesy of Dennis at <a href="http://eastmasonvilleweather.com">East Masonville Weather</a>
-  <br/>
-Clickable Map Courtesy of Jim at <a href="http://jcweather.us/index.php">Juneau County Weather</a>
-  </p>
-</div><!-- end main-copy -->
+}
 
-<?php
+function color($ObsStage, $data12, $action, $flood, $moderate, $major, $ObsFlow, $faction, $fflood, $fmoderate, $fmajor){
+	if($data12<time()){
+		echo "<td width='20' bgcolor='#A4A4A4'></td>";
+	}else{
+		if($action != "" or $flood != "" or $moderate != "" or $major != ""){
+			if(number_format((double)$ObsStage,2)<number_format((double)$action,2) and $action!="") {
+				echo "<td width='20' bgcolor='#04B404'></td>";
+			}elseif(number_format((double)$ObsStage,2)<number_format((double)$flood,2) and $flood!="" and $action == "") {
+				echo "<td width='20' bgcolor='#04B404'></td>";
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$major,2) and $major!="") {
+				echo "<td width='20' bgcolor='#DF01D7'></td>";
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$moderate,2) and $moderate!="") {
+				echo "<td width='20' bgcolor='#FF0000'></td>";
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$flood,2) and $flood!="") {
+				echo "<td width='20' bgcolor='#FE9A2E'></td>";
+			}elseif(number_format((double)$ObsStage,2)>=number_format((double)$action,2) and $action!="") {
+				echo "<td width='20' bgcolor='#F7FE2E'></td>";
+			}else{ 
+				echo "<td width='20'></td>";
+			}
+		}elseif($faction!= "" or $fflood!= "" or $fmoderate!= "" or $fmajor != ""){
+			if(number_format((double)$ObsFlow,2)<number_format((double)$faction,2) and $faction!="") {
+				echo "<td width='20' bgcolor='#04B404'></td>";
+			}elseif(number_format((double)$ObsFlow,2)<number_format((double)$fflood,2) and $fflood!="" and $faction == "") {
+				echo "<td width='20' bgcolor='#04B404'></td>";
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fmajor,2) and $fmajor!="") {
+				echo "<td width='20' bgcolor='#DF01D7'></td>";
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fmoderate,2) and $moderate!="") {
+				echo "<td width='20' bgcolor='#FF0000'></td>";
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$fflood,2) and $fflood!="") {
+				echo "<td width='20' bgcolor='#FE9A2E'></td>";
+			}elseif(number_format((double)$ObsFlow,2)>=number_format((double)$faction,2) and $faction!="") {
+				echo "<td width='20' bgcolor='#F7FE2E'></td>";
+			}else{
+				echo "<td width='20'></td>";
+			}
+		}else{
+			echo "<td width='20'></td>";
+		}
+	}
+} 
+
+	
 ############################################################################
 include("footer.php");
 ############################################################################

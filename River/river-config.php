@@ -4,14 +4,16 @@
 ############################################################################
 #
 #   Project:    Local River/Lake Heights
-#   Module:     river-config.php
-#   Purpose:    Configuation for River Script
+#   Module:     river-fetch.php
+#   Purpose:    Gets data from AHPS
 #   Authors:    Dennis Clapperton <webmaster@eastmasonvilleweather.com>
 #               East Masonville Weather
-#   Version:	2.15
+#   Version:	3.00F
 ############################################################################
+#
+#
 # Gauge Array 
-######################################################################################
+############################################################################
 $RiverGauge = array(
     "AFBI2" => "Fox River at Algonquin Tailwater",
     "MNGI2" => "Fox River at Mongomery",
@@ -38,6 +40,9 @@ $target = 'target="_blank"';        // make "" if not wanting a new page/tab for
 $hydrographtop = false; //set to true if you want the hydrograph on top of the details page
 $rivermaptop = false; //set to true if you want the river map on top of the river summary page
 $dropdown = true; // Set to true if you want the dropdown menu on the details page
+$forecasttrend = true; // Set to true if you want the forecast trend (arrow) column on the summary page
+$forecastcolor = true; // Set to true if you want the max forecast color (colored dot) column on the summary page
+$trend = true; // Set to true if you want the trend column on the summary page
 
 ###  END OF SETTINGS  ###########################################################################################
 
